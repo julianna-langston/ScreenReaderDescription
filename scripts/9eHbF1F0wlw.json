@@ -4,14 +4,7 @@
     "domain": "youtube",
     "id": "9eHbF1F0wlw"
   },
-  "metadata": {
-    "type": "television episode",
-    "title": "Series 17, Episode 4 - 'Apropos of Apoppo.' | Full Episode",
-    "creator": "Taskmaster",
-    "seriesTitle": "Taskmaster",
-    "season": 17,
-    "episode": 4
-  },
+  "metadata": { "type": "television episode", "title": "Series 17, Episode 4 - 'Apropos of Apoppo.' | Full Episode", "seriesTitle": "Taskmaster", "season": 17, "episode": 4 },
   "scripts": [
     {
       "language": "en-US",

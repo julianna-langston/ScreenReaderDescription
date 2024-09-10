@@ -1,0 +1,90 @@
+{
+  "source": {
+    "url": "https://www.youtube.com/watch?v=rYEDA3JcQqw",
+    "domain": "youtube",
+    "id": "rYEDA3JcQqw"
+  },
+  "metadata": { "type": "music video", "title": "Adele - Rolling in the Deep (Official Music Video)", "creator": "Adele" },
+  "scripts": [
+    {
+      "language": "en-US",
+      "author": "Julianna Langston",
+      "tracks": [
+        { "timestamp": 1.258831, "text": "Adele sits alone in a room." },
+        {
+          "timestamp": 3.732451,
+          "text": "A figure stands on a snow covered floor."
+        },
+        {
+          "timestamp": 9.907863,
+          "text": "Adele sits near chairs, which are covered in plastic wrap. Behind her is a giant paper square showing creases. It's haphazardly duct taped to the wall."
+        },
+        {
+          "timestamp": 18.091608,
+          "text": "The upstairs landing is covered in glasses of water."
+        },
+        {
+          "timestamp": 21.275799,
+          "text": "A drummer sits beneath the stairs."
+        },
+        { "timestamp": 24.944583, "text": "The water in the glasses vibrate." },
+        {
+          "timestamp": 41.909305,
+          "text": "The figure in the snow picks up a stick"
+        },
+        {
+          "timestamp": 48.098538,
+          "text": "The figure spins the stick in a circle, kicking up the snow."
+        },
+        {
+          "timestamp": 52.157448,
+          "text": "The figure kicks the snow. A frosty haze forms"
+        },
+        {
+          "timestamp": 64.75444,
+          "text": "The figure spins in circles, the air filling with floating snow"
+        },
+        { "timestamp": 67.924106, "text": "A pile of broken dishes" },
+        {
+          "timestamp": 78.322921,
+          "text": "On the beat, dishes are thrown down the stairs, hit a hanging board, and crumple broken in a pile."
+        },
+        { "timestamp": 87.042109, "text": "Sparks fly near paper figures" },
+        {
+          "timestamp": 96.74121,
+          "text": "The drummer sits still. A plate crashes."
+        },
+        { "timestamp": 106.471027, "text": "The glasses vibrate" },
+        {
+          "timestamp": 121.587374,
+          "text": "Lights strobe above the drummer. The figure, barely visible in the snow, kicks a stream above its head."
+        },
+        {
+          "timestamp": 133.908891,
+          "text": "A large table displays a city scape made of paper. It sits in an empty room between a mounted moose head and an empty fireplace"
+        },
+        { "timestamp": 143.003333, "text": "Sparks fly" },
+        { "timestamp": 171.298902, "text": "Adele takes a breath" },
+        {
+          "timestamp": 175.16084,
+          "text": "The figure disappears behind the cloud of snow"
+        },
+        { "timestamp": 188.368057, "text": "Sparks shoot over the city" },
+        {
+          "timestamp": 195.658703,
+          "text": "Sparks bounce past some buildings."
+        },
+        {
+          "timestamp": 201.818322,
+          "text": "Spinning snow. Breaking plates. Strobing water. Paper buildings survive for now."
+        },
+        {
+          "timestamp": 211.157564,
+          "text": "Smaller paper buildings begin to burn. Fire transfers to a taller one."
+        },
+        { "timestamp": 218.095872, "text": "Ash and embers." },
+        { "timestamp": 229.233016, "text": "She looks down. Fade to black." }
+      ]
+    }
+  ]
+}

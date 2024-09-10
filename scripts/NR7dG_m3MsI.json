@@ -1,0 +1,110 @@
+{
+  "source": {
+    "url": "https://www.youtube.com/watch?v=NR7dG_m3MsI",
+    "domain": "youtube",
+    "id": "NR7dG_m3MsI"
+  },
+  "metadata": { "type": "music video", "title": "Killswitch Engage - Holy Diver [OFFICIAL VIDEO]", "creator": "Roadrunner Records" },
+  "scripts": [
+    {
+      "language": "en-US",
+      "author": "Julianna Langston",
+      "tracks": [
+        {
+          "timestamp": 4.505249,
+          "text": "A knight in a red cape enters a castle"
+        },
+        {
+          "timestamp": 16.828365,
+          "text": "Late at night, the band plays in the castle courtyard."
+        },
+        {
+          "timestamp": 32.674255,
+          "text": "Doors to the throne room open. Party guests turn to look at the knight."
+        },
+        {
+          "timestamp": 35.839158,
+          "text": "The knight approaches a princess lying, unmoving, on a table. The king, surrounded by attractive maids, glares at the knight."
+        },
+        {
+          "timestamp": 46.471646,
+          "text": "The king is played by drummer Justin Foley. He glares and bites a turkey leg."
+        },
+        {
+          "timestamp": 50.010989,
+          "text": "The knight removes his helmet. It's bassist Mike D'Antonio."
+        },
+        {
+          "timestamp": 61.948965,
+          "text": "The princess is played by guitarist Adam Dutkiewicz."
+        },
+        {
+          "timestamp": 81.911379,
+          "text": "Vocalist Howard Jones plays a blacksmith, working on a forge. The knight walks in, and the blacksmith nods. He raises a sword and throws it to the knight."
+        },
+        {
+          "timestamp": 92.809859,
+          "text": "The townspeople and king watch as the knight heads off for the forest"
+        },
+        {
+          "timestamp": 104.86387716593933,
+          "text": "A wizard watches the knight through a crystal ball, which sees what the shadowy figure sees. The wizard is played by guitarist Joel Stroetzel."
+        },
+        { "timestamp": 113.8623, "text": "The knight approaches a tower." },
+        {
+          "timestamp": 127.42985,
+          "text": "The knight opens the tower's door and grabs a torch."
+        },
+        {
+          "timestamp": 134.503079,
+          "text": "The knight finds a book on a glowing pedestal. He makes an impressed shrug."
+        },
+        {
+          "timestamp": 144.691981,
+          "text": "The knight turns a page in the book and mouths the word \"what\""
+        },
+        {
+          "timestamp": 151.203117,
+          "text": "The knight is surrounded by shadowy figures with red eyes. He lifts his sword and strikes. The wizard watches through a crystal ball and frowns."
+        },
+        {
+          "timestamp": 166.365329,
+          "text": "The wizard throws the crystal ball and it shatters in glowing sparks."
+        },
+        {
+          "timestamp": 171.504927,
+          "text": "Back in the throne room, the knight kneels over the princess, book in hand. The wizard appears behind the knight."
+        },
+        {
+          "timestamp": 183.304855,
+          "text": "The wizard conjures shadowy void magic. The townspeople hold the knight back."
+        },
+        {
+          "timestamp": 192.864962,
+          "text": "The king holds the book. Pages turn. The princess's finger twitches."
+        },
+        { "timestamp": 200.068654, "text": "The wizard suddenly stops." },
+        {
+          "timestamp": 205.020575,
+          "text": "The wizard falls forward, as the blacksmith retrieves a sword for the wizard's back."
+        },
+        {
+          "timestamp": 212.815105,
+          "text": "The knight stands before a delighted princess."
+        },
+        {
+          "timestamp": 222.226432,
+          "text": "The knight and princess embrace. The princess is more than a head taller than the knight."
+        },
+        {
+          "timestamp": 233.163341,
+          "text": "The king smiles and eats a turkey leg, while flanked by attractive maids."
+        },
+        {
+          "timestamp": 250.180662,
+          "text": "The blacksmith kisses his sword. Fade to black."
+        }
+      ]
+    }
+  ]
+}

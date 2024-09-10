@@ -1,0 +1,53 @@
+{
+  "source": {
+    "url": "https://www.youtube.com/watch?v=GI6CfKcMhjY",
+    "domain": "youtube",
+    "id": "GI6CfKcMhjY"
+  },
+  "metadata": { "type": "music video", "title": "Jack Sparrow (feat. Michael Bolton)", "creator": "thelonelyisland" },
+  "scripts": [
+    {
+      "language": "en-US",
+      "author": "Julianna Langston",
+      "tracks": [
+        { "timestamp": 1.831388, "text": "In a recording studio" },
+        {
+          "timestamp": 29.326582,
+          "text": "Lonely Island get out of a car in front of a club."
+        },
+        { "timestamp": 49.324168, "text": "In the club" },
+        { "timestamp": 56.100385, "text": "On a beach" },
+        {
+          "timestamp": 89.779379,
+          "text": "Frontman Andy Samberg hits on a woman"
+        },
+        {
+          "timestamp": 99.359793,
+          "text": "Bolton stands in a crows nest, dressed as Jack Sparrow"
+        },
+        {
+          "timestamp": 107.224792,
+          "text": "Bolton kisses a seagull and sends it flying"
+        },
+        { "timestamp": 117.7359, "text": "In the club" },
+        { "timestamp": 121.989494, "text": "Beach" },
+        { "timestamp": 132.649991, "text": "Montage of movie references" },
+        { "timestamp": 163.801411, "text": "He shoots a flamethrower" },
+        {
+          "timestamp": 171.194547,
+          "text": "Bolton throws white powder in the air"
+        },
+        {
+          "timestamp": 177.187227,
+          "text": "Bolton smolders at us, dressed as Erin Brokovich"
+        },
+        { "timestamp": 183.150326, "text": "As Jack Sparrow" },
+        {
+          "timestamp": 191.532908,
+          "text": "The Lonely Island, Turtleneck and Chain"
+        },
+        { "timestamp": 193.050302, "text": "In stores now" }
+      ]
+    }
+  ]
+}

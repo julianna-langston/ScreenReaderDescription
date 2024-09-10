@@ -1,0 +1,46 @@
+{
+  "source": {
+    "url": "https://www.youtube.com/watch?v=ZzI9JE0i6Lc",
+    "domain": "youtube",
+    "id": "ZzI9JE0i6Lc"
+  },
+  "metadata": { "type": "other", "title": "AWS for the Haters in 100 Seconds", "creator": "Fireship" },
+  "scripts": [
+    {
+      "language": "en-US",
+      "author": "Julianna Langston",
+      "tracks": [
+        { "timestamp": 5.11143, "text": "Amazon package" },
+        { "timestamp": 6.133319, "text": "as Doctor Evil" },
+        { "timestamp": 11.677838, "text": "a drug addict" },
+        { "timestamp": 15.6278, "text": "$100,000 free taste" },
+        {
+          "timestamp": 16.986524,
+          "text": "Line chart of dependence and cost, where the line looks like the AWS logo"
+        },
+        {
+          "timestamp": 21.664012,
+          "text": "POV you tried to scale your own servers with 99.9999% uptime"
+        },
+        {
+          "timestamp": 29.360149,
+          "text": "Elastic beanstalk, Kinesis Firehose"
+        },
+        {
+          "timestamp": 41.147598,
+          "text": "Me: I just need to host 'Hello World' on the cloud. AWS: No problem. Have you checked all of our cool named products you'll never understand. AWS gestures to a diagram with 15 nodes, 8 regions, and 19 interconnected links."
+        },
+        { "timestamp": 44.085996, "text": "AmazonSimp, le D B" },
+        {
+          "timestamp": 47.212479,
+          "text": "The house on fire meme. Instead of saying 'This is fine', it's an status picture with a green check saying 'No recent events.'"
+        },
+        { "timestamp": 55.150679, "text": "Elastic turdcutter" },
+        {
+          "timestamp": 63.201962,
+          "text": "We hear feasting upon open source. Meme of AWS eating FOSS."
+        }
+      ]
+    }
+  ]
+}
