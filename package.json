@@ -1,16 +1,18 @@
 {
-  "name": "creenreaderdescription",
+  "name": "screenreaderdescription",
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "generate-jsd": "ts-json-schema-generator --path './types.d.ts' --type 'ScriptData' --out './ScriptData.json'",
-    
-    "prevalidate": "npm run generate-jsd",
+    "generate-jsd": "npx ts-json-schema-generator --path 'types.d.ts' --type 'ScriptData' --out './ScriptData.json'",
     "validate": "ts-node validator.ts"
+  },
+  "lint-staged": {
+    "scripts/*.json": "npm run validate"
   },
   "license": "MIT",
   "devDependencies": {
     "ajv": "^8.17.1",
+    "lint-staged": "^15.2.10",
     "ts-node": "^10.9.2"
   }
 }
