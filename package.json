@@ -1,0 +1,16 @@
+{
+  "name": "creenreaderdescription",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "generate-jsd": "ts-json-schema-generator --path './types.d.ts' --type 'ScriptData' --out './ScriptData.json'",
+    
+    "prevalidate": "npm run generate-jsd",
+    "validate": "ts-node validator.ts"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ts-node": "^10.9.2"
+  }
+}
