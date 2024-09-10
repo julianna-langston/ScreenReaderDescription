@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "generate-jsd": "ts-node generateJSD",
+    "generate-listing": "ts-node lister",
     "prevalidate": "npm run generate-jsd",
     "validate": "ts-node validator"
   },
