@@ -3,16 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "generate-jsd": "npx ts-json-schema-generator --path 'types.d.ts' --type 'ScriptData' --out './ScriptData.json'",
-    "validate": "ts-node validator.ts"
+    "generate-jsd": "ts-node generateJSD",
+    "prevalidate": "npm run generate-jsd",
+    "validate": "ts-node validator"
   },
   "lint-staged": {
-    "scripts/*.json": "npm run validate"
+    "scripts/*.json": "npm run validate",
+    "types.d.ts": "npm run validate"
   },
   "license": "MIT",
   "devDependencies": {
     "ajv": "^8.17.1",
     "lint-staged": "^15.2.10",
+    "ts-json-schema-generator": "^2.3.0",
     "ts-node": "^10.9.2"
   }
 }
