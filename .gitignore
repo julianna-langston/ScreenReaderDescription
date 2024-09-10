@@ -130,4 +130,4 @@ dist
 .pnp.*
 
 # Generated files
-./ScriptData.json
+ScriptData.json
