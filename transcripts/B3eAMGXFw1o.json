@@ -4,7 +4,7 @@
     "domain": "youtube",
     "id": "B3eAMGXFw1o"
   },
-  "metadata": { "type": "music video", "title": "Rihanna - Bitch Better Have My Money (Explicit)", "creator": "Rihanna" },
+  "metadata": { "type": "music video", "title": "Rihanna - Bitch Better Have My Money (Explicit)", "creator": "Rihanna", "requiresExtension": true },
   "scripts": [
     {
       "language": "en-US",

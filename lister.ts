@@ -51,6 +51,10 @@ const generateTitle = ({type, title, creator, seriesTitle, season, episode}: Scr
 
 files.map((f) => {
     const {source, metadata}: ScriptInfo = JSON.parse(fs.readFileSync(path.join(directory, f)).toString());
+    
+    if(metadata.draft || metadata.requiresExtension){
+        return;
+    }
 
     listing[metadata.type] ??= [];
     listing[metadata.type]?.push({

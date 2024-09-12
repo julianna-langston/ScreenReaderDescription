@@ -20,6 +20,8 @@ interface ScriptMetadata {
     season?: number;
     episode?: number;
     type: SupportedVideoTypes;
+    draft?: boolean;
+    requiresExtension?: boolean;
 }
 
 interface ScriptData {
