@@ -1,3 +1,6 @@
+type SupportedSourceDomains = "youtube";
+type SupportedVideoTypes = "music video" | "television episode" | "movie" | "other"
+
 export interface ScriptInfo {
     source: ScriptSource;
     metadata: ScriptMetadata;
@@ -6,8 +9,8 @@ export interface ScriptInfo {
 
 interface ScriptSource {
     url: string;
-    domain?: "youtube";
-    id?: string;
+    domain: SupportedSourceDomains;
+    id: string;
 }
 
 interface ScriptMetadata {
@@ -16,11 +19,11 @@ interface ScriptMetadata {
     seriesTitle?: string;
     season?: number;
     episode?: number;
-    type: "music video" | "television episode" | "movie" | "other";
+    type: SupportedVideoTypes;
 }
 
 interface ScriptData {
-    language: HTMLElement["lang"];
+    language: "en-US";
     author: string;
     tracks: {
         text: string;
