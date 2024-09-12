@@ -4,7 +4,7 @@
     "domain": "youtube",
     "id": "ZPtE12rRDkk"
   },
-  "metadata": { "type": "television episode", "title": "Series 17, Episode 5 - 'Snooker cue umbrella chin.' | Full Episode", "seriesTitle": "Taskmaster", "season": 17, "episode": 5 },
+  "metadata": { "type": "television episode", "title": "Snooker cue umbrella chin.", "seriesTitle": "Taskmaster", "season": 17, "episode": 5, "draft": true },
   "scripts": [
     {
       "language": "en-US",

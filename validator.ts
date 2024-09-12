@@ -5,7 +5,7 @@ import fs from "fs";
 
 const ajv = new Ajv();
 const validator = ajv.compile(schema);
-const directory = path.join(__dirname, "scripts");
+const directory = path.join(__dirname, "transcripts");
 const files = fs.readdirSync(directory);
 files.forEach((f) => {
     const contents = JSON.parse(fs.readFileSync(path.join(directory, f)).toString());
