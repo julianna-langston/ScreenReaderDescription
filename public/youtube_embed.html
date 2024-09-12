@@ -69,11 +69,15 @@
             const id = new URLSearchParams(location.search).get("id");
 
             (async () => {
-                const result = await fetch(`./transcripts/${id}.json`);
+              try {
+                const result = await fetch(`https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main/transcripts/${id}.json`)
                 const json = await result.json();
                 const {scripts} = json;
                 track = scripts[0].tracks;
                 document.getElementById("track-author").textContent = scripts[0].author;
+              }catch(err){
+                alert("Warning: Requested video does not have audio transcripts available.");
+              }
             })();
 
             var player;
