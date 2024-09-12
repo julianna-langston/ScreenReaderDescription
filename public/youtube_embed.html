@@ -1,0 +1,144 @@
+
+<html>
+    <head>
+        <title>Unknown Youtube Video</title>
+        <style>
+          label {
+            display: block;
+            padding-bottom: 4px;
+          }
+          #cc div:not(:first-child){
+            display: none;
+          }
+        </style>
+        <script src="https://www.youtube.com/iframe_api"></script>
+    </head>
+    <body>
+        <h1>Video</h1>
+
+        <!-- 
+          Page Layout considerations:
+
+            Technical
+              - Sometimes, if the video player is the first focusable item on the page, the screen reader will skip over it. 
+                This skipping issue never really happens if there's at least 1 focuable item before the video.
+              - The YouTube player is confusing, but ultimately accessible. It would benefit users to have some troubleshooting
+                information available to them, if they get stuck.
+
+            User Experience
+              - I beileve the most common adjustments users will want to make to audio descriptions will be:
+                1. Enabling/disabling audio descriptions. I'm imagining that you go through a screen with descriptions, 
+                   jump back a bit, disable the descriptions, and re-listen, just for the music or to focus on the dialog or whatever.
+                2. Adjusting the volume. YouTube embed's volume adjustor is sometimes inaccessible.
+                3. Reviewing the text read by a screen reader, such as to read through word-by-word or character-by-character.
+        -->
+        
+        <label>
+            <input type="checkbox" id="enabler" checked />
+            Enable screen reader audio descriptions
+        </label>
+
+        <div id="player"></div>
+
+        <label>
+          Volume<br/>
+          <input aria-disabled="true" type="range" id="volume" value="20" min="0" max="100" step="10" />
+        </label>
+
+        <div>
+          <p>Audio description said:</p>
+          <div id="cc" role="status" aria-live="assertive" aria-atomic="true" aria-relevant="additions text"></div>
+        </div>
+        
+        <p>Audio description written by <span id="track-author"></span></p>
+
+        <h2>Troubleshooting</h2>
+
+        <p>If the play/pause controls suddenly disappear, they might be hidden by the "More Videos" popup. Dismiss them by clicking the "Hide more videos" button. This popup typically appears after you leave and return to this window or tab.</p>
+
+        <script>
+            const enabler = document.getElementById("enabler");
+            const cc = document.getElementById("cc");
+            enabler.addEventListener("change", (e) => {
+                cc.style.display = e.target.checked ? "block" : "none";
+            });
+        </script>
+
+        <script>
+            let track = [];
+            const id = new URLSearchParams(location.search).get("id");
+
+            (async () => {
+                const result = await fetch(`./transcripts/${id}.json`);
+                const json = await result.json();
+                const {scripts} = json;
+                track = scripts[0].tracks;
+                document.getElementById("track-author").textContent = scripts[0].author;
+            })();
+
+            var player;
+            function onYouTubeIframeAPIReady() {
+              player = new YT.Player("player", {
+                height: "390",
+                width: "640",
+                videoId: id,
+                playerVars: {
+                  playsinline: 1
+                },
+                events: {
+                  onReady: onPlayerReady,
+                  onStateChange: onPlayerStateChange
+                }
+              });
+            }
+
+            function onPlayerReady(event) {
+              event.target.playVideo();
+              event.target.setVolume(20);
+
+              const volumeControl = document.getElementById("volume");
+              volumeControl.addEventListener("change", (e) => {
+                event.target.setVolume(e.target.value);
+                event.target.unMute();
+              });
+
+              const {videoTitle} = event.target;
+              if(typeof videoTitle === "string"){
+                document.title = videoTitle;
+              }
+            }
+
+            let trackUpdateInterval = [];
+
+            const playTranscriptFrom = (startingSecond) => {
+              const trackToGo = track.filter(
+                ({ timestamp }) => timestamp >= startingSecond
+              );
+              trackUpdateInterval = trackToGo.map(({ text, timestamp }) => {
+                return setTimeout(() => {
+                  const div = document.createElement("div");
+                  div.textContent = text;
+                  document.getElementById("cc").prepend(div);
+                }, (timestamp - startingSecond) * 1000);
+              });
+            };
+            const killTranscript = () => {
+              trackUpdateInterval.forEach((t) => {
+                clearTimeout(t);
+              });
+              trackUpdateInterval = [];
+            };
+
+            function onPlayerStateChange({ target, data }) {
+              if (data === 1) {
+                playTranscriptFrom(Math.floor(target.getCurrentTime()));
+              } else {
+                killTranscript();
+              }
+            }
+            function stopVideo() {
+              player.stopVideo();
+            }
+        </script>
+    </body>
+</html>
