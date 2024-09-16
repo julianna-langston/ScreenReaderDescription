@@ -1,16 +1,14 @@
 {
-    "source": {
-        "url": "https://www.youtube.com/watch?v=4QIZE708gJ4",
-        "domain": "youtube",
-        "id": "4QIZE708gJ4"
-
-    },
-    "metadata": {
-        "type": "music video",
-        "title": "Post Malone - I Had Some Help (feat. Morgan Wallen)",
-        "creator": "Post Malone",
-        "draft": true
-    },
+  "source": {
+    "url": "https://www.youtube.com/watch?v=4QIZE708gJ4",
+    "domain": "youtube",
+    "id": "4QIZE708gJ4"
+  },
+  "metadata": {
+    "type": "music video",
+    "title": "Post Malone - I Had Some Help (feat. Morgan Wallen)",
+    "creator": "Post Malone"
+  },
   "scripts": [
     {
       "language": "en-US",
@@ -113,7 +111,7 @@
         },
         {
           "timestamp": 186.957717,
-          "text": "Malone dances on a table and on a stage."
+          "text": "Malone dances on a table. On stage, he faces away from us and rocks his hips from side to side."
         },
         {
           "timestamp": 192.395461,
@@ -121,7 +119,7 @@
         },
         {
           "timestamp": 196.037104,
-          "text": "Title card. I had some help. Post Malone, featuring Morgan Wallen."
+          "text": "Title card. I had some help. Post Malone, featuring Morgan Wallen. Credits roll."
         }
       ]
     }
