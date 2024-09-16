@@ -9,7 +9,7 @@
     "validate": "ts-node validator"
   },
   "lint-staged": {
-    "scripts/*.json": "npm run validate",
+    "transcripts/*.json": "npm run validate",
     "types.d.ts": "npm run validate"
   },
   "license": "MIT",
