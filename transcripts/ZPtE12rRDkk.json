@@ -4,61 +4,61 @@
     "domain": "youtube",
     "id": "ZPtE12rRDkk"
   },
-  "metadata": { "type": "television episode", "title": "Snooker cue umbrella chin.", "seriesTitle": "Taskmaster", "season": 17, "episode": 5, "draft": true },
+  "metadata": {"type": "television episode", "title": "Snooker cue umbrella chin.", "seriesTitle": "Taskmaster", "season": 17, "episode": 5},
   "scripts": [
     {
-      "language": "en-US",
+        "language": "en-US",
       "author": "Julianna Langston",
       "tracks": [
         {
-          "timestamp": 2.267338,
+            "timestamp": 2.267338,
           "text": "Greg Davies, the Taskmaster, types at a typewriter. Scenes from the show play, depicting the 5 contestants with absurd situations, costumes, and reactions."
         },
         {
-          "timestamp": 30.487993,
-          "text": "A bow tie floats in the air, framing a sun setting over the back of the house. Text appears. Snooker cue umbrella chin"
+            "timestamp": 30.487993,
+            "text": "A bow tie floats in the air, framing a sun setting over the back of the house. Text appears. Snooker cue umbrella chin"
         },
         { "timestamp": 74.286622, "text": "Sophie laughs. Joanne gapes." },
         {
-          "timestamp": 105.757705,
-          "text": "He produces a pair of white briefs."
+            "timestamp": 105.757705,
+            "text": "He produces a pair of white briefs."
         },
         {
-          "timestamp": 130.907292,
-          "text": "A painting of a brown rodent, limbs wide, surrounded by red and green"
+            "timestamp": 130.907292,
+            "text": "A painting of a brown rodent, limbs wide, surrounded by red and green"
         },
         {
-          "timestamp": 233.724631,
-          "text": "A man eating a sandwich, staring forward blankly"
+            "timestamp": 233.724631,
+            "text": "A man eating a sandwich, staring forward blankly"
         },
         {
-          "timestamp": 239.761166,
-          "text": "Caption. First time in Nando's with my sister and I see the bloke of impractical jokers on bbc3. 2:35pm Nov 30 2012"
+            "timestamp": 239.761166,
+            "text": "Caption. First time in Nando's with my sister and I see the bloke of impractical jokers on bbc3. 2:35pm Nov 30 2012"
         },
         {
-          "timestamp": 296.482639,
-          "text": "Joanne stands. A balloon slowly deflates in her hand. We turn to see Che Guevara printed on the balloon."
+            "timestamp": 296.482639,
+            "text": "Joanne stands. A balloon slowly deflates in her hand. We turn to see Che Guevara printed on the balloon."
         },
         {
-          "timestamp": 338.781806,
-          "text": "She points to someone in the audience. Greg turns away, laughing"
+            "timestamp": 338.781806,
+            "text": "She points to someone in the audience. Greg turns away, laughing"
         },
         { "timestamp": 350.037644, "text": "Greg smiles and nods" },
         {
-          "timestamp": 360.082256,
-          "text": "A photo of Greg and Alex at the beach, with their faces swapped disconcertingly."
+            "timestamp": 360.082256,
+            "text": "A photo of Greg and Alex at the beach, with their faces swapped disconcertingly."
         },
         {
-          "timestamp": 443.531524,
-          "text": "Alex stands in front of the Taskmaster house, wearing a back support brace. It's a large, adjustable band that goes around the waist."
+            "timestamp": 443.531524,
+            "text": "Alex stands in front of the Taskmaster house, wearing a back support brace. It's a large, adjustable band that goes around the waist."
         },
         {
-          "timestamp": 449.864425,
-          "text": "The task lies on a welcome mat. Alex rings the doorbell."
+            "timestamp": 449.864425,
+            "text": "The task lies on a welcome mat. Alex rings the doorbell."
         },
         {
-          "timestamp": 539.721466,
-          "text": "John drops the task on the ground"
+            "timestamp": 539.721466,
+            "text": "John drops the task on the ground"
         },
         { "timestamp": 545.701686, "text": "John smiles and walks away" },
         { "timestamp": 549.732617, "text": "John shrugs and runs away" },
@@ -66,289 +66,288 @@
         { "timestamp": 554.081912, "text": "Alex grabs John" },
         { "timestamp": 597.644055, "text": "The cart handle is too narrow" },
         {
-          "timestamp": 615.316267,
-          "text": "Items dangle from Joanne, including hoops, a racket, a traffic cone, and a drying rack"
+            "timestamp": 615.316267,
+            "text": "Items dangle from Joanne, including hoops, a racket, a traffic cone, and a drying rack"
         },
         {
-          "timestamp": 628.819953,
-          "text": "Sophie wears a life vest and stuffs it with objects"
+            "timestamp": 628.819953,
+            "text": "Sophie wears a life vest and stuffs it with objects"
         },
         {
-          "timestamp": 655.135367,
-          "text": "She dons a hoop skirt, and holds the ends up, creating a large pouch. Alex picks up a bucket of balls."
+            "timestamp": 655.135367,
+            "text": "She dons a hoop skirt, and holds the ends up, creating a large pouch. Alex picks up a bucket of balls."
         },
         {
-          "timestamp": 669.248028,
-          "text": "Joanne, covered in random items, smiles and waves. Sophie, holding a cart, a skirt full of balls, an umbrella, and a rubber ducky in a basket, also waves"
+            "timestamp": 669.248028,
+            "text": "Joanne, covered in random items, smiles and waves. Sophie, holding a cart, a skirt full of balls, an umbrella, and a rubber ducky in a basket, also waves"
         },
         {
-          "timestamp": 683.567003,
-          "text": "Sophie's balls run away. A plate in Joanne's clothes crashes to the ground. She kicks the shards away."
+            "timestamp": 683.567003,
+            "text": "Sophie's balls run away. A plate in Joanne's clothes crashes to the ground. She kicks the shards away."
         },
         { "timestamp": 696.82853, "text": "Sophie nods" },
         {
-          "timestamp": 786.738024,
-          "text": "He wraps the tiger's paws around his neck and mimes a piggy back ride"
+            "timestamp": 786.738024,
+            "text": "He wraps the tiger's paws around his neck and mimes a piggy back ride"
         },
         {
-          "timestamp": 803.968357,
-          "text": "Nick tries to balance a chair on his nose"
+            "timestamp": 803.968357,
+            "text": "Nick tries to balance a chair on his nose"
         },
         { "timestamp": 817.134311, "text": "Alex and Nick carry the cow" },
         {
-          "timestamp": 831.41462,
-          "text": "Steve emerges from the house. He wears a magician suit. Stacked above him is a tiger, a doll in a gold dress, and balloon headed cowboy magician."
+            "timestamp": 831.41462,
+            "text": "Steve emerges from the house. He wears a magician suit. Stacked above him is a tiger, a doll in a gold dress, and balloon headed cowboy magician."
         },
         {
-          "timestamp": 837.031022,
-          "text": "The stack is taller than the door. Steve crouches."
+            "timestamp": 837.031022,
+            "text": "The stack is taller than the door. Steve crouches."
         },
         { "timestamp": 842.471621, "text": "He sits and shuffles" },
         {
-          "timestamp": 851.096457,
-          "text": "The stack leans forward, and the balloon head drops"
+            "timestamp": 851.096457,
+            "text": "The stack leans forward, and the balloon head drops"
         },
         { "timestamp": 858.037313, "text": "Nick mounts the cow" },
         {
-          "timestamp": 860.792305,
-          "text": "The wind blows Steve's stack to the side, as he struggles to pick up the balloon head"
+            "timestamp": 860.792305,
+            "text": "The wind blows Steve's stack to the side, as he struggles to pick up the balloon head"
         },
         { "timestamp": 866.653812, "text": "Nick raises an umbrella" },
         {
-          "timestamp": 881.432725,
-          "text": "Steve holds the tiger's paws by his chin. He waves"
+            "timestamp": 881.432725,
+            "text": "Steve holds the tiger's paws by his chin. He waves"
         },
         {
-          "timestamp": 893.722737,
-          "text": "Nick has an umbrella connected to a billiards cue. He balances the length on his chin. He waves, and the elongated umbrella falls. Part of our view is obscured by raindrops"
+            "timestamp": 893.722737,
+            "text": "Nick has an umbrella connected to a billiards cue. He balances the length on his chin. He waves, and the elongated umbrella falls. Part of our view is obscured by raindrops"
         },
         {
-          "timestamp": 950.56484,
-          "text": "John puts a chair over his shoulder, creating a shelf"
+            "timestamp": 950.56484,
+            "text": "John puts a chair over his shoulder, creating a shelf"
         },
         {
-          "timestamp": 964.972484,
-          "text": "John lays several yards of gutter across the chair."
+            "timestamp": 964.972484,
+            "text": "John lays several yards of gutter across the chair."
         },
         {
-          "timestamp": 988.446551,
-          "text": "He tapes small pictures and a scale model cutout of Greg to the gutter and chairs"
+            "timestamp": 988.446551,
+            "text": "He tapes small pictures and a scale model cutout of Greg to the gutter and chairs"
         },
         {
-          "timestamp": 1015.832142,
-          "text": "John carries the gutter chair on his head, bearing 18 frames on gutters and a lifesize cutout in the chair. John spins around, knocking his gutter into the side of the house."
+            "timestamp": 1015.832142,
+            "text": "John carries the gutter chair on his head, bearing 18 frames on gutters and a lifesize cutout in the chair. John spins around, knocking his gutter into the side of the house."
         },
         { "timestamp": 1051.396019, "text": "Piles of stuff" },
         {
-          "timestamp": 1062.847985,
-          "text": "A raindrop looks like censorship"
+            "timestamp": 1062.847985,
+            "text": "A raindrop looks like censorship"
         },
         { "timestamp": 1068.304076, "text": "The stack is blown over" },
         { "timestamp": 1070.231412, "text": "Gutter Greg" },
         {
-          "timestamp": 1094.80383,
+            "timestamp": 1094.80383,
           "text": "Nick smiles and clasps his hands together"
         },
         { "timestamp": 1104.978086, "text": "Joanne 2" },
         {
-          "timestamp": 1119.2061691659394,
-          "text": "In the study, a hair dryer sits propped up in a coffee mug. It blows upwards at a hovering envelope. Our view reveals the thin string holding the envelope."
+            "timestamp": 1119.2061691659394,
+            "text": "In the study, a hair dryer sits propped up in a coffee mug. It blows upwards at a hovering envelope. Our view reveals the thin string holding the envelope."
         },
         {
-          "timestamp": 1143.119722,
-          "text": "Steve waves his hand under the envelope"
+            "timestamp": 1143.119722,
+            "text": "Steve waves his hand under the envelope"
         },
         {
-          "timestamp": 1172.877547,
-          "text": "The envelope and string drop. Steve looks up and smiles"
+            "timestamp": 1172.877547,
+            "text": "The envelope and string drop. Steve looks up and smiles"
         },
         {
-          "timestamp": 1213.065784,
-          "text": "He puts a hand over the hairdryer, and mimes his hand flying away"
+            "timestamp": 1213.065784,
+            "text": "He puts a hand over the hairdryer, and mimes his hand flying away"
         },
         { "timestamp": 1264.289298, "text": "Greg covers his mouth" },
         { "timestamp": 1272.561238, "text": "The contestants stand." },
         {
-          "timestamp": 1276.688074,
-          "text": "Sophie and Joanne's feet clear the seats of the chairs. John and Steve are a little higher. Nick almost clears the back rest."
+            "timestamp": 1276.688074,
+            "text": "Sophie and Joanne's feet clear the seats of the chairs. John and Steve are a little higher. Nick almost clears the back rest."
         },
         {
-          "timestamp": 1300.057386,
-          "text": "Nick wears a helmet and walks by towers of cans towards 5 tires"
+            "timestamp": 1300.057386,
+            "text": "Nick wears a helmet and walks by towers of cans towards 5 tires"
         },
         {
-          "timestamp": 1308.519332,
-          "text": "He puts a rubber band over his face"
+            "timestamp": 1308.519332,
+            "text": "He puts a rubber band over his face"
         },
         { "timestamp": 1316.616991, "text": "Joanne comes outside in a veil" },
         {
-          "timestamp": 1324.328976,
-          "text": "She has a knife through her head"
+            "timestamp": 1324.328976,
+            "text": "She has a knife through her head"
         },
         {
-          "timestamp": 1327.989781,
-          "text": "Sophie, wearing a top hat and a hoop skirt, jumps on a trampoline while pouring milk from a kettle. Alex, wearing a pigeon mask, holds out a glass."
+            "timestamp": 1327.989781,
+            "text": "Sophie, wearing a top hat and a hoop skirt, jumps on a trampoline while pouring milk from a kettle. Alex, wearing a pigeon mask, holds out a glass."
         },
         { "timestamp": 1333.60496, "text": "Milk splatters his suit" },
         {
-          "timestamp": 1339.978763,
-          "text": "Nick slides inside a row of tires. His head peaks out the right while his feet dangle out the left."
+            "timestamp": 1339.978763,
+            "text": "Nick slides inside a row of tires. His head peaks out the right while his feet dangle out the left."
         },
         { "timestamp": 1348.380607, "text": "John gets on a stool" },
         { "timestamp": 1355.137663, "text": "Nick starts to roll" },
         { "timestamp": 1361.593634, "text": "He stops 3 feet shy of the cans" },
         {
-          "timestamp": 1362.717037,
-          "text": "John jumps onto a mattress in front of Alex and a partially opened umbrella"
+            "timestamp": 1362.717037,
+            "text": "John jumps onto a mattress in front of Alex and a partially opened umbrella"
         },
         {
-          "timestamp": 1365.608143,
-          "text": "Joanne, in a veil, eyepatch, and head knife, jumps onto a mattress"
+            "timestamp": 1365.608143,
+            "text": "Joanne, in a veil, eyepatch, and head knife, jumps onto a mattress"
         },
         {
-          "timestamp": 1368.800362,
-          "text": "Sophie jumps, getting milk on Alex's pigeon head"
+            "timestamp": 1368.800362,
+            "text": "Sophie jumps, getting milk on Alex's pigeon head"
         },
         {
-          "timestamp": 1374.428776,
-          "text": "Steve lies on a table in front of a sky backdrop"
+            "timestamp": 1374.428776,
+            "text": "Steve lies on a table in front of a sky backdrop"
         },
         { "timestamp": 1385.660705, "text": "Nick rolls" },
         {
-          "timestamp": 1390.051901,
-          "text": "He knocks over 1.6 stacks of cans."
+            "timestamp": 1390.051901,
+            "text": "He knocks over 1.6 stacks of cans."
         },
         {
-          "timestamp": 1425.633771,
-          "text": "Eyes covered, Nick lies inside the tire tube, having destroyed 1.1 towers of cans"
+            "timestamp": 1425.633771,
+            "text": "Eyes covered, Nick lies inside the tire tube, having destroyed 1.1 towers of cans"
         },
         {
-          "timestamp": 1474.465326,
-          "text": "Sophie, gaping, in mid air, wearing a hoop skirt, spraying milk over Alex in a suit and a pigeon head. They both face forward."
+            "timestamp": 1474.465326,
+            "text": "Sophie, gaping, in mid air, wearing a hoop skirt, spraying milk over Alex in a suit and a pigeon head. They both face forward."
         },
         {
-          "timestamp": 1532.908355,
-          "text": "Steve wearing goggles and a messy wig looks down at us. He holds a handle connected to broken rope. Behind him is a cloudy sky backdrop."
+            "timestamp": 1532.908355,
+            "text": "Steve wearing goggles and a messy wig looks down at us. He holds a handle connected to broken rope. Behind him is a cloudy sky backdrop."
         },
         {
-          "timestamp": 1598.388344,
-          "text": "Sophie gives thumbs up, dances, and high 5's Steve"
+            "timestamp": 1598.388344,
+            "text": "Sophie gives thumbs up, dances, and high 5's Steve"
         },
         {
-          "timestamp": 1611.113044,
-          "text": "In the lab, a camping cot sits under 3 rotating carousels of neck ties. The task is pinned to one of the ties."
+            "timestamp": 1611.113044,
+            "text": "In the lab, a camping cot sits under 3 rotating carousels of neck ties. The task is pinned to one of the ties."
         },
         { "timestamp": 1679.928261, "text": "Raised head" },
         { "timestamp": 1683.437903, "text": "Raised chest" },
         {
-          "timestamp": 1694.421149,
-          "text": "Several sticks with hook ends sit under the cot."
+            "timestamp": 1694.421149,
+            "text": "Several sticks with hook ends sit under the cot."
         },
         {
-          "timestamp": 1709.519221,
-          "text": "Alex mouths, They say that to everyone"
+            "timestamp": 1709.519221,
+            "text": "Alex mouths, They say that to everyone"
         },
         { "timestamp": 1732.477581, "text": "John takes off his belt" },
         { "timestamp": 1737.745534, "text": "Joanne lifts up her feet" },
         { "timestamp": 1742.399307, "text": "She sits up" },
         {
-          "timestamp": 1745.629322,
-          "text": "She rolls over and looks under the cot"
+            "timestamp": 1745.629322,
+            "text": "She rolls over and looks under the cot"
         },
         {
-          "timestamp": 1752.156627,
-          "text": "She uses 2 hooks to grab a brown tie. John picks up 1 hook"
+            "timestamp": 1752.156627,
+            "text": "She uses 2 hooks to grab a brown tie. John picks up 1 hook"
         },
         {
-          "timestamp": 1756.857001,
-          "text": "She ties the brown tie around her thigh"
+            "timestamp": 1756.857001,
+            "text": "She ties the brown tie around her thigh"
         },
         { "timestamp": 1780.333598, "text": "They pull several ties down" },
         { "timestamp": 1785.800855, "text": "She ties several to her thigh" },
         {
-          "timestamp": 1798.027966,
-          "text": "John makes a long rope of ties, rolls onto his belly, and wraps the rope around the cot and himself"
+            "timestamp": 1798.027966,
+            "text": "John makes a long rope of ties, rolls onto his belly, and wraps the rope around the cot and himself"
         },
         { "timestamp": 1808.253869, "text": "Joanne blindfolds herself" },
         {
-          "timestamp": 1831.820298,
-          "text": "John gags himself and ties his wrists"
+            "timestamp": 1831.820298,
+            "text": "John gags himself and ties his wrists"
         },
         { "timestamp": 1842.14805, "text": "He pulls untied ties off Joanne" },
         { "timestamp": 1854.287698, "text": "John struggles to sit up" },
         {
-          "timestamp": 1860.675015,
-          "text": "Joanne walks out with the cot tied to her back"
+            "timestamp": 1860.675015,
+            "text": "Joanne walks out with the cot tied to her back"
         },
         { "timestamp": 1950.312495, "text": "She shuffles away" },
         {
-          "timestamp": 1964.856685,
-          "text": "Sophie tosses rope into the lab, then army crawls back"
+            "timestamp": 1964.856685,
+            "text": "Sophie tosses rope into the lab, then army crawls back"
         },
         {
-          "timestamp": 1974.813423,
-          "text": "She gets on the cot and grabs the rope"
+            "timestamp": 1974.813423,
+            "text": "She gets on the cot and grabs the rope"
         },
         {
-          "timestamp": 1995.279662,
-          "text": "He has hooks and is tied up with ties. He begins to bounce the cot across the lab."
+            "timestamp": 1995.279662,
+            "text": "He has hooks and is tied up with ties. He begins to bounce the cot across the lab."
         },
         {
-          "timestamp": 2000.833735,
-          "text": "He tries to roll off, and the cot follows on top of him."
+            "timestamp": 2000.833735,
+            "text": "He tries to roll off, and the cot follows on top of him."
         },
         {
-          "timestamp": 2033.680384,
-          "text": "She tied up her stomach, and attached ties to her legs."
+            "timestamp": 2033.680384,
+            "text": "She tied up her stomach, and attached ties to her legs."
         },
         {
-          "timestamp": 2035.332023,
-          "text": "She smiles. Nick flails, unable to get out from under the cot."
+            "timestamp": 2035.332023,
+            "text": "She smiles. Nick flails, unable to get out from under the cot."
         },
         {
-          "timestamp": 2052.222519,
-          "text": "He stands, wearing the cot on his back"
+            "timestamp": 2052.222519,
+            "text": "He stands, wearing the cot on his back"
         },
         { "timestamp": 2088.773642, "text": "Sophie pats Nick's knee" },
         {
-          "timestamp": 2131.381315,
+            "timestamp": 2131.381315,
           "text": "Steve slides to the floor, and tries to push the hooks into the bed. From the ground, he hits the ties with his hook. A red one falls in his lap."
         },
         { "timestamp": 2157.869101, "text": "Ties drop onto his chest" },
         {
-          "timestamp": 2179.444366,
-          "text": "He holds the edge of the bed, covered in ties"
+            "timestamp": 2179.444366,
+            "text": "He holds the edge of the bed, covered in ties"
         },
         { "timestamp": 2267.047729, "text": "Sophie makes a cutting motion" },
         { "timestamp": 2277.006921, "text": "Nick 12, Joanne 10, Steve 9" },
-        { "timestamp": 2288.00982, "text": "-" },
         {
-          "timestamp": 2288.00982,
-          "text": "A long board extends from the stage. At the end of the board is 4 squares with numbers, with 1 the closest and 4 the farthest."
+            "timestamp": 2288.00982,
+            "text": "A long board extends from the stage. At the end of the board is 4 squares with numbers, with 1 the closest and 4 the farthest. Each contestant has dolls with their faces."
         },
         { "timestamp": 2335.525435, "text": "It rolls slowly" },
         { "timestamp": 2337.32408, "text": "Over bay 1" },
         { "timestamp": 2339.213635, "text": "stopping in bay 2" },
         {
-          "timestamp": 2358.067912,
-          "text": "She pushes a trolley. It stops in bay 3"
+            "timestamp": 2358.067912,
+            "text": "She pushes a trolley. It stops in bay 3"
         },
         {
-          "timestamp": 2377.801508,
-          "text": "He pushes a baby stroller. It stops a few inches shy of bay 1."
+            "timestamp": 2377.801508,
+            "text": "He pushes a baby stroller. It stops a few inches shy of bay 1."
         },
         {
-          "timestamp": 2393.11912,
-          "text": "It moves to the left, and stops shy of Bay 1"
+            "timestamp": 2393.11912,
+            "text": "It moves to the left, and stops shy of Bay 1"
         },
         {
-          "timestamp": 2407.691914,
-          "text": "He pushes gently. It stops where Nick and Joanne's did."
+            "timestamp": 2407.691914,
+            "text": "He pushes gently. It stops where Nick and Joanne's did."
         },
         { "timestamp": 2444.303117, "text": "He pushes gently" },
         {
-          "timestamp": 2450.904565,
-          "text": "The wheels stop next to Bay 1. John rubs his eyes with his fingers."
+            "timestamp": 2450.904565,
+            "text": "The wheels stop next to Bay 1. John rubs his eyes with his fingers."
         },
         { "timestamp": 2466.233349, "text": "Bay 2" },
         { "timestamp": 2489.021398, "text": "It barely moves." },
@@ -364,46 +363,46 @@
         { "timestamp": 2589.588138, "text": "Ends just left of Bay 2" },
         { "timestamp": 2612.332114, "text": "Greg fans himself" },
         {
-          "timestamp": 2617.632604,
-          "text": "Steve picks up the car, John picks up the stroller. The 2 shake hands"
+            "timestamp": 2617.632604,
+            "text": "Steve picks up the car, John picks up the stroller. The 2 shake hands"
         },
         { "timestamp": 2635.49907, "text": "John stops at Bay 2" },
         {
-          "timestamp": 2642.040189,
-          "text": "The car stops just to the left of Bay 4. Greg throws his hands in the air as the car stops."
+            "timestamp": 2642.040189,
+            "text": "The car stops just to the left of Bay 4. Greg throws his hands in the air as the car stops."
         },
         {
-          "timestamp": 2647.417286,
-          "text": "Steve licks one finger and puts it in the air. John rolls his eyes."
+            "timestamp": 2647.417286,
+            "text": "Steve licks one finger and puts it in the air. John rolls his eyes."
         },
         { "timestamp": 2653.589269, "text": "Steve and Sophie high five" },
         {
-          "timestamp": 2677.716603,
-          "text": "John 20, Sophie 16, Nick 15, Steve 14, Joanne 12"
+            "timestamp": 2680.716603,
+            "text": "John 20, Sophie 16, Nick 15, Steve 14, Joanne 12"
         },
         {
-          "timestamp": 2707.899001,
-          "text": "A man eating a sandwich, staring forward blankly"
+            "timestamp": 2707.899001,
+            "text": "A man eating a sandwich, staring forward blankly"
         },
         {
-          "timestamp": 2720.511032,
-          "text": "John gestures to Sophie's painting, smiling. Sophie smiles. "
+            "timestamp": 2720.511032,
+            "text": "John gestures to Sophie's painting, smiling. Sophie smiles. "
         },
         {
-          "timestamp": 2727.404967,
-          "text": "John picks up his picture and waves it. Steve claps."
+            "timestamp": 2727.404967,
+            "text": "John picks up his picture and waves it. Steve claps."
         },
         {
-          "timestamp": 2732.610591,
-          "text": "John blows up a red balloon. Joanne claps."
+            "timestamp": 2732.610591,
+            "text": "John blows up a red balloon. Joanne claps."
         },
         {
-          "timestamp": 2736.296839,
-          "text": "John holds up the face swapped Alex and Greg. Greg laughs, Alex looks around."
+            "timestamp": 2736.296839,
+            "text": "John holds up the face swapped Alex and Greg. Greg laughs, Alex looks around."
         },
         {
-          "timestamp": 2743.05222,
-          "text": "John wraps his arms around the pictures, and smiles and poses."
+            "timestamp": 2743.05222,
+            "text": "John wraps his arms around the pictures, and smiles and poses."
         }
       ]
     }
