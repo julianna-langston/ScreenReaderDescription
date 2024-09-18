@@ -6,7 +6,8 @@
   },
   "metadata": {
     "type": "music video",
-    "title": "Remo Williams: The Adventure Begins"
+    "title": "Remo Williams: The Adventure Begins",
+    "requiresExtension": true
   },
   "scripts": [
     {
@@ -238,19 +239,19 @@
           "text": "Harold Smith, a white man with a bushy mustache, watches news scroll by. He hears something, presses a button, and looks at security footage of Remo and MacCleary. He turns off the screen and spins around in his chair."
         },
         {
-          "timestamp": "18:09",
+          "timestamp": 1089,
           "text": "A red car pulls up to a residential street."
         },
         {
-          "timestamp": "18:36",
+          "timestamp": 1116,
           "text": "MacCleary hands Remo a key."
         },
         {
-          "timestamp": "18:46",
+          "timestamp": 1126,
           "text": "MacCleary hands Remo a gun."
         },
         {
-          "timestamp": "19:30",
+          "timestamp": 1170,
           "text": "Remo walks towards the front door of a townhouse, opens a side gate, and walks down stairs to a lower level."
         },
         {
