@@ -70,6 +70,7 @@
 
         <script>
             let track = [];
+            let playRate = 1;
             const id = new URLSearchParams(location.search).get("id");
 
             (async () => {
@@ -91,14 +92,21 @@
                 width: "640",
                 videoId: id,
                 playerVars: {
+                  fs: 0,
                   playsinline: 1
                 },
-                fs: 0,
                 events: {
                   onReady: onPlayerReady,
-                  onStateChange: onPlayerStateChange
+                  onStateChange: onPlayerStateChange,
+                  onPlaybackRateChange: onPlayerPlaybackRateChange,
                 }
               });
+            }
+
+            function onPlayerPlaybackRateChange(event){
+              killTranscript();
+              playRate = event.data;
+              playTranscriptFrom(event.target.getCurrentTime(), playRate);
             }
 
             function onPlayerReady(event) {
@@ -119,7 +127,7 @@
 
             let trackUpdateInterval = [];
 
-            const playTranscriptFrom = (startingSecond) => {
+            const playTranscriptFrom = (startingSecond, rate) => {
               const trackToGo = track.filter(
                 ({ timestamp }) => timestamp >= startingSecond
               );
@@ -128,7 +136,7 @@
                   const div = document.createElement("div");
                   div.textContent = text;
                   document.getElementById("cc").prepend(div);
-                }, (timestamp - startingSecond) * 1000);
+                }, ((timestamp - startingSecond)/rate) * 1000);
               });
             };
             const killTranscript = () => {
@@ -140,7 +148,7 @@
 
             function onPlayerStateChange({ target, data }) {
               if (data === 1) {
-                playTranscriptFrom(Math.floor(target.getCurrentTime()));
+                playTranscriptFrom(Math.floor(target.getCurrentTime()), playRate);
               } else {
                 killTranscript();
               }
