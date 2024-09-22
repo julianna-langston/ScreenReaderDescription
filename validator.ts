@@ -9,6 +9,9 @@ const directory = path.join(__dirname, "transcripts");
 const files = fs.readdirSync(directory);
 files.forEach((f) => {
     const contents = JSON.parse(fs.readFileSync(path.join(directory, f)).toString());
+    if(contents.scripts[0].author === ""){
+        console.log("Unspecified author in file", f)
+    }
     const isValid = validator(contents);
 
     if(!isValid){
