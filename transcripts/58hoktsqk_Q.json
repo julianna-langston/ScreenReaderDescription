@@ -9,13 +9,13 @@
       "author": "Julianna Langston",
       "language": "en-US",
       "tracks": [
-        { "text": "Across white sand dunes", "timestamp": 2.212265 },
+        { "text": "Our view moves across white sand dunes", "timestamp": 2.212265 },
         {
           "text": "A cowboy in black sits on a horse, looking down between the dunes. There, a woman lies in a pink robe by a broken bicycle and a spilled bag of pomegranates.",
           "timestamp": 8.483138
         },
         {
-          "text": "Lady Gaga has blue hair, a pink and white robe, and a red mask covering the top half of her face.",
+          "text": "The woman, Lady Gaga, has blue hair, a pink and white robe, and a red mask covering the top half of her face.",
           "timestamp": 18.29831
         },
         {
@@ -31,7 +31,7 @@
           "timestamp": 39.468287
         },
         {
-          "text": "The horse goes under an archway, entering a town characteristic of the American Southwest.",
+          "text": "The horse walks under an archway, entering a town characteristic of the American Southwest.",
           "timestamp": 42.058427
         },
         {
@@ -221,6 +221,10 @@
         {
           "text": "The purple robed woman holds her hand out, as do the orange men, the princely man, the thumping man, the cowboy in black sitting on a carousel horse, and the blue watchers with the stick.",
           "timestamp": 199.543701
+        },
+        {
+          "text": "Gaga's face falls, and she screams and cries.",
+          "timestamp": 208
         },
         {
           "text": "The Persian man places the pair of objects over Gaga's chest. The Pope closes the box.",
