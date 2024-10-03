@@ -6,7 +6,8 @@
     "generate-jsd": "ts-node generateJSD",
     "generate-listing": "ts-node lister",
     "prevalidate": "npm run generate-jsd",
-    "validate": "ts-node validator"
+    "validate": "ts-node validator",
+    "serve": "npx http-server -p 8080 ./public"
   },
   "lint-staged": {
     "transcripts/*.json": "npm run validate",
