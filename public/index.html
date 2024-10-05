@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Screen Reader Description</title>
+    </head>
+    <body>
+        <h1>Screen Reader Description</h1>
+        
+        <p>Audio descriptions for videos, read by your screen reader.</p>
+        
+        <p>
+            This project is designed for people who regularly use both audio descriptions and screen readers. 
+            <!-- If you don't personally use audio descriptions, but would like to contribute audio descriptions, see our Contribution Guide. -->
+        </p>
+        
+        <p>
+            <a href="https://screenreaderdescription.com/listing.html">Available Video List</a>.
+            <a href="https://juliannalangston.substack.com/">Subscribe to Updates on Substack</a>.
+        </p>
+        
+        <h2>Quick Start</h2>
+        
+        <p>
+            To use audio descriptions on this site, you will need:
+        </p>
+        
+        <ul>
+            <li>A modern browser, such as Chrome, Firefox, or Safari.</li>
+            <li>A modern screenreader, such as NVDA, VoiceOver, or JAWS.</li>
+        </ul>
+        
+        <p>
+            To get started, try the music video <a href="./youtube_embed.html?id=NOG3eus4ZSo">&quot;Tonight, Tonight&quot; by the Smashing Pumpkins</a>. 
+            After clicking on that link, you will find a YouTube video. 
+            As the video plays, your screen reader will begin to speak descriptions. 
+            As you play and pause, the descriptions will play and pause alongside you.
+            You can jump around the video, and the descriptions will update appropriately.
+        </p>
+        
+        <p>
+            We recommend against adjusting the playback rate.
+            The descriptions are designed to be read by a screen reader at a certain rate.
+            If you increase the playback rate, the screen reader may not be able to read the text fast enought to keep up with the video.
+        </p>
+        
+        <h2>What is the Screen Reader Description Project?</h2>
+        
+        <p>
+            As you may already know, audio descriptions are usually an alternative audio track used in movies or on streaming sites, like Netflix or Amazon Prime.
+            These tracks will have an extra narrator describe the visuals on screen, which helps people with blindness or low vision follow the story.
+            Studios produce their audio descriptions with the help of script writers, voice actors, and audio engineers.
+            That number of skills can produce a polished, professional product.
+        </p>
+        
+        <p>
+            The Screen Reader Description Project believes that pro-voiced Audio Description is the best form of audio description.
+            Unfortunately, pro-voiced AD isn't always cost-effective, especially for shorter videos commonly found on the web.
+            This project provides a cheap alternative method for producing AD, making it easier for members of the community to contribute new descriptions and make more media accessible to more people.
+        </p>
+        
+        <h2>How it works</h2>
+        
+        <p>
+            The Screen Reader Description Project is an open source repository of audio descriptions (and the technology to play them via the screen reader).
+            Our audio descriptions are a collection of timestamps, description text, and some metadata. 
+            We play YouTube videos, and track where the time is on the video. 
+            When the video's time overlaps with an audio description, we tell the screen reader to say the description text. 
+            This instruction is done using a "live region", leveraging the "aria-live" attribute in HTML.
+            As far as users aware, they just play the video, and their screen reader starts describing alongside the video.
+        </p>
+        
+        <p>
+            For now, the project only works with youtube videos, embedded on our site.
+        </p>
+        
+        <p>
+            If you'd like to see how the code works with the youtube embed, check out the <a href="https://github.com/julianna-langston/ScreenReaderDescription/blob/main/public/youtube_embed.html">youtube_embed.html page in our GitHub repo</a>.
+        </p>
+    </body>
+</html>
