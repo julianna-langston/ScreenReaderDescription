@@ -53,8 +53,11 @@ const generateTitle = ({type, title, creator, seriesTitle, season, episode}: Scr
 
 const cutOffPoint = new Date().valueOf() - (1000 * 60 * 60 * 24 * 7);   // 7 days ago
 
-files.map((f) => {
+files.forEach((f) => {
     const stats = fs.statSync(path.join(directory, f));
+    if(stats.isDirectory()){
+        return;
+    }
     const {source, metadata}: ScriptInfo = JSON.parse(fs.readFileSync(path.join(directory, f)).toString());
     
     if(metadata.draft || metadata.requiresExtension){
