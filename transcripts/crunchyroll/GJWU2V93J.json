@@ -1,0 +1,375 @@
+{
+  "metadata": {
+    "episode": 1,
+    "seriesTitle": "Mobile Suit Gundam Wing",
+    "title": "The Shooting Star She Saw",
+    "type": "television episode"
+  },
+  "scripts": [
+    {
+      "author": "Julianna Langston",
+      "language": "en-US",
+      "tracks": [
+        {
+          "text": "Intro sequence. A brown haired boy with blue eyes looks at us between outstretched fingers.",
+          "timestamp": 2
+        },
+        { "text": "A silver, blue, and yellow robot.", "timestamp": 6 },
+        {
+          "text": "The boy stands in a green tank top, blue shorts, and brown boots.",
+          "timestamp": 7.658831
+        },
+        {
+          "text": "Joysticks, consoles, and a Heads Up Display flash.",
+          "timestamp": 9
+        },
+        {
+          "text": "The boy stands in a field of grass, blowing in the wind. Our view turns up to see a city skyline, flanked by metal walls, curving up into the distance.",
+          "timestamp": 11.673534
+        },
+        {
+          "text": "A space station with a large metal loop floats between planets.",
+          "timestamp": 15
+        },
+        {
+          "text": "Fire rages amid rubble. A boy with a long brown braid at puts his hands on his hips.",
+          "timestamp": 19.605493
+        },
+        {
+          "text": "A boy with long bangs crosses his arms.",
+          "timestamp": 21.620292
+        },
+        {
+          "text": "A lanky blond boy sits cross legged.",
+          "timestamp": 22.830537
+        },
+        { "text": "A muscular chinese boy poses.", "timestamp": 24.288116 },
+        {
+          "text": "The brown haired boy looks at us between outstretched fingers, drops his hand. The silver and blue robot stands in space, brandishing a sword and shield.",
+          "timestamp": 27.764026
+        },
+        {
+          "text": "A black and green robot swipes. An orange and red robot fires a machine gun. Small, gray robots fall before the blue robot.",
+          "timestamp": 30.723769
+        },
+        {
+          "text": "A girl in a scarf stands in snow. Behind her, a frosty city crumbles. She looks down and kneels, finding a teddy bear dusted with snow.",
+          "timestamp": 35.663672
+        },
+        {
+          "text": "The red robot stands amongst crackling fire and smoke",
+          "timestamp": 50.395933
+        },
+        {
+          "text": "The black and yellow robot brandishes a giant green laser scythe.",
+          "timestamp": 53.028127
+        },
+        {
+          "text": "The red and blue robot holds a spear in a forest clearing, robot bits steaming around it.",
+          "timestamp": 57.652725
+        },
+        {
+          "text": "A yellow robot arms sits in the sand as a white and yellow robot stands over.",
+          "timestamp": 60.579337
+        },
+        {
+          "text": "Soldiers in green and red stand at attention.",
+          "timestamp": 63.581363
+        },
+        {
+          "text": "An aristocratic man in a dress uniform, cape, and epaulette waves.",
+          "timestamp": 65.249126
+        },
+        {
+          "text": "A soldier in a white mask sits in a pilot seat. A white robot flies through space, wielding a laser sword at the red and blue robot.",
+          "timestamp": 66.735088
+        },
+        {
+          "text": "The white robot thrusts and fires. The red and blue robot falls back, then fires a giant canon.",
+          "timestamp": 76.780012
+        },
+        {
+          "text": "5 robots stand in a city. Cut to black",
+          "timestamp": 79.518182
+        },
+        {
+          "text": "Lights glow along the wing of a space station.",
+          "timestamp": 84.076139
+        },
+        {
+          "text": "Explosions erupt towards the center of the station",
+          "timestamp": 88.325244
+        },
+        {
+          "text": "A space shuttle takes off. Purple robots fire rifles.",
+          "timestamp": 91.495185
+        },
+        {
+          "text": "They fire at the departing shuttle, and it explodes.",
+          "timestamp": 98.007968
+        },
+        {
+          "text": "Robots enter a space station, brandishing massive rifles. People stand hands up against a wall. Gunfire in the streets.",
+          "timestamp": 140.045626
+        },
+        {
+          "text": "Small objects emerge from a space station, and maneuver themselves around. 5 objects circle the Earth.",
+          "timestamp": 147.907768
+        },
+        {
+          "text": "A blue and yellow robot with wings floats above Earth, flanked by beams of light",
+          "timestamp": 170.758914
+        },
+        {
+          "text": "In a satellite, soldiers in green uniforms look at monitors.",
+          "timestamp": 194
+        },
+        {
+          "text": "Zechs, a blond man wearing a white mask and a red dress uniform, watches the screen.",
+          "timestamp": 237.29699
+        },
+        {
+          "text": "The sun rises over the Earth. A fighter jet flies in lower orbit.",
+          "timestamp": 242.747246
+        },
+        {
+          "text": "The jet's pilot is a brown haired boy with blue eyes.",
+          "timestamp": 254.799648
+        },
+        {
+          "text": "A man in a suit sits with his eyes closed. Next to him, a girl looks out the window.",
+          "timestamp": 265.949807
+        },
+        { "text": "A light in the window", "timestamp": 289 },
+        {
+          "text": "The jet drops into burning atmosphere.",
+          "timestamp": 336.556711
+        },
+        { "text": "The pilot presses buttons.", "timestamp": 348.588221 },
+        { "text": "Relena looks at her father.", "timestamp": 382 },
+        {
+          "text": "The jet glows red. The pilot presses buttons, and golden lines glow across the ship. The chassis shatters.",
+          "timestamp": 385.682949
+        },
+        {
+          "text": "A humanoid robot emerges, spreading its wings, and flies away",
+          "timestamp": 395.076028
+        },
+        {
+          "text": "A screen analyzes the robot. Next generation fighter. Radar absorbent materials. Variable geometry.",
+          "timestamp": 399.58159
+        },
+        {
+          "text": "Zechs' ship fires on the robot. The robot banks away, dodging.",
+          "timestamp": 431.233427
+        },
+        {
+          "text": "Again and again. The pilot looks to the side.",
+          "timestamp": 436.452381
+        },
+        { "text": "The carrier's tail opens. ", "timestamp": 477.880517 },
+        {
+          "text": "A green robot with a rifle drops out of the carrier.",
+          "timestamp": 483.808246
+        },
+        {
+          "text": "Zechs turns over and shoots up. The other robot dodges, and shoots past Zechs. Zechs tracks him and shoots near his left wing.",
+          "timestamp": 488.622351
+        },
+        {
+          "text": "The pilot adjusts a slider. The top of his robot slides forward, and the wings fold up. Segments rotate.",
+          "timestamp": 521.777454
+        },
+        {
+          "text": "The jet has transformed into a humanoid robot with wings, a shield, and a rifle.",
+          "timestamp": 529.487907
+        },
+        {
+          "text": "2 Aries suits join Zechs. They give him a parachute.",
+          "timestamp": 545.93912
+        },
+        { "text": "Zechs deploys the parachute.", "timestamp": 551.478811 },
+        {
+          "text": "The Aries suits fire at the winged Mobile Suit. It spins around, trailing smoke. ",
+          "timestamp": 555.831254
+        },
+        { "text": "It shimmers in the light.", "timestamp": 562.377979 },
+        { "text": "The Aries continue to fire. ", "timestamp": 567.037563 },
+        {
+          "text": "The winged Mobile Suit turns to face the Aries. It brandishes a rifle, which glows. A giant beam of light and blue electricity shoots forward.",
+          "timestamp": 573.059751
+        },
+        { "text": "The Aries are vaporized.", "timestamp": 584.864006 },
+        { "text": "The Mobile Suit pilot laughs.", "timestamp": 586.555491 },
+        {
+          "text": "Zechs tosses aside his rifle and releases the parachute from his suit.",
+          "timestamp": 599.762631
+        },
+        { "text": "The pilot tracks Zechs.", "timestamp": 605.445165 },
+        {
+          "text": "The pilot shoots, but Zechs dodges and unsheaths a laser sword.",
+          "timestamp": 609.235593
+        },
+        {
+          "text": "Zechs begins to swipe, but the pilot catches his arm.",
+          "timestamp": 612.693439
+        },
+        {
+          "text": "Zechs opens the suit's hatch and leaps off the side with a parachute.",
+          "timestamp": 616.048408
+        },
+        {
+          "text": "The Gundam and the Leo crash into the ocean.",
+          "timestamp": 638.480121
+        },
+        { "text": "The suits sink.", "timestamp": 671.619039 },
+        { "text": "An airport.", "timestamp": 683.965075 },
+        {
+          "text": "Relena watches her father ride off in a car with the soldiers. She turns away.",
+          "timestamp": 736.23866
+        },
+        {
+          "text": "She walks alone along a boardwalk as the sun sets over the sea.",
+          "timestamp": 746.299131
+        },
+        {
+          "text": "She sees the pilot, washed up on the beach. She runs down steps to the shore.",
+          "timestamp": 775
+        },
+        { "text": "She turns", "timestamp": 786.257606 },
+        {
+          "text": "In a theater, a man drops opera glasses and turns to a screen.",
+          "timestamp": 788.556446
+        },
+        {
+          "text": "The screen turns off. In an ornate room, 15 officers sit at a long table under chandeliers. The man from the theatre approaches.",
+          "timestamp": 846.542654
+        },
+        {
+          "text": "On the beach, Relena lifts the pilot's helmet.",
+          "timestamp": 905.619708
+        },
+        { "text": "The pilot stands, covering his face.", "timestamp": 913 },
+        {
+          "text": "An ambulance stops by the stairs.",
+          "timestamp": 922.550739
+        },
+        {
+          "text": "The pilot opens a panel on his suit and presses a red button.",
+          "timestamp": 925.962204
+        },
+        { "text": "The panel explodes, pushing him back.", "timestamp": 930 },
+        {
+          "text": "The pilot round house kicks 3 men in white off the stairs.",
+          "timestamp": 935.391111
+        },
+        {
+          "text": "He kicks a man out of the ambulance and gets in the drivers seat.",
+          "timestamp": 938
+        },
+        { "text": "He drives off. Relena stares after him.", "timestamp": 944 },
+        { "text": "She holds a hand out.", "timestamp": 954.57679 },
+        {
+          "text": "She stands alone, watching the ambulance drive off, towards the sunset.",
+          "timestamp": 962.118225
+        },
+        {
+          "text": "In a factory at night, at least 9 Leo mobile suits stand in various stages of construction. They are large, green humanoid robots, with a yellow panel at the face. A human stands the height of the yellow panel, while others stand in boom lifts.",
+          "timestamp": 964
+        },
+        { "text": "An explosion. ", "timestamp": 973 },
+        {
+          "text": "In a flash, Leo suits are severed across the chest.",
+          "timestamp": 979.362292
+        },
+        {
+          "text": "A Gundam Mobile Suit wielding a scythe stands amidst explosions.",
+          "timestamp": 980.82806
+        },
+        {
+          "text": "The Gundam slices a pipe, which sparks.",
+          "timestamp": 984.856468
+        },
+        {
+          "text": "Duo, a boy with a brown braid, pilots the scythe Gundam. Outside in daylight, Leo suits fire.",
+          "timestamp": 994
+        },
+        {
+          "text": "A red and orange Gundam Mobile Suit wields a machine gun.",
+          "timestamp": 1005.170237
+        },
+        {
+          "text": "The Gundam's chest opens, revealing 2 more machine guns, which fire.",
+          "timestamp": 1015
+        },
+        {
+          "text": "Rockets fire from compartments in the Gundam's chest and legs.",
+          "timestamp": 1018.909052
+        },
+        { "text": "In a desert", "timestamp": 1034.778556 },
+        {
+          "text": "Leo and other Mobile Suits surround a black and yellow Gundam.",
+          "timestamp": 1049
+        },
+        { "text": "The Gundam flies forward.", "timestamp": 1060 },
+        {
+          "text": "It swings its hands. 2 Leos are cut in half and explode. The pilot is a blond boy.",
+          "timestamp": 1062.746783
+        },
+        {
+          "text": "Battleships billow smoke and sink.",
+          "timestamp": 1074.405132
+        },
+        {
+          "text": "A Gundam with an extendable claw hand stands on a ship. It shoots its hand towards the ship's bridge. Ships burn around it.",
+          "timestamp": 1080.056419
+        },
+        {
+          "text": "Fighter jets fly overhead. The Gundam shoots 2 beams of fire at them.",
+          "timestamp": 1088
+        },
+        {
+          "text": "The jets explode, and the battleship sinks.",
+          "timestamp": 1094.711267
+        },
+        { "text": "Zechs Ship", "timestamp": 1104 },
+        { "text": "Photo of a Gundam on a battleship", "timestamp": 1125 },
+        {
+          "text": "A pink car pulls up to a massive, European-style mansion. Relena sits in the back seat. Teenagers mingle on a verandah.",
+          "timestamp": 1165.46264
+        },
+        { "text": "Students sit in a lecture hall.", "timestamp": 1215.687586 },
+        { "text": "A nun enters with a boy.", "timestamp": 1220 },
+        { "text": "Her face hardens'", "timestamp": 1257.696899 },
+        { "text": "He doesn't look at her.", "timestamp": 1260.940182 },
+        { "text": "She stares at him.", "timestamp": 1263.789587 },
+        { "text": "Girls crowd together around a corner.", "timestamp": 1272 },
+        { "text": "Relena hands Heero an envelope", "timestamp": 1275 },
+        { "text": "He tears it.", "timestamp": 1288 },
+        { "text": "He stares at her.", "timestamp": 1291.364799 },
+        { "text": "The pieces fall to the ground.", "timestamp": 1293.140267 },
+        {
+          "text": "She watches them blow away. She balls her hand into a fist and shakes.",
+          "timestamp": 1296
+        },
+        {
+          "text": "He wipes a tear from her eye. She smiles. He whispers in her ear.",
+          "timestamp": 1304.163526
+        },
+        {
+          "text": "She stares forward, eyes wide, as Heero walks away.",
+          "timestamp": 1313.61527
+        },
+        { "text": "Leaves blow.", "timestamp": 1322.211329 },
+        { "text": "She watches him walk away.", "timestamp": 1333.663538 },
+        { "text": "Text appears. To be continued.", "timestamp": 1336.857889 },
+        { "text": "Outro sequence.", "timestamp": 1340.487354 }
+      ]
+    }
+  ],
+  "source": {
+    "domain": "crunchyroll",
+    "id": "GJWU2V93J",
+    "url": "https://www.crunchyroll.com/watch/GJWU2V93J/"
+  }
+}
