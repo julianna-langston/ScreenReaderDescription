@@ -1,4 +1,4 @@
-type SupportedSourceDomains = "youtube";
+type SupportedSourceDomains = "youtube" | "crunchyroll" | "disney";
 type SupportedVideoTypes = "music video" | "television episode" | "movie" | "other"
 
 export interface ScriptInfo {
