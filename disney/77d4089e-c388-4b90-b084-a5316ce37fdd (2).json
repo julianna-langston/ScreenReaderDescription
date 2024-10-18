@@ -1,0 +1,617 @@
+{
+  "metadata": {
+    "episode": 1,
+    "season": 1,
+    "seriesTitle": "Burn Notice",
+    "title": "Pilot",
+    "type": "television episode"
+  },
+  "scripts": [
+    {
+      "author": "Julianna Langston",
+      "language": "en-US",
+      "tracks": [
+        {
+          "text": "Warri, Nigeria. Soldiers ride in a truck, holding guns.",
+          "timestamp": 2
+        },
+        {
+          "text": "People walk in colorful outfits down the street. A man wearing shades and a suit looks around, then at us.",
+          "timestamp": 4
+        },
+        { "text": "The man stands at a corner.", "timestamp": 10 },
+        { "text": "Time passes. People stare at him.", "timestamp": 15 },
+        {
+          "text": "He watches. A man pats someone on the shoulder. A truck drives by. A vendor looks around. The suited man checks his watch.",
+          "timestamp": 18
+        },
+        {
+          "text": "A blue car pulls up to the suited man, and drives on.",
+          "timestamp": 26
+        },
+        { "text": "A truck with soldiers drives by.", "timestamp": 43 },
+        { "text": "A black Mercedes pulls up.", "timestamp": 47 },
+        {
+          "text": "An armed guard in green gets out, and gestures at the car.",
+          "timestamp": 50.138654
+        },
+        { "text": "The spy smiles tightly.", "timestamp": 56.351197 },
+        {
+          "text": "He gets in. The green man gets in after him. Street vendors watch.",
+          "timestamp": 59.258605
+        },
+        { "text": "The car drives off.", "timestamp": 66.734808 },
+        {
+          "text": "The spy sits between the green shirt and a yellow shirt guard. Yellow guard points a handgun at him.",
+          "timestamp": 70
+        },
+        {
+          "text": "The car pulls up to the Warri Grand Hotel. The 2 guards escort the spy to a room.",
+          "timestamp": 94.753312
+        },
+        {
+          "text": "The spy walks in, hands out, smiling. A man in a tracksuit sits on a couch with a woman.",
+          "timestamp": 97
+        },
+        { "text": "Boris. Wannabe Warlord.", "timestamp": 103.526679 },
+        {
+          "text": "The spy sits down. The guards watch him. The woman kisses Boris and walks away. The spy reaches into his pocket.",
+          "timestamp": 128.809496
+        },
+        {
+          "text": "Boris pulls paper from his pocket, and passes it across the table.",
+          "timestamp": 154.865991
+        },
+        { "text": "He pulls out a flip phone.", "timestamp": 166.883581 },
+        { "text": "The spy stares.", "timestamp": 184.475849 },
+        {
+          "text": "He closes his eyes, smiles, opens eyes, turns around.",
+          "timestamp": 203.469643
+        },
+        {
+          "text": "The guards kick the spy, curled up on the floor. Boris talks on a phone.",
+          "timestamp": 211.451864
+        },
+        {
+          "text": "The guards carry the spy out of an elevator.",
+          "timestamp": 254.837211
+        },
+        {
+          "text": "Blood pours from his mouth. They drag him to the restroom.",
+          "timestamp": 273.449717
+        },
+        {
+          "text": "The spy elbows Yellow Guard's head into a door frame.",
+          "timestamp": 279.681818
+        },
+        {
+          "text": "He throws Yellow across the tile, grabs Green Guard's gun, hits him, then throws him into a mirror.",
+          "timestamp": 286.545841
+        },
+        {
+          "text": "The spy pushes Green into a urinal. He grabs Yellow's handgun.",
+          "timestamp": 299.611185
+        },
+        {
+          "text": "The bloody spy stumbles out of the restroom.",
+          "timestamp": 307.289952
+        },
+        {
+          "text": "He hobbles outside, sees some men with guns, and walks the other direction.",
+          "timestamp": 313
+        },
+        {
+          "text": "He pushes a man off a motorcycle and gets on.",
+          "timestamp": 317
+        },
+        {
+          "text": "He drives away from the hotel. The men with guns run to a car.",
+          "timestamp": 325.748401
+        },
+        {
+          "text": "The spy rides through the market.",
+          "timestamp": 337.547664
+        },
+        {
+          "text": "The car pursues. A man leans out the car window, pointing a gun at the spy.",
+          "timestamp": 341.965521
+        },
+        {
+          "text": "The spy turns a corner, and drives down a street littered with boxes.",
+          "timestamp": 358.17516
+        },
+        { "text": "He goes up a ramp.", "timestamp": 364.550725 },
+        {
+          "text": "The car races down the narrow path.",
+          "timestamp": 366.758046
+        },
+        {
+          "text": "The car crashes into a stand. The spy rides off. A crowd descends on the car, brandishing guns.",
+          "timestamp": 381.522768
+        },
+        {
+          "text": "The pursuers are surrounded by guns",
+          "timestamp": 386.782777
+        },
+        {
+          "text": "The spy rides the motorcycle to an airplane. Soldiers hold out their hands.",
+          "timestamp": 389.513956
+        },
+        {
+          "text": "A soldier takes the spy's bike. He holds a paper, and stumbles onto the African Airlines plane.",
+          "timestamp": 393.175289
+        },
+        {
+          "text": "A plane takes off. It has 9 passenger windows.",
+          "timestamp": 431.490898
+        },
+        { "text": "Palm trees blow outside a motel.", "timestamp": 438.840965 },
+        {
+          "text": "A woman plays with an ID. The bruised spy lies in bed, shirtless.",
+          "timestamp": 441.239725
+        },
+        {
+          "text": "The woman sits in a chair. She looks at the spy thoughtfully.",
+          "timestamp": 448.171954
+        },
+        { "text": "Fiona. The Ex-Girlfriend.", "timestamp": 450 },
+        { "text": "She kicks him.", "timestamp": 453 },
+        { "text": "She smiles.", "timestamp": 567 },
+        { "text": "Women walk in bikinis", "timestamp": 580.270255 },
+        { "text": "Michael walks into a hotel lobby.", "timestamp": 587 },
+        { "text": "Michael Westen, Accounts Frozen.", "timestamp": 613.674163 },
+        { "text": "The bank teller smiles.", "timestamp": 654.61928 },
+        {
+          "text": "Michael steps off a bus and looks at his phone.",
+          "timestamp": 660.196754
+        },
+        {
+          "text": "He rolls his eyes. A blond girl in a tiny bikini top waves at him. ",
+          "timestamp": 663.990596
+        },
+        {
+          "text": "Michael takes off his hat angrily. Young, tanned women walk around Miami wearing bikinis.",
+          "timestamp": 717.977174
+        },
+        { "text": "20 somethings dance.", "timestamp": 741.375076 },
+        { "text": "Butts bounce.", "timestamp": 744.848783 },
+        { "text": "The Miami Sands Motel.", "timestamp": 752.798317 },
+        {
+          "text": "Michael shuts curtains, and pulls out a phone book.",
+          "timestamp": 757.843446
+        },
+        {
+          "text": "He finds an ad for discounted uniforms.",
+          "timestamp": 769.484638
+        },
+        { "text": "He looks at the door.", "timestamp": 775 },
+        {
+          "text": "He rips out the page, and picks up a lamp stand. He turns it upside down and approaches the door from the side.",
+          "timestamp": 781.133528
+        },
+        {
+          "text": "The drunk girls stumble away. Michael rolls his eyes, looks around outside, then closes the door.",
+          "timestamp": 795.101047
+        },
+        {
+          "text": "He leaves the room. Drunk girls watch.",
+          "timestamp": 802.68685
+        },
+        {
+          "text": "Wearing a suit, he walks down the sidewalk, past people in swimsuits. 2 boys ride skateboards.",
+          "timestamp": 809.812373
+        },
+        {
+          "text": "Michael spies a gray sedan around the corner. The driver has sunglasses and a bushy mustache. A man in a suit and sunglasses reads the paper nearby.",
+          "timestamp": 813
+        },
+        { "text": "The boys skate off.", "timestamp": 855.771399 },
+        {
+          "text": "The boys talk to the cops, pointing at the man in the gray car. The boy cries and turns red. The cops approach the car.",
+          "timestamp": 860.219299
+        },
+        {
+          "text": "The newspaper Fed shows a badge. The cop stops. A bus drives by the scene. Michael watches, smiling.",
+          "timestamp": 878.931303
+        },
+        {
+          "text": "Michael looks up at an office building.",
+          "timestamp": 888.250248
+        },
+        { "text": "SecuriCorp", "timestamp": 900.048259 },
+        { "text": "Lucy. Ex-Spy.", "timestamp": 902.805181 },
+        {
+          "text": "Michael smiles. Lucy looks away. Michael mimes a begging dog.",
+          "timestamp": 959.255836
+        },
+        { "text": "She pulls out cash.", "timestamp": 1009.089401 },
+        { "text": "She watches him leave.", "timestamp": 1021.774328 },
+        {
+          "text": "Women in bikinis walk down the street. A redhead in a tie dye 2 piece walks in slow motion. Her B cups jiggle.",
+          "timestamp": 1022.799801
+        },
+        { "text": "Sam. The Buddy.", "timestamp": 1034.214395 },
+        {
+          "text": "Sam drinks a beer with a gold and red label.",
+          "timestamp": 1094.932281
+        },
+        {
+          "text": "Michael walks through automated gates at the end of a mansion's driveway.",
+          "timestamp": 1098.750263
+        },
+        {
+          "text": "A man carries an envelope by a pool with seaside views of Miami in the distance.",
+          "timestamp": 1103.248014
+        },
+        { "text": "Javier. The Caretaker.", "timestamp": 1126.482629 },
+        { "text": "Mr. Pyne. The Rich Guy.", "timestamp": 1221 },
+        {
+          "text": "Pyne opens a safe with a fingerprint lock.",
+          "timestamp": 1256
+        },
+        { "text": "Vincent. Security.", "timestamp": 1284.358656 },
+        { "text": "Vincent stands menacingly.", "timestamp": 1307.48196 },
+        { "text": "Michael gets up and walks out.", "timestamp": 1320.624117 },
+        { "text": "Oleg. The Landlord.", "timestamp": 1331.120307 },
+        {
+          "text": "Michael opens a door. He looks around. The rooms is full of junk, including a disco ball, neon dancing signs, and mattresses.",
+          "timestamp": 1385.832835
+        },
+        { "text": "He screams into a pillow.", "timestamp": 1439.704145 },
+        {
+          "text": "A blond woman lights a cigarette.",
+          "timestamp": 1452.120681
+        },
+        { "text": "Madeline. The Mom.", "timestamp": 1454.670981 },
+        {
+          "text": "He sees a gray car in the rearview mirror.",
+          "timestamp": 1471.29269
+        },
+        { "text": "He throws the cigarette out.", "timestamp": 1492.69039 },
+        {
+          "text": "He turns sharply down a sidewalk.",
+          "timestamp": 1524.81522
+        },
+        {
+          "text": "The pursuers turn into a parking lot, and dead end at a fence. Michael keeps driving.",
+          "timestamp": 1535
+        },
+        { "text": "He mimes strangling his mother.", "timestamp": 1611 },
+        {
+          "text": "A scantily dressed woman gets out of a stretch limo.",
+          "timestamp": 1615.346593
+        },
+        {
+          "text": "People line up in front of Club 300.",
+          "timestamp": 1622.266479
+        },
+        {
+          "text": "Michael carries a brown bag past the line, and cuts between people.",
+          "timestamp": 1625.48127
+        },
+        {
+          "text": "In his apartment, he looks at tubes and wires on a board. Lights strobe out his window.",
+          "timestamp": 1636.306731
+        },
+        {
+          "text": "He sprays powder over tubes. A doll torso is taped next to them.",
+          "timestamp": 1668.878871
+        },
+        {
+          "text": "He puts it in a box and writes Dan Siebel on the label.",
+          "timestamp": 1673.088618
+        },
+        { "text": "Sunrise.", "timestamp": 1682.083995 },
+        {
+          "text": "Michael pushes aside cables. He watches the boy, David, color with a red crayon.",
+          "timestamp": 1700.088153
+        },
+        {
+          "text": "Javier smiles and puts the cash in Michael's hand.",
+          "timestamp": 1769.326017
+        },
+        {
+          "text": "People play volleyball on the beach.",
+          "timestamp": 1778.388519
+        },
+        { "text": "People swim in a pool.", "timestamp": 1783.456996 },
+        { "text": "Sam sunbathes.", "timestamp": 1785.017891 },
+        { "text": "Barry. The Launderer.", "timestamp": 1836 },
+        { "text": "Barry passes a note.", "timestamp": 1898.161657 },
+        {
+          "text": "Michael pushes through the club line at night.",
+          "timestamp": 1900.983804
+        },
+        { "text": "People kiss on the stairs.", "timestamp": 1910.871752 },
+        {
+          "text": "The man and woman walk away. Michael watches them go. They close the door. Michael eyes Sugar's door at the end of the alley.",
+          "timestamp": 1931.328025
+        },
+        { "text": "Sunrise.", "timestamp": 1938.646729 },
+        { "text": "Dan. The Handler.", "timestamp": 1962.307569 },
+        {
+          "text": "Dan hangs up. A piece of the pipe bomb pops, and Dan jumps. In his apartment, Michael clenches his fist.",
+          "timestamp": 2011.453707
+        },
+        {
+          "text": "He leaves his apartment. Walking down the stairs, he sees a man with short, spiky blond hair.",
+          "timestamp": 2019.488208
+        },
+        { "text": "Sugar. The Drug Dealer.", "timestamp": 2030.004839 },
+        {
+          "text": "Michael twists Sugar's wrist, and he drops to the ground. Michael leaves, and Sugar watches, holding his wrist.",
+          "timestamp": 2071.464183
+        },
+        { "text": "Walter. The Art Dealer.", "timestamp": 2080.625364 },
+        {
+          "text": "Walter smiles warmly. The light reflects off his pink shawl and right earring.",
+          "timestamp": 2154.694805
+        },
+        {
+          "text": "Michael looks around and smiles tightly.",
+          "timestamp": 2163.454744
+        },
+        { "text": "City at night", "timestamp": 2168.821972 },
+        {
+          "text": "Michael looks at Mr. Pyne's safe.",
+          "timestamp": 2194.387189
+        },
+        {
+          "text": "Michael rubs a pencil against paper, then blows the dust on the fingerprint scanner. He uses putty in the shape of a finger to mimic the dust print. He opens the safe, which holds cash and documents.",
+          "timestamp": 2213.653615
+        },
+        {
+          "text": "Holding a flashlight in his mouth, he reviews documents.",
+          "timestamp": 2218.38154
+        },
+        {
+          "text": "He takes pictures with his phone of a grid of numbers, a contract, and a Western Equitable Insurance Company bond.",
+          "timestamp": 2222.803105
+        },
+        { "text": "Javier's neighborhood.", "timestamp": 2229.642336 },
+        {
+          "text": "David hands Michael a drawing of a him holding 2 guns shooting dozens of bullets at a dead blond man.",
+          "timestamp": 2334.214255
+        },
+        { "text": "David smiles and nods.", "timestamp": 2342.249834 },
+        {
+          "text": "A slender blond woman in a gravity defying bathing suit gets out of a pool.",
+          "timestamp": 2345.420449
+        },
+        {
+          "text": "She kisses Mr. Pyne, who eats a meal next to Michael.",
+          "timestamp": 2358.57064
+        },
+        { "text": "Vincent watches.", "timestamp": 2393 },
+        {
+          "text": "Pyne glares at documents, then Vincent.",
+          "timestamp": 2404
+        },
+        {
+          "text": "Michael walks down Pyne's driveway.",
+          "timestamp": 2431.198094
+        },
+        { "text": "Phone", "timestamp": 2443.818092 },
+        {
+          "text": "He takes a $35 pink, bejeweled phone from the electronics kiosk.",
+          "timestamp": 2452.858415
+        },
+        { "text": "The cashier smiles awkwardly.", "timestamp": 2458.069519 },
+        { "text": "He solders", "timestamp": 2465 },
+        {
+          "text": "He holds 2 duct taped phones. He dials a number, and the pink phone flashes red.",
+          "timestamp": 2476
+        },
+        { "text": "Sunset. A bar.", "timestamp": 2481 },
+        {
+          "text": "Fiona holds chopsticks and looks at him.",
+          "timestamp": 2490.273823
+        },
+        { "text": "She licks a finger.", "timestamp": 2565 },
+        { "text": "A middle aged man behind Fiona.", "timestamp": 2597.798953 },
+        {
+          "text": "Fiona turns left. A middle aged man behind the sushi bar.",
+          "timestamp": 2601
+        },
+        {
+          "text": "They kiss against the railing by Michael's apartment.",
+          "timestamp": 2652
+        },
+        { "text": "She turns to face the gunman.", "timestamp": 2669.293308 },
+        {
+          "text": "She licks her lips. The gunman smiles.",
+          "timestamp": 2676.853734
+        },
+        {
+          "text": "She pushes the gun hand aside, headbutts him, he falls, she pistolwhips him, and straightens her hair. Michael sighs.",
+          "timestamp": 2680.031407
+        },
+        { "text": "She walks away.", "timestamp": 2708.0845 },
+        {
+          "text": "In daylight, Michael talks on the phone outside.",
+          "timestamp": 2717.163412
+        },
+        { "text": "He steps into a hardware store.", "timestamp": 2737.188675 },
+        {
+          "text": "In daylight, he goes to Sugar's door, and moves the studfinder around. He makes an L shape with duct tape to the left of the doorknob.",
+          "timestamp": 2766
+        },
+        {
+          "text": "Michael goes to the side of the warehouse and unscrews some corrugated metal. He moves the metal aside, and uses a box cutter to strike lines in a wood stud.",
+          "timestamp": 2773.220783
+        },
+        {
+          "text": "He shoots within the duct tape L.",
+          "timestamp": 2788.887058
+        },
+        { "text": "He bashes through the back.", "timestamp": 2809.851404 },
+        {
+          "text": "Sam empties a mini bottle of vodka into a can of tomato juice.",
+          "timestamp": 2862.483752
+        },
+        {
+          "text": "Michael watches Fiona exit a building.",
+          "timestamp": 2872.316841
+        },
+        {
+          "text": "Fiona pauses, puts on shades, and smiles.",
+          "timestamp": 2878.526413
+        },
+        {
+          "text": "Pyne and a woman walk down the sidewalk.",
+          "timestamp": 2903.434493
+        },
+        { "text": "Vincent opens a car door.", "timestamp": 2907 },
+        {
+          "text": "Sam and the cab driver fight in front of Pyne's car.",
+          "timestamp": 2907
+        },
+        {
+          "text": "Sam pushes the driver, who pushes then punches Sam. Sam falls back into Pyne's car, and tapes the pink phone under a seat. Vincent pushes the cab driver away, then grabs Sam.",
+          "timestamp": 2929
+        },
+        {
+          "text": "Michael walks up to a suburban house. Inside, Madeleine looks flips through a medical textbook.",
+          "timestamp": 2929
+        },
+        {
+          "text": "Michael looks at a collection of pill bottles on a side table.",
+          "timestamp": 3010
+        },
+        { "text": "He hugs her", "timestamp": 3074 },
+        {
+          "text": "Michael rushes into a shed. He flips through items, looking at a screw driver, cloth, and zipties.",
+          "timestamp": 3113
+        },
+        {
+          "text": "He runs out and stands in the middle of the street, looking at passing cars.",
+          "timestamp": 3129
+        },
+        {
+          "text": "An SUV and a sedan drive by. Our view spins around him. He sees a red sedan drive by, and he holds his hands up in front of it. The car slows down, and Michael approaches the drivers seat, gun drawn.",
+          "timestamp": 3143
+        },
+        {
+          "text": "The driver moves over as Michael gets in. He drives off.",
+          "timestamp": 3166
+        },
+        { "text": "The sun visor won't stay up.", "timestamp": 3183 },
+        { "text": "Vincent drives and checks a note.", "timestamp": 3186 },
+        { "text": "Michael's car drives past Vincent's.", "timestamp": 3192 },
+        {
+          "text": "Michael drives into Vincent's car. The red car's headlight is broken. Vincent's car crumpled.",
+          "timestamp": 3227
+        },
+        {
+          "text": "Michael gets out, jumps over the debris, and tries Vincent's door.",
+          "timestamp": 3233
+        },
+        {
+          "text": "He turns away, covers his eyes, and stabs the door window with a screwdriver. It shatters.",
+          "timestamp": 3241
+        },
+        {
+          "text": "He punctures the airbag, and ties Vincent to the steering wheel.",
+          "timestamp": 3256
+        },
+        { "text": "Michael runs.", "timestamp": 3270 },
+        {
+          "text": "He knocks on Javier's door. David answers with a black eye.",
+          "timestamp": 3274
+        },
+        { "text": "David shakes his head.", "timestamp": 3312 },
+        {
+          "text": "He picks up a multimeter. Michael flinches. David messes with it.",
+          "timestamp": 3315
+        },
+        { "text": "Michael shifts.", "timestamp": 3357 },
+        {
+          "text": "David makes a fist and punches at Michael's palms.",
+          "timestamp": 3442
+        },
+        {
+          "text": "Sam walks down a street. Michael walks a distance behind him. Sam enters a restaurant, and sits down with 2 feds.",
+          "timestamp": 3450
+        },
+        {
+          "text": "In Javier's living room, Michael opens the blinds, moves the dining table and chairs, and loads a gun.",
+          "timestamp": 3600
+        },
+        {
+          "text": "He tapes a red tube to the gun, tapes a phone to the tube, and connects a wire between the tube and a device.",
+          "timestamp": 3618
+        },
+        {
+          "text": "He places the modified gun behind a christmas tree. He strips the linens off a bed and props up the mattress.",
+          "timestamp": 3631
+        },
+        {
+          "text": "He takes mirrors off a wall, sets them up against the mattress, and adjusts the blinds.",
+          "timestamp": 3641
+        },
+        { "text": "The phone says Call Forwarding.", "timestamp": 3645 },
+        { "text": "Michael looks through blinds.", "timestamp": 3648 },
+        { "text": "Vince and Pyne pull up.", "timestamp": 3651 },
+        {
+          "text": "Vince walks to the house, pulls out a gun, and kicks down the door",
+          "timestamp": 3660
+        },
+        {
+          "text": "Vince looks at the gun. Michael slams his hand in the wall, flicks his black eye, and pushes him into a wall. Vince drops the gun and holds his face.",
+          "timestamp": 3695
+        },
+        {
+          "text": "They trade blows, and Michael drags Vince down the hallway.",
+          "timestamp": 3706
+        },
+        {
+          "text": "Pyne drops to the ground, then crawls for Vince's gun.",
+          "timestamp": 3710
+        },
+        {
+          "text": "With glare in his face, Pyne fires at a figure in the hallway.",
+          "timestamp": 3714
+        },
+        {
+          "text": "Pyne steps back. Vince looks at the gun shot on his abdomen. Michael pushes Vince into Pyne, and they fall to the floor.",
+          "timestamp": 3722
+        },
+        {
+          "text": "Pyne is tied to a chair. Vince lies on a couch. Michael wears gloves and holds the gun.",
+          "timestamp": 3728
+        },
+        { "text": "Michael smiles gleefully.", "timestamp": 3823 },
+        { "text": "Waves roll at sunset.", "timestamp": 3830 },
+        {
+          "text": "Javier smiles at Michael. They stand on a boardwalk.",
+          "timestamp": 3840
+        },
+        {
+          "text": "Michael drinks a coffee. He watches David fight larger boys on a playground.",
+          "timestamp": 3855
+        },
+        {
+          "text": "He stands under a No Outlet sign. He looks around, then walks up to the Fed car.",
+          "timestamp": 3867
+        },
+        {
+          "text": "David headbutts and punches the bully. Michael watches through binoculars and smiles.",
+          "timestamp": 3908
+        },
+        {
+          "text": "Michael bounds up the stairs to his apartment, then stops. His door is ajar.",
+          "timestamp": 3912
+        },
+        {
+          "text": "He enters the apartment, and the floor is littered with quality photoprints of Michael doing things and meeting people from around Miami, including asking the Feds for binoculars. In the center sits a tourist pamphlet that reads Welcome To Miami. Fade to black. Credits roll.",
+          "timestamp": 3952
+        }
+      ]
+    }
+  ],
+  "source": {
+    "domain": "disney",
+    "id": "77d4089e-c388-4b90-b084-a5316ce37fdd",
+    "url": "https://www.disneyplus.com/play/77d4089e-c388-4b90-b084-a5316ce37fdd"
+  }
+}
