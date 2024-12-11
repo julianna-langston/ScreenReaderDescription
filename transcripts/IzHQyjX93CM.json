@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "creator": "Fugget About It - 9 Story",
+    "season": 1,
     "episode": 1,
     "seriesTitle": "Fugget About It",
     "title": "Hate Crime Legislation is for Pussies",
@@ -10,6 +10,7 @@
     {
       "author": "Julianna Langston",
       "language": "en-US",
+      "explicit": true,
       "tracks": [
         {
           "text": "Jimmy picks up the paper in his snow covered front yard. Wind blows open his robe, revealing his genitals.",

@@ -27,6 +27,7 @@ interface ScriptMetadata {
 interface ScriptData {
     language: "en-US";
     author: string;
+    explicit?: boolean;
     tracks: {
         text: string;
         timestamp: number;

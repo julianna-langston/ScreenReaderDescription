@@ -10,6 +10,7 @@
     {
       "author": "Julianna Langston",
       "language": "en-US",
+      "explicit": true,
       "tracks": [
         { "text": "Jimmy brandishes a baseball bat.", "timestamp": 29.422802 },
         { "text": "Young Petey smiles and runs.", "timestamp": 33.216065 },
