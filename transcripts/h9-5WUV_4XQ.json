@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "season": 1,
+    "episode": 12,
+    "seriesTitle": "Fugget About It",
+    "title": "Sex on Ice",
+    "type": "television episode"
+  },
+  "scripts": [
+    {
+      "author": "Julianna Langston",
+      "language": "en-US",
+      "explicit": true,
+      "tracks": [
+        {
+          "text": "McCool throws his boss through a ground floor window.",
+          "timestamp": 65.06417
+        },
+        { "text": "At the office", "timestamp": 120 },
+        { "text": "At the house", "timestamp": 184 },
+        { "text": "Fugget About It Cares", "timestamp": 239.221347 },
+        { "text": "The Annual Regina Winter Carnival", "timestamp": 290 },
+        { "text": "Cookie and Jimmy smile", "timestamp": 293.33378 },
+        {
+          "text": "Kids line up for the Whack A Seal booth",
+          "timestamp": 295.703131
+        },
+        {
+          "text": "A child poses at the Wildlife Zoo, in front of a frozen moose, bear, and beaver.",
+          "timestamp": 304.083944
+        },
+        {
+          "text": "A mother presses her child's tongue against a metal pole. Several other children have their tongues on poles. A sign reads Free Daycare.",
+          "timestamp": 334
+        },
+        { "text": "Jimmy passes ice sculptures", "timestamp": 337.089942 },
+        {
+          "text": "A man carves spaghetti and meatballs on a pedestal. Jimmy approaches a large, mostly uncut block of ice.",
+          "timestamp": 351.26832
+        },
+        {
+          "text": "Jimmy stabs at the ice block. He shivers, wraps a scarf around his face, and keeps stabbing.",
+          "timestamp": 357.28206
+        },
+        {
+          "text": "Large chunks fall away. A crowd begins to gather.",
+          "timestamp": 364.602939
+        },
+        { "text": "A city skyline takes form", "timestamp": 372.622628 },
+        {
+          "text": "Near the booths, Gina dances amongst the crowd, picking wallets",
+          "timestamp": 374.983647
+        },
+        { "text": "Another boy does the same", "timestamp": 382.106994 },
+        { "text": "They stare at each other", "timestamp": 389 },
+        { "text": "The boy smiles. Gina smiles back.", "timestamp": 393 },
+        { "text": "Gina pushes him down", "timestamp": 399 },
+        { "text": "Girls walk out in puffy jackets", "timestamp": 411.230243 },
+        { "text": "She removes her jacket", "timestamp": 418.284447 },
+        {
+          "text": "She pours water over herself and gets encased in ice.",
+          "timestamp": 421.758706
+        },
+        { "text": "At the house", "timestamp": 426.106918 },
+        { "text": "A crowd watches Jimmy", "timestamp": 460.623774 },
+        {
+          "text": "He holds a puck. The crowd produces hockey sticks.",
+          "timestamp": 494.221033
+        },
+        {
+          "text": "They chase the puck through the snow.",
+          "timestamp": 497.783036
+        },
+        {
+          "text": "Jimmy puts a stocking over his head and wears sunglasses.",
+          "timestamp": 567.380388
+        },
+        {
+          "text": "Jinksy chips chunks of ice off a block. He sculpts 3 snowmen beating up a 4th, bleeding snowman",
+          "timestamp": 571.8587
+        },
+        {
+          "text": "A sculpture of a couple carrying tommy guns. He uses a zester to polish the drum.",
+          "timestamp": 577.880188
+        },
+        {
+          "text": "He carries the sculpture to a couple labelled \"Just Married\". He drops the ice on top of a pink cake. The frosting explodes over the couple, who clap. ",
+          "timestamp": 580.970734
+        },
+        {
+          "text": "Jinksy carves 3 men smiling and throwing money in the air. The same 3 men stand nearby, in the same position, smiling.",
+          "timestamp": 585.490241
+        },
+        {
+          "text": "Cookie frowns in an empty bed at night.",
+          "timestamp": 588.341903
+        },
+        {
+          "text": "Cheech and Petey ride and escalator",
+          "timestamp": 590.299522
+        },
+        {
+          "text": "They walk up the frozen escalator.",
+          "timestamp": 597.434322
+        },
+        {
+          "text": "Jinksy carves a man holding a gun, a man beating another man, legs dangling out of the ground, and a man in a tuxedo.",
+          "timestamp": 600
+        },
+        { "text": "Theresa stands in ice.", "timestamp": 608.235514 },
+        { "text": "A knife flies past his face", "timestamp": 642.239823 },
+        {
+          "text": "The BareNaked Ladies Gallery present Jinksy",
+          "timestamp": 720.805003
+        },
+        { "text": "Ice sculptures", "timestamp": 732.405632 },
+        { "text": "McCool waves at Jinksy", "timestamp": 804.435059 },
+        { "text": "Rich Little Casino", "timestamp": 830.355232 },
+        {
+          "text": "Cheech puts down chips. A waitress walks over with drinks.",
+          "timestamp": 849.950445
+        },
+        {
+          "text": "Petey drinks from a tumbler with a sippy cup lid",
+          "timestamp": 855.299944
+        },
+        {
+          "text": "Chips pile up around empty sippy tumblers",
+          "timestamp": 858.182967
+        },
+        {
+          "text": "At the gallery, Jinksy caves a sculpture of Cookie on the roof.",
+          "timestamp": 877.447794
+        },
+        {
+          "text": "He carves a bed with a heart shaped headboard",
+          "timestamp": 892
+        },
+        {
+          "text": "Cookie pushes Jinksy into the bed",
+          "timestamp": 907.771865
+        },
+        {
+          "text": "The bed steams and the headboard sweats into water",
+          "timestamp": 912.858914
+        },
+        {
+          "text": "A shooting star flies across the moon",
+          "timestamp": 918.281596
+        },
+        {
+          "text": "She walks away through the foot of standing water",
+          "timestamp": 934.422899
+        },
+        { "text": "She tenderizes a steak", "timestamp": 995.388758 },
+        { "text": "At the Rich Little Casino", "timestamp": 1022 },
+        { "text": "At the Friendly Giant Arena", "timestamp": 1062 },
+        {
+          "text": "James Brown dances in the rink in front of 4 women wearing giant feathers",
+          "timestamp": 1100.906122
+        },
+        { "text": "A man plays a guitar", "timestamp": 1103.458914 },
+        {
+          "text": "Jinksy rides a wrecking ball down into the rink",
+          "timestamp": 1115.74429
+        },
+        {
+          "text": "A 25 foot ice block rises out of the floor.",
+          "timestamp": 1120.743915
+        },
+        { "text": "At the Rich Little Casino", "timestamp": 1142 },
+        {
+          "text": "A bodyguard grabs Cheech's throat",
+          "timestamp": 1166.166811
+        },
+        {
+          "text": "At the Arena, people throw beer cans and bottles at Jinksy",
+          "timestamp": 1212.983105
+        },
+        { "text": "Theresa in ice", "timestamp": 1324.939724 }
+      ]
+    }
+  ],
+  "source": {
+    "domain": "youtube",
+    "id": "h9-5WUV_4XQ",
+    "url": "https://www.youtube.com/watch?v=h9-5WUV_4XQ"
+  }
+}
