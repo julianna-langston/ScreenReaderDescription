@@ -67,9 +67,10 @@
         <script>
             let track = [];
             let playRate = 1;
-            const id = new URLSearchParams(location.search).get("id");
-
-            (async () => {
+            let currentlyPlayingId = "";
+            
+            const loadVideoTranscript = async (id) => {
+              console.log("Getting transcript for video id", id);
               try {
                 const result = await fetch(`https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main/transcripts/${id}.json`)
                 const json = await result.json();
@@ -79,24 +80,48 @@
               }catch(err){
                 alert("Warning: Requested video does not have audio transcripts available.");
               }
-            })();
-
+            }
+            
             var player;
             function onYouTubeIframeAPIReady() {
-              player = new YT.Player("player", {
-                height: "390",
-                width: "640",
-                videoId: id,
-                playerVars: {
-                  fs: 0,
-                  playsinline: 1
-                },
-                events: {
-                  onReady: onPlayerReady,
-                  onStateChange: onPlayerStateChange,
-                  onPlaybackRateChange: onPlayerPlaybackRateChange,
-                }
-              });
+              const params = new URLSearchParams(location.search);
+              if(params.has("id")){
+                const videoId = new URLSearchParams(location.search).get("id");
+                player = new YT.Player("player", {
+                  height: "390",
+                  width: "640",
+                  videoId,
+                  playerVars: {
+                    fs: 0,
+                    playsinline: 1
+                  },
+                  events: {
+                    onReady: onPlayerReady,
+                    onStateChange: onPlayerStateChange,
+                    onPlaybackRateChange: onPlayerPlaybackRateChange,
+                  }
+                });
+              }else{
+                const playlist = params.get("list");
+                
+                player = new YT.Player("player", {
+                  height: "390",
+                  width: "640",
+                  playerVars: {
+                    fs: 0,
+                    playsinline: 1,
+                    autoplay: 0,
+                    controls: 1,
+                    listType: "list",
+                    playlist
+                  },
+                  events: {
+                    onReady: onPlayerReady,
+                    onStateChange: onPlayerStateChange,
+                    onPlaybackRateChange: onPlayerPlaybackRateChange,
+                  }
+                });
+              }
             }
 
             function onPlayerPlaybackRateChange(event){
@@ -143,6 +168,12 @@
             };
 
             function onPlayerStateChange({ target, data }) {
+              const playingVideoId = target.playerInfo.videoData.video_id;
+              if(currentlyPlayingId !== playingVideoId && playingVideoId){
+                loadVideoTranscript(playingVideoId);
+                currentlyPlayingId = playingVideoId;
+              }
+
               if (data === 1) {
                 playTranscriptFrom(Math.floor(target.getCurrentTime()), playRate);
               } else {
