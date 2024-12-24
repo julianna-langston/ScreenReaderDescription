@@ -65,18 +65,18 @@
         </script>
 
         <script>
-            let track = [];
+            let trackCollection = {};
             let playRate = 1;
-            let currentlyPlayingId = "";
             
             const loadVideoTranscript = async (id) => {
-              console.log("Getting transcript for video id", id);
+              console.debug("loadVideoTranscript", {id});
               try {
                 const result = await fetch(`https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main/transcripts/${id}.json`)
                 const json = await result.json();
                 const {scripts} = json;
-                track = scripts[0].tracks;
+                trackCollection[id] = scripts[0].tracks;
                 document.getElementById("track-author").textContent = scripts[0].author;
+                console.log("Finished loading:", trackCollection);
               }catch(err){
                 alert("Warning: Requested video does not have audio transcripts available.");
               }
@@ -84,6 +84,7 @@
             
             var player;
             function onYouTubeIframeAPIReady() {
+              console.debug("onYouTubeIframeAPIReady");
               const params = new URLSearchParams(location.search);
               if(params.has("id")){
                 const videoId = new URLSearchParams(location.search).get("id");
@@ -121,16 +122,34 @@
                     onPlaybackRateChange: onPlayerPlaybackRateChange,
                   }
                 });
+
+                let valve = 100;
+                const playlistList = playlist.split(",");
+                const waitForPlayerToLoad = setInterval(() => {
+                  if(player.cuePlaylist){
+                    player.cuePlaylist(playlistList);
+                    clearInterval(waitForPlayerToLoad);
+                  }
+                  if(valve <= 0){
+                    console.error("Timed out waiting for YouTube Player API to load. Unable to cue playlist.");
+                    clearInterval(waitForPlayerToLoad);
+                  }
+
+                  valve--;
+                }, 100);
+                playlistList.forEach(loadVideoTranscript);
               }
             }
 
             function onPlayerPlaybackRateChange(event){
+              console.debug("onPlayerPlaybackRateChange", {event});
               killTranscript();
               playRate = event.data;
-              playTranscriptFrom(event.target.getCurrentTime(), playRate);
+              playTranscriptFrom(event.target.playerInfo.videoData.video_id, event.target.getCurrentTime(), playRate);
             }
 
             function onPlayerReady(event) {
+              console.debug("onPlayerReady", {event});
               event.target.playVideo();
               event.target.setVolume(20);
 
@@ -148,8 +167,9 @@
 
             let trackUpdateInterval = [];
 
-            const playTranscriptFrom = (startingSecond, rate) => {
-              const trackToGo = track.filter(
+            const playTranscriptFrom = (videoId, startingSecond, rate) => {
+              console.debug("playTranscriptFrom", {videoId, startingSecond, rate});
+              const trackToGo = trackCollection[videoId]?.filter(
                 ({ timestamp }) => timestamp >= startingSecond
               );
               trackUpdateInterval = trackToGo.map(({ text, timestamp }) => {
@@ -161,6 +181,7 @@
               });
             };
             const killTranscript = () => {
+              console.debug("killTranscript");
               trackUpdateInterval.forEach((t) => {
                 clearTimeout(t);
               });
@@ -168,19 +189,20 @@
             };
 
             function onPlayerStateChange({ target, data }) {
+              console.debug("onPlayerStateChange", {target, data});
               const playingVideoId = target.playerInfo.videoData.video_id;
-              if(currentlyPlayingId !== playingVideoId && playingVideoId){
+              if(playingVideoId && !(playingVideoId in trackCollection)){
                 loadVideoTranscript(playingVideoId);
-                currentlyPlayingId = playingVideoId;
               }
 
               if (data === 1) {
-                playTranscriptFrom(Math.floor(target.getCurrentTime()), playRate);
+                playTranscriptFrom(playingVideoId, Math.floor(target.getCurrentTime()), playRate);
               } else {
                 killTranscript();
               }
             }
             function stopVideo() {
+              console.debug("stopVideo");
               player.stopVideo();
             }
         </script>
