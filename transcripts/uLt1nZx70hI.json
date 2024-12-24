@@ -14,7 +14,6 @@
       "tracks": [
         { "text": "Jimmy brandishes a baseball bat.", "timestamp": 29.422802 },
         { "text": "Young Petey smiles and runs.", "timestamp": 33.216065 },
-        { "text": "Intro", "timestamp": 62.156916 },
         {
           "text": "Agent McCool rides his white horse at full gallop. McCool wears a red coat with 3 chevrons, a broad rimmed hat, and has a knee-length bulge between his legs.",
           "timestamp": 90.914079
@@ -177,8 +176,7 @@
         {
           "text": "McCool hands the satchel to Jimmy.",
           "timestamp": 1324.907353
-        },
-        { "text": "Credits roll", "timestamp": 1329.969867 }
+        }
       ]
     }
   ],
