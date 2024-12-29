@@ -1,0 +1,152 @@
+<!--
+TO DO:
+ - Styling
+ - Edit tracks
+ - Delete tracks
+ - Sort tracks
+ - Set metadata 
+    - type
+    - title
+ - Cache content
+    - Clear cache
+ - Set author info
+ - Set language info
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit SRD Video</title>
+
+        <script src="https://www.youtube.com/iframe_api"></script>
+    </head>
+    <body>
+        <h1>Edit SRD Video</h1>
+
+        <div id="player"></div>
+
+        <div id="transcript">
+            <table>
+                <thead>
+                    <th>Timestamp</th>
+                    <th>Text</th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <input id="timestamp-marker" type="text" size="6" value="0:00" />
+            <input id="description-text" type="text" />
+            <button id="submit">Submit</button>
+            <button id="export">Export</button>
+        </div>
+
+        <script>
+            let transcript = [];
+            const idElem = document.getElementById("youtube-id");
+            const params = new URLSearchParams(location.search);
+            if(!params.has("id")){
+                console.warn("No id");
+            }
+
+            const padTen = (num) => {
+                if(num < 10){
+                    return `0${num}`
+                }
+                return `${num}`;
+            }
+            const displaySeconds = (seconds) => {
+                if(seconds < 60){
+                    return `0:${padTen(Math.floor(seconds))}`;
+                }
+                if(seconds < 3600){
+                    return `${Math.floor(seconds/60)}:${padTen(Math.floor(seconds % 60))}`;
+                }
+                return seconds;
+            }
+            const displayTranscript = () => {
+                const table = document.querySelector("#transcript tbody");
+                table.innerHTML = "";
+                const fragment = document.createDocumentFragment();
+                transcript.forEach(({timestamp, text}) => {
+                    const tr = document.createElement("tr");
+                    const td1 = document.createElement("td");
+                    td1.textContent = displaySeconds(timestamp);
+                    const td2 = document.createElement("td");
+                    td2.textContent = text;
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                    fragment.appendChild(tr);
+                });
+                table.appendChild(fragment);
+            }
+
+            function onYouTubeIframeAPIReady() {
+                new YT.Player("player", {
+                    height: "390",
+                    width: "640",
+                    videoId: params.get("id"),
+                    playerVars: {
+                        fs: 0,
+                        playsinline: 1
+                    },
+                    events: {
+                        onReady: (event) => {
+                            console.debug("onReady", event);
+                            displayTranscript();
+                        },
+                        onStateChange: (event) => {
+                            if(event.data === YT.PlayerState.PAUSED){
+                                const currentTime = event.target.getCurrentTime();
+                                const timestampElem = document.getElementById("timestamp-marker");
+                                timestampElem.setAttribute("data-timestamp", currentTime);
+                                timestampElem.value = displaySeconds(currentTime);
+                            }
+                            console.debug("onStateChange", event);
+                        },
+                        onPlaybackRateChange: (event) => {
+                            console.debug("onPlaybackRateChange", event);
+                        }
+                    }
+                });
+            }
+
+            document.getElementById("submit").addEventListener("click", () => {
+                const timestamp = document.getElementById("timestamp-marker");
+                const description = document.getElementById("description-text");
+                transcript.push({
+                    timestamp: Number(timestamp.getAttribute("data-timestamp")),
+                    text: description.value
+                });
+                timestamp.removeAttribute("data-timestamp");
+                description.value = "";
+                displayTranscript();
+            });
+            document.getElementById("export").addEventListener("click", () => {
+                const json = {
+                    source: {
+                        domain: "youtube",
+                        id: params.get("id"),
+                        url: `https://www.youtube.com/watch?v=$${params.get("id")}`
+                    },
+                    metadata: {
+                        type: "unknown"
+                    },
+                    scripts: [
+                        {
+                            language: "en-US",
+                            author: "",
+                            tracks: transcript
+                        }
+                    ]
+                };
+
+                const element = document.createElement("a");
+                element.setAttribute("href", `data:text/plain;charset=utf-8,${encodeURIComponent(JSON.stringify(json))}`);
+                element.setAttribute("download", `${json.source.id}.json`);
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+            })
+        </script>
+    </body>
+</html>
