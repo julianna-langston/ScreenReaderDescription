@@ -24,17 +24,25 @@ interface ScriptMetadata {
     requiresExtension?: boolean;
 }
 
+interface ScriptTrack {
+    text: string;
+    timestamp: number;
+}
+
 interface ScriptData {
     language: "en-US";
     author: string;
     explicit?: boolean;
-    tracks: {
-        text: string;
-        timestamp: number;
-    }[];
+    tracks: ScriptTrack[];
 }
 
 export type ScriptListing = {
     "languages": ScriptData["language"][];
     file: string;
 } & ScriptMetadata & ScriptSource;
+
+interface Transcript {
+    source: ScriptSource;
+    metadata: ScriptMetadata;
+    scripts: ScriptData[];
+}
