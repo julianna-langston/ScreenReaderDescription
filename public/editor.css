@@ -20,8 +20,8 @@ button {
 
 #transcript {
     position: relative;
-
     padding: 4px;
+    max-width: calc(100vw-700px);
 
     #export {
         position: absolute;
@@ -64,10 +64,6 @@ button {
     input[type="number"]{
         width: 28px;
     }
-}
-
-#layout > div {
-    outline: 2px solid red;
 }
 
 
