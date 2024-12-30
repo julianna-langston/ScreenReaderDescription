@@ -100,23 +100,6 @@ const initializeIframe = () => {
     fillSavedMetadata(savedMetadata);
 }
 
-const padTen = (num) => {
-    if(num < 10){
-        return `0${num}`
-    }
-    return `${num}`;
-}
-
-const displaySeconds = (seconds) => {
-    if(seconds < 60){
-        return `0:${padTen(Math.floor(seconds))}`;
-    }
-    if(seconds < 3600){
-        return `${Math.floor(seconds/60)}:${padTen(Math.floor(seconds % 60))}`;
-    }
-    return seconds;
-}
-
 const displayTranscript = () => {
     const table = document.querySelector("#transcript tbody");
     table.innerHTML = "";
@@ -124,7 +107,7 @@ const displayTranscript = () => {
     transcript.forEach(({timestamp, text}) => {
         const tr = document.createElement("tr");
         const td1 = document.createElement("td");
-        td1.textContent = displaySeconds(timestamp);
+        td1.textContent = Editor.displaySeconds(timestamp);
         const td2 = document.createElement("td");
         td2.textContent = text;
         tr.appendChild(td1);
@@ -193,7 +176,7 @@ const clickCancelButton = () => {
 const setTimestamp = (seconds) => {
     const input = document.getElementById("timestamp-marker");
     input.setAttribute("data-timestamp", seconds);
-    input.value = displaySeconds(seconds);
+    input.value = Editor.displaySeconds(seconds);
 }
 
 const displayTracks = (tracks) => {
@@ -201,7 +184,7 @@ const displayTracks = (tracks) => {
     tracks.forEach(({timestamp, text}, index) => {
         const tr = document.createElement("tr");
         const td1 = document.createElement("td");
-        td1.textContent = displaySeconds(timestamp);
+        td1.textContent = Editor.displaySeconds(timestamp);
         tr.appendChild(td1);
         const td2 = document.createElement("td");
         td2.textContent = text;
@@ -239,7 +222,7 @@ const startEditing = (index, timestamp, text) => {
     
     const timestampElem = document.getElementById("timestamp-marker");
     timestampElem.setAttribute("data-timestamp", timestamp);
-    timestampElem.value = displaySeconds(timestamp);
+    timestampElem.value = Editor.displaySeconds(timestamp);
     
     const textElem = document.getElementById("description-text");
     textElem.value = text;

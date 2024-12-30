@@ -146,3 +146,25 @@ test("Update metadata: television episode", () => {
 });
 
 test.todo("Initialize with starting values");
+
+test.each([
+    {seconds: 11, display: "0:11"},
+    {seconds: 1, display: "0:01"},
+    {seconds: 1.01, display: "0:01"},
+    {seconds: 0.99999, display: "0:00"},
+    {seconds: 61, display: "1:01"},
+    {seconds: 83, display: "1:23"},
+    {seconds: 119, display: "1:59"},
+    {seconds: 120, display: "2:00"},
+    {seconds: 599, display: "9:59"},
+    {seconds: 600, display: "10:00"},
+    {seconds: 754, display: "12:34"},
+    {seconds: 3599, display: "59:59"},
+    {seconds: 3600, display: "1:00:00"},
+    {seconds: (3600*12) + (34*60)+56, display: "12:34:56"},
+    {seconds: (3600*99) + (59*60)+59, display: "99:59:59"},
+    {seconds: Infinity, display: "99:59:59"},
+    {seconds: -1, display: "0:00"},
+])("$display", ({seconds, display}) => {
+    expect(Editor.displaySeconds(seconds)).toBe(display);
+})

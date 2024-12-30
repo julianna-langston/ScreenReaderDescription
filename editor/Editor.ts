@@ -1,5 +1,15 @@
 import { ScriptData, ScriptMetadata, ScriptTrack, Transcript } from "../types";
 
+const MAXIMUM_TIME_TO_DISPLAY = (3600*99) + (59*60) + 59;
+
+const padTen = (num: number) => {
+    if(num < 10){
+        return `0${num}`;
+    }
+    return `${num}`;
+}
+
+
 type Presets = {
     author?: string;
     language?: ScriptData["language"];
@@ -35,6 +45,23 @@ export class Editor {
                 ...presets.metadata
             };
         }
+    }
+
+    public static displaySeconds(seconds: number){
+        if(seconds <= 0){
+            return `0:00`
+        }
+        if(seconds < 60) {
+            return `0:${padTen(Math.floor(seconds))}`;
+        }
+        if(seconds < 3600){
+            return `${Math.floor(seconds/60)}:${padTen(Math.floor(seconds % 60))}`
+        }
+        if(seconds < MAXIMUM_TIME_TO_DISPLAY){
+            return `${Math.floor(seconds/3600)}:${padTen(Math.floor((seconds % 3600)/60))}:${padTen(Math.floor(seconds % 60))}`
+        }
+        return `99:59:59`
+
     }
 
     addTrack(track: ScriptTrack){
