@@ -1,0 +1,92 @@
+body {
+    font-family: Arial;
+}
+
+h1 {
+    margin-left: 24px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+#transcript {
+    position: relative;
+
+    padding: 4px;
+
+    #export {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+    }
+
+    #transcript-table-container {
+        height: 250px;
+        width: fit-content;
+        overflow-y: auto;
+        margin-top: 4px;
+        margin-bottom: 4px;
+
+        table {
+            margin-left: auto;
+        }
+    }
+
+    #edit-section, #add-buttons {
+        display: inline;
+    }
+
+    #description-text {
+        width: 500px;
+    }
+}
+
+#metadata {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 4px;
+    margin-top: 8px;
+
+    label {
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    input[type="number"]{
+        width: 28px;
+    }
+}
+
+#layout > div {
+    outline: 2px solid red;
+}
+
+
+#transcript:not(:has([data-isEditing])) #edit-buttons{
+    display: none;
+}
+#transcript:has([data-isEditing]) #add-buttons{
+    display: none;
+}
+[data-isEditing]{
+    background-color: yellow;
+}
+.metadata-block{
+    display: none;
+}
+#metadata:has([value="television episode"]:checked) #television-metadata {
+    display: block;
+}
+#metadata:not(:has([value="television episode"]:checked)) #other-metadata {
+    display: block;
+}
+

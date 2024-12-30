@@ -97,24 +97,9 @@ const initializeIframe = () => {
         }
     });
 
+    document.getElementById("author").value = savedAuthor;
+    document.getElementById("language").value = savedLanguage;
     fillSavedMetadata(savedMetadata);
-}
-
-const displayTranscript = () => {
-    const table = document.querySelector("#transcript tbody");
-    table.innerHTML = "";
-    const fragment = document.createDocumentFragment();
-    transcript.forEach(({timestamp, text}) => {
-        const tr = document.createElement("tr");
-        const td1 = document.createElement("td");
-        td1.textContent = Editor.displaySeconds(timestamp);
-        const td2 = document.createElement("td");
-        td2.textContent = text;
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        fragment.appendChild(tr);
-    });
-    table.appendChild(fragment);
 }
 
 const downloadText = (filename, text) => {
@@ -184,7 +169,10 @@ const displayTracks = (tracks) => {
     tracks.forEach(({timestamp, text}, index) => {
         const tr = document.createElement("tr");
         const td1 = document.createElement("td");
-        td1.textContent = Editor.displaySeconds(timestamp);
+        const button0 = document.createElement("button");
+        button0.textContent = Editor.displaySeconds(timestamp);
+        button0.addEventListener("click", () => player.seekTo(timestamp));
+        td1.appendChild(button0);
         tr.appendChild(td1);
         const td2 = document.createElement("td");
         td2.textContent = text;

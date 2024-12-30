@@ -6,29 +6,8 @@ TO DO:
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Edit SRD Video</title>
-
-        <style>
-            #transcript:not(:has([data-isEditing])) #edit-buttons{
-                display: none;
-            }
-            #transcript:has([data-isEditing]) #add-buttons{
-                display: none;
-            }
-            [data-isEditing]{
-                background-color: yellow;
-            }
-            .metadata-block{
-                display: none;
-            }
-            #metadata:has([value="television episode"]:checked) #television-metadata {
-                display: block;
-            }
-            #metadata:not(:has([value="television episode"]:checked)) #other-metadata {
-                display: block;
-            }
-        </style>
-
+        <title>Edit Video Description</title>
+        <link href="./editor.css" rel="stylesheet" />
         <script>var exports = {};</script>
         <script src="https://www.youtube.com/iframe_api"></script>
         <script src="./Editor.js"></script>
@@ -37,74 +16,82 @@ TO DO:
     <body>
         <h1>Edit SRD Video</h1>
 
-        <div id="player"></div>
-
-        <div id="transcript">
-            <label>
-                Author
-                <input type="text" id="author" />
-            </label>
-            <label>
-                Language
-                <select id="language">
-                    <option>en-US</option>
-                </select>
-            </label>
-            <button id="export">Export</button>
-            <table>
-                <thead>
-                    <th>Timestamp</th>
-                    <th>Text</th>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-            <input id="timestamp-marker" type="text" size="6" value="0:00" />
-            <input id="description-text" type="text" />
-            <div id="add-buttons">
-                <button id="submit">Submit</button>
-            </div>
-            <div id="edit-buttons">
-                <button id="update">Update</button>
-                <button id="cancel">Cancel</button>
-            </div>
-            <div id="metadata">
+        <div id="layout">
+            <div id="player"></div>
+    
+            <div id="transcript">
                 <label>
-                    Type
-                    <select id="video-type">
-                        <option value="television episode">Television episode</option>
-                        <option value="movie">Movie</option>
-                        <option value="music video">Music video</option>
-                        <option value="other">Other</option>
+                    Author
+                    <input type="text" id="author" />
+                </label>
+                <label>
+                    Language
+                    <select id="language">
+                        <option>en-US</option>
                     </select>
                 </label>
+                <button id="export">Export</button>
 
-                <div class="metadata-block" id="television-metadata">
-                    <label>
-                        Series Title
-                        <input type="text" name="seriesTitle" />
-                    </label>
-                    <label>
-                        Episode Title
-                        <input type="text" name="title" />
-                    </label>
-                    <label>
-                        Season
-                        <input type="number" name="season" />
-                    </label>
-                    <label>
-                        Episode
-                        <input type="number" name="episode" />
-                    </label>
+                <div id="transcript-table-container">
+                    <table>
+                        <thead>
+                            <th>Time</th>
+                            <th>Description</th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
-
-                <div class="metadata-block" id="other-metadata">
+                <div id="edit-section">
+                    <input id="timestamp-marker" aria-label="Timestamp" type="text" size="6" value="0:00" />
+                    <input id="description-text" aria-label="Description" type="text" />
+                </div>
+                <div id="add-buttons">
+                    <button id="submit">Submit</button>
+                </div>
+                <div id="edit-buttons">
+                    <button id="update">Update</button>
+                    <button id="cancel">Cancel</button>
+                </div>
+                <div id="metadata">
                     <label>
-                        Title
-                        <input type="text" name="title" />
+                        Type
+                        <select id="video-type">
+                            <option value="television episode">Television episode</option>
+                            <option value="movie">Movie</option>
+                            <option value="music video">Music video</option>
+                            <option value="other">Other</option>
+                        </select>
                     </label>
+    
+                    <div class="metadata-block" id="television-metadata">
+                        <label>
+                            Series Title
+                            <input type="text" name="seriesTitle" />
+                        </label>
+                        <label>
+                            Episode Title
+                            <input type="text" name="title" />
+                        </label>
+                        <label>
+                            Season
+                            <input type="number" name="season" />
+                        </label>
+                        <label>
+                            Episode
+                            <input type="number" name="episode" />
+                        </label>
+                    </div>
+    
+                    <div class="metadata-block" id="other-metadata">
+                        <label>
+                            Title
+                            <input type="text" name="title" />
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
+
     </body>
 </html>
