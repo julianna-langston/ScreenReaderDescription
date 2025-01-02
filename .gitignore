@@ -132,3 +132,4 @@ dist
 # Generated files
 ScriptData.json
 public/listing.html
+public/Editor.js

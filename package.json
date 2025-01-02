@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "build": "tsc ./editor/Editor.ts --outdir ./public",
     "generate-jsd": "ts-node generateJSD",
     "generate-listing": "ts-node lister",
     "prevalidate": "npm run generate-jsd",
     "validate": "ts-node validator",
-    "serve": "npx http-server -p 8080 ./public"
+    "serve": "npx http-server -p 8080 ./public",
+    "test": "jest"
   },
   "lint-staged": {
     "transcripts/*.json": "npm run validate",
@@ -15,9 +17,14 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^29.5.14",
     "ajv": "^8.17.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.2.10",
+    "ts-jest": "^29.2.5",
     "ts-json-schema-generator": "^2.3.0",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
   }
 }
