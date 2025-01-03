@@ -87,7 +87,7 @@
               console.debug("onYouTubeIframeAPIReady");
               const params = new URLSearchParams(location.search);
               if(params.has("id")){
-                const videoId = new URLSearchParams(location.search).get("id");
+                const videoId = params.get("id");
                 player = new YT.Player("player", {
                   height: "390",
                   width: "640",
