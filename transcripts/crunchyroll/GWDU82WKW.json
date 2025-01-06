@@ -1,0 +1,319 @@
+{
+  "metadata": {
+    "episode": 3,
+    "seriesTitle": "Quality Assurance in Another World",
+    "title": "Tesla",
+    "type": "television episode"
+  },
+  "scripts": [
+    {
+      "author": "Julianna Langston",
+      "language": "en-US",
+      "tracks": [
+        { "text": "Bandai Namco", "timestamp": 2.460804 },
+        { "text": "Bandai Namco Filmworks", "timestamp": 8.637938 },
+        { "text": "Kodansha", "timestamp": 12 },
+        {
+          "text": "Clouds dot a sky over mountains. Near a road, crouched, leafy figures crawl forward.",
+          "timestamp": 39.365152
+        },
+        {
+          "text": "Cubes float in blue streams of light.",
+          "timestamp": 118
+        },
+        {
+          "text": "The light eminates from a stone tablet.",
+          "timestamp": 121
+        },
+        {
+          "text": "Red and black text appears. Quality Assurance in Another World. The text becomes grainy and glitches.",
+          "timestamp": 124
+        },
+        {
+          "text": "Haga presses his hands against a stone wall.",
+          "timestamp": 130
+        },
+        {
+          "text": "He pulls out a pad of paper and writes.",
+          "timestamp": 134
+        },
+        {
+          "text": "Nikola carries boxes near a tent.",
+          "timestamp": 138
+        },
+        {
+          "text": "She trips, dropping papers. She gets up, dirt smudging her face.",
+          "timestamp": 141
+        },
+        {
+          "text": "A dog man sits at a desk. Papers with sketches hang on a nearby wall.",
+          "timestamp": 145
+        },
+        {
+          "text": "He presents the papers to a girl with short green hair, sitting in a bed.",
+          "timestamp": 150
+        },
+        {
+          "text": "A silver haired elf slices meat. She turns, holding plates of food.",
+          "timestamp": 152
+        },
+        {
+          "text": "Nikola floats in the stream of blue, glowing yellow.",
+          "timestamp": 157
+        },
+        {
+          "text": "Light passes over the Play-Ing Inc group, including Sakai and Sumida. A red haired man with a goatee stands alone.",
+          "timestamp": 160
+        },
+        {
+          "text": "A black knight with a green cape and broadsword walk through a barren land.",
+          "timestamp": 163
+        },
+        {
+          "text": "A small man sits in a glowing pod, surrounded by a nest of wires.",
+          "timestamp": 166
+        },
+        {
+          "text": "The small man transforms into Haga.",
+          "timestamp": 168
+        },
+        {
+          "text": "The dog man puts his hands on the ground and glows green.",
+          "timestamp": 172
+        },
+        {
+          "text": "Haga races past the glow, knife in hand.",
+          "timestamp": 175
+        },
+        {
+          "text": "A muscular, humanoid monster with tusks swipes at him. He leaps back, and the elf leaps over him, coming down with a broadsword.",
+          "timestamp": 178
+        },
+        {
+          "text": "She slices through the tusked monster's right arm.",
+          "timestamp": 181
+        },
+        {
+          "text": "A variety of monsters approach. Nikola stands alone, mouth open.",
+          "timestamp": 182
+        },
+        {
+          "text": "Blue light erupts, knocking back the monsters.",
+          "timestamp": 184
+        },
+        {
+          "text": "A dragon roars. The elf, dog man, Haga, and Nikola look up at it.",
+          "timestamp": 186
+        },
+        { "text": "Haga tenses", "timestamp": 176.970974 },
+        {
+          "text": "Montage of character faces, including Haga's party. Nikola is consumed in flames. Haga reaches out into white light while screaming.",
+          "timestamp": 191
+        },
+        {
+          "text": "A platform sits in a rectangular pool in a dark stone room. A green diamond sits in a library. A king is flanked by a man and a rabbit woman.",
+          "timestamp": 196
+        },
+        {
+          "text": "Haga and party look at a village from a cliff. A tablet sits on a desk.",
+          "timestamp": 201
+        },
+        {
+          "text": "Text appears, Number 3, Tesla. In a tall castle with numerous towers, 5 men stand in front of a throne. A red haired man approaches.",
+          "timestamp": 207.441055
+        },
+        { "text": "The NPCs stand nervously", "timestamp": 307 },
+        {
+          "text": "A bloody dart board hangs on a wall.",
+          "timestamp": 324.350677
+        },
+        {
+          "text": "The redhead tosses an NPC at the dartboard.",
+          "timestamp": 335.771608
+        },
+        { "text": "Blood runs down the wall", "timestamp": 341.126605 },
+        { "text": "Sakai throws an NPC. Blood splatters.", "timestamp": 378 },
+        {
+          "text": "Haga and Nikola crawl in disguise.",
+          "timestamp": 383.903038
+        },
+        {
+          "text": "A crumbling tower, surrounded by torches and crumbling obelisks.",
+          "timestamp": 395.219279
+        },
+        {
+          "text": "Haga draws a bow and fires through the entrance",
+          "timestamp": 418
+        },
+        {
+          "text": "A goblin lies dead on stairs, an arrow in his head. Haga and Nikola pass it.",
+          "timestamp": 427.298151
+        },
+        { "text": "An arrow flies over head.", "timestamp": 446 },
+        { "text": "Haga throws a rock.", "timestamp": 448.743727 },
+        {
+          "text": "A humanoid archer with a dog head falls forward.",
+          "timestamp": 454.044561
+        },
+        {
+          "text": "Haga grabs a potion and tosses it. In the shadows, a horned cyclops catches on fire and collapses.",
+          "timestamp": 457
+        },
+        { "text": "Nikola gapes after Haga", "timestamp": 469.773485 },
+        { "text": "She picks up a gold coin", "timestamp": 499 },
+        {
+          "text": "She drops her staff while looking at a trail of coins.",
+          "timestamp": 502.493702
+        },
+        {
+          "text": "She picks up coins and imagines giving them to Haga",
+          "timestamp": 506.787825
+        },
+        {
+          "text": "In a dark, stone chamber sits a rectangular pool. In the center of the pool is a platform with an altar. The Coin Boys, child sized orbs with snarling faces, surround the altar.",
+          "timestamp": 534.990946
+        },
+        {
+          "text": "Nikola sits up. A giant hand emerges from the pool and opens. In the palm is a face. The hand roars.",
+          "timestamp": 565
+        },
+        {
+          "text": "A staff flies through the air and hits the hand face between the eyes.",
+          "timestamp": 576.191808
+        },
+        {
+          "text": "The hand forms a fist, just as Haga leaps and kicks at it.",
+          "timestamp": 579.732023
+        },
+        {
+          "text": "The hand falls into the pool. Haga lands next to Nikola on the altar.",
+          "timestamp": 585.02047
+        },
+        {
+          "text": "The hand swipes at them. Haga pulls Nikola to the ground. The hand knocks Coin Boys into the pool.",
+          "timestamp": 594.898092
+        },
+        {
+          "text": "Haga leaps off a Coin Boy, onto the hand, and stabs it in the face.",
+          "timestamp": 600
+        },
+        {
+          "text": "He leaps off the hand, and grabs onto a nearby pillar at the edge of the pool. He looks back.",
+          "timestamp": 610.325817
+        },
+        {
+          "text": "He leaps, and stabs the hand in the back, pushing it to the ground.",
+          "timestamp": 614.818635
+        },
+        {
+          "text": "Haga uses the staff to push the Coin Boys into the pool.",
+          "timestamp": 635.198311
+        },
+        { "text": "They steam, melt, and sink.", "timestamp": 640.654352 },
+        {
+          "text": "Haga kicks the hand into the pool.",
+          "timestamp": 645.790152
+        },
+        {
+          "text": "He returns her staff. She steps back and sits down.",
+          "timestamp": 673.14218
+        },
+        {
+          "text": "Kuro is bent over, face, arms and legs stuck in the ground. His pants are down, and she sits on his bare butt.",
+          "timestamp": 701.809701
+        },
+        {
+          "text": "Now Loading... The Advent Altar is a relic of old times. It is a labyrinth crawling with magical creatures from the continent as well as cultists. Only adventurers who do not value their lives go near it.",
+          "timestamp": 712.346245
+        },
+        {
+          "text": "Now Loading... Fighters: People who study sword and shield techniques. Because there are no skill requirements to join, the Clayborne Island warrior's guild has the highest number of registered members.",
+          "timestamp": 717.426243
+        },
+        {
+          "text": "Namiko, a female elf with short green hair, falls a few inches towards the water, then resets, then repeats, several times per second.",
+          "timestamp": 737.426226
+        },
+        {
+          "text": "He flexes and admires his muscular body.",
+          "timestamp": 843.961691
+        },
+        { "text": "Haga frowns", "timestamp": 863.684213 },
+        { "text": "Jin is the blue haired leader.", "timestamp": 970.115612 },
+        { "text": "Nikola grabs his waist", "timestamp": 1023.070805 },
+        { "text": "She pats him down", "timestamp": 1030.388214 },
+        {
+          "text": "Nikola glows yellow and floats off the ground. She rises to the top of a pillar.",
+          "timestamp": 1042.960389
+        },
+        {
+          "text": "Outside the Advent Altar, at sunset, a pot sits over a crackling fire. Glowing Nikola devours a sandwhich.",
+          "timestamp": 1076.260373
+        },
+        { "text": "Tesla changes appearance", "timestamp": 1150.563182 },
+        { "text": "She bites on the stone.", "timestamp": 1191 },
+        { "text": "She eats the stone", "timestamp": 1195.486319 },
+        {
+          "text": "Tesla closes her eyes, glows brightly, and the glow disappears. Nikola opens her eyes, surprised.",
+          "timestamp": 1246.875925
+        },
+        {
+          "text": "The sun sets over their camp in front of the Advent Altar. During the day, Haga and Nikola walk down a road in the valley. His cheeks are hollow.",
+          "timestamp": 1274.267455
+        },
+        { "text": "They turn around", "timestamp": 1326.566177 },
+        {
+          "text": "A guard floats a foot off the ground. His arms are outstretched, parallel to the ground.",
+          "timestamp": 1339.317524
+        },
+        {
+          "text": "Haga and Nikola stare at the floating guard.",
+          "timestamp": 1342.690315
+        },
+        {
+          "text": "In a house on the edge of the village, a dog man sits at a desk in a dark room. By candlelight, he puts quill to parchment and smiles.",
+          "timestamp": 1346.231632
+        },
+        { "text": "To be continued", "timestamp": 1352 },
+        
+        {
+          "text": "Credits roll near stylized still drawings. Nikola carries a staff and walks ahead of Haga.",
+          "timestamp": 1354
+        },
+        {
+          "text": "A dog man, Haga, and Nikola stand in a mountainous area. Haga and holds a paper and quill. Nikola holds the same and watches Haga. The dog man smiles.",
+          "timestamp": 1367
+        },
+        {
+          "text": "The dog man sits, holding papers with colorful rectangles. Nikola and Haga stand at the far side of the room, near windows.",
+          "timestamp": 1378
+        },
+        {
+          "text": "Haga, Nikola, the dog man, and a silver haired elf girl sit around a campfire, eating meat. The sun sets behind the woods surrounding them.",
+          "timestamp": 1390
+        },
+        {
+          "text": "Nikola looks up, mouth open wide. A blue stream of light flickers and rises above her, shooting into the sky, until it explodes in fireworks.",
+          "timestamp": 1398
+        },
+        {
+          "text": "Haga, Nikola, the dog man, and the silver haired elf girl stare at the night sky over mountains. Nikola points at the blue firework, sparkling above them.",
+          "timestamp": 1403
+        },
+        {
+          "text": "Nikola floats in the air, glowing purple, and holding a wooden staff.",
+          "timestamp": 1420
+        },
+        {
+          "text": "Haga, the dog man, and the silver haired elf stand in a lit, green grove. Nikola runs to them as the dog man waves.",
+          "timestamp": 1434
+        }
+      ]
+    }
+  ],
+  "source": {
+    "domain": "crunchyroll",
+    "id": "GWDU82WKW",
+    "url": "https://www.crunchyroll.com/watch/GWDU82WKW/"
+  }
+}
