@@ -10,6 +10,9 @@
       "author": "Julianna Langston",
       "language": "en-US",
       "tracks": [
+        { "text": "Bandai Namco", "timestamp": 2 },
+        { "text": "Bandai Namco Filmworks", "timestamp": 8 },
+        { "text": "Kodansha", "timestamp": 12 },
         {
           "text": "The sun sets over Bayle Castle, casting a shadow over the castle town.",
           "timestamp": 48.885249
@@ -152,7 +155,7 @@
           "timestamp": 445.048848
         },
         { "text": "Style of manga panels", "timestamp": 474.116765 },
-        { "text": "That's not what he said.", "timestamp": 490.090925 },
+        { "text": "Text appears. That's not what he said.", "timestamp": 490.090925 },
         {
           "text": "In the market, stalls hold fruits, a man smokes a hookah, and kids run.",
           "timestamp": 517.345123
