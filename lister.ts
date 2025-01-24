@@ -173,6 +173,19 @@ const generateCrunchyrollListing = () => {
         <body>
             <h1>${title}</h1>
 
+            <p>
+                The Screen Reader Description project includes descriptions for videos streaming on various sites. While some sites, like youtube, can be hosted on this website, sites like Crunchyroll can't.
+                While the project maintains descriptions for several shows on Crunchyroll, you will have to download the project's Chrome Extension in order to watch the shows with descriptions.
+            </p>
+
+            <p>
+                Once you install the Chrome Extension, you can visit any of the links below. As long as the extension is installed and you are running a screen reader, the description should play immediately.
+            </p>
+
+            <p>
+                Not all shows have been fully described. If you are interested in more episodes, or for more shows, please reach out on GitHub or Discord.
+            </p>
+
             ${entries.map(([seriesTitle, episodes]) => {
                 episodes.sort((a, b) => {
                     if(a.episode > b.episode){
@@ -184,12 +197,12 @@ const generateCrunchyrollListing = () => {
                     return 0;
                 });
                 return `
-                <h2>${seriesTitle}</h2>
+            <h2>${seriesTitle}</h2>
 
-                <ol>
-                    ${episodes.map(({episode, title, url}) => `<li value="${episode}"><a href="${url}">${title}</a></li>`).join("")}
-                </ol>
-                `;
+            <ol>
+                ${episodes.map(({episode, title, url}) => `<li value="${episode}"><a href="${url}">${title}</a></li>`).join("\n")}
+            </ol>
+            `;
             }).join("")}
         </body>
     </html>`;
