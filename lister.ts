@@ -175,15 +175,15 @@ const generateCrunchyrollListing = () => {
 
             <p>
                 The Screen Reader Description project includes descriptions for videos streaming on various sites. While some sites, like youtube, can be hosted on this website, sites like Crunchyroll can't.
-                While the project maintains descriptions for several shows on Crunchyroll, you will have to download the project's Chrome Extension in order to watch the shows with descriptions.
+                While the project maintains descriptions for several shows on Crunchyroll, you will have to download the project's <a href="https://chromewebstore.google.com/detail/screen-reader-description/mheldpckofmhbfadbafiohnpgfphopjk">Chrome Extension</a> in order to watch the shows with descriptions.
             </p>
 
             <p>
-                Once you install the Chrome Extension, you can visit any of the links below. As long as the extension is installed and you are running a screen reader, the description should play immediately.
+                Once you install the <a href="https://chromewebstore.google.com/detail/screen-reader-description/mheldpckofmhbfadbafiohnpgfphopjk">Chrome Extension</a>, you can visit any of the links below. As long as the extension is installed and you are running a screen reader, the description should play immediately.
             </p>
 
             <p>
-                Not all shows have been fully described. If you are interested in more episodes, or for more shows, please reach out on GitHub or Discord.
+                Not all shows have been fully described. If you are interested in more episodes, or for more shows, please reach out on <a href="https://github.com/julianna-langston/ScreenReaderDescription">GitHub</a>.
             </p>
 
             ${entries.map(([seriesTitle, episodes]) => {
