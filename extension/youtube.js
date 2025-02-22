@@ -5,7 +5,7 @@ let trackUpdateInterval = [];
 let videoElem;
 let currentVideoId = null;
 
-const ccContainerSelector = "#player.ytd-watch-flexy";
+const ccContainerSelector = "#below";
 const videoSelector = "#content video";
 
 const init = () => {
@@ -37,13 +37,13 @@ const setup = () => {
         }
     
         currentTracks = result.scripts[0].tracks;
-        if(!videoElem.paused){
+        if(videoElem?.paused === false){
             playTracksFrom(videoElem.currentTime);
         }
     });
     ccElem = createCCElement();
     waitThenAct(ccContainerSelector, (container) => {
-        container.appendChild(ccElem);
+        container.insertBefore(ccElem, container.childNodes[0] ?? null);
         console.debug("Added cc element: ", ccElem);
     });
     waitThenAct(videoSelector, (video) => {
