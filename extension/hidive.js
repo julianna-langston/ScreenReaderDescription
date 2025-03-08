@@ -81,6 +81,12 @@ const waitThenAct = (
 };
 
 const grabData = async (id) => {
+    const storageKey = `script-hidive-info-${id}`;
+    const storedData = await checkStrictMode.storage.local.get(storageKey);
+    if(storageKey in storedData){
+        return storedData[storageKey];
+    }
+
     const serverPath = `https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main/transcripts/hidive/${id}.json`;
     console.debug("Grabbing data for:", {id, serverPath});
 
