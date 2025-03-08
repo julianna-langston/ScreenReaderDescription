@@ -12,6 +12,10 @@
         {
             "js": ["youtube.js"],
             "matches": ["https://*.youtube.com/*"]
+        },
+        {
+            "js": ["hidive.js"],
+            "matches": ["https://*.hidive.com/video/*"]
         }
     ]
 }
