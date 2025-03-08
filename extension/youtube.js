@@ -67,7 +67,7 @@ const tearDown = () => {
     currentTracks = [];
     videoElem = null;
     currentVideoId = null;
-    ccElem.remove();
+    ccElem?.remove();
     ccElem = null;
 }
 
