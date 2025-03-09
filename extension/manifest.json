@@ -3,6 +3,12 @@
     "name": "Screen Reader Description",
     "description": "Provides screen reader-based audio descriptions for select videos on various streaming sites.",
     "version": "0.3",
+    "permissions": [
+        "storage"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
     "content_scripts": [
         {
             "js": ["crunchyroll.js"],

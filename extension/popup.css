@@ -1,0 +1,16 @@
+#buttons {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    button {
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 4px;
+
+        &:disabled {
+            border-color: #444;
+        }
+    }
+}

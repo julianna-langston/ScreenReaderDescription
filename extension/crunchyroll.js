@@ -101,6 +101,12 @@ const waitThenAct = (
 };
 
 const grabData = async (id) => {
+    const storageKey = `script-crunchyroll-info-${id}`;
+    const storedData = await checkStrictMode.storage.local.get(storageKey);
+    if(storageKey in storedData){
+        return storedData[storageKey];
+    }
+
     const serverPath = `https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main/transcripts/crunchyroll/${id}.json`;
     console.debug("Grabbing data for:", {id, serverPath});
 

@@ -110,6 +110,12 @@ const waitThenAct = (
 };
 
 const grabData = async (id) => {
+    const storageKey = `script-youtube-info-${id}`;
+    const storedData = await chrome.storage.local.get(storageKey);
+    if(storageKey in storedData){
+        return storedData[storageKey];
+    }
+
     const serverPath = `https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main/transcripts/${id}.json`;
     console.debug("Grabbing data for:", {id, serverPath});
 
