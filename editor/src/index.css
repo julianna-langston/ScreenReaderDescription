@@ -1,0 +1,38 @@
+label {
+    display: block;
+}
+
+.track-display {
+    height:350px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin: 4px 0;
+    overflow-y: auto;
+}
+
+#track-editor {
+    width: 300px;
+    height: 100px;
+}
+
+#editor-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editor{
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.script-info {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    text-align: right;
+
+    input {
+        margin-left: 4px;
+    }
+}
