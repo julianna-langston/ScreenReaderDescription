@@ -17,6 +17,7 @@ const init = () => {
         if(result === null){
             return;
         }
+        killTracks();
 
         currentTracks = result.scripts[0].tracks;
 
@@ -82,7 +83,22 @@ const waitThenAct = (
 
 const grabData = async (id) => {
     const storageKey = `script-hidive-info-${id}`;
-    const storedData = await checkStrictMode.storage.local.get(storageKey);
+    
+    chrome.storage.onChanged.addListener((changes, areaName) => {
+        if(areaName === "local" && Object.keys(changes).includes(storageKey)){
+            killTracks();
+            currentTracks = changes[storageKey].newValue.scripts[0].tracks;
+    
+            if(videoElem && !videoElem.paused){
+                playTracksFrom(videoElem.currentTime);
+            }
+
+        }
+        console.log("Changed: ", changes, areaName);
+        console.log("storageKey: ", storageKey);
+    });
+
+    const storedData = await chrome.storage.local.get(storageKey);
     if(storageKey in storedData){
         return storedData[storageKey];
     }
