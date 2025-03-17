@@ -1,4 +1,4 @@
-type SupportedSourceDomains = "youtube" | "crunchyroll" | "disney";
+type SupportedSourceDomains = "youtube" | "crunchyroll" | "disney" | "hidive";
 type SupportedVideoTypes = "music video" | "television episode" | "movie" | "other"
 
 export interface ScriptInfo {
@@ -14,12 +14,12 @@ interface ScriptSource {
 }
 
 interface ScriptMetadata {
+    type: SupportedVideoTypes;
     title: string;
     creator?: string;
     seriesTitle?: string;
     season?: number;
     episode?: number;
-    type: SupportedVideoTypes;
     draft?: boolean;
     requiresExtension?: boolean;
 }
