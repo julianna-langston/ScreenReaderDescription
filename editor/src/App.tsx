@@ -156,7 +156,9 @@ function App() {
       return;
     }
 
-    setTracks(tracks.toSpliced(editingIndex, 1));
+    const newTracksValue = tracks.toSpliced(editingIndex, 1);
+    setTracks(newTracksValue);
+    localStorage.setItem("saved-tracks", JSON.stringify(newTracksValue));
     onCancel();
   };
 
@@ -165,6 +167,7 @@ function App() {
     setTrackText(tracks[index].text);
     setEditingIndex(index);
   };
+
 
   useEffect(() => {
     pullFromStorage<string>("saved-tracks", (saved) =>
@@ -243,6 +246,15 @@ function App() {
             onDragOver={(e) => e.preventDefault()}
             onDrop={(e) => {
               e.preventDefault();
+
+              if(e.dataTransfer.files){
+                  Array.from(e.dataTransfer.files).forEach(async (f) => {
+                      const text = await f.text();
+                      const json = JSON.parse(text);
+                      onUpload(json);
+                  });
+                  return;
+              }
 
               const stringJson = e.dataTransfer.getData("text/plain");
               try {
