@@ -1,38 +1,38 @@
 import { cleanup, fireEvent, render } from "@testing-library/react";
 import App from "../src/App";
 import { ScriptInfo } from "../src/types";
-import { mergeDeep } from "../src/utils";
+import { mergeDeep, LocalStorageMock } from "../src/utils";
+
+global.localStorage = new LocalStorageMock();
+
+HTMLDialogElement.prototype.show = jest.fn(function mock(
+  this: HTMLDialogElement
+) {
+  this.open = true;
+});
+
+HTMLDialogElement.prototype.showModal = jest.fn(function mock(
+  this: HTMLDialogElement
+) {
+  this.open = true;
+  this.addEventListener("blur", () => {
+      this.close();
+  });
+});
+
+HTMLDialogElement.prototype.close = jest.fn(function mock(
+  this: HTMLDialogElement
+) {
+  this.open = false;
+  this.dispatchEvent(new Event("close"));
+});
+
 
 afterEach(() => {
   cleanup();
   localStorage.clear();
 });
 
-class LocalStorageMock {
-  private store: Record<string, string>;
-  constructor() {
-    this.store = {};
-  }
-  clear() {
-    this.store = {};
-  }
-  getItem(key: string) {
-    return this.store[key] || null;
-  }
-  setItem(key: string, value: string) {
-    this.store[key] = value;
-  }
-  removeItem(key: string) {
-    delete this.store[key];
-  }
-  get length() {
-    return Object.keys(this.store).length;
-  }
-  key(index: number) {
-    return Object.keys(this.store)[index];
-  }
-}
-global.localStorage = new LocalStorageMock();
 
 it("Add a track line", () => {
   const { container, getByText } = render(<App />);
@@ -110,6 +110,7 @@ describe("Get info from localStorage", () => {
     expect(table?.querySelector("tr")?.textContent).toBe("00:03Test");
   });
 });
+it.todo("Author name");
 
 it("Edit track", () => {
   const savedTracks = JSON.stringify([
@@ -571,4 +572,24 @@ describe("Tracks are sorted", () => {
 
 it.todo("Reset");
 
-it.todo("Splicer");
+describe("Splicer", () => {
+  it("Open and close dialog", () => {
+    const { container, getByText } = render(<App />);
+
+    const dialog = container.querySelector("dialog");
+    expect(dialog).not.toBeNull();
+    expect(dialog?.open).toBeFalsy();
+    
+    const spliceBtn = getByText("Splice");
+    fireEvent.click(spliceBtn);
+    
+    expect(dialog?.open).toBeTruthy();
+    
+    fireEvent.click(getByText("Close"));
+    expect(dialog?.open).toBeFalsy();
+  });
+});
+
+it.todo("Splicer - add tracks in place");
+it.todo("Splicer - add tracks adjusted forward");
+it.todo("Splicer - add tracks adjusted backward");
