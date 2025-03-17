@@ -147,8 +147,18 @@ window.addEventListener("DOMContentLoaded", () => {
     uploadLabel.addEventListener("dragover", (e) => {
         e.preventDefault();
     });
-    uploadLabel.addEventListener("drop", (e) => {
+    uploadLabel.addEventListener("drop", async (e) => {
         e.preventDefault();
+
+        if(e.dataTransfer.files){
+            Array.from(e.dataTransfer.files).forEach(async (f) => {
+                const text = await f.text();
+                const json = JSON.parse(text);
+                await jsonProcessor(json);
+                await refreshList();
+            });
+            return;
+        }
 
         const stringJson = e.dataTransfer.getData("text/plain");
         try {
@@ -156,7 +166,7 @@ window.addEventListener("DOMContentLoaded", () => {
             console.log("Transferred: ", json);
             jsonProcessor(json).then(refreshList);
         } catch (e) {
-            console.error("Dropped object is invalid")
+            console.error("Dropped object is invalid", e)
         }
     });
 });
