@@ -88,7 +88,12 @@ const showList = (list) => {
         const td2 = document.createElement("td");
         const btn = document.createElement("button");
         btn.textContent = "Export";
+        btn.draggable = "true";
         btn.addEventListener("click", () => downloadTracks(json.source.id + ".json", JSON.stringify(json)));
+        btn.addEventListener("dragstart", (e) => {
+            e.dataTransfer.setData("text/plain", JSON.stringify(json));
+            e.dataTransfer.dropEffect = "copy";
+        });
         td2.appendChild(btn);
         tr.appendChild(td2);
 
@@ -105,9 +110,7 @@ const showList = (list) => {
         table.appendChild(tr);
     });
 };
-const jsonUploader = async (file) => {
-    const text = await file.text();
-    const json = JSON.parse(text);
+const jsonProcessor = async (json) => {
     const listKey = `script-${json.source.domain}-list`;
     const myList = (await chrome.storage.local.get(listKey))?.[listKey] ??
         [];
@@ -119,14 +122,17 @@ const jsonUploader = async (file) => {
 };
 const initializeUploadButton = () => {
     const uploadElement = document.getElementById("upload");
-    uploadElement.addEventListener("change", (e) => {
+    uploadElement.addEventListener("change", async (e) => {
         if (!(e.target instanceof HTMLInputElement))
             return;
         const file = e.target.files[0];
         if (!file) {
             return;
         }
-        void jsonUploader(file).then(refreshList);
+        const text = await file.text();
+        const json = JSON.parse(text);
+        await jsonProcessor(json);
+        await refreshList();
     });
 };
 const main = async () => {
@@ -135,3 +141,22 @@ const main = async () => {
     initializeUploadButton();
 };
 void main();
+
+window.addEventListener("DOMContentLoaded", () => {
+    const uploadLabel = document.getElementById("upload");
+    uploadLabel.addEventListener("dragover", (e) => {
+        e.preventDefault();
+    });
+    uploadLabel.addEventListener("drop", (e) => {
+        e.preventDefault();
+
+        const stringJson = e.dataTransfer.getData("text/plain");
+        try {
+            const json = JSON.parse(stringJson);
+            console.log("Transferred: ", json);
+            jsonProcessor(json).then(refreshList);
+        } catch (e) {
+            console.error("Dropped object is invalid")
+        }
+    });
+});
