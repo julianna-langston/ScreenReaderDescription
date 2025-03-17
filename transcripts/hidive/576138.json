@@ -1,15 +1,20 @@
 {
+  "source": {
+    "url": "https://www.hidive.com/video/576138?seasonId=20456",
+    "domain": "hidive",
+    "id": "576138"
+  },
   "metadata": {
-    "episode": 2,
-    "season": 1,
-    "seriesTitle": "Shirobako",
+    "type": "television episode",
     "title": "Arupin is Here!",
-    "type": "television episode"
+    "seriesTitle": "Shirobako",
+    "season": 1,
+    "episode": 2
   },
   "scripts": [
     {
-      "author": "",
       "language": "en-US",
+      "author": "",
       "tracks": [
         {
           "text": "Segawa lies face down in her apartment. A cartoon bear lies face down in a blizzard.",
@@ -22,7 +27,66 @@
           "timestamp": 24
         },
         { "text": "She holds an audition script.", "timestamp": 34 },
-        { "text": "Intro", "timestamp": 59 },
+        {
+          "text": "A hand sketches Aoi. The paper is flipped up. A red pencil adds notes. Lines marked with heights appear behind her. The Musashino workers appear, standing across the width of the page, with names.",
+          "timestamp": 59
+        },
+        {
+          "timestamp": 67,
+          "text": "Aoi gains color, then runs off the page, onto the street in front of Musashino. Ema, Misa, Midori, and Kuza follow behind her."
+        },
+        {
+          "timestamp": 74,
+          "text": "Aoi dials a corded phone. Taro photocopies and papers go flying. Erika types on a phone. Ochiai, Honda, and Watanabe stare at phones. Manager Yuka stands in a business suit. Ogasawara poses in a black gothic lolita dress. Uchida wears a hoodie and glasses. Segawa has a long brown brain and yellow shirt. "
+        },
+        {
+          "timestamp": 86,
+          "text": "A clip of Exodus is displayed on a car's window shield. It depicts a pink haired girl running in a circle."
+        },
+        {
+          "timestamp": 91,
+          "text": "The pink haired girl is replaced with a girl with short brown hair and a red bow runs. She's replaced by a girl with long black hair and a blue dress."
+        },
+        {
+          "timestamp": 97,
+          "text": "As Aoi drives, a blue car approaches. She looks at him, and Tomagaya looks back."
+        },
+        { "timestamp": 100, "text": "They race down the road." },
+        {
+          "timestamp": 103,
+          "text": "Aoi adjusts the a gear and her car spins 180 degrees while drifting across a median."
+        },
+        {
+          "timestamp": 107,
+          "text": "Aoi smiles and Tomagaya as they drive in opposite directions."
+        },
+        { "timestamp": 112, "text": "Aoi's car flies over a hill at sunrise." },
+        { "timestamp": 114, "text": "Aoi smiles and holds beer" },
+        { "timestamp": 116, "text": "Erika drinks an energy drink." },
+        { "timestamp": 118, "text": "Ema smiles and waves." },
+        {
+          "timestamp": 120,
+          "text": "Marukawa grills while other Musashino staff gather around."
+        },
+        {
+          "timestamp": 122,
+          "text": "Aoi eats a donut. Midori draws in the air. Ema wakes from her desk."
+        },
+        { "timestamp": 125, "text": "Zuka reads lines in a recording booth." },
+        {
+          "timestamp": 130,
+          "text": "Misa stands in front of a green screen wearing glowing orbs across her waist, chest, arms, and head. She swings a bat. A Motion Capture figure mimics her movements."
+        },
+        { "timestamp": 136, "text": "Aoi and Ema's pink fingers interlace." },
+        {
+          "timestamp": 140,
+          "text": "Misa, Ema, Aoi, Zuka, and Midori stand with interlocking pinkies on a roof watching the sun over the horizon."
+        },
+        {
+          "timestamp": 143,
+          "text": "Stills from the show appear on pieces of film"
+        },
+        { "timestamp": 145, "text": "Text appears, Shirobako." },
         { "text": "At the Musashino offices at night", "timestamp": 148 },
         { "text": "Aoi stares at him", "timestamp": 228 },
         { "text": "Title card", "timestamp": 234 },
@@ -131,13 +195,77 @@
         },
         { "text": "She picks up an envelope", "timestamp": 1375 },
         { "text": "and runs back to the conference room.", "timestamp": 1379 },
-        { "text": "Outro", "timestamp": 1382 }
+        {
+          "text": "Yellow rectangular lights fall across a night sky above a stylized city. The lights are glowing peg boards.",
+          "timestamp": 1382
+        },
+        {
+          "text": "Sketches of pirate goth doll and teddy bear standing in a field of grass.",
+          "timestamp": 1384
+        },
+        {
+          "text": "A sketch depicts them from below, underneath a cloudy sky. Another depicts from the side, with mountains in the background.",
+          "timestamp": 1386
+        },
+        {
+          "text": "Another depicts them sitting on either side of a drawing desk.",
+          "timestamp": 1389
+        },
+        { "text": "The sketches gain color.", "timestamp": 1392 },
+        { "text": "The doll and bear slowly stand", "timestamp": 1413 },
+        {
+          "text": "They raise then lower their right hands.",
+          "timestamp": 1418
+        },
+        { "text": "They raise and lower both hands.", "timestamp": 1421 },
+        {
+          "text": "They turn to the side and raise their hands as is dancing",
+          "timestamp": 1425
+        },
+        { "text": "They face each other and bow.", "timestamp": 1428 },
+        {
+          "text": "They face us and jump, raising their hands and feet wide",
+          "timestamp": 1431
+        },
+        {
+          "text": "They lean to the left then right, punching the air.",
+          "timestamp": 1435
+        },
+        {
+          "text": "They put their hands on their hips and skip across the table.",
+          "timestamp": 1438
+        },
+        {
+          "text": "The doll shakes her head and wags a finger.",
+          "timestamp": 1442
+        },
+        { "text": "The bear holds his face and blushes.", "timestamp": 1444 },
+        {
+          "text": "The bear taps his foot and claps. The doll sways back and forth and blows a kiss.",
+          "timestamp": 1446
+        },
+        {
+          "text": "He leans to the side and holds a hand to his ear. She arcs her hand out from one side to the other.",
+          "timestamp": 1450
+        },
+        {
+          "text": "He turns away and shakes his butt. He turns to the side and mimes skating. ",
+          "timestamp": 1454
+        },
+        {
+          "text": "She lifts her hands over head then lowers them to her sides.",
+          "timestamp": 1458
+        },
+        { "text": "She clasps her hands together,", "timestamp": 1462 },
+        {
+          "text": "He holds a pink envelope with a red heart.",
+          "timestamp": 1464
+        },
+        {
+          "text": "He holds out the envelope. She turns away and puts her hands on her hips. He faceplants forward.",
+          "timestamp": 1467
+        }
       ]
     }
-  ],
-  "source": {
-    "domain": "hidive",
-    "id": "576138",
-    "url": "https://www.hidive.com/video/576138?seasonId=20456"
-  }
+  ]
 }
