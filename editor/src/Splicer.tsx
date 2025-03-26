@@ -45,15 +45,28 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
           const json = JSON.parse(text) as ScriptInfo;
           setTracks(json.scripts[0].tracks);
         }}
+        onDragOver={(e) => e.preventDefault()}
+        onDrop={async (e) => {
+          if(e.dataTransfer.files){
+            const text = await e.dataTransfer.files[0].text();
+            const json = JSON.parse(text);
+            setTracks(json.scripts[0].tracks);
+            return;
+          }
+
+          const stringJson = e.dataTransfer.getData("text/plain");
+          const json = JSON.parse(stringJson);
+          setTracks(json.scripts[0].tracks);
+        }}
       />
       
       <fieldset>
         <label>
-            <input type="radio" checked={shouldAdjustTimestamp} onChange={() => setShouldAdjustTimestamp(false)} />
+            <input type="radio" value="adjust" checked={shouldAdjustTimestamp} onChange={() => setShouldAdjustTimestamp(true)} />
             Adjust timestamp to start at {timestamp}
         </label>
         <label>
-            <input type="radio" checked={!shouldAdjustTimestamp} onChange={() => setShouldAdjustTimestamp(true)} />
+            <input type="radio" value="preserve" checked={!shouldAdjustTimestamp} onChange={() => setShouldAdjustTimestamp(false)} />
             Preserve timestamps
         </label>
       </fieldset>
@@ -73,9 +86,9 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
                 <td>
                   <input type="checkbox" checked={selected.includes(index)} onChange={() => {
                     if(selected.includes(index)){
-                        setSelected(selected.toSpliced(selected.indexOf(index), 1));
+                      setSelected(selected.toSpliced(selected.indexOf(index), 1));
                     }else{
-                        setSelected(selected.concat([index]));
+                      setSelected(selected.concat([index]));
                     }
                   }} />
                 </td>
