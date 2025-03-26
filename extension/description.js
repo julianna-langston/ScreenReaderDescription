@@ -150,7 +150,7 @@ window.addEventListener("DOMContentLoaded", () => {
     uploadLabel.addEventListener("drop", async (e) => {
         e.preventDefault();
 
-        if(e.dataTransfer.files){
+        if(e.dataTransfer.files.length > 0){
             Array.from(e.dataTransfer.files).forEach(async (f) => {
                 const text = await f.text();
                 const json = JSON.parse(text);
