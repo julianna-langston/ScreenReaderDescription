@@ -8,6 +8,10 @@ label {
     border-radius: 4px;
     margin: 4px 0;
     overflow-y: auto;
+
+    td {
+        vertical-align: top;
+    }
 }
 
 #track-editor {
