@@ -218,6 +218,7 @@ function App() {
             marginTop: "4px",
           }}
         >
+          <span>{tracks.length}</span>
           <button
             onClick={() => {
               if (confirm("Are you sure?")) {
