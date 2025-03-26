@@ -43,22 +43,29 @@ export const exportContent = (filename: string, text: string) => {
   document.body.removeChild(element);
 }
 
+const matcher: Partial<Record<ScriptSource["domain"], RegExp>> = {
+  hidive: /^https:\/\/www.hidive.com\/video\/(\d+)/,
+  youtube: /^https:\/\/www.youtube.com\/watch\?v=([\w\d\-]+)/,
+  crunchyroll: /^https:\/\/www.crunchyroll.com\/watch\/([\w\d]+)\//,
+}
 
 export const convertUrlToSource = (url: string): ScriptSource => {
-  const hidiveMatcher = url.match(/^https:\/\/www.hidive.com\/video\/(\d+)/);
-  if(hidiveMatcher !== null){
-    return {
-      url,
-      id: hidiveMatcher[1],
-      domain: "hidive"
+  const domains = Object.keys(matcher) as ScriptSource["domain"][];
+  for(let i = 0; i<domains.length; i++){
+    const domain = domains[i];
+    const match = matcher[domain];
+    if(!match){
+      continue;
     }
-  }
-  const youtubeMatcher = url.match(/^https:\/\/www.youtube.com\/watch\?v=([\w\d\-]+)/)
-  if(youtubeMatcher !== null){
+    const tester = url.match(match);
+    if(tester === null){
+      continue;
+    }
+
     return {
       url,
-      id: youtubeMatcher[1],
-      domain: "youtube"
+      id: tester[1],
+      domain
     }
   }
 

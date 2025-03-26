@@ -588,8 +588,93 @@ describe("Splicer", () => {
     fireEvent.click(getByText("Close"));
     expect(dialog?.open).toBeFalsy();
   });
+  it.todo("You can open Splicer again after clicking 'Close'")
+  it.todo("You can open Splicer again after ESCing out")
+  it("Dropping data causes table to update", () => {
+    const {container, getByText} = render(<App />);
+    fireEvent.click(getByText("Splice"));
+    const dialog = container.querySelector("dialog");
+
+    expect(dialog?.querySelectorAll("tbody tr")).toHaveLength(0);
+
+    const fileInput = dialog?.querySelector("input[type='file']") as HTMLInputElement;
+    fireEvent.drop(fileInput, {
+      dataTransfer: {
+        getData: () => JSON.stringify({
+            ...defaultExport,
+            scripts: [{
+              ...defaultExport.scripts[0],
+              tracks: [
+                {
+                  timestamp: 3,
+                  text: "Test"
+                }
+              ]
+            }]
+          })
+      }
+    })
+
+    expect(dialog?.querySelectorAll("tbody tr")).toHaveLength(1);
+  });
+  it("Add track in place to empty tracks", () => {
+    const {container, getByText} = render(<App />);
+
+    const dialog = container.querySelector("dialog");
+    const tableElem = container.querySelector("table");
+    expect(tableElem?.querySelectorAll("tbody tr")).toHaveLength(0);
+
+    fireEvent.click(getByText("Splice"));
+
+    // Import data
+    const fileInput = dialog?.querySelector("input[type='file']") as HTMLInputElement;
+    fireEvent.drop(fileInput, {
+      dataTransfer: {
+        getData: () => JSON.stringify({
+            ...defaultExport,
+            scripts: [{
+              ...defaultExport.scripts[0],
+              tracks: [
+                {
+                  timestamp: 3,
+                  text: "Test"
+                }
+              ]
+            }]
+          })
+      }
+    })
+
+    expect(dialog?.querySelector("input[type='radio']:checked")).toHaveProperty("value", "adjust")
+    fireEvent.click(dialog?.querySelector("input[type='radio'][value='preserve']") as HTMLInputElement)
+    expect(dialog?.querySelector("input[type='radio']:checked")).toHaveProperty("value", "preserve")
+
+    expect(dialog?.querySelectorAll("input[type='checkbox']")).toHaveLength(1)
+    // 0 checkboxes are checked
+    expect(dialog?.querySelectorAll("input[type='checkbox']:checked")).toHaveLength(0)
+
+    // Check first checkbox
+    const checkbox = dialog?.querySelector("input[type='checkbox']") as HTMLInputElement;
+    expect(checkbox).toHaveProperty("checked", false);
+    fireEvent.click(checkbox);
+    expect(checkbox).toHaveProperty("checked", true);
+
+    // 1 checkboxes are checked
+    expect(dialog?.querySelectorAll("input[type='checkbox']:checked")).toHaveLength(1)
+
+    fireEvent.click(getByText("Splice in 1 tracks"));
+
+    expect(dialog?.open).toBeFalsy();
+
+    expect(tableElem?.querySelectorAll("tbody tr")).toHaveLength(1);
+    expect(tableElem?.querySelector("tbody tr")?.textContent).toBe("00:03Test");
+  });
+  
+  it.todo("add 1 track that needs to adjust forward");
+  it.todo("add 1 track that needs to adjust backwards");
+  it.todo("add several tracks that need to adjust");
 });
 
-it.todo("Splicer - add tracks in place");
-it.todo("Splicer - add tracks adjusted forward");
-it.todo("Splicer - add tracks adjusted backward");
+it.todo("Test matching hidive, youtube, crunchyroll, disney+")
+
+it.todo("Enter timestamp 11:23.6 -- displayed timestamp shows max out precision");
