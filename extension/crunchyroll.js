@@ -102,7 +102,7 @@ const waitThenAct = (
 
 const grabData = async (id) => {
     const storageKey = `script-crunchyroll-info-${id}`;
-    const storedData = await checkStrictMode.storage.local.get(storageKey);
+    const storedData = await chrome.storage.local.get(storageKey);
     if(storageKey in storedData){
         return storedData[storageKey];
     }
