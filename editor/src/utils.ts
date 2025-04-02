@@ -14,9 +14,9 @@ const padNumbers = (num: number) => {
 };
 
 export const displayTimestamp = (num: number) => {
-  const seconds = num % 60;
+  const seconds = (num % 60);
   const minutes = Math.floor(num / 60);
-  return `${padNumbers(minutes)}:${padNumbers(seconds)}`;
+  return `${padNumbers(minutes)}:${padNumbers(seconds)}`.match(/(\d{2}:\d{2}\.?[1-9]*)/)?.[1] ?? "00:00";
 };
 
 export const validDomains = {

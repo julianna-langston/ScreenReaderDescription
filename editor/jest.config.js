@@ -5,5 +5,5 @@ export default {
   transform: {
     "^.+\.tsx?$": ["ts-jest",{}],
   },
-  testRegex: ["/test/.*\.tsx$"]
+  testRegex: ["/test/.*\.tsx?$"]
 };
