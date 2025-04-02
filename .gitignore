@@ -133,3 +133,5 @@ dist
 ScriptData.json
 public/listing.html
 public/crunchyroll.html
+public/editor.html
+public/assets/*
