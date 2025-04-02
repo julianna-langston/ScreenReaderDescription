@@ -39,7 +39,6 @@ function App() {
   const [showSplicer, setShowSplicer] = useState(false);
 
   const [authorName, setAuthorName] = useState("");
-  const [language, setLanguage] = useState("en-US");
   const [tracks, setTracks] = useState<Array<ScriptTrack>>([]);
   const [trackTimestamp, setTrackTimestamp] = useState("00:00");
   const [trackText, setTrackText] = useState("");
@@ -70,7 +69,6 @@ function App() {
 
   const onUpload = (json: ScriptInfo) => {
     setAuthorName(json.scripts[0].author);
-    setLanguage(json.scripts[0].language);
     setTracks(json.scripts[0].tracks);
     localStorage.setItem(
       "saved-tracks",
@@ -183,6 +181,7 @@ function App() {
     );
     pullFromStorage<string>("saved-season", (saved) => setSeason(+saved));
     pullFromStorage<string>("saved-episode", (saved) => setEpisode(+saved));
+    pullFromStorage<string>("saved-author", (saved) => setAuthorName(saved));
   }, []);
 
   return (
@@ -193,9 +192,13 @@ function App() {
         <label>
           Author name:
           <input
+            id="author-name"
             type="text"
             value={authorName}
-            onChange={(e) => setAuthorName(e.target.value)}
+            onChange={(e) => {
+              localStorage.setItem("saved-author", e.target.value);
+              setAuthorName(e.target.value)}
+            }
           />
         </label>
 
@@ -203,8 +206,7 @@ function App() {
           Script language:
           <input
             type="text"
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
+            value={"en-US"}
             readOnly
           />
         </label>
@@ -269,6 +271,7 @@ function App() {
             Upload
           </button>
           <button
+            id="export"
             draggable
             onDragStart={(e) => {
               e.dataTransfer.setData("text/plain", JSON.stringify(onExport()));

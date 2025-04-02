@@ -5,78 +5,309 @@ import { mergeDeep, LocalStorageMock } from "../src/utils";
 
 global.localStorage = new LocalStorageMock();
 
-HTMLDialogElement.prototype.show = jest.fn(function mock(
-  this: HTMLDialogElement
-) {
-  this.open = true;
-});
-
-HTMLDialogElement.prototype.showModal = jest.fn(function mock(
-  this: HTMLDialogElement
-) {
-  this.open = true;
-  this.addEventListener("blur", () => {
-      this.close();
+beforeAll(() => {
+  HTMLDialogElement.prototype.show = jest.fn(function mock(
+    this: HTMLDialogElement
+  ) {
+    this.open = true;
   });
-});
+  
+  HTMLDialogElement.prototype.showModal = jest.fn(function mock(
+    this: HTMLDialogElement
+  ) {
+    this.open = true;
+    this.addEventListener("blur", () => {
+        this.close();
+    });
+  });
+  
+  HTMLDialogElement.prototype.close = jest.fn(function mock(
+    this: HTMLDialogElement
+  ) {
+    this.open = false;
+    this.dispatchEvent(new Event("close"));
+  });
 
-HTMLDialogElement.prototype.close = jest.fn(function mock(
-  this: HTMLDialogElement
-) {
-  this.open = false;
-  this.dispatchEvent(new Event("close"));
+  global.confirm = () => true;
 });
-
 
 afterEach(() => {
   cleanup();
   localStorage.clear();
 });
 
-
-it("Add a track line", () => {
-  const { container, getByText } = render(<App />);
-
-  const table = container.querySelector("tbody");
-
-  expect(table?.querySelectorAll("tr")).toHaveLength(0);
-  expect(localStorage.getItem("saved-tracks")).toBeNull();
-
-  const timestampElem = container.querySelector("#track-timestamp")!;
-  const textElem = container.querySelector("#track-text")!;
-  const submitButtonElem = getByText("Submit") as HTMLButtonElement;
-
-  fireEvent.change(timestampElem, {
-    target: {
-      value: "00:03",
-    },
-  });
-  fireEvent.change(textElem, {
-    target: {
-      value: "test",
+const doExportJson = (container: HTMLElement) => {
+  const exportButton = container.querySelector("#export") as HTMLButtonElement;
+  const onDragStartMock = jest.fn<unknown, string[], string>(() => {});
+  fireEvent.dragStart(exportButton, {
+    dataTransfer: {
+      setData: onDragStartMock,
+      dropEffect: "",
     },
   });
 
-  fireEvent.click(submitButtonElem);
+  expect(onDragStartMock.mock.calls).toHaveLength(1);
+  const [receivedDataType, receivedJsonString] = onDragStartMock.mock.calls[0];
+  expect(receivedDataType).toBe("text/plain");
 
-  expect(table?.querySelectorAll("tr")).toHaveLength(1);
-  expect(table?.querySelector("tr:first-child td")?.textContent).toBe("00:03");
-  expect(
-    table?.querySelector("tr:first-child td:last-child")?.textContent
-  ).toBe("test");
+  const json: ScriptInfo = JSON.parse(receivedJsonString);
 
-  expect(timestampElem).toHaveProperty("value", "00:03");
-  expect(textElem).toHaveProperty("value", "");
-  expect(localStorage.getItem("saved-tracks")).toBe(
-    JSON.stringify([
+  return json;
+}
+
+describe("Track CRUD", () => {
+  it("Add a track line", () => {
+    const { container, getByText } = render(<App />);
+  
+    const table = container.querySelector("tbody");
+  
+    expect(table?.querySelectorAll("tr")).toHaveLength(0);
+    expect(localStorage.getItem("saved-tracks")).toBeNull();
+  
+    const timestampElem = container.querySelector("#track-timestamp")!;
+    const textElem = container.querySelector("#track-text")!;
+    const submitButtonElem = getByText("Submit") as HTMLButtonElement;
+  
+    fireEvent.change(timestampElem, {
+      target: {
+        value: "00:03",
+      },
+    });
+    fireEvent.change(textElem, {
+      target: {
+        value: "test",
+      },
+    });
+  
+    fireEvent.click(submitButtonElem);
+  
+    // Confirm element updated after change event
+    expect(timestampElem).toHaveProperty("value", "00:03");
+    expect(textElem).toHaveProperty("value", "");
+
+    // Confirm table displays updates
+    expect(table?.querySelectorAll("tr")).toHaveLength(1);
+    expect(table?.querySelector("tr:first-child td")?.textContent).toBe("00:03");
+    expect(
+      table?.querySelector("tr:first-child td:last-child")?.textContent
+    ).toBe("test");
+  
+    // Confirm updates saved to local storage
+    expect(localStorage.getItem("saved-tracks")).toBe(
+      JSON.stringify([
+        {
+          text: "test",
+          timestamp: 3,
+        },
+      ])
+    );
+
+    // Confirm updates reflected in exports
+    const json = doExportJson(container);4
+    expect(json.scripts[0].tracks).toEqual([{
+      text: "test",
+      timestamp: 3
+    }])
+  });
+
+  it("Edit track", () => {
+    const savedTracks = JSON.stringify([
       {
-        text: "test",
         timestamp: 3,
+        text: "Test",
+      },
+    ]);
+    localStorage.setItem("saved-tracks", savedTracks);
+    const { container, getByText } = render(<App />);
+  
+    const timestampElem: HTMLInputElement =
+      container.querySelector("#track-timestamp")!;
+    const textElem: HTMLInputElement = container.querySelector("#track-text")!;
+    const submitButtonElem = getByText("Submit")! as HTMLButtonElement;
+  
+    const table = container.querySelector("tbody")!;
+    expect(table.querySelectorAll("tr")).toHaveLength(1);
+    expect(table.querySelectorAll("tr")[0].textContent).toBe("00:03Test");
+  
+    // Confirm that the text and timestamp are empty
+    expect(timestampElem.value).toBe("00:00");
+    expect(textElem.value).toBe("");
+  
+    // Click the first timestamp
+    const timestampButton = table?.querySelector("tr button")!;
+    fireEvent.click(timestampButton);
+  
+    // Info should've updated
+    expect(timestampElem.value).toBe("00:03");
+    expect(textElem.value).toBe("Test");
+  
+    // Change values
+    fireEvent.change(timestampElem, {
+      target: {
+        value: "00:04",
+      },
+    });
+    expect(timestampElem.value).toBe("00:04");
+    fireEvent.change(textElem, {
+      target: {
+        value: "My Test",
+      },
+    });
+    expect(textElem.value).toBe("My Test");
+    fireEvent.click(submitButtonElem);
+  
+    // Confirm updates
+    expect(timestampElem.value).toBe("00:04");
+    expect(textElem.value).toBe("");
+    expect(table.querySelectorAll("tr")).toHaveLength(1);
+    expect(table.querySelectorAll("tr")[0].textContent).toBe("00:04My Test");
+    expect(localStorage.getItem("saved-tracks")).toBe(
+      JSON.stringify([
+        {
+          text: "My Test",
+          timestamp: 4,
+        },
+      ])
+    );
+
+    const json = doExportJson(container);
+    expect(json.scripts[0].tracks).toEqual([
+      {
+        text: "My Test",
+        timestamp: 4,
       },
     ])
-  );
-});
+  });
+  it("Delete track", () => {
+    const savedTracks = JSON.stringify([
+      {
+        timestamp: 3,
+        text: "Test",
+      },
+    ]);
+    localStorage.setItem("saved-tracks", savedTracks);
+    const { container, queryByText } = render(<App />);
+  
+    const timestampElem: HTMLInputElement =
+      container.querySelector("#track-timestamp")!;
+    const textElem: HTMLInputElement = container.querySelector("#track-text")!;
+    const table = container.querySelector("tbody");
+    expect(table?.querySelectorAll("tr")).toHaveLength(1);
+  
+    // Confirm that the text and timestamp are empty
+    expect(timestampElem.value).toBe("00:00");
+    expect(textElem.value).toBe("");
+    expect(queryByText("Delete")).toBeNull();
+  
+    // Click the first timestamp
+    const timestampButton = table?.querySelector("tr button")!;
+    fireEvent.click(timestampButton);
+  
+    // Info should've updated
+    expect(timestampElem.value).toBe("00:03");
+    expect(textElem.value).toBe("Test");
+    expect(queryByText("Delete")).not.toBeNull();
+  
+    // Click Delete button
+    fireEvent.click(queryByText("Delete")!);
+  
+    expect(table?.querySelectorAll("tr")).toHaveLength(0);
+    expect(localStorage.getItem("saved-tracks")).toBe("[]");
+    
+    const json = doExportJson(container);
+    expect(json.scripts[0].tracks).toEqual([])
+  });
+  it("Cancel edit track", () => {
+    const savedTracks = JSON.stringify([
+      {
+        timestamp: 3,
+        text: "Test",
+      },
+    ]);
+    localStorage.setItem("saved-tracks", savedTracks);
+    const { container, queryByText } = render(<App />);
+  
+    const timestampElem: HTMLInputElement =
+      container.querySelector("#track-timestamp")!;
+    const textElem: HTMLInputElement = container.querySelector("#track-text")!;
+  
+    const table = container.querySelector("tbody")!;
+    expect(table.querySelectorAll("tr")).toHaveLength(1);
+    expect(table.querySelectorAll("tr")[0].textContent).toBe("00:03Test");
+  
+    // Confirm that the text and timestamp are empty
+    expect(timestampElem.value).toBe("00:00");
+    expect(textElem.value).toBe("");
+  
+    expect(queryByText("Cancel")).toBeNull();
+  
+    // Click the first timestamp
+    const timestampButton = table?.querySelector("tr button")!;
+    fireEvent.click(timestampButton);
+  
+    // Info should've updated
+    expect(timestampElem.value).toBe("00:03");
+    expect(textElem.value).toBe("Test");
+  
+    // Change values
+    fireEvent.change(timestampElem, {
+      target: {
+        value: "00:04",
+      },
+    });
+    expect(timestampElem.value).toBe("00:04");
+    fireEvent.change(textElem, {
+      target: {
+        value: "My Test",
+      },
+    });
+    expect(textElem.value).toBe("My Test");
+  
+    expect(queryByText("Cancel")).not.toBeNull();
+    fireEvent.click(queryByText("Cancel")!);
+  
+    // Confirm updates
+    expect(timestampElem.value).toBe("00:04");
+    expect(textElem.value).toBe("");
+    expect(table.querySelectorAll("tr")).toHaveLength(1);
+    expect(table.querySelectorAll("tr")[0].textContent).toBe("00:03Test");
+  });
 
+  
+  it("Timestamp 11:23.6", () => {
+    const { container, getByText } = render(<App />);
+  
+    const table = container.querySelector("tbody");
+  
+    expect(table?.querySelectorAll("tr")).toHaveLength(0);
+    expect(localStorage.getItem("saved-tracks")).toBeNull();
+  
+    const timestampElem = container.querySelector("#track-timestamp")!;
+    const textElem = container.querySelector("#track-text")!;
+    const submitButtonElem = getByText("Submit") as HTMLButtonElement;
+  
+    fireEvent.change(timestampElem, {
+      target: {
+        value: "11:23.6",
+      },
+    });
+    fireEvent.change(textElem, {
+      target: {
+        value: "test",
+      },
+    });
+  
+    fireEvent.click(submitButtonElem);
+  
+    // Confirm element updated after change event
+    expect(timestampElem).toHaveProperty("value", "11:23.6");
+
+    // Confirm table displays updates
+    expect(table?.querySelectorAll("tr")).toHaveLength(1);
+    expect(table?.querySelector("tr:first-child td")?.textContent).toBe("11:23.6");
+  });
+
+})
 describe("Get info from localStorage", () => {
   it.each([
     [
@@ -109,10 +340,17 @@ describe("Get info from localStorage", () => {
     expect(table?.querySelectorAll("tr")).toHaveLength(1);
     expect(table?.querySelector("tr")?.textContent).toBe("00:03Test");
   });
+  it("Author name", () => {
+    localStorage.setItem("saved-author", "Jane Doe");
+    const { container } = render(<App />);
+  
+    expect(localStorage.getItem("saved-author")).toBe("Jane Doe");
+  
+    const authorNameElem = container.querySelector("#author-name") as HTMLInputElement;
+    expect(authorNameElem).toHaveProperty("value", "Jane Doe");
+  });
 });
-it.todo("Author name");
-
-it("Edit track", () => {
+it("Edit author name", () => {
   const savedTracks = JSON.stringify([
     {
       timestamp: 3,
@@ -120,148 +358,22 @@ it("Edit track", () => {
     },
   ]);
   localStorage.setItem("saved-tracks", savedTracks);
-  const { container, getByText } = render(<App />);
+  const { container } = render(<App />);
 
-  const timestampElem: HTMLInputElement =
-    container.querySelector("#track-timestamp")!;
-  const textElem: HTMLInputElement = container.querySelector("#track-text")!;
-  const submitButtonElem = getByText("Submit")! as HTMLButtonElement;
+  expect(localStorage.getItem("saved-author")).toBeNull();
 
-  const table = container.querySelector("tbody")!;
-  expect(table.querySelectorAll("tr")).toHaveLength(1);
-  expect(table.querySelectorAll("tr")[0].textContent).toBe("00:03Test");
-
-  // Confirm that the text and timestamp are empty
-  expect(timestampElem.value).toBe("00:00");
-  expect(textElem.value).toBe("");
-
-  // Click the first timestamp
-  const timestampButton = table?.querySelector("tr button")!;
-  fireEvent.click(timestampButton);
-
-  // Info should've updated
-  expect(timestampElem.value).toBe("00:03");
-  expect(textElem.value).toBe("Test");
-
-  // Change values
-  fireEvent.change(timestampElem, {
+  const authorNameElem = container.querySelector("#author-name") as HTMLInputElement;
+  fireEvent.change(authorNameElem, {
     target: {
-      value: "00:04",
-    },
+      value: "John Doe"
+    }
   });
-  expect(timestampElem.value).toBe("00:04");
-  fireEvent.change(textElem, {
-    target: {
-      value: "My Test",
-    },
-  });
-  expect(textElem.value).toBe("My Test");
-  fireEvent.click(submitButtonElem);
 
-  // Confirm updates
-  expect(timestampElem.value).toBe("00:04");
-  expect(textElem.value).toBe("");
-  expect(table.querySelectorAll("tr")).toHaveLength(1);
-  expect(table.querySelectorAll("tr")[0].textContent).toBe("00:04My Test");
-  expect(localStorage.getItem("saved-tracks")).toBe(
-    JSON.stringify([
-      {
-        text: "My Test",
-        timestamp: 4,
-      },
-    ])
-  );
-});
-it("Delete track", () => {
-  const savedTracks = JSON.stringify([
-    {
-      timestamp: 3,
-      text: "Test",
-    },
-  ]);
-  localStorage.setItem("saved-tracks", savedTracks);
-  const { container, queryByText } = render(<App />);
+  expect(authorNameElem).toHaveProperty("value", "John Doe");
+  expect(localStorage.getItem("saved-author")).toBe("John Doe");
 
-  const timestampElem: HTMLInputElement =
-    container.querySelector("#track-timestamp")!;
-  const textElem: HTMLInputElement = container.querySelector("#track-text")!;
-  const table = container.querySelector("tbody");
-  expect(table?.querySelectorAll("tr")).toHaveLength(1);
-
-  // Confirm that the text and timestamp are empty
-  expect(timestampElem.value).toBe("00:00");
-  expect(textElem.value).toBe("");
-  expect(queryByText("Delete")).toBeNull();
-
-  // Click the first timestamp
-  const timestampButton = table?.querySelector("tr button")!;
-  fireEvent.click(timestampButton);
-
-  // Info should've updated
-  expect(timestampElem.value).toBe("00:03");
-  expect(textElem.value).toBe("Test");
-  expect(queryByText("Delete")).not.toBeNull();
-
-  // Click Delete button
-  fireEvent.click(queryByText("Delete")!);
-
-  expect(table?.querySelectorAll("tr")).toHaveLength(0);
-  expect(localStorage.getItem("saved-tracks")).toBe("[]");
-});
-it("Cancel edit track", () => {
-  const savedTracks = JSON.stringify([
-    {
-      timestamp: 3,
-      text: "Test",
-    },
-  ]);
-  localStorage.setItem("saved-tracks", savedTracks);
-  const { container, queryByText } = render(<App />);
-
-  const timestampElem: HTMLInputElement =
-    container.querySelector("#track-timestamp")!;
-  const textElem: HTMLInputElement = container.querySelector("#track-text")!;
-
-  const table = container.querySelector("tbody")!;
-  expect(table.querySelectorAll("tr")).toHaveLength(1);
-  expect(table.querySelectorAll("tr")[0].textContent).toBe("00:03Test");
-
-  // Confirm that the text and timestamp are empty
-  expect(timestampElem.value).toBe("00:00");
-  expect(textElem.value).toBe("");
-
-  expect(queryByText("Cancel")).toBeNull();
-
-  // Click the first timestamp
-  const timestampButton = table?.querySelector("tr button")!;
-  fireEvent.click(timestampButton);
-
-  // Info should've updated
-  expect(timestampElem.value).toBe("00:03");
-  expect(textElem.value).toBe("Test");
-
-  // Change values
-  fireEvent.change(timestampElem, {
-    target: {
-      value: "00:04",
-    },
-  });
-  expect(timestampElem.value).toBe("00:04");
-  fireEvent.change(textElem, {
-    target: {
-      value: "My Test",
-    },
-  });
-  expect(textElem.value).toBe("My Test");
-
-  expect(queryByText("Cancel")).not.toBeNull();
-  fireEvent.click(queryByText("Cancel")!);
-
-  // Confirm updates
-  expect(timestampElem.value).toBe("00:04");
-  expect(textElem.value).toBe("");
-  expect(table.querySelectorAll("tr")).toHaveLength(1);
-  expect(table.querySelectorAll("tr")[0].textContent).toBe("00:03Test");
+  const json = doExportJson(container);
+  expect(json.scripts[0].author).toEqual("John Doe");
 });
 
 it("Test drag effect", () => {
@@ -301,21 +413,9 @@ it("Test drag effect", () => {
   localStorage.setItem("saved-seriesTitle", expectedJson.metadata.seriesTitle);
   localStorage.setItem("saved-season", String(expectedJson.metadata.season));
   localStorage.setItem("saved-episode", String(expectedJson.metadata.episode));
-  const { getByText } = render(<App />);
+  const { container } = render(<App />);
 
-  const onDragStartMock = jest.fn<unknown, string[], string>(() => {});
-  const exportButton = getByText("Export");
-  fireEvent.dragStart(exportButton, {
-    dataTransfer: {
-      setData: onDragStartMock,
-      dropEffect: "",
-    },
-  });
-
-  expect(onDragStartMock.mock.calls).toHaveLength(1);
-  const [receivedDataType, receivedJsonString] = onDragStartMock.mock.calls[0];
-  expect(receivedDataType).toBe("text/plain");
-  const json: ScriptInfo = JSON.parse(receivedJsonString);
+  const json = doExportJson(container);
   expect(json).toEqual(expectedJson);
 });
 
@@ -504,7 +604,6 @@ describe("Test editing metadata", () => {
 
 it.todo("Upload button - drop");
 it.todo("Upload button - upload file");
-it.todo("Downloading with Export button");
 
 describe("Tracks are sorted", () => {
   it("Adding track in middle", () => {
@@ -570,7 +669,87 @@ describe("Tracks are sorted", () => {
   it.todo("Editing track's timestamp to move its index");
 });
 
-it.todo("Reset");
+it("Reset", () => {
+  const expectedJson = {
+    source: {
+      url: "https://www.hidive.com/video/576138?seasonId=20456",
+      domain: "hidive",
+      id: "576138",
+    },
+    metadata: {
+      type: "television episode",
+      title: "Aurpin is Here!",
+      seriesTitle: "Shirobako",
+      season: 1,
+      episode: 2,
+    },
+    scripts: [
+      {
+        language: "en-US",
+        author: "",
+        tracks: [
+          {
+            timestamp: 3,
+            text: "Test",
+          },
+        ],
+      },
+    ],
+  };
+  localStorage.setItem(
+    "saved-tracks",
+    JSON.stringify(expectedJson.scripts[0].tracks)
+  );
+  localStorage.setItem("saved-url", expectedJson.source.url);
+  localStorage.setItem("saved-type", expectedJson.metadata.type);
+  localStorage.setItem("saved-title", expectedJson.metadata.title);
+  localStorage.setItem("saved-seriesTitle", expectedJson.metadata.seriesTitle);
+  localStorage.setItem("saved-season", String(expectedJson.metadata.season));
+  localStorage.setItem("saved-episode", String(expectedJson.metadata.episode));
+  const { container, getByText, getByLabelText } = render(<App />);
+
+  // Expect display content from loaded values
+  expect(getByLabelText("Type")).toHaveProperty("value", expectedJson.metadata.type);
+  expect(getByLabelText("URL")).toHaveProperty("value", expectedJson.source.url);
+  expect(getByLabelText("Title")).toHaveProperty("value", expectedJson.metadata.title);
+  expect(getByLabelText("Series Title")).toHaveProperty("value", expectedJson.metadata.seriesTitle);
+  expect(getByLabelText("Season")).toHaveProperty("value", String(expectedJson.metadata.season));
+  expect(getByLabelText("Episode")).toHaveProperty("value", String(expectedJson.metadata.episode));
+  
+  // Expect exported content
+  expect(doExportJson(container)).toEqual(expectedJson);
+  
+  // Click reset button
+  fireEvent.click(getByText("Reset"));
+  
+  // Expect display content from reset values
+  expect(getByLabelText("Type")).toHaveProperty("value", expectedJson.metadata.type);
+  expect(getByLabelText("URL")).toHaveProperty("value", "");
+  expect(getByLabelText("Title")).toHaveProperty("value", "");
+  expect(getByLabelText("Series Title")).toHaveProperty("value", "");
+  expect(getByLabelText("Season")).toHaveProperty("value", "0");
+  expect(getByLabelText("Episode")).toHaveProperty("value", "0");
+  
+  // Expect exported content
+  expect(doExportJson(container)).toEqual({
+    ...defaultExport,
+    metadata: {
+      episode: 0,
+      season: 0,
+      seriesTitle: "",
+      title: "",
+      type: "television episode"
+    }
+  });
+
+  // Expect saved value
+  expect(localStorage.getItem("saved-type")).not.toBeNull();
+  expect(localStorage.getItem("saved-url")).toBeNull();
+  expect(localStorage.getItem("saved-title")).toBeNull();
+  expect(localStorage.getItem("saved-seriesTitle")).toBeNull();
+  expect(localStorage.getItem("saved-season")).toBeNull();
+  expect(localStorage.getItem("saved-episode")).toBeNull();
+});
 
 describe("Splicer", () => {
   it("Open and close dialog", () => {
@@ -674,7 +853,3 @@ describe("Splicer", () => {
   it.todo("add 1 track that needs to adjust backwards");
   it.todo("add several tracks that need to adjust");
 });
-
-it.todo("Test matching hidive, youtube, crunchyroll, disney+")
-
-it.todo("Enter timestamp 11:23.6 -- displayed timestamp shows max out precision");
