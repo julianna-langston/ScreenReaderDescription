@@ -2,6 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import { convertTimestampToNumber, displayTimestamp } from "./utils";
 import { ScriptInfo } from "./types";
 
+const getAnscestorOfType = (elem: Node | null, type: string): Node | null => {
+  if(elem === null){
+    return null;
+  }
+  if(elem.nodeName === type){
+    return elem;
+  }
+  return getAnscestorOfType(elem.parentElement, type);
+}
+
+function array_unique<T>(arr: T[]){
+  return [...new Set(arr)];
+}
+
 interface ScriptTrack {
   timestamp: number;
   text: string;
@@ -20,7 +34,7 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
 
   useEffect(() => {
     if(open){
-        dialogRef.current?.showModal();
+      dialogRef.current?.showModal();
     }
   }, [open])
 
@@ -32,6 +46,15 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
         dialogRef.current?.close();
         closed();
       }}>Close</button>
+
+      <button onClick={() => {
+        setTracks([]);
+        setSelected([]);
+      }}>Clear Tracks</button>
+
+      <button onClick={() => {
+        setSelected([]);
+      }}>Clear selected</button>
 
       <input
         type="file"
@@ -72,7 +95,29 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
       </fieldset>
 
       <div className="track-display">
-        <table>
+        <table onMouseUp={() => {
+          const selection = document.getSelection();
+          if(selection?.type !== "Range"){
+            return;
+          }
+          const startIndex = Number(getAnscestorOfType(selection.anchorNode, "TR")?.getAttribute("data-index"));
+          const endIndex = Number(getAnscestorOfType(selection.focusNode, "TR")?.getAttribute("data-index"));
+          
+          if(isNaN(startIndex) || isNaN(endIndex)){
+            return;
+          }
+
+          const arr = [];
+          const rangeLength = Math.abs(endIndex - startIndex);
+          const direction = (endIndex - startIndex) < 0 ? -1 : 1;
+          let cursor = startIndex;
+          while(arr.length <= rangeLength){
+            arr.push(cursor);
+            cursor += direction;
+          }
+
+          setSelected(array_unique(selected.concat(arr)));
+        }}>
           <thead>
             <tr>
               <th scope="col" aria-label="Should Splice?"></th>
@@ -82,7 +127,7 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
           </thead>
           <tbody>
             {tracks.map(({ timestamp, text }, index) => (
-              <tr key={index}>
+              <tr key={index} data-index={index}>
                 <td>
                   <input type="checkbox" checked={selected.includes(index)} onChange={() => {
                     if(selected.includes(index)){

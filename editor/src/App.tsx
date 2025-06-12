@@ -221,6 +221,30 @@ function App() {
           }}
         >
           <span>{tracks.length}</span>
+          <button onClick={() => {
+            if(!confirm("Are you sure?")){
+              return;
+            }
+            setTracks([]);
+            localStorage.removeItem("saved-tracks");
+
+          }}>Clear tracks</button>
+          <button onClick={() => {
+            if(!confirm("Are you sure?")){
+              return;
+            }
+            setTracks([]);
+            localStorage.removeItem("saved-tracks");
+            setTrackTimestamp("00:00");
+            setUrl("");
+            localStorage.removeItem("saved-url");
+            setTitle("");
+            localStorage.removeItem("saved-title");
+            setEpisode(episode+1);
+            localStorage.setItem("saved-episode", String(episode+1));
+          }}>
+            Next Episode
+          </button>
           <button
             onClick={() => {
               if (confirm("Are you sure?")) {
@@ -322,6 +346,11 @@ function App() {
               aria-invalid={!trackTimestampValid}
               value={trackTimestamp}
               onChange={(e) => setTrackTimestamp(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  onSubmit();
+                }
+              }}
             />
           </label>
 
