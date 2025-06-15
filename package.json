@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "build": "ts-node gather_script",
     "generate-jsd": "ts-node generateJSD",
     "generate-listing": "ts-node lister",
     "prevalidate": "npm run generate-jsd",
