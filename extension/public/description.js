@@ -1,4 +1,4 @@
-const domains = ["crunchyroll", "youtube", "hidive"];
+const domains = ["crunchyroll", "youtube", "hidive", "emby"];
 const listKeys = domains.map((str) => `script-${str}-list`);
 
 const renderTimestamp = (seconds) => `${padNumbers(Math.floor(seconds / 60), 2)}:${padNumbers(Math.floor(seconds % 60), 2)}`;
@@ -43,11 +43,29 @@ const refreshList = async () => {
         if (left.source.domain > right.source.domain) {
             return -1;
         }
-        if (left.metadata.title < right.metadata.title) {
+        if (left.source.seriesTitle < right.source.seriesTitle) {
+            return -1;
+        }
+        if (left.source.seriesTitle > right.source.seriesTitle) {
             return 1;
         }
-        if (left.metadata.title > right.metadata.title) {
+        if (left.source.season < right.source.season) {
             return -1;
+        }
+        if (left.source.season > right.source.season) {
+            return 1;
+        }
+        if (left.source.episode < right.source.episode) {
+            return -1;
+        }
+        if (left.source.episode > right.source.episode) {
+            return 1;
+        }
+        if (left.source.title < right.source.title) {
+            return -1;
+        }
+        if (left.source.title > right.source.title) {
+            return 1;
         }
         return 0;
     });

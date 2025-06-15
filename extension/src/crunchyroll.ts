@@ -1,9 +1,11 @@
+import { ScriptData, ScriptInfo } from "../../types";
+
 const ccId = "screen-reader-descriptions-cc";
-let ccElem;
-let currentTracks = [];
-let trackUpdateInterval = [];
-let videoElem;
-let currentVideoId = null;
+let ccElem: HTMLDivElement;
+let currentTracks: ScriptData["tracks"] = [];
+let trackUpdateInterval: NodeJS.Timeout[] = [];
+let videoElem: HTMLVideoElement;
+let currentVideoId: string | null = null;
 
 const init = () => {
     // The URL that users go to will have a pathname like /watch/G50UZ0947/haga-makoto
@@ -35,7 +37,7 @@ const init = () => {
 
         currentVideoId = id;
         
-        grabData(id).then((result) => {
+        grabData(id).then((result: ScriptInfo) => {
             if(result === null){
                 return;
             }
@@ -45,12 +47,12 @@ const init = () => {
     });
     
     ccElem = createCCElement();
-    waitThenAct("#velocity-player-package", (container) => {
+    waitThenAct("#velocity-player-package", (container: HTMLDivElement) => {
         container.appendChild(ccElem);
         console.debug("Added cc element: ", ccElem);
     });
 
-    waitThenAct("video", (video) => {
+    waitThenAct<HTMLVideoElement>("video", (video) => {
         videoElem = video;
         video.addEventListener("playing", () => {
             console.log("Video playing from", video.currentTime);
@@ -72,13 +74,13 @@ const createCCElement = () => {
     return cc;
 };
 
-const waitThenAct = (
-    selector,
-    cb,
+const waitThenAct = <T>(
+    selector: string,
+    cb: (element: T) => void,
     intervalTime = 100,
     maxAttempts = 100
 ) => {
-    const elem = document.querySelector(selector);
+    const elem = document.querySelector(selector) as T;
     if (elem) {
         cb(elem);
         return;
@@ -86,7 +88,7 @@ const waitThenAct = (
 
     let valve = 0;
     const interval = setInterval(() => {
-        const elem = document.querySelector(selector);
+        const elem = document.querySelector(selector) as T;
         if (elem) {
             clearInterval(interval);
             cb(elem);
@@ -100,7 +102,7 @@ const waitThenAct = (
     }, intervalTime);
 };
 
-const grabData = async (id) => {
+const grabData = async (id: string) => {
     const storageKey = `script-crunchyroll-info-${id}`;
     const storedData = await chrome.storage.local.get(storageKey);
     if(storageKey in storedData){
@@ -119,7 +121,7 @@ const grabData = async (id) => {
     return null;
 }
 
-const playTracksFrom = (startingSecond) => {
+const playTracksFrom = (startingSecond: number) => {
     console.debug("Playing tracks from", startingSecond);
     killTracks();
     const tracksToGo = currentTracks.filter(({timestamp}) => timestamp >= startingSecond);

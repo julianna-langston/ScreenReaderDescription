@@ -22,6 +22,10 @@
         {
             "js": ["hidive.js"],
             "matches": ["https://*.hidive.com/video/*"]
+        },
+        {
+            "js": ["emby.js"],
+            "matches": ["https://emby.firethestars.com/web/index.html"]
         }
     ]
 }
