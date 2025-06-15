@@ -1,0 +1,63 @@
+{
+  "source": {
+    "url": "https://www.youtube.com/watch?v=tRwHpyOq4P4",
+    "domain": "youtube",
+    "id": "tRwHpyOq4P4"
+  },
+  "metadata": { "type": "music video", "title": "Otonoke", "creator": "Creepy Nuts" },
+  "scripts": [
+    {
+      "language": "en-US",
+      "author": "Julianna Langston",
+      "tracks": [
+        {
+          "text": "DJ Matsunaga approaches a turntable. He spins the right of 2 discs. He has short blond hair and wears a baggy jacket.",
+          "timestamp": 1
+        },
+        {
+          "text": "Rapper R-Shitei dances. Clones of R-Shitei and Matsunaga fill our view. Their clones gather in the shape of letters spelling Otonoke",
+          "timestamp": 8
+        },
+        { "text": "Red text, Creepy Nuts.", "timestamp": 12 },
+        {
+          "text": "Large faces of Matsunaga and R-Shitei spin in a circle. At the center, R-Shitei raps while walking in a circle. A cow floats above him.",
+          "timestamp": 18
+        },
+        {
+          "text": "The word otonoke is written on his teeth in Japanese",
+          "timestamp": 24
+        },
+        { "text": "The duo walk along the spinning vinyl", "timestamp": 28 },
+        {
+          "text": "Matsunaga DJ's behind piles of televisions and electronics from the mid-1900's",
+          "timestamp": 28
+        },
+        {
+          "text": "The equipment spins on a stack of discs, 5 tiers high",
+          "timestamp": 32
+        },
+        {
+          "text": "R-Shitei raps from a tier below the TV's. A flying saucer floats above him.",
+          "timestamp": 36
+        },
+        {
+          "text": "R-Shitei opens his mouth, revealing a clone of himself. We enter his mouth, and his clone opens his mouth. Repeat.",
+          "timestamp": 41
+        },
+        {
+          "text": "Hundreds of R-Shitei's sing or make faces.",
+          "timestamp": 45
+        },
+        { "text": "Matsunaga DJ's", "timestamp": 47 },
+        {
+          "text": "Matsunaga operates a giant turntable. He spins around, and his face has grown larger. The discs are the size of his eyes.",
+          "timestamp": 55
+        },
+        {
+          "text": "R-Shitei dances. His hands grow to the size of his body.",
+          "timestamp": 60
+        }
+      ]
+    }
+  ]
+}
