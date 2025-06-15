@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { convertTimestampToNumber, displayTimestamp } from "./utils";
 import { ScriptInfo } from "./types";
 
-const getAnscestorOfType = (elem: Node | null, type: string): Node | null => {
+const getAnscestorOfType = (elem: HTMLElement | null, type: string): HTMLElement | null => {
   if(elem === null){
     return null;
   }
@@ -32,6 +32,10 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
   const [shouldAdjustTimestamp, setShouldAdjustTimestamp] = useState(true);
   const dialogRef = useRef<HTMLDialogElement | null>(null);
 
+  const doSetSelected = (arr: number[]) => {
+    setSelected(array_unique(arr).toSorted());
+  }
+
   useEffect(() => {
     if(open){
       dialogRef.current?.showModal();
@@ -49,11 +53,11 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
 
       <button onClick={() => {
         setTracks([]);
-        setSelected([]);
+        doSetSelected([]);
       }}>Clear Tracks</button>
 
       <button onClick={() => {
-        setSelected([]);
+        doSetSelected([]);
       }}>Clear selected</button>
 
       <input
@@ -100,8 +104,8 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
           if(selection?.type !== "Range"){
             return;
           }
-          const startIndex = Number(getAnscestorOfType(selection.anchorNode, "TR")?.getAttribute("data-index"));
-          const endIndex = Number(getAnscestorOfType(selection.focusNode, "TR")?.getAttribute("data-index"));
+          const startIndex = Number(getAnscestorOfType(selection.anchorNode as HTMLElement, "TR")?.getAttribute("data-index"));
+          const endIndex = Number(getAnscestorOfType(selection.focusNode as HTMLElement, "TR")?.getAttribute("data-index"));
           
           if(isNaN(startIndex) || isNaN(endIndex)){
             return;
@@ -116,7 +120,7 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
             cursor += direction;
           }
 
-          setSelected(array_unique(selected.concat(arr)));
+          doSetSelected(selected.concat(arr));
         }}>
           <thead>
             <tr>
@@ -131,9 +135,9 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
                 <td>
                   <input type="checkbox" checked={selected.includes(index)} onChange={() => {
                     if(selected.includes(index)){
-                      setSelected(selected.toSpliced(selected.indexOf(index), 1));
+                      doSetSelected(selected.toSpliced(selected.indexOf(index), 1));
                     }else{
-                      setSelected(selected.concat([index]));
+                      doSetSelected(selected.concat([index]));
                     }
                   }} />
                 </td>

@@ -128,7 +128,7 @@ function App() {
       ? tracks.toSpliced(editingIndex, 1, {
           text: trackText,
           timestamp: convertTimestampToNumber(trackTimestamp),
-        })
+        }).toSorted(trackSort)
       : tracks
           .concat([
             {
