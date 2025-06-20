@@ -138,7 +138,7 @@
         { "text": "A deep, dark hole", "timestamp": 464 },
         { "text": "Katzo jumps", "timestamp": 501 },
         { "text": "He taps his fist in his palm", "timestamp": 510 },
-        { "text": "Sunraku's temple throbs, metaphorically", "timestamp": 551 },
+        { "text": "Sunraku's temple throbs.", "timestamp": 551 },
         {
           "text": "Sunraku grabs Emul and leaps into the hole",
           "timestamp": 560
@@ -157,19 +157,19 @@
           "text": "A long green serpent with red eyes and gills on either side of the head",
           "timestamp": 658.5
         },
-        { "text": "Katzo hands glow red", "timestamp": 663 },
+        { "text": "Katzo's hands glow red", "timestamp": 663 },
         {
           "text": "The serpent lunges at the shore. The trio dodge.",
-          "timestamp": 685
+          "timestamp": 685.5
         },
         { "text": "Embers warm in the fire", "timestamp": 697 },
         { "text": "Bilac wipes sweat off her face", "timestamp": 702 },
         {
-          "text": "A purple blade rapier with a twisted gold and silver hilt. A silver dagger with a twisted purple hilt.",
+          "text": "A long purple blade rapier and a short dagger with a purple hilt.",
           "timestamp": 712
         },
         { "text": "He picks up the blades", "timestamp": 744 },
-        { "text": "The rapier", "timestamp": 821 },
+        { "text": "The rapier", "timestamp": 821.5 },
         {
           "text": "He uses Spiral Edge on the serpent, leaving a purple and red circle on the body",
           "timestamp": 826
@@ -180,8 +180,8 @@
           "text": "Emul hides behind a rock. The serpent's wound glows purple.",
           "timestamp": 839
         },
-        { "text": "Text, Corrosive Poison", "timestamp": 871.5 },
-        { "text": "Katzo punches the serpent's face", "timestamp": 875 },
+        { "text": "Text, Corrosive Poison", "timestamp": 872 },
+        { "text": "Katzo punches", "timestamp": 874 },
         { "text": "Katzo's hands glow black", "timestamp": 895 },
         {
           "text": "She leaps and black fist punches the purple wound.",

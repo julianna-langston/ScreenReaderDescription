@@ -137,7 +137,7 @@
           "text": "When the souls of the Divinity are shaken, a rabbit shall tell an epic tale.",
           "timestamp": 325
         },
-        { "text": "Her expression becomes blank", "timestamp": 354 },
+        { "text": "Setsuna's expression becomes blank", "timestamp": 354 },
         { "text": "Setsuna looks up", "timestamp": 395 },
         {
           "text": "Dialog, Unique Scenario EX, From the Living World, With Love. Begin Now?",
@@ -157,7 +157,8 @@
           "timestamp": 472
         },
         { "text": "The night sky turns photo negative", "timestamp": 518 },
-        { "text": "She bows", "timestamp": 536 },
+        { "text": "Setsuna turns back", "timestamp": 532 },
+        { "text": "She bows", "timestamp": 536.5 },
         { "text": "The breeze blows her hair", "timestamp": 542 },
         { "text": "Her eye twitches", "timestamp": 588 },
         {
@@ -185,12 +186,12 @@
           "timestamp": 758
         },
         { "text": "Hizutome house", "timestamp": 766 },
-        { "text": "An egg is cracked into a pan", "timestamp": 817 },
+        { "text": "An egg is cracked into a pan", "timestamp": 818 },
         {
           "text": "Text, Rakuro's Mother, Eika Hizutome, Entomology geek",
           "timestamp": 830
         },
-        { "text": "A rhinoceros beetle", "timestamp": 851 },
+        { "text": "A rhinoceros beetle", "timestamp": 851.6 },
         {
           "text": "Text, Rakuro's Younger Sister, Rumi Hizutome, Fashionista",
           "timestamp": 858
@@ -213,7 +214,7 @@
           "timestamp": 1164
         },
         { "text": "His leg is stretched left", "timestamp": 1172 },
-        { "text": "He retracts his foot", "timestamp": 1185 },
+        { "text": "He retracts his foot", "timestamp": 1185.5 },
         {
           "timestamp": 1207,
           "text": "Rakuro floats, as if in water. Debris floats around him. "
