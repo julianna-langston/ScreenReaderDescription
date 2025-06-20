@@ -123,3 +123,29 @@ export class LocalStorageMock {
     return Object.keys(this.store)[index];
   }
 }
+
+export const pullFromStorage = <T>(
+  key: string,
+  pullCallbackIfFound: (obj: T) => void
+) => {
+  const stored = localStorage.getItem(key) as T;
+  if (stored === null) {
+    return;
+  }
+  pullCallbackIfFound(stored);
+}
+
+export interface ScriptTrack {
+  timestamp: number;
+  text: string;
+}
+
+export const trackSort = (a: ScriptTrack, b: ScriptTrack) => {
+  if (a.timestamp < b.timestamp) {
+    return -1;
+  }
+  if (a.timestamp > b.timestamp) {
+    return 1;
+  }
+  return 0;
+};

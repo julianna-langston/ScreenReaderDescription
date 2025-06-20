@@ -1,43 +1,20 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   convertTimestampToNumber,
   displayTimestamp,
   exportContent,
   convertUrlToSource,
   validTypes,
+  pullFromStorage,
+  trackSort,
+  type ScriptTrack
 } from "./utils";
 import { ScriptInfo, SupportedVideoTypes } from "./types";
 import Splicer from "./Splicer";
-
-interface ScriptTrack {
-  timestamp: number;
-  text: string;
-}
-
-function pullFromStorage<T>(
-  key: string,
-  pullCallbackIfFound: (obj: T) => void
-) {
-  const stored = localStorage.getItem(key) as T;
-  if (stored === null) {
-    return;
-  }
-  pullCallbackIfFound(stored);
-}
-
-const trackSort = (a: ScriptTrack, b: ScriptTrack) => {
-  if (a.timestamp < b.timestamp) {
-    return -1;
-  }
-  if (a.timestamp > b.timestamp) {
-    return 1;
-  }
-  return 0;
-};
+import { sendMessageUpdateTracks } from "./bridge_functions";
 
 function App() {
   const [showSplicer, setShowSplicer] = useState(false);
-
   const [authorName, setAuthorName] = useState("");
   const [tracks, setTracks] = useState<Array<ScriptTrack>>([]);
   const [trackTimestamp, setTrackTimestamp] = useState("00:00");
@@ -50,6 +27,8 @@ function App() {
   const [season, setSeason] = useState(0);
   const [episode, setEpisode] = useState(0);
   const [creator, setCreator] = useState("");
+  const [lastTouchedTimestamp, setLastTouchedTimestamp] = useState(-1);
+  const editorDisplay = useRef<HTMLDivElement | null>(null);
 
   const { id, domain } = useMemo(() => convertUrlToSource(url), [url]);
   const otherMetadata = useMemo(() => {
@@ -124,16 +103,20 @@ function App() {
   };
 
   const onSubmit = () => {
+    if(trackText === ""){
+      return;
+    }
+    const numTimestamp = convertTimestampToNumber(trackTimestamp);
     const newTracksValue = editingMode
       ? tracks.toSpliced(editingIndex, 1, {
           text: trackText,
-          timestamp: convertTimestampToNumber(trackTimestamp),
+          timestamp: numTimestamp,
         }).toSorted(trackSort)
       : tracks
           .concat([
             {
               text: trackText,
-              timestamp: convertTimestampToNumber(trackTimestamp),
+              timestamp: numTimestamp,
             },
           ])
           .toSorted(trackSort);
@@ -141,6 +124,7 @@ function App() {
     setTracks(newTracksValue);
     localStorage.setItem("saved-tracks", JSON.stringify(newTracksValue));
     onCancel();
+    setLastTouchedTimestamp(numTimestamp);
   };
 
   const onCancel = () => {
@@ -166,7 +150,6 @@ function App() {
     setEditingIndex(index);
   };
 
-
   useEffect(() => {
     pullFromStorage<string>("saved-tracks", (saved) =>
       setTracks(JSON.parse(saved))
@@ -183,6 +166,16 @@ function App() {
     pullFromStorage<string>("saved-episode", (saved) => setEpisode(+saved));
     pullFromStorage<string>("saved-author", (saved) => setAuthorName(saved));
   }, []);
+
+  useEffect(() => {
+    sendMessageUpdateTracks(tracks);
+  }, [tracks])
+
+  useEffect(() => {
+    setTimeout(() => {
+      editorDisplay?.current?.querySelector("[data-lasttouched='true']")?.scrollIntoView();
+    }, 50);
+  }, [tracks, lastTouchedTimestamp]);
 
   return (
     <>
@@ -211,29 +204,22 @@ function App() {
           />
         </label>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            gap: "4px",
-            marginTop: "4px",
-          }}
-        >
+        <div id="editor-top" role="toolbar">
           <span>{tracks.length}</span>
           <button onClick={() => {
             if(!confirm("Are you sure?")){
               return;
             }
             setTracks([]);
+            console.log("Removing tracks...");
             localStorage.removeItem("saved-tracks");
-
           }}>Clear tracks</button>
           <button onClick={() => {
             if(!confirm("Are you sure?")){
               return;
             }
             setTracks([]);
+            console.log("Removing tracks...");
             localStorage.removeItem("saved-tracks");
             setTrackTimestamp("00:00");
             setUrl("");
@@ -248,6 +234,7 @@ function App() {
           <button
             onClick={() => {
               if (confirm("Are you sure?")) {
+                console.log("Reset");
                 setTracks([]);
                 localStorage.removeItem("saved-tracks");
                 setTrackTimestamp("00:00");
@@ -269,7 +256,13 @@ function App() {
             Reset
           </button>
           <button onClick={() => setShowSplicer(true)}>Splice</button>
-          <button
+          <div
+            style={{
+              border: "1px dashed black",
+              borderRadius: "2px",
+              padding: "0 2px",
+              backgroundColor: "rgb(240,240,240)",
+            }}
             onDragOver={(e) => e.preventDefault()}
             onDrop={(e) => {
               e.preventDefault();
@@ -292,8 +285,8 @@ function App() {
               }
             }}
           >
-            Upload
-          </button>
+            Drop Script
+          </div>
           <button
             id="export"
             draggable
@@ -310,7 +303,7 @@ function App() {
         </div>
       </div>
 
-      <div className="track-display">
+      <div className="track-display" ref={editorDisplay}>
         <table>
           <thead>
             <tr>
@@ -320,7 +313,7 @@ function App() {
           </thead>
           <tbody>
             {tracks.map(({ timestamp, text }, index) => (
-              <tr key={index}>
+              <tr key={index} data-lasttouched={timestamp === lastTouchedTimestamp}>
                 <td>
                   <button
                     onClick={() => focusOnTimestamp(index)}
@@ -383,6 +376,7 @@ function App() {
             URL
             <input
               type="text"
+              id="url"
               value={url}
               onChange={(e) => {
                 setUrl(e.target.value);
@@ -480,7 +474,9 @@ function App() {
         open={showSplicer}
         closed={() => setShowSplicer(false)}
         tracksCallback={(addedTracks) => {
+          console.log("Added tracks: ", addedTracks)
           const newTracks = tracks.concat(addedTracks).toSorted(trackSort);
+          console.log("New tracks: ", newTracks);
           setTracks(newTracks);
         }}
       />
