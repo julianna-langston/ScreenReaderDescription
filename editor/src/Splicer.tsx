@@ -33,7 +33,15 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
 
   const doSetSelected = (arr: number[]) => {
-    setSelected(array_unique(arr).toSorted());
+    setSelected(array_unique(arr).toSorted((a, b) => {
+      if(+a < +b){
+        return -1;
+      }
+      if(+a > +b){
+        return 1;
+      }
+      return 0;
+    }));
   }
 
   useEffect(() => {
@@ -152,14 +160,14 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
       <button onClick={()=>{
         let selectedTracks = selected.map((index) => tracks[index]);
         if(shouldAdjustTimestamp){
-            const baselineSeconds = convertTimestampToNumber(timestamp);
-            const diff = selectedTracks[0].timestamp - baselineSeconds;
-            selectedTracks = selectedTracks.map((track) => {
-                return {
-                    timestamp: track.timestamp - diff,
-                    text: track.text
-                }
-            });
+          const baselineSeconds = convertTimestampToNumber(timestamp);
+          const diff = selectedTracks[0].timestamp - baselineSeconds;
+          selectedTracks = selectedTracks.map((track) => {
+              return {
+                  timestamp: track.timestamp - diff,
+                  text: track.text
+              }
+          });
         }
         tracksCallback(selectedTracks);
         dialogRef.current?.close();
