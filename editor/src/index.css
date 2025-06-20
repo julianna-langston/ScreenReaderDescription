@@ -40,3 +40,15 @@ label {
         margin-left: 4px;
     }
 }
+
+[role="toolbar"]{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+tr[data-lastTouched="true"]{
+    background-color: bisque;
+}
