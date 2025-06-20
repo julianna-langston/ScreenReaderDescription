@@ -2,14 +2,26 @@
     "manifest_version": 3,
     "name": "Screen Reader Description",
     "description": "Provides screen reader-based audio descriptions for select videos on various streaming sites.",
-    "version": "0.3",
+    "version": "0.4",
     "permissions": [
-        "storage"
+        "storage",
+        "tabs"
     ],
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
     "action": {
         "default_popup": "popup.html"
     },
     "content_scripts": [
+        {
+            "js": ["editor_bridge.js"],
+            "matches": [
+                "http://localhost:5173/",
+                "https://www.screenreaderdescription.com/editor.html"
+            ]
+        },
         {
             "js": ["crunchyroll.js"],
             "matches": ["https://*.crunchyroll.com/*"],
