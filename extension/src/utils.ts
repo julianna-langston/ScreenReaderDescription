@@ -1,3 +1,4 @@
+import type { ScriptInfo } from "../../types";
 import {ccId} from "./constants";
 
 export const createCCElement = () => {
@@ -63,7 +64,7 @@ export const waitThenAct = <T>(
     }, intervalTime);
 };
 
-export const grabScripts = async (storageKey, serverPath) => {
+export const grabScripts = async (storageKey: string, serverPath: string): Promise<ScriptInfo | null> => {
     console.debug("[ScreenReaderDescription] Getting from storage...", storageKey);
     const saved = (await chrome.storage.local.get([storageKey]))[storageKey];
     if (saved) {
