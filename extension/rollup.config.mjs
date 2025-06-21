@@ -82,18 +82,18 @@ export default [
     //         typescript({ tsconfig: "./tsconfig.json" }),
     //     ]
     // },
-    // {
-    //     input: "src/emby.ts",
-    //     output: [
-    //         {
-    //             file: "dist/emby.js",
-    //             format: "iife"
-    //         }
-    //     ],
-    //     plugins: [
-    //         typescript({ tsconfig: "./tsconfig.json" }),
-    //     ]
-    // },
+    {
+        input: "src/emby.ts",
+        output: [
+            {
+                file: "dist/emby.js",
+                format: "iife"
+            }
+        ],
+        plugins: [
+            typescript({ tsconfig: "./tsconfig.json" }),
+        ]
+    },
     {
         input: "src/youtube.ts",
         output: [

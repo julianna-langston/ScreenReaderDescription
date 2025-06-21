@@ -19,3 +19,4 @@ export const crunchyrollStyle = `
     display: none;
 }`;
 export const disneyStyle = crunchyrollStyle;
+export const embyStyle = crunchyrollStyle;

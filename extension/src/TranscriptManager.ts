@@ -9,7 +9,7 @@ export class TranscriptManager {
   }
 
   set currentTracks(tracks) {
-    if(JSON.stringify(this.currentTracks) === JSON.stringify(tracks)){
+    if(JSON.stringify(this._tracks) === JSON.stringify(tracks)){
         return;
     }
 
@@ -30,13 +30,13 @@ export class TranscriptManager {
   }
 
   addTrack(timestamp: number, text: string) {
-    const newTrackList = this.currentTracks;
+    const newTrackList = this.currentTracks.slice(0);
     newTrackList.push({timestamp, text});
     this.currentTracks = newTrackList;
   }
 
   editTrack(timestamp: number, text: string){
-    const newTrackList = this.currentTracks;
+    const newTrackList = this.currentTracks.slice(0);
     const index = newTrackList.findIndex(({timestamp: comparer}) => comparer === timestamp);
     this.currentTracks = newTrackList.toSpliced(index, 1, {text, timestamp});
   }
