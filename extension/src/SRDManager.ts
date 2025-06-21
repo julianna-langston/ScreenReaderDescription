@@ -1,5 +1,6 @@
-import { ScriptData, ScriptInfo } from "../../types";
-import { Forwardable, PlayerReceivableMessageTypes, UpdateScriptTracks } from "./message_types";
+import { ScriptInfo } from "../../types";
+import type { Forwardable, PlayerReceivableMessageTypes, UpdateScriptTracks } from "./message_types";
+import { TranscriptManager } from "./TranscriptManager";
 import { createCCElement, createStyleElement, waitThenAct, grabScripts, createTrackEditorDialog } from "./utils";
 
 type DomainMainCallbacks = {
@@ -19,10 +20,12 @@ type DomainRegistrationParams = {
 }
 
 export class SRDManager {
+    /** Data **/
+    private script = new TranscriptManager();
+
+    /** Player **/
     private trackUpdateInterval: NodeJS.Timeout[] = [];
     private videoElement: HTMLVideoElement | null = null;
-    private currentScript: ScriptInfo | null = null;
-    private _currentTracks: ScriptData["tracks"] = [];
     private currentKey: string | null = null;
     private ccElement: HTMLDivElement;
 
@@ -37,26 +40,42 @@ export class SRDManager {
     
     constructor(private params: DomainRegistrationParams){
         this.ccElement = createCCElement();
-        
         this.trackEditorDialog = createTrackEditorDialog(() => {
-            const trackIndex = Number(this.trackEditorDialog.getAttribute("data-trackIndex"));
-            const trackTimestamp = Number(this.trackEditorDialog.getAttribute("data-timestamp"));
+            const isEditing = this.trackEditorDialog.getAttribute("data-isEditing") === "true";
+            const timestamp = Number(this.trackEditorDialog.getAttribute("data-timestamp"));
             const trackEditorInput = this.trackEditorDialog.querySelector("input");
-            if(trackIndex >= 0){
-                this.currentTracks[trackIndex].text = trackEditorInput.value;
+            if(isEditing){
+                this.script.editTrack(timestamp, trackEditorInput.value);
             }else{
-                const indexToInsertAfter = this.currentTracks.findLastIndex(({timestamp}) => timestamp < trackTimestamp);
-                this.currentTracks = this.currentTracks.toSpliced(indexToInsertAfter + 1, 0, {
-                    text: trackEditorInput.value,
-                    timestamp: trackTimestamp
-                });
-                this.lastPlayedTimestamp = trackTimestamp;
+                this.script.addTrack(timestamp, trackEditorInput.value)
             }
+            this.lastPlayedTimestamp = timestamp;
             trackEditorInput.value = "";
             this.trackEditorDialog.close();
-            this.playTranscriptFrom(trackTimestamp - 3);
+            this.videoElement.currentTime = timestamp - 3;
+            this.videoElement.play();
             this.editingMarker = null;
         });
+        this.script.onTrackChange = () => {
+            this.killTranscript();
+            if (this.videoElement && !this.videoElement?.paused) {
+                this.playTranscriptFrom(this.videoElement.currentTime);
+            }
+            console.log("Current tracks updated. Bridged?", this.bridgedTabId);
+            if(this.bridgedTabId !== null){
+                const updateMessage: UpdateScriptTracks = {
+                    type: "update-script-tracks",
+                    tracks: this.script.currentTracks
+                };
+                const forwardable: Forwardable = {
+                    type: "forward",
+                    tabId: this.bridgedTabId,
+                    message: updateMessage
+                }
+                console.log("Sending message", forwardable);
+                chrome.runtime.sendMessage(forwardable)
+            }
+        }
 
         // TODO: Set up indicator element
 
@@ -70,7 +89,7 @@ export class SRDManager {
                 }
                 case "update-script-tracks": {
                     console.debug("Updating tracks...");
-                    this.currentTracks = message.tracks;
+                    this.script.currentTracks = message.tracks;
                     break;
                 }
             }
@@ -93,14 +112,15 @@ export class SRDManager {
     }
 
     get lastPlayedTrackIndex(){
-        return this.currentTracks.findIndex(({timestamp}) => timestamp === this.lastPlayedTimestamp);
+        return this.script.currentTracks.findIndex(({timestamp}) => timestamp === this.lastPlayedTimestamp);
     }
 
     private async setup(videoId: string, errorCallback?: () => void){
         console.debug("[ScreenReaderDescription] - Setting up for", videoId);
         this.currentKey = `script-${this.params.platformId}-info-${videoId}`
         const serverPath = this.params.generateServerPath(videoId);
-        this.currentScript = await grabScripts(this.currentKey, serverPath);
+        const scripts = await grabScripts(this.currentKey, serverPath);
+        this.script.currentTracks = scripts?.scripts[0].tracks ?? [];
         
         waitThenAct<HTMLVideoElement>(this.params.videoSelector, (video) => {
             this.videoElement = video;
@@ -118,54 +138,25 @@ export class SRDManager {
             });
         }
 
-        console.debug("[ScreenReaderDescription] - Grabbed script", this.currentScript);
-        if (!this.currentScript) {
+        console.debug("[ScreenReaderDescription] - Grabbed script", scripts);
+        if (!scripts) {
             errorCallback?.();
             return;
         }
-        this.currentTracks = this.currentScript.scripts[0].tracks;
         if (!this.videoElement.paused) {
             this.playTranscriptFrom(this.videoElement.currentTime);
         }
     }
 
-    get currentTracks() {
-        return this._currentTracks;
-    }
-    set currentTracks(tracks) {
-        if(JSON.stringify(this._currentTracks) === JSON.stringify(tracks)){
-            return;
-        }
-        this._currentTracks = tracks;
-        this.killTranscript();
-        if (this.videoElement && !this.videoElement?.paused) {
-            this.playTranscriptFrom(this.videoElement.currentTime);
-        }
-        console.log("Current tracks updated. Bridged?", this.bridgedTabId);
-        if(this.bridgedTabId !== null){
-            const updateMessage: UpdateScriptTracks = {
-                type: "update-script-tracks",
-                tracks: this._currentTracks
-            };
-            const forwardable: Forwardable = {
-                type: "forward",
-                tabId: this.bridgedTabId,
-                message: updateMessage
-            }
-            console.log("Sending message", forwardable);
-            chrome.runtime.sendMessage(forwardable)
-        }
-    }
     teardown() {
         this.currentKey = null;
-        this.currentScript = null;
-        this.currentTracks = [];
+        this.script.teardown()
         this.ccElement.innerHTML = "";
     }
+
     playTranscriptFrom(startingSecond: number) {
         this.killTranscript();
-        const trackToGo = this.currentTracks.filter(({ timestamp }) => timestamp >= startingSecond);
-        this.trackUpdateInterval = trackToGo.map(({ text, timestamp }) => setTimeout(() => {
+        this.trackUpdateInterval = this.script.tracksToGo(startingSecond).map(({ text, timestamp }) => setTimeout(() => {
             this.lastPlayedTimestamp = timestamp;
             console.debug("AD Message: ", text, timestamp);
             const div = document.createElement("div");
@@ -173,12 +164,14 @@ export class SRDManager {
             this.ccElement.prepend(div);
         }, (timestamp - startingSecond) * 1000));
     }
+
     killTranscript() {
         this.trackUpdateInterval.forEach((t) => {
             clearTimeout(t);
         });
         this.trackUpdateInterval = [];
     }
+
     wireListenersToVideo() {
         const video = this.videoElement;
         if (!video.paused) {
@@ -196,6 +189,7 @@ export class SRDManager {
 
         console.debug("[ScreenReaderDescriptions] - All listeners wired up");
     }
+
     manageEditingMode(e: KeyboardEvent) {
         if(e.key === "r"){
             this.editMode = !this.editMode;
@@ -210,22 +204,22 @@ export class SRDManager {
                 // Edit last-played track
                 e.preventDefault();
                 e.stopPropagation();
-                console.log("Edit track", this.lastPlayedTrackIndex);
-                if(this.lastPlayedTrackIndex === -1){
+                console.log("Edit track", this.lastPlayedTimestamp);
+                if(this.lastPlayedTimestamp === -1){
                     return;
                 }
                 this.videoElement.pause();
-                this.trackEditorDialog.setAttribute("data-trackIndex", `${this.lastPlayedTrackIndex}`);
-                this.trackEditorDialog.setAttribute("data-timestamp", `${this.currentTracks[this.lastPlayedTrackIndex].timestamp}`);
+                this.trackEditorDialog.setAttribute("data-isEditing", "true");
+                this.trackEditorDialog.setAttribute("data-timestamp", `${this.lastPlayedTimestamp}`);
                 const input = this.trackEditorDialog.querySelector("input");
-                input.value = this.currentTracks[this.lastPlayedTrackIndex]?.text ?? "";
+                input.value = this.script.getTrackByTimestamp(this.lastPlayedTimestamp)?.text ?? "";
                 this.trackEditorDialog.showModal();
                 break;
             }
             case "f": {
                 // Add new track
                 this.videoElement.pause();
-                this.trackEditorDialog.setAttribute("data-trackIndex", "-1");
+                this.trackEditorDialog.setAttribute("data-isEditing", "false");
                 this.trackEditorDialog.setAttribute("data-timestamp", (this.editingMarker ?? this.videoElement.currentTime).toFixed(1));
                 this.trackEditorDialog.showModal();
                 e.preventDefault();
@@ -257,24 +251,22 @@ export class SRDManager {
             }
             case "q": {
                 // Previous text
-                const previousTrack = this.currentTracks[this.lastPlayedTrackIndex - 1];
+                const previousTrack = this.script.currentTracks[this.lastPlayedTrackIndex - 1];
                 if(!previousTrack){
                     return;
                 }
                 this.videoElement.currentTime = previousTrack.timestamp;
                 this.videoElement.play();
-                console.log("previous text", this.lastPlayedTrackIndex, this.currentTracks);
                 break;
             }
             case "w": {
                 // Next text
-                const nextTrack = this.currentTracks[this.lastPlayedTrackIndex + 1];
+                const nextTrack = this.script.currentTracks[this.lastPlayedTrackIndex + 1];
                 if(!nextTrack){
                     return;
                 }
                 this.videoElement.currentTime = nextTrack.timestamp;
                 this.videoElement.play();
-                console.log("next text", this.lastPlayedTrackIndex, this.currentTracks);
                 break;
             }
             case "x": {
@@ -282,12 +274,11 @@ export class SRDManager {
                 if(this.lastPlayedTrackIndex < 0){
                     return;
                 }
-                let delta = 1;
+                let delta = -1;
                 if(e.altKey){
-                    delta = .1;
+                    delta = -.1;
                 }
-                this.currentTracks[this.lastPlayedTrackIndex].timestamp -= delta;
-                console.log("move back 1s", this.lastPlayedTrackIndex, this.currentTracks);
+                this.script.moveTrack(this.lastPlayedTimestamp, delta);
                 break;
             }
             case "c": {
@@ -299,7 +290,7 @@ export class SRDManager {
                 if(e.altKey){
                     delta = .1;
                 }
-                this.currentTracks[this.lastPlayedTrackIndex].timestamp += delta;
+                this.script.moveTrack(this.lastPlayedTimestamp, delta);
                 break;
             }
             case "h": {
