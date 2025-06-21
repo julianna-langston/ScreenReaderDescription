@@ -10,6 +10,26 @@ export const createCCElement = () => {
     return cc;
 };
 
+export const createTrackEditorDialog = (submitCallback: () => void) => {
+    const dialog = document.createElement("dialog");
+    dialog.setAttribute("data-trackIndex", "-1");
+    dialog.setAttribute("data-timestamp", "-1");
+    const trackEditorInput = document.createElement("input");
+    const trackSubmitButton = document.createElement("button");
+    trackSubmitButton.textContent = "Submit";
+    trackSubmitButton.style.display = "block";
+    trackSubmitButton.addEventListener("click", submitCallback);
+    trackEditorInput.addEventListener("keydown", (e) => {
+        if(e.key === "Enter"){
+            submitCallback();
+        }
+        e.stopPropagation()
+    });
+    dialog.appendChild(trackEditorInput);
+    dialog.appendChild(trackSubmitButton);
+    return dialog;
+}
+
 export const createStyleElement = (css: string) => {
     const style = document.createElement("style");
     style.textContent = css;

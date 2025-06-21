@@ -1,4 +1,4 @@
-import type { BackgroundReceivableMessageTypes, EditorHandshake, VideoHandshake } from "./message_types";
+import type { BackgroundReceivableMessageTypes, EditorHandshake, PlayerHandshake } from "./message_types";
 
 const sendHandshake = (editorTabId: number, playerTabId: number) => {
     const sendToPlayer: EditorHandshake = {
@@ -6,7 +6,7 @@ const sendHandshake = (editorTabId: number, playerTabId: number) => {
         editorTabId
     }
     void chrome.tabs.sendMessage(playerTabId, sendToPlayer);
-    const sendToEditor: VideoHandshake = {
+    const sendToEditor: PlayerHandshake = {
         type: "editor-bridge",
         playerTabId
     }
@@ -31,7 +31,7 @@ chrome.runtime.onMessage.addListener((message: BackgroundReceivableMessageTypes,
             break;
         }
         case "forward": {
-            console.debug("Forwarding message...", message);
+            console.debug("Forwarding message...", message, "From: ", sender);
             chrome.tabs.sendMessage(message.tabId, message.message)
             break;
         }

@@ -1,7 +1,7 @@
 import { ScriptData } from "../../types";
-import type {BridgeType, EditorReceivableMessageTypes, UpdateScriptTracks, ForwardableToPlayer} from "./message_types";
+import type {BridgeType, EditorReceivableMessageTypes, UpdateScriptTracks, Forwardable} from "./message_types";
 
-let playerTabId: number | null;
+let playerTabId: number | null = null;
 let currentTracks: ScriptData["tracks"] = [];
 
 // Init: Add bridge connector button
@@ -15,7 +15,7 @@ const sendMessageToBackground = () => {
         type: "update-script-tracks",
         tracks: currentTracks
     };
-    const forwardable: ForwardableToPlayer = {
+    const forwardable: Forwardable = {
         type: "forward",
         tabId: playerTabId,
         message: videoMessage
@@ -31,6 +31,17 @@ chrome.runtime.onMessage.addListener((message: EditorReceivableMessageTypes) => 
             bridgeConnectorButton.textContent = "Bridged";
             playerTabId = message.playerTabId;
             sendMessageToBackground();
+            break;
+        }
+        case "update-script-tracks": {
+            document.dispatchEvent(
+                new CustomEvent("ScreenReaderDescription-Track-Update-From-Player", {
+                    detail: {
+                        tracks: message.tracks
+                    }
+                })
+            );
+            break;
         }
     }
 })

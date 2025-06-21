@@ -7,6 +7,7 @@ new SRDManager({
     videoSelector: "video",
     platformId: "crunchyroll",
     ccContainerSelector: "#velocity-player-package",
+    editorListenerContainerSelector: "body",
     main: ({ setup }) => {
         console.log("Checking page...");
         const starter = location.pathname.split("/")[1];
