@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { TCollection } from "./types";
+import type { TCollection } from "./types";
 
 const parseFileList = (files: string[]) => {
     let fileInfos: TCollection[] = [];
