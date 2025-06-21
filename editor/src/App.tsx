@@ -165,6 +165,15 @@ function App() {
     pullFromStorage<string>("saved-season", (saved) => setSeason(+saved));
     pullFromStorage<string>("saved-episode", (saved) => setEpisode(+saved));
     pullFromStorage<string>("saved-author", (saved) => setAuthorName(saved));
+
+    // @ts-expect-error
+    document.addEventListener("ScreenReaderDescription-Track-Update-From-Player", (e: CustomEvent) => {
+      const {tracks: newTracks} = e.detail;
+      if(JSON.stringify(newTracks) === JSON.stringify(tracks)){
+        return;
+      }
+      setTracks(newTracks);
+    });
   }, []);
 
   useEffect(() => {
