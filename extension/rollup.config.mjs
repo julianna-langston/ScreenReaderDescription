@@ -70,18 +70,18 @@ export default [
             typescript({ tsconfig: "./tsconfig.json" }),
         ]
     },
-    // {
-    //     input: "src/hidive.ts",
-    //     output: [
-    //         {
-    //             file: "dist/hidive.js",
-    //             format: "iife"
-    //         }
-    //     ],
-    //     plugins: [
-    //         typescript({ tsconfig: "./tsconfig.json" }),
-    //     ]
-    // },
+    {
+        input: "src/hidive.ts",
+        output: [
+            {
+                file: "dist/hidive.js",
+                format: "iife"
+            }
+        ],
+        plugins: [
+            typescript({ tsconfig: "./tsconfig.json" }),
+        ]
+    },
     {
         input: "src/emby.ts",
         output: [

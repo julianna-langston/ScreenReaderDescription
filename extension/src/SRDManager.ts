@@ -143,7 +143,7 @@ export class SRDManager {
             errorCallback?.();
             return;
         }
-        if (!this.videoElement.paused) {
+        if (this.videoElement && !this.videoElement.paused) {
             this.playTranscriptFrom(this.videoElement.currentTime);
         }
     }
