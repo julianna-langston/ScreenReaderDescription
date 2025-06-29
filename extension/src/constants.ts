@@ -14,9 +14,7 @@ export const youtubeStyle = `
     }
 }
 `;
-export const crunchyrollStyle = `
+export const defaultStyle = `
 #${ccId} div:not(:first-child){
     display: none;
 }`;
-export const disneyStyle = crunchyrollStyle;
-export const embyStyle = crunchyrollStyle;

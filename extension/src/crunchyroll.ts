@@ -1,9 +1,9 @@
-import { crunchyrollStyle} from "./constants";
+import { defaultStyle} from "./constants";
 import { SRDManager } from "./SRDManager";
 
 new SRDManager({
     generateServerPath: (id) => `https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main/transcripts/crunchyroll/${id}.json`,
-    style: crunchyrollStyle,
+    style: defaultStyle,
     videoSelector: "video",
     platformId: "crunchyroll",
     ccContainerSelector: "#velocity-player-package",
