@@ -28,6 +28,10 @@ export const createTrackEditorDialog = (submitCallback: () => void) => {
     });
     dialog.appendChild(trackEditorInput);
     dialog.appendChild(trackSubmitButton);
+
+    dialog.addEventListener("close", () => {
+        dialog.setAttribute("data-isEditing", "false");
+    });
     return dialog;
 }
 
