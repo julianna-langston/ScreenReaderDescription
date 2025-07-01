@@ -1,16 +1,10 @@
+import type { ScriptInfo, ScriptMetadata } from "../../types";
+import { renderTimestamp } from "./utils";
+
 const domains = ["crunchyroll", "youtube", "hidive", "emby"];
 const listKeys = domains.map((str) => `script-${str}-list`);
 
-const renderTimestamp = (seconds) => `${padNumbers(Math.floor(seconds / 60), 2)}:${padNumbers(Math.floor(seconds % 60), 2)}`;
-const padNumbers = (num, padCount, text = "0") => {
-    const numberLength = String(num).length;
-    const paddingNeeded = padCount - numberLength;
-    if (paddingNeeded <= 0) {
-        return String(num);
-    }
-    return Array(paddingNeeded).fill(text).join("") + num;
-}
-const generateTitleFromMetadata = ({ type, title, creator, seriesTitle, episode, season }) => {
+const generateTitleFromMetadata = ({ type, title, creator, seriesTitle, episode, season }: ScriptMetadata) => {
     switch (type) {
         case "other":
         case "music video": {
@@ -25,7 +19,7 @@ const generateTitleFromMetadata = ({ type, title, creator, seriesTitle, episode,
         }
     }
 };
-const downloadTracks = (filename, text) => {
+const downloadTracks = (filename: string, text: string) => {
     const element = document.createElement("a");
     element.setAttribute("href", `data:text/plain;charset=utf-8,${encodeURIComponent(text)}`);
     element.setAttribute("download", filename);
@@ -71,7 +65,7 @@ const refreshList = async () => {
     });
     showList(allScripts);
 };
-const showList = (list) => {
+const showList = (list: ScriptInfo[]) => {
     const table = document.getElementById("displayList");
     table.innerHTML = `<tr>
         <td>Domain</td>
@@ -106,7 +100,7 @@ const showList = (list) => {
         const td2 = document.createElement("td");
         const btn = document.createElement("button");
         btn.textContent = "Export";
-        btn.draggable = "true";
+        btn.draggable = true;
         btn.addEventListener("click", () => downloadTracks(json.source.id + ".json", JSON.stringify(json)));
         btn.addEventListener("dragstart", (e) => {
             e.dataTransfer.setData("text/plain", JSON.stringify(json));
@@ -128,7 +122,7 @@ const showList = (list) => {
         table.appendChild(tr);
     });
 };
-const jsonProcessor = async (json) => {
+const jsonProcessor = async (json: ScriptInfo) => {
     const listKey = `script-${json.source.domain}-list`;
     const myList = (await chrome.storage.local.get(listKey))?.[listKey] ??
         [];

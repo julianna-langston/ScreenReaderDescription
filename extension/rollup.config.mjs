@@ -1,7 +1,7 @@
 import typescript from "@rollup/plugin-typescript";
 import copy from 'rollup-plugin-copy';
 
-const files = ["crunchyroll", "editor_bridge", "background", "hidive", "emby", "youtube", "options"]    // "description"
+const files = ["crunchyroll", "editor_bridge", "background", "hidive", "emby", "youtube", "options", "description"]    // "description"
 
 export default [
     {

@@ -80,7 +80,17 @@ export const grabScripts = async (storageKey: string, serverPath: string): Promi
         return (await result.json());
     }
     catch (err) {
-        console.warn("Received error while fetching/processing json from server: ", err);
+        console.log("Received error while fetching/processing json from server: ", err);
         return null;
     }
 };
+
+const padNumbers = (num: number, padCount: number, text = "0") => {
+    const numberLength = String(num).length;
+    const paddingNeeded = padCount - numberLength;
+    if (paddingNeeded <= 0) {
+        return String(num);
+    }
+    return Array(paddingNeeded).fill(text).join("") + num;
+}
+export const renderTimestamp = (seconds: number) => `${padNumbers(Math.floor(seconds / 60), 2)}:${padNumbers(Math.floor(seconds % 60), 2)}`;
