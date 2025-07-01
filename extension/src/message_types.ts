@@ -12,12 +12,13 @@ import { ScriptData } from "../../types";
  */
 
 export type UpdateScriptTracks = {
-    type: "update-script-tracks",
-    tracks: ScriptData["tracks"]
+    type: "update-script-tracks";
+    tracks: ScriptData["tracks"];
+    lastTouched: number;
 }
 
 export type EditorHandshake = {
-    type: "editor-bridge",
+    type: "editor-bridge";
     editorTabId: number;
 }
 
