@@ -1,6 +1,8 @@
 import typescript from "@rollup/plugin-typescript";
 import copy from 'rollup-plugin-copy';
 
+const files = ["crunchyroll", "editor_bridge", "background", "hidive", "emby", "youtube", "options"]    // "description"
+
 export default [
     {
         input: "src/popup.ts",
@@ -22,88 +24,18 @@ export default [
             })
         ]
     },
-    {
-        input: "src/editor_bridge.ts",
-        output: [
-            {
-                file: "dist/editor_bridge.js",
-                format: "iife"
-            }
-        ],
-        plugins: [
-            typescript({ tsconfig: "./tsconfig.json" }),
-        ]
-    },
-    {
-        input: "src/background.ts",
-        output: [
-            {
-                file: "dist/background.js",
-                format: "iife"
-            }
-        ],
-        plugins: [
-            typescript({ tsconfig: "./tsconfig.json" }),
-        ]
-    },
-    // {
-    //     input: "src/description.ts",
-    //     output: [
-    //         {
-    //             file: "dist/description.js",
-    //             format: "iife"
-    //         }
-    //     ],
-    //     plugins: [
-    //         typescript({ tsconfig: "./tsconfig.json" }),
-    //     ]
-    // },
-    {
-        input: "src/crunchyroll.ts",
-        output: [
-            {
-                file: "dist/crunchyroll.js",
-                format: "iife"
-            }
-        ],
-        plugins: [
-            typescript({ tsconfig: "./tsconfig.json" }),
-        ]
-    },
-    {
-        input: "src/hidive.ts",
-        output: [
-            {
-                file: "dist/hidive.js",
-                format: "iife"
-            }
-        ],
-        plugins: [
-            typescript({ tsconfig: "./tsconfig.json" }),
-        ]
-    },
-    {
-        input: "src/emby.ts",
-        output: [
-            {
-                file: "dist/emby.js",
-                format: "iife"
-            }
-        ],
-        plugins: [
-            typescript({ tsconfig: "./tsconfig.json" }),
-        ]
-    },
-    {
-        input: "src/youtube.ts",
-        output: [
-            {
-                file: "dist/youtube.js",
-                format: "iife"
-            }
-        ],
-        plugins: [
-            typescript({ tsconfig: "./tsconfig.json" }),
-        ]
-    }
+    ...files.map((filename) => {
+        return {
+            input: `src/${filename}.ts`,
+            output: [
+                {
+                    file: `dist/${filename}.js`,
+                    format: "iife"
+                }
+            ],
+            plugins: [
+                typescript({ tsconfig: "./tsconfig.json" }),
+            ]
+        }
+    })
 ]
