@@ -13,7 +13,8 @@ const sendMessageToBackground = () => {
     }
     const videoMessage: UpdateScriptTracks = {
         type: "update-script-tracks",
-        tracks: currentTracks
+        tracks: currentTracks,
+        lastTouched: -1
     };
     const forwardable: Forwardable = {
         type: "forward",
@@ -37,7 +38,8 @@ chrome.runtime.onMessage.addListener((message: EditorReceivableMessageTypes) => 
             document.dispatchEvent(
                 new CustomEvent("ScreenReaderDescription-Track-Update-From-Player", {
                     detail: {
-                        tracks: message.tracks
+                        tracks: message.tracks,
+                        lastTouched: message.lastTouched
                     }
                 })
             );

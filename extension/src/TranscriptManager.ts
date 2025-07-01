@@ -2,6 +2,7 @@ import { ScriptData } from "../../types";
 
 export class TranscriptManager {
   private _tracks: ScriptData["tracks"] = [];
+  public lastTouchedTimestamp = -1;
   public onTrackChange = () => {};
 
   get currentTracks() {
@@ -32,18 +33,21 @@ export class TranscriptManager {
   addTrack(timestamp: number, text: string) {
     const newTrackList = this.currentTracks.slice(0);
     newTrackList.push({timestamp, text});
+    this.lastTouchedTimestamp = timestamp;
     this.currentTracks = newTrackList;
   }
-
+  
   editTrack(timestamp: number, text: string){
     const newTrackList = this.currentTracks.slice(0);
     const index = newTrackList.findIndex(({timestamp: comparer}) => comparer === timestamp);
+    this.lastTouchedTimestamp = timestamp;
     this.currentTracks = newTrackList.toSpliced(index, 1, {text, timestamp});
   }
   
   moveTrack(timestamp: number, diff: number){
     const newTrackList = this.currentTracks;
     const index = newTrackList.findIndex(({timestamp: comparer}) => comparer === timestamp);
+    this.lastTouchedTimestamp = timestamp;
     this.currentTracks = newTrackList.toSpliced(index, 1, {
         text: newTrackList[index].text, 
         timestamp: timestamp + diff

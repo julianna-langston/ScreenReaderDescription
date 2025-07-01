@@ -65,7 +65,8 @@ export class SRDManager {
             if(this.bridgedTabId !== null){
                 const updateMessage: UpdateScriptTracks = {
                     type: "update-script-tracks",
-                    tracks: this.script.currentTracks
+                    tracks: this.script.currentTracks,
+                    lastTouched: this.script.lastTouchedTimestamp
                 };
                 const forwardable: Forwardable = {
                     type: "forward",

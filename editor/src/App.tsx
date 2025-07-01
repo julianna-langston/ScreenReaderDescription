@@ -168,11 +168,12 @@ function App() {
 
     // @ts-expect-error
     document.addEventListener("ScreenReaderDescription-Track-Update-From-Player", (e: CustomEvent) => {
-      const {tracks: newTracks} = e.detail;
+      const {tracks: newTracks, lastTouched} = e.detail;
       if(JSON.stringify(newTracks) === JSON.stringify(tracks)){
         return;
       }
       setTracks(newTracks);
+      setLastTouchedTimestamp(lastTouched)
     });
   }, []);
 
