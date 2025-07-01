@@ -37,3 +37,31 @@ chrome.runtime.onMessage.addListener((message: BackgroundReceivableMessageTypes,
         }
     }
 });
+
+
+const updateForEmby = async () => {
+    const info = await chrome.scripting?.getRegisteredContentScripts();
+    const hasRegisteredContentScripts = info.length > 0;
+    const {embyUrl} = await chrome.storage.sync.get({embyUrl: ""});
+
+    if(hasRegisteredContentScripts){
+        await chrome.scripting.updateContentScripts([{
+            id: "emby-url",
+            matches: [embyUrl]
+        }]);
+    }else{
+        await chrome.scripting.registerContentScripts([{
+            id: "emby-url",
+            js: ["emby.js"],
+            matches:["https://emby.firethestars.com/*"],
+        }]);
+    }
+};
+
+void updateForEmby();
+
+chrome.storage.sync.onChanged.addListener((changes) => {
+    if("embyUrl" in changes){
+        void updateForEmby();
+    }
+});
