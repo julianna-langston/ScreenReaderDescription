@@ -16,87 +16,91 @@
       "language": "en-US",
       "author": "Julianna Langston",
       "tracks": [
-        { "timestamp": 17, "text": "Muscular arms and abs also bear scars." },
         {
-          "timestamp": 19,
+          "timestamp": 41,
+          "text": "Muscular legs walk foward. Twin green blades dangle to side. The thighs bear large, dark scars."
+        },
+        { "timestamp": 44, "text": "Muscular arms and abs also bear scars." },
+        {
+          "timestamp": 46,
           "text": "Sunraku wears only blue shorts and a blue bird mask."
         },
         {
-          "timestamp": 23,
+          "timestamp": 50,
           "text": "Red text appears, Shangri-La Frontier. Beyond the text is an expanse of mountains, forests, plains, and cities. We zoom out and the expanse is reflected in VR goggles worn by Rakuro"
         },
         {
-          "timestamp": 34,
+          "timestamp": 61,
           "text": "At night, Sunraku stands in a misty field"
         },
         {
-          "timestamp": 39,
+          "timestamp": 66,
           "text": "Moon light shines over Sunraku as he stands near large rocks."
         },
         {
-          "timestamp": 41,
+          "timestamp": 68,
           "text": "Rakuro smiles. His image glitches into Sunraku, whose brow furrows"
         },
         {
-          "timestamp": 44,
+          "timestamp": 71,
           "text": "Pencilgon, a woman with long purple hair, twirls a spear in a forest."
         },
         {
-          "text": "Katzo, a girl with blond pig tails, walks forward. Looking away from us, she puts her hands on her hips.",
-          "timestamp": 48
+          "timestamp": 75,
+          "text": "A girl with blond pig tails walks forward. Looking away from us, she puts her hands on her hips."
         },
         {
-          "timestamp": 51,
-          "text": "Psyger-0 swings a log. Emul wears a suit and top hat. She leaps and is replaced by her human form."
+          "timestamp": 78,
+          "text": "Psyger-0, a knight, wears a helmet. Emul wears a suit and top hat. She leaps and is replaced by her human form."
         },
         {
-          "timestamp": 53,
+          "timestamp": 80,
           "text": "Vysache wears an eye patch. He holds a carrot shaped smoking pipe and sits cross legged in a low lit, traditional Japanese room"
         },
         {
-          "timestamp": 58,
-          "text": "Orcelot, wearing armor and a purple cape, sits on a box in a storage room."
+          "timestamp": 85,
+          "text": "A man wearing armor and a purple cape sits on a box in a storage room."
         },
         {
-          "timestamp": 61,
+          "timestamp": 88,
           "text": "Lycagon bears fangs over a forest, backdropped by a red moon. Yellow lines shine around her red, glowing eyes."
         },
         {
-          "timestamp": 65,
+          "timestamp": 92,
           "text": "Sunraku runs through the woods. He leaps, and crosses in front of a full moon."
         },
         {
-          "timestamp": 68,
+          "timestamp": 95,
           "text": "Flying through the air, he kicks and punches goblins. Holding red twin knives, he cuts at more goblins."
         },
         {
-          "timestamp": 72,
+          "timestamp": 99,
           "text": "With red glowing fists, the blond girl fires energy blasts at goblins. Pencilgon strikes human sized wasps. They fight back to back."
         },
         {
-          "timestamp": 77,
+          "timestamp": 104,
           "text": "Vysache, with a scar over his right eye, slowly opens his eyes."
         },
         {
-          "text": "Pencilgon strikes with a sword. Katzo punches with a fire ball.",
-          "timestamp": 79
+          "timestamp": 106,
+          "text": "Pencilgon strikes with a sword. The blond girl punches with a fire ball."
         },
         {
-          "timestamp": 82,
-          "text": "The knight strikes the ground, and the ground explodes with brilliant light that fades to lightning."
+          "timestamp": 109,
+          "text": "Psyger-0 strikes the ground, and the ground explodes with brilliant light that fades to lightning."
         },
         {
-          "timestamp": 86,
+          "timestamp": 113,
           "text": "A town of small red houses and rabbit shaped motifs. A large temple rests at the top of a giant tree. "
         },
         {
-          "timestamp": 90,
-          "text": "The town fades into the bird man's red eye"
+          "timestamp": 117,
+          "text": "The town fades into Sunraku's red bird eye"
         },
-        { "timestamp": 93, "text": "Emul leaps up, smiling." },
+        { "timestamp": 120, "text": "Emul leaps up, smiling." },
         {
-          "text": "In a forest glowing with a red mist, Katzo, Sunraku, and Pencilgon walk side by side.",
-          "timestamp": 97
+          "timestamp": 124,
+          "text": "In a forest glowing with a red mist, the blond girl, Sunraku, and Pencilgon walk side by side."
         },
         { "text": "Emul flails and conjures a door", "timestamp": 156 },
         { "text": "Vash exhales smoke", "timestamp": 170 },
@@ -144,7 +148,7 @@
           "timestamp": 682
         },
         {
-          "text": "He strikes. Magic circles fly into the air, then fall back down to the anvil, embuing themselvs in the blade.",
+          "text": "He strikes. Magic circles fly into the air, then fall back down to the anvil, embuing themselves in the blade.",
           "timestamp": 688
         },
         {
@@ -185,7 +189,7 @@
         { "text": "Vash hammers a punch", "timestamp": 923 },
         {
           "text": "Cannot be wielded due to failure to meet stat requirements.",
-          "timestamp": 933
+          "timestamp": 991.7
         },
         { "text": "Thirdrema", "timestamp": 1038 },
         { "text": "Narrow, twisting alleyways", "timestamp": 1041 },
@@ -300,7 +304,7 @@
           "timestamp": 1502
         },
         {
-          "text": "Post-Episode Footnotes: The spelling of the name \"Kei Uomi\". Given name \"Kei\" is spelled with the kanji for \"wisdom.\" Family name \"Uomi\" is spelled with the characters \"fish\" and \"light\"/\"buoyant\". When you combine these kanji into a bigger kanji, it spells \"katsuo\". Katsuo is the fish slipjack tuna. The fish can be dried to produce fish flakes, also known as bonito. Bonito is used as the base for katsuo dashi, the most common form of dashi (soup stock). Player name Modor Katzo refers to the fishing season modori katsuo, translated Returning Katsuo, when are at their highest quality. The name Katzo Tataki refers to the dish katsuo tataki, where raw fish is seasoned and seared. The name Oikatzo refers to the ingredient oigatsuo, spelled leveled up katsuo, which refers to dashi that's been mixed with soy sauce.",
+          "text": "Post-Episode Footnotes: On the spelling of the name \"Kei Uomi\". Given name \"Kei\" is spelled with the kanji for \"wisdom.\" Family name \"Uomi\" is spelled with the characters \"fish\" and \"light\"/\"buoyant\". When you combine these kanji into a bigger kanji, it spells \"katsuo\". Katsuo is the fish slipjack tuna. The fish can be dried to produce fish flakes, also known as bonito. Bonito is used as the base for katsuo dashi, the most common form of dashi (soup stock). Player name Modor Katzo refers to the fishing season modori katsuo, translated Returning Katsuo, when katsuo are at their highest quality. The name Katzo Tataki refers to the sashimi dish katsuo tataki, where raw fish is seasoned and seared. The name Oikatzo refers to the ingredient oigatsuo, spelled leveled up katsuo, which refers to dashi that's been mixed with soy sauce.",
           "timestamp": 1505
         }
       ]
