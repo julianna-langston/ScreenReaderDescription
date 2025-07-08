@@ -1,0 +1,140 @@
+{
+  "source": {
+    "url": "https://www.crunchyroll.com/watch/GQJUM0403/track-it-like-a-bloodhound",
+    "domain": "crunchyroll",
+    "id": "GQJUM0403"
+  },
+  "metadata": {
+    "type": "television episode",
+    "title": "https://www.crunchyroll.com/watch/GQJUM0403/track-it-like-a-bloodhound",
+    "seriesTitle": "Shangri-La Frontier",
+    "season": 2,
+    "episode": 10
+  },
+  "scripts": [
+    {
+      "language": "en-US",
+      "author": "Julianna Langston",
+      "tracks": [
+        { "timestamp": 1.5, "text": "Bird fly past an ornate cathedral" },
+        {
+          "timestamp": 5.3,
+          "text": "Pencilgon walks along the marble floors, past columns. Stain glass casts a glow of pink across Animalia's face."
+        },
+        {
+          "timestamp": 34.6,
+          "text": "Animalia smiles. Pencilgon puts her hands on her hips and smiles wide."
+        },
+        {
+          "timestamp": 39,
+          "text": "Red light rolls right over humans. Green light rolls left over avatars. Rakuro and Sunraku, Towa and Pencilgon, Kei and Katzo, Rei and Psyger-0."
+        },
+        {
+          "text": "A green sword-shaped tower stands behind a fountain in the middle of Eleventar. Day turns to night. Red text, Shangri-La Frontier.",
+          "timestamp": 53
+        },
+        { "timestamp": 61, "text": "Sunraku stands in the Inventoria" },
+        {
+          "timestamp": 63,
+          "text": "Pencilgon and Katzo stand back to back in the ruins."
+        },
+        { "timestamp": 67, "text": "A mail bird lands on Psyger-0's arm." },
+        {
+          "timestamp": 70,
+          "text": "Akane and Creecure run at night through the ruins."
+        },
+        {
+          "timestamp": 72.5,
+          "text": "Ether Reactor, Operations Unit, Golden Crystal sphere, Idols"
+        },
+        { "timestamp": 73.5, "text": "Professor in library" },
+        { "text": "Psyger-100 in Eleventar", "timestamp": 75 },
+        { "timestamp": 76.7, "text": "Emul runs from SF Zoo" },
+        {
+          "text": "Bilac hammers in a forge. Amariys sips coffee. In Nephilim Hollow, Rust and Mold stand on a roof near satellite dishes.",
+          "timestamp": 79.8
+        },
+        {
+          "timestamp": 84.5,
+          "text": "A computer sits in the Utopia reference room."
+        },
+        {
+          "timestamp": 86.7,
+          "text": "Sunraku flies through the crystal nest fighting scorpions."
+        },
+        {
+          "timestamp": 90.5,
+          "text": "Sunraku flies through the Ruins, fighting golems."
+        },
+        {
+          "timestamp": 94.7,
+          "text": "In Nephilim Hollow, Sunraku stares up. He dissapears. Kingfisher and Crimson Twinewing fly around and fight. In the red mecha, Rust screams."
+        },
+        { "timestamp": 101, "text": "A spiky golem in the ruins." },
+        {
+          "timestamp": 102.69999999999999,
+          "text": "The Gatekeeper's arms glow blue."
+        },
+        {
+          "timestamp": 104.4,
+          "text": "The Golden Crystal scorpion spreads its pincers."
+        },
+        {
+          "timestamp": 108.1,
+          "text": "Akitsu Akane, a blue haired ninja girl, makes hand signals."
+        },
+        {
+          "text": "Sunraku stares up at the Overdress Golem",
+          "timestamp": 111
+        },
+        { "timestamp": 114.4, "text": "Pencilgon swings a golden spear." },
+        {
+          "timestamp": 116.30000000000001,
+          "text": "Katzo red fist punches the Gatekeeper."
+        },
+        {
+          "timestamp": 118.19999999999999,
+          "text": "Psyger-0 holds a sword and takes her dark form."
+        },
+        { "text": "Sunraku wears his helm and Gilta Bar", "timestamp": 120.8 },
+        { "timestamp": 121.5, "text": "Clouds cover the moon." },
+        {
+          "timestamp": 125.69999999999999,
+          "text": "A shadowy wolf lunges from the darkness."
+        },
+        { "text": "Text, 35, Track it like a blood hound", "timestamp": 127.4 },
+        {
+          "timestamp": 220.6,
+          "text": "The crystal grows into the arm, pulverizing it."
+        },
+        {
+          "timestamp": 241.7,
+          "text": "He punches the support rapidly. It begins to crack."
+        },
+        {
+          "timestamp": 258.6,
+          "text": "The saw falls and crashes into the mountain. Sunraku falls."
+        },
+        { "timestamp": 262, "text": "Flit float" },
+        {
+          "timestamp": 265.5,
+          "text": "He loads on a magic circle and turns around. The mountain shudders and disappears."
+        },
+        {
+          "text": "Players ride in a gondola in Eleventar. Water channels flow from a central fountain, where a tall, green, stone sword stands at an angle. Players gather on a bridge over a channel.",
+          "timestamp": 311.9
+        },
+        { "text": "Armor shop", "timestamp": 318.2 },
+        { "timestamp": 344.7, "text": "He wears the sash" },
+        { "text": "He bows 60 degrees", "timestamp": 387.2 },
+        { "timestamp": 403.6, "text": "He looks up" },
+        { "timestamp": 466.8, "text": "She walks closer" },
+        {
+          "timestamp": 509.6,
+          "text": "A stone hand lies pierced by a stone sword"
+        },
+        { "timestamp": 512.3, "text": "Text, Lightless Barrens" }
+      ]
+    }
+  ]
+}

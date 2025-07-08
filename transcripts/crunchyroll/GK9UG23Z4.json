@@ -1,0 +1,200 @@
+{
+  "source": {
+    "url": "https://www.crunchyroll.com/watch/GK9UG23Z4/run-fueled-by-impatience",
+    "domain": "crunchyroll",
+    "id": "GK9UG23Z4"
+  },
+  "metadata": {
+    "type": "television episode",
+    "title": "Run, Fueled by Impatience",
+    "seriesTitle": "Shangri-La Frontier",
+    "season": 2,
+    "episode": 9
+  },
+  "scripts": [
+    {
+      "language": "en-US",
+      "author": "Julianna Langston",
+      "tracks": [
+        {
+          "timestamp": 35,
+          "text": "Red light rolls right over humans. Green light rolls left over avatars. Rakuro and Sunraku, Towa and Pencilgon, Kei and Katzo, Rei and Psyger-0."
+        },
+        {
+          "timestamp": 49,
+          "text": "A green tower stands behind a fountain in the middle of a red-bricked town. Day turns to night. Red text, Shangri-La Frontier."
+        },
+        { "timestamp": 57, "text": "Sunraku stands in the Inventoria" },
+        {
+          "timestamp": 59,
+          "text": "Pencilgon and Katzo stand back to back in the ruins."
+        },
+        { "timestamp": 63, "text": "A mail bird lands on Psyger-0's arm." },
+        {
+          "text": "Akane and Creecure run at night through the ruins.",
+          "timestamp": 66
+        },
+        {
+          "timestamp": 68.5,
+          "text": "Ether Reactor, Operations Unit, Golden Crystal sphere, Idols"
+        },
+        { "timestamp": 69.5, "text": "Professor in library" },
+        { "timestamp": 71, "text": "Psyger-100 in town" },
+        { "timestamp": 72.7, "text": "Emul runs from SF Zoo" },
+        {
+          "timestamp": 75.8,
+          "text": "Bilac hammers in a forge. Amariys sips coffee. In Nephilim Hollow, Rust and a man stand on a roof near satellite dishes."
+        },
+        {
+          "timestamp": 80.5,
+          "text": "A computer sits in the Utopia reference room."
+        },
+        {
+          "timestamp": 82.7,
+          "text": "Sunraku flies through the crystal nest fighting scorpions."
+        },
+        {
+          "timestamp": 86.5,
+          "text": "Sunraku flies through the Ruins, fighting golems."
+        },
+        {
+          "text": "In Nephilim Hollow, Sunraku stares up. He dissapears. Kingfisher and Crimson Twinewing fly around and fight. In the red mecha, Rust screams.",
+          "timestamp": 90.7
+        },
+        { "timestamp": 97, "text": "A spiky golem in the ruins." },
+        {
+          "timestamp": 98.69999999999999,
+          "text": "The Gatekeeper's arms glow blue."
+        },
+        {
+          "timestamp": 100.4,
+          "text": "The Golden Crystal scorpion spreads its pincers."
+        },
+        {
+          "text": "Akitsu Akane, a blue haired ninja girl, makes hand signals.",
+          "timestamp": 104.1
+        },
+        {
+          "timestamp": 107,
+          "text": "Sunraku stares up at a giant mountain of metal trash."
+        },
+        { "timestamp": 110.4, "text": "Pencilgon swings a golden spear." },
+        {
+          "timestamp": 112.30000000000001,
+          "text": "Katzo red fist punches the Gatekeeper."
+        },
+        {
+          "timestamp": 114.19999999999999,
+          "text": "Psyger-0 holds a sword and takes her dark form."
+        },
+        {
+          "timestamp": 116.80000000000001,
+          "text": "Sunraku wears a mask and holds crystal arm guns."
+        },
+        { "timestamp": 117.5, "text": "Clouds cover the moon." },
+        {
+          "timestamp": 121.69999999999999,
+          "text": "A shadowy wolf lunges from the darkness."
+        },
+        { "timestamp": 125.3, "text": "Text, 34, Run, Fueled by Impatience" },
+        { "timestamp": 239.8, "text": "He grabs Emul's head and shakes." },
+        { "timestamp": 353.3, "text": "The RNG Goddess shows middle fingers." },
+        { "timestamp": 354.8, "text": "Sunraku falls to the floor." },
+        { "timestamp": 368.2, "text": "He launches a map" },
+        { "timestamp": 420.8, "text": "He equips a carrot" },
+        {
+          "text": "Gilta Brill is a pair of 3 foot long crystal gun gauntlets.",
+          "timestamp": 485.3
+        },
+        {
+          "text": "He leaps through the door and closes it.",
+          "timestamp": 562.5
+        },
+        { "timestamp": 570.7, "text": "Eighthold at day time" },
+        { "timestamp": 580.5, "text": "Stat screen. Luck 104, Vitality 3" },
+        { "timestamp": 618.6, "text": "He thinks of Katzo and Pencilgon" },
+        { "timestamp": 633.6, "text": "Animalia" },
+        { "timestamp": 634.7, "text": "Psyger-100" },
+        { "timestamp": 635.8, "text": "Psyger-0" },
+        { "timestamp": 636.8, "text": "Professor" },
+        { "timestamp": 652.2, "text": "Mailbird flies" },
+        { "timestamp": 654.2, "text": "Psyger-100 sits in Schwarz Vulf HQ" },
+        { "timestamp": 691.9, "text": "A pigeon carries mail to Psyger-0" },
+        { "timestamp": 703.8, "text": "Psyger-0 reads the letter" },
+        {
+          "timestamp": 722.5,
+          "text": "She walks to the door and trips over her own foot."
+        },
+        { "timestamp": 735.4, "text": "At the Saiga residence." },
+        {
+          "timestamp": 741.3,
+          "text": "Rei lies on a futon in her tatami matt room"
+        },
+        {
+          "timestamp": 766.5,
+          "text": "She blushes and rolls around, flailing. Above her, a wall scroll reads \"Constant Progress\""
+        },
+        {
+          "timestamp": 772.4,
+          "text": "In the traditional japanese garden, water falls into a souzu bamboo shoot and pours out."
+        },
+        { "timestamp": 790.6, "text": "The ruins of past glories" },
+        { "text": "Sunraku looks at an error message", "timestamp": 793.6 },
+        { "timestamp": 799.5, "text": "He holds Gilta Brill" },
+        {
+          "timestamp": 801.8,
+          "text": "Cannot equip weapon due to insufficient stats."
+        },
+        { "timestamp": 874.6, "text": "A mail bird falcon flies overhead" },
+        { "timestamp": 978, "text": "He sees a pile of junk" },
+        { "timestamp": 979.6, "text": "He breaks" },
+        {
+          "text": "He shouts at a hmountain of metal parts. Steam emerges.",
+          "timestamp": 994.7
+        },
+        {
+          "text": "A claw raises. A pylon drives into the ground. A circular saw rises hundreds of feet in the air.",
+          "timestamp": 1024.2
+        },
+        { "text": "Text, Area Boss, Overdress Golem", "timestamp": 1034.5 },
+        { "timestamp": 1070.9, "text": "Boosts" },
+        { "timestamp": 1073.1, "text": "Junk falls towards him." },
+        {
+          "timestamp": 1092.2,
+          "text": "He leaves an outline of himself behind him."
+        },
+        {
+          "timestamp": 1095.6,
+          "text": "The golem swings an arm at the outline."
+        },
+        {
+          "timestamp": 1098.1,
+          "text": "The outline flickers while Sunraku skates away."
+        },
+        { "timestamp": 1123.7, "text": "He brakes, then engages boat leap." },
+        { "timestamp": 1145.1, "text": "A hand swings around to him" },
+        {
+          "timestamp": 1175.9,
+          "text": "He leaps off of parts and pipes, reaching a platform near the top."
+        },
+        {
+          "timestamp": 1319.1,
+          "text": "In a red toned town with a green sword shaped tower in the background, Psyger-0 stands under an awning."
+        },
+        {
+          "timestamp": 1324.1,
+          "text": "Players side eye her and walk past hurriedly"
+        },
+        { "timestamp": 1353.7, "text": "Text, 36, The saint's holy water" },
+        {
+          "timestamp": 1397.4,
+          "text": "Text, and so, the new chapter of his life begins..."
+        },
+        {
+          "text": "Item shop sign, Sold out of Saint's Holy Water, Restock Date TBA",
+          "timestamp": 1423.4
+        }
+      ]
+    }
+  ]
+}

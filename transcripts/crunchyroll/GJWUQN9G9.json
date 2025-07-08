@@ -1,0 +1,233 @@
+{
+  "source": {
+    "url": "https://www.crunchyroll.com/watch/GJWUQN9G9/when-humanity-dreams-of-the-impossible-and-takes-to-the-skies",
+    "domain": "crunchyroll",
+    "id": "GJWUQN9G9"
+  },
+  "metadata": {
+    "type": "television episode",
+    "title": "When Humanity Dreams of the Impossible and Takes to the Skies",
+    "seriesTitle": "Shangri-La Frontier",
+    "season": 2,
+    "episode": 4
+  },
+  "scripts": [
+    {
+      "language": "en-US",
+      "author": "Julianna Langston",
+      "tracks": [
+        { "text": "The Serpent's Apple in Eighthold", "timestamp": 0 },
+        {
+          "timestamp": 20.5,
+          "text": "Text, 29, When humanity dreams of the impossible and takes to the skies"
+        },
+        {
+          "timestamp": 26.2,
+          "text": "Katzo, Sunraku, the Psyger sisters, Animalia, and Professor stare."
+        },
+        { "timestamp": 33.5, "text": "Pencilgon smiles. Psyger-100 smiles." },
+        {
+          "timestamp": 67,
+          "text": "Red light rolls right over humans. Green light rolls left over player characters. Rakuro and Sunraku, Towa and Pencilgon, Kei and Katzo, Rei and Psyger-0."
+        },
+        {
+          "timestamp": 81,
+          "text": "A green tower stands behind a fountain in the middle of a red-bricked town. Day turns to night. Red text, Shangri-La Frontier."
+        },
+        { "timestamp": 89, "text": "Sunraku stands in the Inventoria" },
+        {
+          "text": "Pencilgon and Katzo stand back to back in the ruins.",
+          "timestamp": 91
+        },
+        { "timestamp": 95, "text": "A mail bird lands on Psyger-0's arm." },
+        { "text": "A ninja runs at night through the ruins.", "timestamp": 98 },
+        { "timestamp": 101.5, "text": "Professor in library" },
+        { "timestamp": 103, "text": "Psyger-100 in town" },
+        { "timestamp": 104.7, "text": "Emul runs from SF Zoo" },
+        {
+          "timestamp": 107.8,
+          "text": "Bilac hammers in a forge. Amariys sips coffee. A woman and man stand on a roof near satellite dishes."
+        },
+        {
+          "timestamp": 112.5,
+          "text": "A computer sits in the Utopia reference room."
+        },
+        {
+          "timestamp": 114.7,
+          "text": "Sunraku flies through the crystal nest fighting scorpions."
+        },
+        {
+          "timestamp": 118.5,
+          "text": "Sunraku flies through the Ruins, fighting golems."
+        },
+        {
+          "timestamp": 122.7,
+          "text": "A mecha stares up. Blue and red mecha fly around and fight. The pink haired woman is in the red mecha."
+        },
+        { "timestamp": 129, "text": "A spiky golem in the ruins." },
+        { "timestamp": 130.7, "text": "The Gatekeeper's arms glow blue." },
+        { "timestamp": 132.4, "text": "A lava crystal scorpion" },
+        {
+          "timestamp": 136.1,
+          "text": "A blue haired ninja girl makes hand signals."
+        },
+        {
+          "timestamp": 139,
+          "text": "Sunraku stares up at agiant mountain of metal trash."
+        },
+        { "timestamp": 142.4, "text": "Pencilgon swings a golden spear." },
+        {
+          "timestamp": 144.3,
+          "text": "Katzo red fist punches the Gatekeeper."
+        },
+        {
+          "timestamp": 146.2,
+          "text": "Psyger-0 holds a sword and takes her dark form."
+        },
+        {
+          "timestamp": 148.8,
+          "text": "Sunraku wears a mask and holds crystal arm guns."
+        },
+        { "timestamp": 149.5, "text": "Clouds cover the moon." },
+        {
+          "timestamp": 153.7,
+          "text": "A shadowy wolf lunges from the darkness."
+        },
+        { "timestamp": 345, "text": "She reaches out a hand." },
+        {
+          "text": "They stare up at her, exchange glances, then smile.",
+          "timestamp": 351.3
+        },
+        { "text": "Sunraku slumps.", "timestamp": 394.1 },
+        {
+          "text": "He uses a pick axe in the crystal nest. He dodges scorpions.",
+          "timestamp": 410.4
+        },
+        {
+          "text": "The rolling hills of the crystal nest glow in the moonlight.",
+          "timestamp": 427
+        },
+        { "text": "Sunraku runs", "timestamp": 431 },
+        { "timestamp": 436.4, "text": "He leaps over crystal shards." },
+        {
+          "timestamp": 443.4,
+          "text": "A scorpion pursues, exploding shards in its path."
+        },
+        {
+          "text": "A scorpion blasts in from the right. He rolls and runs left.",
+          "timestamp": 447.9
+        },
+        {
+          "timestamp": 457.6,
+          "text": "He leaps over a shard, drops over a cliff, and lands on an overhang."
+        },
+        { "timestamp": 462.8, "text": "Several scorpions descend." },
+        { "timestamp": 470, "text": "Inventoria" },
+        {
+          "timestamp": 487.1,
+          "text": "In the crystal nest, he lands on a shard."
+        },
+        { "timestamp": 509, "text": "The ground shakes. The shard cracks." },
+        {
+          "timestamp": 512.9,
+          "text": "A scorpion pincer bursts from below, sending him flying, trailing red pixels."
+        },
+        { "text": "Sunraku, HP 0", "timestamp": 519.6 },
+        { "timestamp": 536.2, "text": "Scorpions watch as Sunraku falls." },
+        { "timestamp": 539.1, "text": "Rabituza Inn" },
+        {
+          "text": "Sunraku lies in the bed, glaring at the ceiling.",
+          "timestamp": 542.7
+        },
+        { "timestamp": 551.1, "text": "He logs out." },
+        { "text": "Rakuro removes his goggles.", "timestamp": 552.2 },
+        { "timestamp": 556.4, "text": "He drinks from a Kaiser Energy" },
+        {
+          "text": "He knocks the can off the desk then catches it.",
+          "timestamp": 594.4
+        },
+        { "timestamp": 629.1, "text": "Allows a second mid-air jump." },
+        { "timestamp": 653.5, "text": "He drinks" },
+        {
+          "timestamp": 662.2,
+          "text": "At the Rabituza Inn, Emul opens a door."
+        },
+        { "timestamp": 710.3, "text": "The Forge" },
+        {
+          "text": "Sunraku opens an item list and selects Non-Specialized Armament: Converger, Comet Catapult",
+          "timestamp": 735.9
+        },
+        { "timestamp": 757.5, "text": "She removes the headgear" },
+        {
+          "timestamp": 817.9,
+          "text": "She gets on her hands and knees and dogeza bows."
+        },
+        { "timestamp": 829, "text": "His face softens" },
+        { "timestamp": 833.6, "text": "She looks up" },
+        { "timestamp": 871.5, "text": "She blinks." },
+        { "text": "Sunraku walks down a hallway", "timestamp": 874.1 },
+        { "timestamp": 900.9, "text": "Idol" },
+        { "timestamp": 937.2, "text": "Eighthold at night" },
+        { "text": "A store sign reads Spell books", "timestamp": 938.4 },
+        { "timestamp": 983, "text": "Canyon of Ancient Souls" },
+        { "timestamp": 990.1, "text": "He chases a fleeing wyvern zombie." },
+        {
+          "timestamp": 999.3,
+          "text": "A golden chain bursts from Emul's book and wraps around the wyvern's arms"
+        },
+        {
+          "timestamp": 1021.6,
+          "text": "He strikes it in the back. The zombie disintegrates."
+        },
+        { "timestamp": 1041.4, "text": "He looks behind him." },
+        {
+          "timestamp": 1102,
+          "text": "He leaps above and descends on top of the dullahan, slicing it in half."
+        },
+        { "text": "Text, Level up, 78 arrow 79", "timestamp": 1110 },
+        {
+          "text": "Your skills have evolved. You have learned new skills. New Skills: Cleaver, Ten Counter, Shock wave Fist Level 1, Power slash level 1. Skill evolution: Boundless slash arrow Boundless Massacre, Six Boat Leap arrow Seven Boat Leap",
+          "timestamp": 1114.7
+        },
+        { "timestamp": 1134.7, "text": "Eighthold alley" },
+        {
+          "text": "She walks through the white door, and it disappears.",
+          "timestamp": 1165.2
+        },
+        {
+          "text": "In the Canyon of ancient souls, he climbs a cliff.",
+          "timestamp": 1176.3
+        },
+        {
+          "timestamp": 1187.7,
+          "text": "The crystal nest glitters under a crescent moon."
+        },
+        { "timestamp": 1189.8, "text": "He picks up a piece of crystal." },
+        {
+          "timestamp": 1199.9,
+          "text": "He tosses it, and it bounces off crystal shards."
+        },
+        {
+          "timestamp": 1203.7,
+          "text": "The ground shakes, and scorpions emerge"
+        },
+        { "timestamp": 1210, "text": "He runs" },
+        { "timestamp": 1244.4, "text": "The scorpions gain on him." },
+        {
+          "timestamp": 1259.4,
+          "text": "He approaches a ledge and engages seven boat leap"
+        },
+        {
+          "timestamp": 1267.2,
+          "text": "The scorpions startle, then drag their pincers on the ground, slowing."
+        },
+        { "timestamp": 1282.1, "text": "The mass tumble over the side." },
+        {
+          "timestamp": 1317.6,
+          "text": "He equips marsh dagger, and drags it into the wall of the crystal pit."
+        },
+        { "timestamp": 1324, "text": "Dozens of scorpions fall into the pit." }
+      ]
+    }
+  ]
+}

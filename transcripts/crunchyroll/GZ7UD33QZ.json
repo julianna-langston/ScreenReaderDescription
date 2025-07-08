@@ -1,0 +1,418 @@
+{
+  "source": {
+    "url": "https://www.crunchyroll.com/watch/GZ7UD33QZ/the-wings-in-a-draw",
+    "domain": "crunchyroll",
+    "id": "GZ7UD33QZ"
+  },
+  "metadata": {
+    "type": "television episode",
+    "title": "The Wings in a Draw",
+    "seriesTitle": "Shangri-La Frontier",
+    "season": 2,
+    "episode": 7
+  },
+  "scripts": [
+    {
+      "language": "en-US",
+      "author": "Julianna Langston",
+      "tracks": [
+        {
+          "timestamp": 49,
+          "text": "Red light rolls right over humans. Green light rolls left over avatars. Rakuro and Sunraku, Towa and Pencilgon, Kei and Katzo, Rei and Psyger-0."
+        },
+        {
+          "timestamp": 63,
+          "text": "A green tower stands behind a fountain in the middle of a red-bricked town. Day turns to night. Red text, Shangri-La Frontier."
+        },
+        { "timestamp": 71, "text": "Sunraku stands in the Inventoria" },
+        {
+          "timestamp": 73,
+          "text": "Pencilgon and Katzo stand back to back in the ruins."
+        },
+        { "timestamp": 77, "text": "A mail bird lands on Psyger-0's arm." },
+        { "timestamp": 80, "text": "A ninja runs at night through the ruins." },
+        {
+          "timestamp": 82.5,
+          "text": "Ether Reactor, Operations Unit, Golden Crystal sphere, Idols"
+        },
+        { "timestamp": 83.5, "text": "Professor in library" },
+        { "timestamp": 85, "text": "Psyger-100 in town" },
+        { "timestamp": 86.7, "text": "Emul runs from SF Zoo" },
+        {
+          "text": "Bilac hammers in a forge. Amariys sips coffee. In Nephilim Hollow, Rust and a man stand on a roof near satellite dishes.",
+          "timestamp": 89.8
+        },
+        {
+          "timestamp": 94.5,
+          "text": "A computer sits in the Utopia reference room."
+        },
+        {
+          "timestamp": 96.7,
+          "text": "Sunraku flies through the crystal nest fighting scorpions."
+        },
+        {
+          "timestamp": 100.5,
+          "text": "Sunraku flies through the Ruins, fighting golems."
+        },
+        {
+          "text": "In Nephilim Hollow, Sunraku stares up. He dissapears. Kingfisher and a red mecha fly around and fight. In the red mecha, Rust screams.",
+          "timestamp": 104.7
+        },
+        { "timestamp": 111, "text": "A spiky golem in the ruins." },
+        {
+          "timestamp": 112.69999999999999,
+          "text": "The Gatekeeper's arms glow blue."
+        },
+        {
+          "text": "The Golden Crystal scorpion spreads its pincers.",
+          "timestamp": 114.4
+        },
+        {
+          "timestamp": 118.1,
+          "text": "A blue haired ninja girl makes hand signals."
+        },
+        {
+          "text": "Sunraku stares up at a giant mountain of metal trash.",
+          "timestamp": 121
+        },
+        { "timestamp": 124.4, "text": "Pencilgon swings a golden spear." },
+        {
+          "timestamp": 126.30000000000001,
+          "text": "Katzo red fist punches the Gatekeeper."
+        },
+        {
+          "timestamp": 128.2,
+          "text": "Psyger-0 holds a sword and takes her dark form."
+        },
+        {
+          "timestamp": 130.8,
+          "text": "Sunraku wears a mask and holds crystal arm guns."
+        },
+        { "timestamp": 131.5, "text": "Clouds cover the moon." },
+        {
+          "timestamp": 135.7,
+          "text": "A shadowy wolf lunges from the darkness."
+        },
+        { "timestamp": 139.6, "text": "Text, 32, The Wings in a Draw" },
+        {
+          "timestamp": 145.6,
+          "text": "A man wearing a green jacket and sunglasses looks at a tablet. Elsewhere, Rust stands in a tall hangar, staring at the red mecha."
+        },
+        {
+          "text": "Crimson Twinewing is a slender mecha with twin blades for arms.",
+          "timestamp": 153.9
+        },
+        {
+          "text": "She grabs the tablet, showing a video stream of the fight.",
+          "timestamp": 172.7
+        },
+        {
+          "timestamp": 180.4,
+          "text": "Comments scroll across the stream. Rust smiles."
+        },
+        {
+          "text": "Crimson Twinewing stands on rubble, towering over Sunraku and Super Ballman. Rust stands on Twinewing's shoulders and stares down at the players, her hair blowing in the wind.",
+          "timestamp": 201.9
+        },
+        { "timestamp": 214.9, "text": "Super Ballman glances at Sunraku." },
+        { "timestamp": 225, "text": "Her eyes grow wide." },
+        { "timestamp": 227.7, "text": "She clenches her fist." },
+        { "text": "Dialog, Rust has challenged you.", "timestamp": 236.3 },
+        { "timestamp": 238.6, "text": "She puts her hand on Twinewing" },
+        {
+          "timestamp": 246,
+          "text": "Twinewing crosses blades then stands at attention."
+        },
+        {
+          "text": "Sunraku clicks Repair. Super Ballman is teleported to a lobby.",
+          "timestamp": 265.3
+        },
+        { "text": "Super Ballman looks to the side.", "timestamp": 276.8 },
+        {
+          "text": "Several dozen players cheer inside the lobby, which resembles a grungy metal hangar. One wall has a window, which displays the match like a large screen TV.",
+          "timestamp": 298.3
+        },
+        {
+          "text": "Twinewing charges down a highway. Kingfisher flies up and fires. She spins, dodges, and flies up.",
+          "timestamp": 308.8
+        },
+        {
+          "text": "He dodges a strike, then drops and flies away. She follows, dodging fire.",
+          "timestamp": 314.1
+        },
+        {
+          "text": "He flies along a 2 lane road between sky scrapers. She follows him down the narrow passage.",
+          "timestamp": 318.8
+        },
+        {
+          "text": "She releases a barrage of missiles. He banks around a corner. Several missiles hit a building. He turns and shoots the surviving missiles.",
+          "timestamp": 323
+        },
+        { "timestamp": 329.4, "text": "They explode. He rises." },
+        { "text": "She emerges from the explosion.", "timestamp": 332.2 },
+        {
+          "timestamp": 334.1,
+          "text": "He summersaults in the air, firing. She spins and dodges shots."
+        },
+        {
+          "timestamp": 338.8,
+          "text": "He readies his gun. She swings a sword."
+        },
+        {
+          "text": "She spins, generating a stream of fire. He flies back into a building.",
+          "timestamp": 342
+        },
+        {
+          "text": "He flies off as she charges the building. She emerges from the other side of the skyscraper.",
+          "timestamp": 344.2
+        },
+        {
+          "timestamp": 349.4,
+          "text": "He flies backwards and fires. She dodges."
+        },
+        {
+          "text": "He turns left, flies along a highway, banks right down a side street, then right again. She pursues.",
+          "timestamp": 352.4
+        },
+        {
+          "timestamp": 356.9,
+          "text": "He shoots as she rounds the corner. She rises, and his shots follow her up the sky scraper."
+        },
+        {
+          "timestamp": 360.9,
+          "text": "In the air, she flies and swings. He parries, then shoots as she rounds back."
+        },
+        {
+          "text": "A turret on her shoulder glows, points at him, and releases a barrage of pink laser strikes. He dodges, and the strikes hit buildings.",
+          "timestamp": 363
+        },
+        {
+          "timestamp": 371.7,
+          "text": "He descends quickly into a courtyard. She pursues. He turns and fires up at her."
+        },
+        {
+          "timestamp": 378.9,
+          "text": "She catches up, and they exchange blows while falling."
+        },
+        {
+          "timestamp": 381.8,
+          "text": "He pushes her against a building and drags her head down the concrete exterior."
+        },
+        { "timestamp": 388.8, "text": "He points his gun." },
+        { "timestamp": 390.9, "text": "She shoots lasers." },
+        {
+          "timestamp": 393.4,
+          "text": "Before hitting the ground, he blasts off. She hits the ground, then blasts off."
+        },
+        {
+          "timestamp": 397.2,
+          "text": "The nephilim are reflected in the windows of the skyscraper as they climb. She fires lasers at him and he evades."
+        },
+        {
+          "timestamp": 406,
+          "text": "Above the city, he turns and fires at her. She evades."
+        },
+        { "timestamp": 409, "text": "She fires a barrage of missiles." },
+        {
+          "timestamp": 411,
+          "text": "He flies in a circle until surrounded, then spins and fires, creating an explosion in the round."
+        },
+        {
+          "text": "He banks past a building, down, under an overpass, then left around another building.",
+          "timestamp": 417.3
+        },
+        {
+          "timestamp": 422.4,
+          "text": "He grabs his gun's side mounted grip and pulls, revealing a laser sword."
+        },
+        {
+          "timestamp": 425.9,
+          "text": "Twinewing turns a corner and slows, looking around. She stops and looks up."
+        },
+        { "timestamp": 429.9, "text": "He descends, sword in hand." },
+        {
+          "timestamp": 431.2,
+          "text": "They cross blades and electricity ripples across the shock wave."
+        },
+        {
+          "text": "She pushes him back, then strikes rapidly. He dodges, then flies off.",
+          "timestamp": 436.7
+        },
+        {
+          "timestamp": 440.2,
+          "text": "He returns his laser sword to his gun, then fires laser shots at her."
+        },
+        { "timestamp": 443.7, "text": "She jumps around evasively." },
+        { "timestamp": 446.2, "text": "Players watch from the lobby." },
+        { "timestamp": 453.3, "text": "Super Ballman watches." },
+        {
+          "timestamp": 475.1,
+          "text": "Kingfisher pulls the grip and wields the laser sword."
+        },
+        { "timestamp": 478.8, "text": "Super Ballman grins." },
+        {
+          "timestamp": 481.5,
+          "text": "Twinewing's swords crackle with red and black electricity."
+        },
+        { "text": "Her eyes glow.", "timestamp": 485 },
+        { "text": "She flies.", "timestamp": 487 },
+        { "timestamp": 489, "text": "Super Ballman clenches a fist." },
+        {
+          "text": "An X strike shatters Kingfisher's gun and torso.",
+          "timestamp": 497.6
+        },
+        { "timestamp": 500.9, "text": "Super Ballman gapes." },
+        { "timestamp": 504.4, "text": "Winner, Crimson Twinewing" },
+        { "timestamp": 508.2, "text": "Super Ballman stares" },
+        { "timestamp": 511.2, "text": "Sunraku appears on the street." },
+        { "timestamp": 548, "text": "She glares" },
+        {
+          "timestamp": 565.3,
+          "text": "Mold grabs Rust. She looks behind him. Dozens gather."
+        },
+        { "timestamp": 584.3, "text": "Her ears blush and she punches Mold." },
+        { "timestamp": 594.7, "text": "The crowd gapes" },
+        { "timestamp": 596.2, "text": "Rust stares." },
+        { "timestamp": 599.5, "text": "Rust grins" },
+        { "timestamp": 612.8, "text": "Mold bows and follows Rust" },
+        {
+          "text": "In a shiny, not destroyed city, people turn and stare.",
+          "timestamp": 671.6
+        },
+        {
+          "timestamp": 677,
+          "text": "A ball of fire descends from the sky, hits the ground behind buildings, and erupts in flames."
+        },
+        { "timestamp": 682.4, "text": "The shock wave knocks people back." },
+        {
+          "timestamp": 689.5,
+          "text": "The mecha runs, stomping on cars the size of its feet."
+        },
+        {
+          "timestamp": 696.7,
+          "text": "The mecha drags its arms through windows and stomps on streets. Fireballs rise up around it."
+        },
+        { "timestamp": 718.3, "text": "A giant mecha punches a building." },
+        {
+          "timestamp": 731.9,
+          "text": "5 giant mechas stand in tanks, cables connected to their necks."
+        },
+        {
+          "timestamp": 734.8,
+          "text": "A human moves its hand. The mech mirrors."
+        },
+        { "text": "Kingfisher and Big Dog sit on a roof.", "timestamp": 742.3 },
+        { "timestamp": 765.4, "text": "3 giants walk" },
+        {
+          "timestamp": 799.4,
+          "text": "He disappears from Kingfisher's shoulder."
+        },
+        { "timestamp": 821.6, "text": "He slices one and shoots another." },
+        {
+          "timestamp": 830.9,
+          "text": "The closed eyes type raises its head and charges. Kingfisher leaps"
+        },
+        {
+          "timestamp": 846.8,
+          "text": "Kingfisher presses a gun grip to the closed eyes type's head. It shudders."
+        },
+        { "timestamp": 850.9, "text": "Dialog, Closed-Eyes captured." },
+        {
+          "timestamp": 982.6,
+          "text": "Dawn breaks over the post-apocalyptic city."
+        },
+        {
+          "timestamp": 987.5,
+          "text": "Crimson Twinewing lands on top of a building."
+        },
+        { "timestamp": 992, "text": "Rust appears on top of the mecha." },
+        {
+          "timestamp": 993.9,
+          "text": "She stares off, her hair drifting in the wind."
+        },
+        {
+          "timestamp": 996.9,
+          "text": "A large crowd is gathered in the lobby."
+        },
+        { "timestamp": 1013.1, "text": "Mold stands on a rooftop." },
+        {
+          "timestamp": 1014.9,
+          "text": "On his tablet, an indicator points to an overpass."
+        },
+        {
+          "text": "Rockets blast. A chunky mecha skates down the highway. Its left arm ends in a barrel. Its right arm is long and ends in a pincer. There are 2 fins on its head piece.",
+          "timestamp": 1018.8
+        },
+        {
+          "timestamp": 1027,
+          "text": "It comes to a stop. Sunraku appears on top."
+        },
+        {
+          "text": "Right arm is 3 times larger than the left.",
+          "timestamp": 1063.4
+        },
+        { "text": "Twinewing looks down at Fiddler.", "timestamp": 1099.3 },
+        { "timestamp": 1108.1, "text": "She stares and smiles." },
+        { "timestamp": 1122.5, "text": "They enter their mechas" },
+        {
+          "timestamp": 1126.3,
+          "text": "Fiddler stands. Mold consults a tablet."
+        },
+        { "timestamp": 1131, "text": "A spectator swallows." },
+        {
+          "text": "The onlookers stare. On the screen, Fiddler stands on the street, looking up at Twinewing on top of the highest tower. The sun peaks between buildings.",
+          "timestamp": 1133.7
+        },
+        { "timestamp": 1146.9, "text": "Twinewing's engines start." },
+        {
+          "timestamp": 1148.8,
+          "text": "Fiddler skates down the highway. Twinewing flies behind him, and releases a missile barrage."
+        },
+        { "timestamp": 1152, "text": "Fiddler skates evasively" },
+        {
+          "timestamp": 1155.4,
+          "text": "An explosion crumbles the road beneath him. He leaps, and begins to skate along the side of a building."
+        },
+        {
+          "timestamp": 1160.4,
+          "text": "He reaches the ground. Missiles fly. He weaves between the pylons holding up the raised highway."
+        },
+        { "timestamp": 1167.8, "text": "His torso turns back and he fires." },
+        { "timestamp": 1181.8, "text": "Twinewing releases more missiles." },
+        { "text": "Fiddler emerges from the smoke.", "timestamp": 1186.3 },
+        {
+          "timestamp": 1197.9,
+          "text": "Twinewing flies over the empty, raised high way"
+        },
+        {
+          "timestamp": 1205.7,
+          "text": "Mold looks at the head fins. Fiddler skates out from under the highway."
+        },
+        { "timestamp": 1219.5, "text": "His head fins glow." },
+        { "timestamp": 1221.7, "text": "His body becomes transparent." },
+        { "text": "Twinewing fires crimson lasers.", "timestamp": 1244 },
+        {
+          "timestamp": 1251.1,
+          "text": "Fiddler skates, his rocket blasts visible. She fires at him."
+        },
+        { "timestamp": 1269.6, "text": "He skates down the highway." },
+        { "timestamp": 1275.7, "text": "She fires missiles." },
+        { "timestamp": 1278.1, "text": "Explosions land around him." },
+        {
+          "timestamp": 1292.7,
+          "text": "She hovers over a cloud of black smoke."
+        },
+        {
+          "timestamp": 1312,
+          "text": "From a crackle of electricity, Fiddler's guillotine pincers emerge in mid air and close around her arm."
+        },
+        { "timestamp": 1319.4, "text": "Her arm shatters." },
+        { "text": "Mold gapes. Super Ballman smiles.", "timestamp": 1320.6 },
+        {
+          "text": "In Japanese, Rust's nephilim is spelled Hiyoku Renri. Hiyoku renri is a 4 character term to mean marital vows. The 4 character yojijukugo term is properly spelled with the characters comparable, wing, connect, arrangement. However, Rust's spelling replaces the characters comparable, pronounced \"hi\", with the character for crimson, also pronounced \"hi\". Note that the second half of the phrase, Renri, also means trees with entwined branches, which is a poetic reference to a romantic couple. The concepts of the crimson color, wings, and entwined branches form the English translation Crimson Twine wing",
+          "timestamp": 1419
+        }
+      ]
+    }
+  ]
+}
