@@ -2,7 +2,7 @@ import { youtubeStyle} from "./constants";
 import { SRDManager } from "./SRDManager";
 
 new SRDManager({
-    generateServerPath: (id) => `https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main/transcripts/crunchyroll/${id}.json`,
+    generateServerPath: (id) => `https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main/transcripts/${id}.json`,
     style: youtubeStyle,
     videoSelector: "#content video",
     platformId: "youtube",
