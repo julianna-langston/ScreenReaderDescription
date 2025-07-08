@@ -14,7 +14,7 @@ new SRDManager({
         waitThenAct(".videoOsdTitle", () => {
             const video = document.querySelector("video");
             const src = video.getAttribute("src");
-            const match = src.match(/\/emby\/videos\/(\d+)\//)?.[1];
+            const match = src.match(/\/emby\/videos\/(\d+)\//)?.[1] ?? src.match(/^blob:https?:\/\/emby\..+\/([0-9a-zA-Z\-]{36})$/)?.[1];
             if(!match){
                 return;
             }
