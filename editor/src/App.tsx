@@ -175,6 +175,7 @@ function App() {
         return;
       }
       setTracks(newTracks);
+      localStorage.setItem("saved-tracks", JSON.stringify(newTracks));
       setLastTouchedTimestamp(lastTouched)
     });
     // @ts-expect-error
@@ -501,6 +502,7 @@ function App() {
           const newTracks = tracks.concat(addedTracks).toSorted(trackSort);
           console.log("New tracks: ", newTracks);
           setTracks(newTracks);
+          localStorage.setItem("saved-tracks", JSON.stringify(newTracks));
         }}
       />
     </>
