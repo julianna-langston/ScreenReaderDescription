@@ -45,6 +45,16 @@ chrome.runtime.onMessage.addListener((message: EditorReceivableMessageTypes) => 
             );
             break;
         }
+        case "id-announce": {
+            document.dispatchEvent(
+                new CustomEvent("ScreenReaderDescription-announce-id", {
+                    detail: {
+                        id: message.id
+                    }
+                })
+            );
+            break;
+        }
     }
 })
 

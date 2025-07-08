@@ -10,8 +10,15 @@ new SRDManager({
     ccContainerSelector: ".htmlVideoPlayerContainer",
     editorListenerContainerSelector: "body",
     main: ({ setup }) => {
-        waitThenAct<HTMLHeadElement>(".videoOsdTitle", ({textContent}) => {
-            setup(textContent);
-        })
+        // Wait for metadata about the video to load...
+        waitThenAct(".videoOsdTitle", () => {
+            const video = document.querySelector("video");
+            const src = video.getAttribute("src");
+            const match = src.match(/\/emby\/videos\/(\d+)\//)?.[1];
+            if(!match){
+                return;
+            }
+            setup(match);
+        });
     }
 });

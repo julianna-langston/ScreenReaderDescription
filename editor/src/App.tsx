@@ -28,6 +28,7 @@ function App() {
   const [episode, setEpisode] = useState(0);
   const [creator, setCreator] = useState("");
   const [lastTouchedTimestamp, setLastTouchedTimestamp] = useState(-1);
+  const [videoId, setVideoId] = useState("");
   const editorDisplay = useRef<HTMLDivElement | null>(null);
 
   const { id, domain } = useMemo(() => convertUrlToSource(url), [url]);
@@ -41,6 +42,7 @@ function App() {
       }
     }
   }, [type, seriesTitle, season, episode, creator]);
+  const shouldShowId = useMemo(() => url.includes("emby."), [url]);
 
   const editingMode = editingIndex !== null;
 
@@ -85,7 +87,7 @@ function App() {
       source: {
         url,
         domain,
-        id,
+        id: shouldShowId ? videoId : id
       },
       metadata: {
         type,
@@ -174,6 +176,10 @@ function App() {
       }
       setTracks(newTracks);
       setLastTouchedTimestamp(lastTouched)
+    });
+    // @ts-expect-error
+    document.addEventListener("ScreenReaderDescription-announce-id", (e: CustomEvent) => {
+      setVideoId(e.detail.id);
     });
   }, []);
 
@@ -394,6 +400,13 @@ function App() {
               }}
             />
           </label>
+
+          {shouldShowId && <label>
+            ID
+            <input type="text" id="videoId" value={videoId} onChange={(e) => {
+              setVideoId(e.target.value);
+            }} />
+          </label>}
 
           <label>
             Type

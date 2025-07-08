@@ -122,6 +122,16 @@ export class SRDManager {
         const serverPath = this.params.generateServerPath(videoId);
         const scripts = await grabScripts(this.currentKey, serverPath);
         this.script.currentTracks = scripts?.scripts[0].tracks ?? [];
+
+        const idAnnounce: Forwardable = {
+            type: "forward",
+            tabId: this.bridgedTabId,
+            message: {
+                type: "id-announce",
+                id: videoId
+            }
+        }
+        chrome.runtime.sendMessage(idAnnounce)
         
         waitThenAct<HTMLVideoElement>(this.params.videoSelector, (video) => {
             this.videoElement = video;

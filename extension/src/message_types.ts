@@ -25,11 +25,16 @@ export type EditorHandshake = {
 export type PlayerReceivableMessageTypes = UpdateScriptTracks | EditorHandshake;
 
 export type PlayerHandshake = {
-    type: "editor-bridge",
+    type: "editor-bridge";
     playerTabId: number;
 }
 
-export type EditorReceivableMessageTypes = UpdateScriptTracks | PlayerHandshake;
+export type PlayerIdAnnounce = {
+    type: "id-announce";
+    id: string;
+}
+
+export type EditorReceivableMessageTypes = UpdateScriptTracks | PlayerHandshake | PlayerIdAnnounce;
 
 export type BridgeType = {
     type: "bridge";
