@@ -110,6 +110,8 @@ function App() {
     <>
       <h1>Available Descriptions</h1>
 
+      <h2>Television Episodes</h2>
+
       <table>
         <thead>
           <tr>
@@ -119,23 +121,25 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {Object.keys(series).map((title) => <tr>
+          {Object.keys(series).map((title) => <tr key={title}>
             <td>
               {files.find(({seriesTitle}) => seriesTitle === title)?.domain}
             </td>
             <td>
             <PopUp title={title}>
               <div>
-                {Object.keys(series[title]).map((seasonNumber) => <div>
+                {Object.keys(series[title]).map((seasonNumber) => <div key={seasonNumber}>
                   Season {seasonNumber}
                   <ol>
-                    {Object.entries(series[title][seasonNumber]).map(([episodeNumber, {title, url}]) => <li value={episodeNumber}><a href={url}>{title}</a></li>)}
+                    {Object.entries(series[title][seasonNumber]).map(([episodeNumber, {title, url}]) => <li key={episodeNumber} value={episodeNumber}><a href={url}>{title}</a></li>)}
                   </ol>
                 </div>)}
               </div>
             </PopUp>
             </td>
-            <td>{summarizeList(Object.keys(Object.values(series[title])[0]).map((str) => +str))}</td>
+            <td>
+              {Object.entries(series[title]).map(([num, season]) => <div key={num}>Season {num}: {summarizeList(Object.keys(season).map((str) => +str))}</div>)}
+            </td>
           </tr>)}
         </tbody>
       </table>
