@@ -32,33 +32,33 @@ const refreshList = async () => {
     const myList = Object.values((await chrome.storage.local.get(listKeys)) ?? {}).flat();
     const allScripts = Object.values(await chrome.storage.local.get(myList)).toSorted((left, right) => {
         if (left.source.domain < right.source.domain) {
-            return 1;
+            return -1;
         }
         if (left.source.domain > right.source.domain) {
-            return -1;
-        }
-        if (left.source.seriesTitle < right.source.seriesTitle) {
-            return -1;
-        }
-        if (left.source.seriesTitle > right.source.seriesTitle) {
             return 1;
         }
-        if (left.source.season < right.source.season) {
+        if (left.metadata.seriesTitle < right.metadata.seriesTitle) {
             return -1;
         }
-        if (left.source.season > right.source.season) {
+        if (left.metadata.seriesTitle > right.metadata.seriesTitle) {
             return 1;
         }
-        if (left.source.episode < right.source.episode) {
+        if (left.metadata.season < right.metadata.season) {
             return -1;
         }
-        if (left.source.episode > right.source.episode) {
+        if (left.metadata.season > right.metadata.season) {
             return 1;
         }
-        if (left.source.title < right.source.title) {
+        if (left.metadata.episode < right.metadata.episode) {
             return -1;
         }
-        if (left.source.title > right.source.title) {
+        if (left.metadata.episode > right.metadata.episode) {
+            return 1;
+        }
+        if (left.metadata.title < right.metadata.title) {
+            return -1;
+        }
+        if (left.metadata.title > right.metadata.title) {
             return 1;
         }
         return 0;
