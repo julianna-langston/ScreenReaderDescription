@@ -35,6 +35,25 @@ export const createTrackEditorDialog = (submitCallback: () => void) => {
     return dialog;
 }
 
+export const createTrackDisplayDialog = () => {
+    const dialog = document.createElement("dialog");
+    dialog.innerHTML = `<button>Close</button>
+    <table>
+        <thead>
+            <tr>
+                <th scole="col">Timestamp</th>
+                <th scope="col">Text</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>`;
+    dialog.querySelector("button").addEventListener("click", () => {
+        dialog.close();
+    });
+    return dialog;
+}
+
 export const createStyleElement = (css: string) => {
     const style = document.createElement("style");
     style.textContent = css;
@@ -94,3 +113,4 @@ const padNumbers = (num: number, padCount: number, text = "0") => {
     return Array(paddingNeeded).fill(text).join("") + num;
 }
 export const renderTimestamp = (seconds: number) => `${padNumbers(Math.floor(seconds / 60), 2)}:${padNumbers(Math.floor(seconds % 60), 2)}`;
+

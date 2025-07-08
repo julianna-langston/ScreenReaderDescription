@@ -1,7 +1,7 @@
 import { ScriptInfo } from "../../types";
 import type { Forwardable, PlayerReceivableMessageTypes, UpdateScriptTracks } from "./message_types";
 import { TranscriptManager } from "./TranscriptManager";
-import { createCCElement, createStyleElement, waitThenAct, grabScripts, createTrackEditorDialog } from "./utils";
+import { createCCElement, createStyleElement, waitThenAct, grabScripts, createTrackEditorDialog, createTrackDisplayDialog } from "./utils";
 
 type DomainMainCallbacks = {
     teardown: () => void;
@@ -17,6 +17,13 @@ type DomainRegistrationParams = {
 
     /** Editing **/
     editorListenerContainerSelector?: string;
+}
+
+const speak = (ccElement: HTMLElement, text: string) => {
+    const div = document.createElement("div");
+    div.textContent = text;
+    ccElement.prepend(div);
+    console.debug("AD Message: ", text);
 }
 
 export class SRDManager {
@@ -37,6 +44,7 @@ export class SRDManager {
     private editingMarker: number | null = null;
     private lastPlayedTimestamp = -1;
     private trackEditorDialog: HTMLDialogElement;
+    private trackDisplayDialog: HTMLDialogElement;
     
     constructor(private params: DomainRegistrationParams){
         this.ccElement = createCCElement();
@@ -62,21 +70,24 @@ export class SRDManager {
                 this.playTranscriptFrom(this.videoElement.currentTime);
             }
             console.log("Current tracks updated. Bridged?", this.bridgedTabId);
-            if(this.bridgedTabId !== null){
-                const updateMessage: UpdateScriptTracks = {
-                    type: "update-script-tracks",
-                    tracks: this.script.currentTracks,
-                    lastTouched: this.script.lastTouchedTimestamp
-                };
-                const forwardable: Forwardable = {
-                    type: "forward",
-                    tabId: this.bridgedTabId,
-                    message: updateMessage
-                }
-                console.log("Sending message", forwardable);
-                chrome.runtime.sendMessage(forwardable)
+            if(this.bridgedTabId === null){
+                speak(this.ccElement, "Not bridged to editor")
+                return;
             }
+            const updateMessage: UpdateScriptTracks = {
+                type: "update-script-tracks",
+                tracks: this.script.currentTracks,
+                lastTouched: this.script.lastTouchedTimestamp
+            };
+            const forwardable: Forwardable = {
+                type: "forward",
+                tabId: this.bridgedTabId,
+                message: updateMessage
+            }
+            console.log("Sending message", forwardable);
+            chrome.runtime.sendMessage(forwardable)
         }
+        this.trackDisplayDialog = createTrackDisplayDialog();
 
         // TODO: Set up indicator element
 
@@ -146,6 +157,8 @@ export class SRDManager {
                     this.manageEditingMode(e);
                 });
                 container.appendChild(this.trackEditorDialog);
+                container.appendChild(this.trackDisplayDialog);
+                console.log("Dialogs", this.trackEditorDialog, this.trackDisplayDialog)
             });
         }
 
@@ -169,10 +182,7 @@ export class SRDManager {
         this.killTranscript();
         this.trackUpdateInterval = this.script.tracksToGo(startingSecond).map(({ text, timestamp }) => setTimeout(() => {
             this.lastPlayedTimestamp = timestamp;
-            console.debug("AD Message: ", text, timestamp);
-            const div = document.createElement("div");
-            div.textContent = text;
-            this.ccElement.prepend(div);
+            speak(this.ccElement, text);
         }, (timestamp - startingSecond) * 1000));
     }
 
@@ -201,16 +211,29 @@ export class SRDManager {
         console.debug("[ScreenReaderDescriptions] - All listeners wired up");
     }
 
+    displayTranscript(){
+        console.log("Displaying transcript...", this.trackDisplayDialog);
+        this.trackDisplayDialog.querySelector("tbody").innerHTML = this.script.currentTracks.map(({text, timestamp}) => 
+            `<tr><td>${timestamp}</td><td ${timestamp === this.lastPlayedTimestamp ? "tabIndex='0'" : ""}>${text}</td></tr>`
+        ).join("");
+        this.trackDisplayDialog.showModal();
+        (this.trackEditorDialog.querySelector("[tabIndex]") as HTMLTableCellElement | undefined)?.focus();
+    }
+
     manageEditingMode(e: KeyboardEvent) {
         if(e.key === "r"){
             this.editMode = !this.editMode;
-            console.log("Editing mode: ", this.editMode ? "on" : "off");
+            speak(this.ccElement, `Editing mode: ${this.editMode ? "on" : "off"}`);
             return;
         }
         if(!this.editMode){
             return;
         }
         switch(e.key){
+            case "t": {
+                this.displayTranscript();
+                break;
+            }
             case "e": {
                 // Edit last-played track
                 e.preventDefault();
@@ -240,6 +263,7 @@ export class SRDManager {
             case "d" : {
                 // Mark
                 this.editingMarker = this.videoElement.currentTime;
+                speak(this.ccElement, "Marking track");
                 break;
             }
             case "a": {
@@ -286,10 +310,10 @@ export class SRDManager {
                     return;
                 }
                 let delta = -1;
-                if(e.altKey){
+                if(e.shiftKey){
                     delta = -.1;
                 }
-                this.script.moveTrack(this.lastPlayedTimestamp, delta);
+                this.lastPlayedTimestamp = this.script.moveTrack(this.lastPlayedTimestamp, delta);
                 break;
             }
             case "c": {
@@ -298,10 +322,10 @@ export class SRDManager {
                     return;
                 }
                 let delta = 1;
-                if(e.altKey){
+                if(e.shiftKey){
                     delta = .1;
                 }
-                this.script.moveTrack(this.lastPlayedTimestamp, delta);
+                this.lastPlayedTimestamp = this.script.moveTrack(this.lastPlayedTimestamp, delta);
                 break;
             }
             case "h": {

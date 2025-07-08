@@ -47,11 +47,13 @@ export class TranscriptManager {
   moveTrack(timestamp: number, diff: number){
     const newTrackList = this.currentTracks;
     const index = newTrackList.findIndex(({timestamp: comparer}) => comparer === timestamp);
+    const newTimestamp = timestamp + diff;
     this.lastTouchedTimestamp = timestamp;
     this.currentTracks = newTrackList.toSpliced(index, 1, {
         text: newTrackList[index].text, 
-        timestamp: timestamp + diff
+        timestamp: newTimestamp
     });
+    return newTimestamp;
   }
 
   teardown(){
