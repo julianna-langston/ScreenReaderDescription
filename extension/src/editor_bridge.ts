@@ -58,7 +58,7 @@ chrome.runtime.onMessage.addListener((message: EditorReceivableMessageTypes) => 
     }
 })
 
-document.querySelector("#editor-top").prepend(bridgeConnectorButton);
+document.querySelector("#editor-top")?.prepend(bridgeConnectorButton);
 bridgeConnectorButton.textContent = "Bridge for Live Editing";
 bridgeConnectorButton.addEventListener("click", () => {
     const urlInput = document.getElementById("url") as HTMLInputElement;
