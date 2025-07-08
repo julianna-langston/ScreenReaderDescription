@@ -12,7 +12,7 @@
       "language": "en-US",
       "tracks": [
         {
-          "text": "Rock and debris rises into the sky. Rain falls from gray clouds. A dragon made of rock, glowing hot from the inside, and rears up, as high as a mountain..",
+          "text": "Rock and debris rises into the sky. Rain falls from gray clouds. A dragon made of rock, glowing hot from the inside, and rears up, as high as a mountain.",
           "timestamp": 3
         },
         {
@@ -35,11 +35,11 @@
         },
         { "text": "He clenches a fist", "timestamp": 50 },
         {
-          "text": "Faria, the elf, looks up at him. Her head continues to rise higher.",
+          "text": "Faeria, the elf, looks up at him. Her head rises and rises.",
           "timestamp": 58
         },
         {
-          "text": "His foot approaches her face. Her eyes widen. His foot lands over her eyes, and her smile distorts, the impact rippling the face.",
+          "text": "His foot approaches her face. Her eyes widen. His foot lands over her eyes, and her smile distorts, the impact rippling her face.",
           "timestamp": 70
         },
         {
@@ -47,11 +47,11 @@
           "timestamp": 86
         },
         {
-          "text": "A teenage boy removes his VR headset and places a DVD case on a shelf labelled 'Never Play Again'. He opens a window and looks out at the clear, sunny day.",
+          "text": "A teenage boy removes his VR headset and places a disc case on a shelf labelled 'Never Play Again'. He opens a window and looks out at the clear, sunny day.",
           "timestamp": 134
         },
         {
-          "text": "Muscular legs walk foward. Twin green blades dangle to side. The thighs bear large, dark scars.",
+          "text": "Muscular legs walk forward. Twin green blades dangle to side. The thighs bear large, dark scars.",
           "timestamp": 161
         },
         { "text": "Muscular arms and abs also bear scars.", "timestamp": 164 },
@@ -60,7 +60,7 @@
           "timestamp": 166
         },
         {
-          "text": "Red text appears, Shangri-La Frontier. Beyond the text is an expanse of mountains, forests, plains, and cities. We zoom out and the expanse is reflected in VR goggles worn by Hizutome",
+          "text": "Red text appears, Shangri-La Frontier. Beyond the text is an expanse of mountains, forests, plains, and cities. We zoom out and the expanse is reflected in VR goggles worn by Rakuro",
           "timestamp": 170
         },
         {
@@ -72,7 +72,7 @@
           "timestamp": 186
         },
         {
-          "text": "Hizutome smiles. His image glitches into the bird man, whose brow furrows",
+          "text": "Rakuro smiles. His image glitches into the bird man, whose brow furrows",
           "timestamp": 188
         },
         {
@@ -124,7 +124,7 @@
           "timestamp": 229
         },
         {
-          "text": "A town of small red houses and rabbit shaped motifs. A large temple rests at the top of a giant tree. ",
+          "text": "A town of small red houses and rabbit shaped motifs. A red castle rests at the top of a giant tree. ",
           "timestamp": 233
         },
         {
@@ -145,11 +145,11 @@
           "timestamp": 254
         },
         {
-          "text": "Framed collections of butterflies and beetles hang on the wall. Hizutome picks up a packaged snack of melon bread. Next to it is Eighteen Magazine, depicting a purple haired girl.",
+          "text": "Framed collections of butterflies and beetles hang on the wall. Rakuro picks up a packaged snack of melon bread. Next to it is Eighteen Magazine, depicting a purple haired girl named Towa Amane.",
           "timestamp": 257
         },
         {
-          "text": "Hizutome sits in the entryway. He eats the round bread while putting on his shoes.",
+          "text": "Rakuro sits in the entryway. He eats the round bread while putting on his shoes.",
           "timestamp": 266
         },
         {
@@ -165,7 +165,7 @@
           "timestamp": 287
         },
         {
-          "text": "Hizutomi, a high school boy with short, bluish black hair and blue eyes, walks down a school hallway with a bookbag.",
+          "text": "Rakuro, a high school boy with short, bluish black hair and blue eyes, walks down a school hallway with a bookbag.",
           "timestamp": 291
         },
         {
@@ -173,13 +173,13 @@
           "timestamp": 297
         },
         {
-          "text": "Students pass by, side-eyeing the girl. Hizutome walks past windows.",
+          "text": "Students pass by, side-eyeing the girl. Rakuro walks past windows.",
           "timestamp": 316
         },
         { "text": "He approaches the corner.", "timestamp": 322 },
         { "text": "She runs to him", "timestamp": 326 },
         {
-          "text": "The girl watches Hizutome and his friend walk away.",
+          "text": "The girl watches Rakuro and his friend walk away.",
           "timestamp": 341
         },
         { "text": "The sun sets over Rock Roll Game Shop.", "timestamp": 344 },
@@ -212,7 +212,7 @@
         },
         { "text": "Behind him, a poster reads Riot Blood", "timestamp": 633 },
         {
-          "text": "He opens the jewel case and removes thumb sized disk. He slides it into his computer.",
+          "text": "He opens the disc case and removes thumb sized disk. He slides it into his computer.",
           "timestamp": 674
         },
         {
@@ -221,7 +221,7 @@
         },
         { "text": "A light ripples across his eye.", "timestamp": 716 },
         {
-          "text": "He looks around in an untextured 3-D space",
+          "text": "He looks around in an untextured, 3-D space",
           "timestamp": 718
         },
         { "text": "Text, Utopia", "timestamp": 721 },
@@ -252,7 +252,7 @@
           "timestamp": 846
         },
         {
-          "text": "Text, Introduction, Pioneers, Fell the Night Wind",
+          "text": "Text, Introduction, Pioneers, Feel the Night Wind",
           "timestamp": 864
         },
         {
@@ -361,7 +361,7 @@
           "text": "The bunny disappears leaving a knife where its neck was.",
           "timestamp": 1150
         },
-        { "text": "Level up, 2 > 4", "timestamp": 1152 },
+        { "text": "Level up, 2 arrow 4", "timestamp": 1152 },
         {
           "text": "Condition achieved. You learned flash counter",
           "timestamp": 1163
@@ -381,8 +381,8 @@
           "text": "He spins in a circle. The ogre drops, then disintegrates.",
           "timestamp": 1236
         },
-        { "text": "Level up, 11 > 12", "timestamp": 1244 },
-        { "text": "Stm 25, Luc 50", "timestamp": 1249 },
+        { "text": "Level up, 11 arrow 12", "timestamp": 1244 },
+        { "text": "Stamina 25, Luck 50", "timestamp": 1249 },
         { "text": "Play time, 2:28", "timestamp": 1267 },
         {
           "text": "Vorpal Chopper, Bonus to critical damage.",
@@ -401,11 +401,11 @@
         { "text": "It spawns a deep, misty chasm.", "timestamp": 1335 },
         { "text": "Area boss, Ravenous python", "timestamp": 1340 },
         {
-          "text": "Holding twinblades, he runs forward. The python opens its mouth",
+          "text": "Holding twin blades, he runs forward. The python opens its mouth",
           "timestamp": 1371
         },
         {
-          "text": "Hizutome lies in bead, wearing the VR headset, smiling.",
+          "text": "Rakuro lies in bead, wearing the VR headset, smiling.",
           "timestamp": 1373
         },
         { "text": "His fingers twitch.", "timestamp": 1378 },
