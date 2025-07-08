@@ -5,70 +5,42 @@ let trackUpdateInterval = [];
 let videoElem;
 let currentVideoId = null;
 
-const ccContainerSelector = "#below";
-const videoSelector = "#content video";
-
 const init = () => {
-    document.head.appendChild(createStyleElement());
-
-    // The URL that users go to will have a pathname like /watch?v=.....
-    if(location.pathname === "/watch"){
-        currentVideoId = new URLSearchParams(location.search).get("v");
-        setup();
+    // The URL that users go to will have a pathname like /video/576103
+    const path = location.pathname.split("/");
+    if(path[1] !== "video"){
+        return;
     }
 
-    document.addEventListener("yt-navigate-start", (e) => {
-        tearDown();
-
-        if(e.detail.pageType !== "watch"){
-            return;
-        }
-
-        currentVideoId = e.detail.endpoint.watchEndpoint.videoId;
-        setup();
-    });
-}
-
-const setup = () => {
-    grabData(currentVideoId).then((result) => {
-        console.log("Grabbed data: ", result);
+    const id = path[2];
+    grabData(id).then((result) => {
         if(result === null){
             return;
         }
-    
+        killTracks();
+
         currentTracks = result.scripts[0].tracks;
-        if(videoElem?.paused === false){
+
+        if(videoElem && !videoElem.paused){
             playTracksFrom(videoElem.currentTime);
         }
     });
+
     ccElem = createCCElement();
-    waitThenAct(ccContainerSelector, (container) => {
-        container.insertBefore(ccElem, container.childNodes[0] ?? null);
+    waitThenAct(".app-container", (container) => {
+        container.appendChild(ccElem);
         console.debug("Added cc element: ", ccElem);
     });
-    waitThenAct(videoSelector, (video) => {
+
+    waitThenAct("video", (video) => {
         videoElem = video;
-        if(!video.paused){
-            playTracksFrom(video.currentTime);
-        }
         video.addEventListener("playing", () => {
-            console.debug("Video playing from", video.currentTime);
             playTracksFrom(video.currentTime);
         });
         video.addEventListener("pause", () => killTracks());
         video.addEventListener("seeking", () => killTracks());
         video.addEventListener("ended", () => killTracks());
-        console.debug("Wired up video");
-    });
-}
-
-const tearDown = () => {
-    killTracks();
-    currentTracks = [];
-    videoElem = null;
-    currentVideoId = null;
-    ccElem?.remove();
-    ccElem = null;
+    })
 }
 
 const createCCElement = () => {
@@ -110,15 +82,32 @@ const waitThenAct = (
 };
 
 const grabData = async (id) => {
-    const serverPath = `https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main/transcripts/${id}.json`;
+    const storageKey = `script-hidive-info-${id}`;
+    
+    chrome.storage.onChanged.addListener((changes, areaName) => {
+        if(areaName === "local" && Object.keys(changes).includes(storageKey)){
+            killTracks();
+            currentTracks = changes[storageKey].newValue.scripts[0].tracks;
+    
+            if(videoElem && !videoElem.paused){
+                playTracksFrom(videoElem.currentTime);
+            }
+
+        }
+        console.log("Changed: ", changes, areaName);
+        console.log("storageKey: ", storageKey);
+    });
+
+    const storedData = await chrome.storage.local.get(storageKey);
+    if(storageKey in storedData){
+        return storedData[storageKey];
+    }
+
+    const serverPath = `https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main/transcripts/hidive/${id}.json`;
     console.debug("Grabbing data for:", {id, serverPath});
 
     try {
         const result = await fetch(serverPath);
-        if(result.status === 404){
-            console.debug(`YouTube video ${id} does not have a description.`);
-            return null;
-        }
         return (await result.json());
     } catch (err) {
         console.warn("Received error while fetching/processing json from server: ", err);
@@ -146,26 +135,6 @@ const playTracksFrom = (startingSecond) => {
 const killTracks = () => {
     trackUpdateInterval.forEach((t) => clearTimeout(t));
     trackUpdateInterval = [];
-}
-
-const createStyleElement = () => {
-    const style = document.createElement("style");
-    style.textContent = `
-#${ccId} {
-    background: var(--yt-spec-badge-chip-background);
-    margin-top: 12px;
-    font-family: "Roboto", "Arial", sans-serif;
-    font-size: 1.4rem;
-    line-height: 2rem;
-    padding: 12px;
-    border-radius: 12px;
-
-    &:not(:has(:first-child)){
-        display: none;
-    }
-}
-`
-    return style;
 }
 
 init();

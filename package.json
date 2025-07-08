@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "build": "ts-node gather_script",
     "generate-jsd": "ts-node generateJSD",
     "generate-listing": "ts-node lister",
     "prevalidate": "npm run generate-jsd",
     "validate": "ts-node validator",
-    "serve": "npx http-server -p 8080 ./public"
+    "serve": "npx http-server -p 8080 ./public",
+    "test": "cd ./editor && npm run test"
   },
   "lint-staged": {
     "transcripts/*.json": "npm run validate",

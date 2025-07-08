@@ -1,14 +1,10 @@
-type SupportedSourceDomains = "youtube" | "crunchyroll" | "disney" | "hidive" | "emby";
+type SupportedSourceDomains = "youtube" | "crunchyroll" | "disney" | "hidive";
 type SupportedVideoTypes = "music video" | "television episode" | "movie" | "other"
 
 export interface ScriptInfo {
     source: ScriptSource;
     metadata: ScriptMetadata;
     scripts: ScriptData[];
-}
-
-export interface TCollection extends ScriptInfo {
-    filename: string;
 }
 
 interface ScriptSource {
@@ -18,12 +14,12 @@ interface ScriptSource {
 }
 
 interface ScriptMetadata {
-    type: SupportedVideoTypes;
     title: string;
     creator?: string;
     seriesTitle?: string;
     season?: number;
     episode?: number;
+    type: SupportedVideoTypes;
     draft?: boolean;
     requiresExtension?: boolean;
 }
