@@ -146,22 +146,31 @@
           "timestamp": 331
         },
         { "text": "A falcon approaches", "timestamp": 357 },
-        { "text": "It lands on his head.", "timestamp": 370 },
+        { "text": "It lands on his head. Mail bird dialog.", "timestamp": 370 },
         { "text": "A falcon descends", "timestamp": 415 },
         { "text": "She hits his face while he laughs", "timestamp": 431 },
         { "text": "A diamond shaped pendant", "timestamp": 524 },
         { "text": "Equipped, ID Shard Necklace", "timestamp": 554 },
-        { "text": "Rakuro house, at night", "timestamp": 590 },
+        { "text": "Emul jumps down and hugs Sunraku", "timestamp": 558 },
+        { "text": "Rakuro's house, at night", "timestamp": 590 },
         {
           "text": "Eika walks up the stairs, drying her long black hair.",
-          "timestamp": 590
+          "timestamp": 594
         },
         {
           "text": "She sees a sign. Important business until tomorrow morning. Stay out!",
           "timestamp": 604
         },
+        {
+          "text": "She sighs and smiles. Rakuro lies on his bed, wearing VR goggles",
+          "timestamp": 609
+        },
+        {
+          "text": "Cans of Energy Kaiser and Riot Blood lie on the desk.",
+          "timestamp": 612
+        },
         { "text": "Thirdrema at night", "timestamp": 618 },
-        { "text": "Sunraku opens his eyes.", "timestamp": 624 },
+        { "text": "Sunraku opens his eyes.", "timestamp": 623 },
         { "text": "He wears the ID Shard Necklace", "timestamp": 628 },
         {
           "text": "Emul sits on the roof of the palace, looking up at the sky.",
@@ -181,10 +190,7 @@
           "text": "Psyger-0 descends, cutting a player in half.",
           "timestamp": 666
         },
-        {
-          "text": "Psyger-100 stands on an outcropping, under a Swarzwolf flag",
-          "timestamp": 690
-        },
+        { "text": "Psyger-100 stands on an outcropping.", "timestamp": 689 },
         { "text": "Several clans raise flags", "timestamp": 696 },
         { "text": "The inlet is surrounded on all sides", "timestamp": 703 },
         {
@@ -193,7 +199,7 @@
         },
         {
           "text": "Orcelot equips a sword as dozens of players descend.",
-          "timestamp": 731
+          "timestamp": 731.5
         },
         { "text": "Orcelot kills a player.", "timestamp": 744 },
         { "text": "Orcelot and 4 others run into a cave.", "timestamp": 761 },
@@ -274,10 +280,7 @@
         { "text": "Sunraku approaches.", "timestamp": 1063 },
         { "text": "A sakura blossom falls", "timestamp": 1073 },
         { "text": "and is cut in half", "timestamp": 1076 },
-        {
-          "text": "Sunraku drops below the the cutting force of wind.",
-          "timestamp": 1080
-        },
+        { "text": "Sunraku drops below the wind.", "timestamp": 1079 },
         {
           "text": "He kicks Wethermon's right leg. The legs end in metal stakes without feet.",
           "timestamp": 1086
@@ -319,7 +322,7 @@
         { "text": "He kicks Wethermon's knee", "timestamp": 1274 },
         {
           "text": "Wethermon takes a quickdraw stance. Katzo stops tapping her fingers.",
-          "timestamp": 1287
+          "timestamp": 1288
         },
         {
           "text": "A sword strikes through Sunraku's abs. His eyes widen. Katzo grits her teeth. Pencilgon's eyes widen.",
