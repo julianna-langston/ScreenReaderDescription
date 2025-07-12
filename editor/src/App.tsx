@@ -11,7 +11,6 @@ import {
 } from "./utils";
 import { ScriptInfo, SupportedVideoTypes } from "./types";
 import Splicer from "./Splicer";
-import { sendMessageUpdateTracks } from "./bridge_functions";
 
 function App() {
   const [showSplicer, setShowSplicer] = useState(false);
@@ -55,6 +54,7 @@ function App() {
       "saved-tracks",
       JSON.stringify(json.scripts[0].tracks)
     );
+    sendTrackUpdate(json.scripts[0].tracks)
     setUrl(json.source.url);
     localStorage.setItem("saved-url", json.source.url);
     setTitle(json.metadata.title);
@@ -125,6 +125,7 @@ function App() {
 
     setTracks(newTracksValue);
     localStorage.setItem("saved-tracks", JSON.stringify(newTracksValue));
+    sendTrackUpdate(newTracksValue);
     onCancel();
     setLastTouchedTimestamp(numTimestamp);
   };
@@ -143,7 +144,12 @@ function App() {
     const newTracksValue = tracks.toSpliced(editingIndex, 1);
     setTracks(newTracksValue);
     localStorage.setItem("saved-tracks", JSON.stringify(newTracksValue));
+    sendTrackUpdate(newTracksValue);
     onCancel();
+  };
+
+  const sendTrackUpdate = (newTracksValue: ScriptTrack[]) => {
+    document.dispatchEvent(new CustomEvent("ScreenReaderDescription-Track-Update", {detail: {tracks: newTracksValue}}));
   };
 
   const focusOnTimestamp = (index: number) => {
@@ -153,9 +159,11 @@ function App() {
   };
 
   useEffect(() => {
-    pullFromStorage<string>("saved-tracks", (saved) =>
-      setTracks(JSON.parse(saved))
-    );
+    pullFromStorage<string>("saved-tracks", (saved) =>{
+      const pulledTracks = JSON.parse(saved);
+      setTracks(pulledTracks);
+      sendTrackUpdate(pulledTracks);
+    });
     pullFromStorage<string>("saved-url", (saved) => setUrl(saved));
     pullFromStorage<SupportedVideoTypes>("saved-type", (saved) =>
       setType(saved)
@@ -180,13 +188,23 @@ function App() {
     });
     // @ts-expect-error
     document.addEventListener("ScreenReaderDescription-announce-id", (e: CustomEvent) => {
-      setVideoId(e.detail.id);
+      let idToUse = shouldShowId ? videoId : e.detail.id;
+      if(idToUse !== e.detail.id){
+        setVideoId(e.detail.id);
+      }
     });
   }, []);
 
   useEffect(() => {
-    sendMessageUpdateTracks(tracks);
-  }, [tracks])
+    let idToUse = shouldShowId ? videoId : id;
+    if (idToUse) {
+      document.dispatchEvent(
+        new CustomEvent("ScreenReaderDescription-video-id-update", {
+          detail: { id: idToUse }
+        })
+      );
+    }
+  }, [videoId, url])
 
   useEffect(() => {
     setTimeout(() => {
@@ -400,6 +418,16 @@ function App() {
                 localStorage.setItem("saved-url", e.target.value);
               }}
             />
+            <button
+              onClick={() => {
+                if (url) {
+                  window.open(url, '_blank');
+                }
+              }}
+              disabled={!url}
+            >
+              Open
+            </button>
           </label>
 
           {shouldShowId && <label>
@@ -503,6 +531,7 @@ function App() {
           console.log("New tracks: ", newTracks);
           setTracks(newTracks);
           localStorage.setItem("saved-tracks", JSON.stringify(newTracks));
+          sendTrackUpdate(newTracks);
         }}
       />
     </>

@@ -4,6 +4,7 @@ export class TranscriptManager {
   private _tracks: ScriptData["tracks"] = [];
   public lastTouchedTimestamp = -1;
   public onTrackChange = () => {};
+  public onSaveData: ((data: any) => void) | null = null;
 
   get currentTracks() {
     return this._tracks;
@@ -14,18 +15,26 @@ export class TranscriptManager {
         return;
     }
 
-    // TODO: Validate non-duplicating timestamps
-    this._tracks = tracks.toSorted(
-      (a, b) => {
-        if (a.timestamp < b.timestamp) {
-          return -1;
-        }
-        if (a.timestamp > b.timestamp) {
-          return 1;
-        }
-        return 0;
-      }
-    );
+    // Save data through callback if available
+    if (this.onSaveData) {
+      this.onSaveData({
+        tracks: tracks.toSorted(
+          (a, b) => {
+            if (a.timestamp < b.timestamp) {
+              return -1;
+            }
+            if (a.timestamp > b.timestamp) {
+              return 1;
+            }
+            return 0;
+          }
+        ),
+        lastTouched: this.lastTouchedTimestamp,
+        timestamp: Date.now()
+      });
+    }else{
+      this._tracks = tracks;
+    }
 
     this.onTrackChange();
   }
@@ -58,6 +67,11 @@ export class TranscriptManager {
 
   teardown(){
     this._tracks = [];
+  }
+
+  loadData(data: ScriptData["tracks"]) { 
+    this._tracks = data;
+    this.onTrackChange();
   }
 
   tracksToGo(startingSecond: number){

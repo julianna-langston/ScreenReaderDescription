@@ -1,7 +1,6 @@
 import { ScriptInfo } from "../../types";
-import type { Forwardable, PlayerReceivableMessageTypes, UpdateScriptTracks } from "./message_types";
 import { TranscriptManager } from "./TranscriptManager";
-import { createCCElement, createStyleElement, waitThenAct, grabScripts, createTrackEditorDialog, createTrackDisplayDialog } from "./utils";
+import { createCCElement, createStyleElement, waitThenAct, grabScripts, createTrackEditorDialog, createTrackDisplayDialog, displayTimestamp } from "./utils";
 
 type DomainMainCallbacks = {
     teardown: () => void;
@@ -17,6 +16,7 @@ type DomainRegistrationParams = {
 
     /** Editing **/
     editorListenerContainerSelector?: string;
+    indicatorContainerSelector?: string;
 }
 
 const speak = (ccElement: HTMLElement, text: string) => {
@@ -36,15 +36,45 @@ export class SRDManager {
     private currentKey: string | null = null;
     private ccElement: HTMLDivElement;
 
-    /** Bridging **/
-    private bridgedTabId: number | null = null;
-
     /** Editing **/
-    private editMode = false;
+    private _editMode = false;
     private editingMarker: number | null = null;
+
+    get editMode() {
+        return this._editMode;
+    }
     private lastPlayedTimestamp = -1;
     private trackEditorDialog: HTMLDialogElement;
     private trackDisplayDialog: HTMLDialogElement;
+    private _activeUpdating = false;
+    private indicatorElement: HTMLDivElement | null = null;
+
+    get activeUpdating() {
+        return this._activeUpdating;
+    }
+
+    set activeUpdating(value: boolean) {
+        this._activeUpdating = value;
+        this.updateIndicator();
+    }
+
+    set editMode(value: boolean) {
+        this._editMode = value;
+        this.updateIndicator();
+    }
+
+    private updateIndicator() {
+        if (!this.indicatorElement) {
+            return;
+        }
+        
+        if (!this.activeUpdating) {
+            this.indicatorElement.textContent = "Here";
+            return;
+        }
+        
+        this.indicatorElement.textContent = this.editMode ? "Editing mode on" : "Editing mode off";
+    }
     
     constructor(private params: DomainRegistrationParams){
         this.ccElement = createCCElement();
@@ -64,45 +94,40 @@ export class SRDManager {
             this.videoElement.play();
             this.editingMarker = null;
         });
+        
+        // Initialize save callback
+        this.script.onSaveData = (data) => {
+            void chrome.storage.local.set({ trackUpdates: data });
+        };
+
         this.script.onTrackChange = () => {
             this.killTranscript();
             if (this.videoElement && !this.videoElement?.paused) {
                 this.playTranscriptFrom(this.videoElement.currentTime);
             }
-            console.log("Current tracks updated. Bridged?", this.bridgedTabId);
-            if(this.bridgedTabId === null){
-                speak(this.ccElement, "Not bridged to editor")
-                return;
-            }
-            const updateMessage: UpdateScriptTracks = {
-                type: "update-script-tracks",
-                tracks: this.script.currentTracks,
-                lastTouched: this.script.lastTouchedTimestamp
-            };
-            const forwardable: Forwardable = {
-                type: "forward",
-                tabId: this.bridgedTabId,
-                message: updateMessage
-            }
-            console.log("Sending message", forwardable);
-            chrome.runtime.sendMessage(forwardable)
+            console.log("Current tracks updated.");
         }
         this.trackDisplayDialog = createTrackDisplayDialog();
 
         // TODO: Set up indicator element
 
-        // TODO: Setup editor messages
-        console.debug("Wiring up for messaging...");
-        chrome.runtime.onMessage.addListener((message: PlayerReceivableMessageTypes) => {
-            switch(message.type){
-                case "editor-bridge": {
-                    this.bridgedTabId = message.editorTabId;
-                    break;
+        // Setup storage listener for cross-extension communication
+        chrome.storage.local.onChanged.addListener((changes) => {
+            console.debug("[SRDManager] Storage changed:", changes);
+            
+            // Handle currentlyEditingId changes
+            if (changes.currentlyEditingId) {
+                const idData = changes.currentlyEditingId.newValue;
+                if (idData && idData.id === this.currentKey?.split('-').pop()) {
+                    this.activeUpdating = true;
                 }
-                case "update-script-tracks": {
-                    console.debug("Updating tracks...");
-                    this.script.currentTracks = message.tracks;
-                    break;
+            }
+            
+            // Handle trackUpdates changes when activeUpdating is true
+            if (changes.trackUpdates && this.activeUpdating) {
+                const trackData = changes.trackUpdates.newValue;
+                if (trackData && trackData.tracks && JSON.stringify(trackData.tracks) !== JSON.stringify(this.script.currentTracks)) {
+                    this.script.loadData(trackData.tracks);
                 }
             }
         })
@@ -115,6 +140,20 @@ export class SRDManager {
             console.debug("CC Container located: ", container);
             container.appendChild(this.ccElement);
         });
+
+        // Setup indicator if container selector is provided
+        if (this.params.indicatorContainerSelector) {
+            waitThenAct<HTMLElement>(this.params.indicatorContainerSelector, (container) => {
+                const indicator = document.createElement("div");
+                indicator.textContent = "Here";
+                indicator.style.cssText = "color: red; font-weight: bold; padding: 4px; border: 1px solid red; border-radius: 4px; background-color: rgba(255, 0, 0, 0.1); width: fit-content; height:20px;";
+                container.appendChild(indicator);
+                
+                // Store reference to indicator for later updates
+                this.indicatorElement = indicator;
+                this.updateIndicator();
+            });
+        }
 
         // Wireup callbacks
         this.params.main({
@@ -133,16 +172,23 @@ export class SRDManager {
         const serverPath = this.params.generateServerPath(videoId);
         const scripts = await grabScripts(this.currentKey, serverPath);
         this.script.currentTracks = scripts?.scripts[0].tracks ?? [];
+        console.debug("[ScreenReaderDescription] - Grabbed script", scripts);
 
-        const idAnnounce: Forwardable = {
-            type: "forward",
-            tabId: this.bridgedTabId,
-            message: {
-                type: "id-announce",
-                id: videoId
-            }
+        // Check storage for currentlyEditingId and trackUpdates
+        const storage = await chrome.storage.local.get(['currentlyEditingId', 'trackUpdates']);
+        if (storage.currentlyEditingId && storage.currentlyEditingId.id === videoId && storage.trackUpdates && storage.trackUpdates.tracks) {
+            this.script.currentTracks = storage.trackUpdates.tracks;
+            this.activeUpdating = true;
+            // Update indicator after setting activeUpdating
+            this.updateIndicator();
+            this.script.loadData(storage.trackUpdates.tracks);
+        }else{
+            const idData = {
+                id: videoId,
+                timestamp: Date.now()
+            };
+            void chrome.storage.local.set({ currentlyEditingId: idData });
         }
-        chrome.runtime.sendMessage(idAnnounce)
         
         waitThenAct<HTMLVideoElement>(this.params.videoSelector, (video) => {
             this.videoElement = video;
@@ -162,7 +208,6 @@ export class SRDManager {
             });
         }
 
-        console.debug("[ScreenReaderDescription] - Grabbed script", scripts);
         if (!scripts) {
             errorCallback?.();
             return;
@@ -214,7 +259,7 @@ export class SRDManager {
     displayTranscript(){
         console.log("Displaying transcript...", this.trackDisplayDialog);
         this.trackDisplayDialog.querySelector("tbody").innerHTML = this.script.currentTracks.map(({text, timestamp}) => 
-            `<tr><td>${timestamp}</td><td ${timestamp === this.lastPlayedTimestamp ? "tabIndex='0'" : ""}>${text}</td></tr>`
+            `<tr><td>${displayTimestamp(timestamp)}</td><td ${timestamp === this.lastPlayedTimestamp ? "tabIndex='0'" : ""}>${text}</td></tr>`
         ).join("");
         this.trackDisplayDialog.showModal();
         (this.trackEditorDialog.querySelector("[tabIndex]") as HTMLTableCellElement | undefined)?.focus();

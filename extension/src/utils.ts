@@ -114,3 +114,16 @@ const padNumbers = (num: number, padCount: number, text = "0") => {
 }
 export const renderTimestamp = (seconds: number) => `${padNumbers(Math.floor(seconds / 60), 2)}:${padNumbers(Math.floor(seconds % 60), 2)}`;
 
+const padNumbersSimple = (num: number) => {
+    if (num < 10) {
+        return `0${num}`;
+    }
+    return `${num}`;
+};
+
+export const displayTimestamp = (num: number) => {
+    const seconds = (num % 60);
+    const minutes = Math.floor(num / 60);
+    return `${padNumbersSimple(minutes)}:${padNumbersSimple(+seconds.toFixed(1))}`.match(/(\d{2}:\d{2}\.?[1-9]*)/)?.[1] ?? "00:00";
+};
+

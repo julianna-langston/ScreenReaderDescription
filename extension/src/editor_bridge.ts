@@ -1,75 +1,59 @@
 import { ScriptData } from "../../types";
-import type {BridgeType, EditorReceivableMessageTypes, UpdateScriptTracks, Forwardable} from "./message_types";
 
-let playerTabId: number | null = null;
 let currentTracks: ScriptData["tracks"] = [];
-
-// Init: Add bridge connector button
-const bridgeConnectorButton = document.createElement("button");
+let lastTouchedTimestamp = -1;
 
 const sendMessageToBackground = () => {
-    if(playerTabId === null){
-        return;
-    }
-    const videoMessage: UpdateScriptTracks = {
-        type: "update-script-tracks",
-        tracks: currentTracks,
-        lastTouched: -1
-    };
-    const forwardable: Forwardable = {
-        type: "forward",
-        tabId: playerTabId,
-        message: videoMessage
-    }
-    console.log("Sending message", forwardable);
-    chrome.runtime.sendMessage(forwardable);
+    lastTouchedTimestamp = Date.now();
+    chrome.storage.local.set({ trackUpdates: { tracks: currentTracks, lastTouched: lastTouchedTimestamp, timestamp: lastTouchedTimestamp } });
 }
 
-chrome.runtime.onMessage.addListener((message: EditorReceivableMessageTypes) => {
-    console.debug("[Screen Reader Description]: Received message from background:", message);
-    switch(message.type){
-        case "editor-bridge": {
-            bridgeConnectorButton.textContent = "Bridged";
-            playerTabId = message.playerTabId;
-            sendMessageToBackground();
-            break;
+chrome.storage.local.onChanged.addListener((changes) => {
+    console.debug("[Screen Reader Description]: Local storage changed:", changes);
+    // Handle track updates from player
+    if (changes.trackUpdates) {
+        if(changes.lastTouchedTimestamp && changes.lastTouchedTimestamp.newValue === lastTouchedTimestamp){
+            return;
         }
-        case "update-script-tracks": {
+        const trackData = changes.trackUpdates.newValue;
+        if (trackData) {
             document.dispatchEvent(
                 new CustomEvent("ScreenReaderDescription-Track-Update-From-Player", {
                     detail: {
-                        tracks: message.tracks,
-                        lastTouched: message.lastTouched
+                        tracks: trackData.tracks,
+                        lastTouched: trackData.lastTouched
                     }
                 })
             );
-            break;
         }
-        case "id-announce": {
+    }
+    
+        // Handle ID announcements from player
+    if (changes.currentlyEditingId) {
+        const idData = changes.currentlyEditingId.newValue;
+        if (idData) {
             document.dispatchEvent(
                 new CustomEvent("ScreenReaderDescription-announce-id", {
                     detail: {
-                        id: message.id
+                        id: idData.id
                     }
                 })
             );
-            break;
         }
     }
-})
-
-document.querySelector("#editor-top")?.prepend(bridgeConnectorButton);
-bridgeConnectorButton.textContent = "Bridge for Live Editing";
-bridgeConnectorButton.addEventListener("click", () => {
-    const urlInput = document.getElementById("url") as HTMLInputElement;
-    const bridgeInfo: BridgeType = {
-        type: "bridge",
-        url: urlInput.value
-    };
-    chrome.runtime.sendMessage(bridgeInfo);
+    
+    // Handle embyUrl changes
+    if (changes.embyUrl) {
+        console.log("Emby URL updated:", changes.embyUrl.newValue);
+        // Handle emby URL changes if needed
+    }
 });
 
 document.addEventListener("ScreenReaderDescription-Track-Update", (e: CustomEvent) => {
     currentTracks = e.detail.tracks as ScriptData["tracks"];
     sendMessageToBackground();
+});
+
+document.addEventListener("ScreenReaderDescription-video-id-update", (e: CustomEvent) => {
+    chrome.storage.local.set({ currentlyEditingId: { id: e.detail.id, timestamp: Date.now() } });
 });
