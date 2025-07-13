@@ -7,7 +7,7 @@ new SRDManager({
     platformId: "crunchyroll",
     ccContainerSelector: "#velocity-player-package",
     editorListenerContainerSelector: "body",
-    indicatorContainerSelector: "#vilosControlsContainer",
+    indicatorContainerSelector: "#velocity-controls-package",
     main: ({ setup }) => {
         console.log("Checking page...");
         const starter = location.pathname.split("/")[1];
