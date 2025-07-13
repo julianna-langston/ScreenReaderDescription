@@ -6,14 +6,24 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const renderUrls = () => {
         urlsList.innerHTML = "";
+        
+        if (embyUrls.length === 0) {
+            const emptyState = document.createElement("div");
+            emptyState.className = "empty-state";
+            emptyState.textContent = "No Emby URLs added yet";
+            urlsList.appendChild(emptyState);
+            return;
+        }
+        
         embyUrls.forEach((url, index) => {
             const urlDiv = document.createElement("div");
-            urlDiv.style.cssText = "margin: 8px 0; display: flex; gap: 8px; align-items: center;";
+            urlDiv.className = "url-item";
             
             const input = document.createElement("input");
             input.type = "text";
             input.value = url;
-            input.style.cssText = "flex: 1;";
+            input.className = "url-input";
+            input.placeholder = "Enter Emby URL (e.g., http://your-emby-server.com)";
             input.addEventListener("change", () => {
                 embyUrls[index] = input.value;
                 chrome.storage.local.set({embyUrls: embyUrls});
@@ -21,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             const deleteButton = document.createElement("button");
             deleteButton.textContent = "Delete";
+            deleteButton.className = "delete-button";
             deleteButton.addEventListener("click", () => {
                 embyUrls.splice(index, 1);
                 chrome.storage.local.set({embyUrls: embyUrls});
@@ -35,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     addButton.addEventListener("click", () => {
         embyUrls.push("");
-        chrome.storage.local.set({embyUrls});
+        chrome.storage.local.set({embyUrls: embyUrls});
         renderUrls();
     });
     
