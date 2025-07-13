@@ -66,13 +66,16 @@ export class SRDManager {
         if (!this.indicatorElement) {
             return;
         }
-        
-        if (!this.activeUpdating) {
-            this.indicatorElement.textContent = "Here";
-            return;
+
+        if(this.script.currentTracks.length === 0){
+            this.indicatorElement.textContent = "SRD)))";
+        }else{
+            this.indicatorElement.textContent = "Described";
         }
         
-        this.indicatorElement.textContent = this.editMode ? "Editing mode on" : "Editing mode off";
+        if(this.activeUpdating){
+            this.indicatorElement.textContent = "Editing mode on";
+        }
     }
     
     constructor(private params: DomainRegistrationParams){
@@ -93,11 +96,6 @@ export class SRDManager {
             this.videoElement.play();
             this.editingMarker = null;
         });
-        
-        // Initialize save callback
-        this.script.onSaveData = (data) => {
-            void chrome.storage.local.set({ trackUpdates: data });
-        };
 
         this.script.onTrackChange = () => {
             this.killTranscript();
@@ -105,6 +103,7 @@ export class SRDManager {
                 this.playTranscriptFrom(this.videoElement.currentTime);
             }
             console.log("Current tracks updated.");
+            this.updateIndicator();
         }
         this.trackDisplayDialog = createTrackDisplayDialog();
 
@@ -119,6 +118,11 @@ export class SRDManager {
                 const idData = changes.currentlyEditingId.newValue;
                 if (idData && idData.id === this.currentKey?.split('-').pop()) {
                     this.activeUpdating = true;
+        
+                    // Initialize save callback
+                    this.script.onSaveData = (data) => {
+                        void chrome.storage.local.set({ trackUpdates: data });
+                    };
                 }
             }
             
@@ -193,8 +197,8 @@ export class SRDManager {
         const serverPath = `https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/refs/heads/main${catalog[catalogKey]}`
         
         const scripts = await grabScripts(this.currentKey, serverPath);
-        this.script.currentTracks = scripts?.scripts[0].tracks ?? [];
         console.debug("[ScreenReaderDescription] - Grabbed script", scripts);
+        this.script.currentTracks = scripts?.scripts[0].tracks ?? [];
 
         // Check storage for currentlyEditingId and trackUpdates
         const storage = await chrome.storage.local.get(['currentlyEditingId', 'trackUpdates']);
@@ -202,14 +206,7 @@ export class SRDManager {
             this.script.currentTracks = storage.trackUpdates.tracks;
             this.activeUpdating = true;
             // Update indicator after setting activeUpdating
-            this.updateIndicator();
             this.script.loadData(storage.trackUpdates.tracks);
-        }else{
-            const idData = {
-                id: videoId,
-                timestamp: Date.now()
-            };
-            void chrome.storage.local.set({ currentlyEditingId: idData });
         }
         
         waitThenAct<HTMLVideoElement>(this.params.videoSelector, (video) => {
