@@ -9,15 +9,17 @@
     "prevalidate": "npm run generate-jsd",
     "validate": "ts-node validator",
     "serve": "npx http-server -p 8080 ./public",
-    "test": "cd ./editor && npm run test"
+    "test": "cd ./editor && npm run test",
+    "prepare": "husky"
   },
   "lint-staged": {
-    "transcripts/*.json": "npm run validate",
+    "transcripts/**/*.json": "ts-node generate-catalog.ts && git add transcript-catalog.json",
     "types.d.ts": "npm run validate"
   },
   "license": "MIT",
   "devDependencies": {
     "ajv": "^8.17.1",
+    "husky": "^9.1.7",
     "lint-staged": "^15.2.10",
     "ts-json-schema-generator": "^2.3.0",
     "ts-node": "^10.9.2"

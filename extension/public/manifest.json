@@ -20,7 +20,8 @@
         {
             "js": ["editor_bridge.js"],
             "matches": [
-                "https://www.screenreaderdescription.com/editor.html"
+                "http://localhost:5173/*",
+                "https://*.screenreaderdescription.com/editor.html"
             ]
         },
         {
