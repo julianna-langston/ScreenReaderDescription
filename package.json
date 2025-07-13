@@ -9,10 +9,14 @@
     "prevalidate": "npm run generate-jsd",
     "validate": "ts-node validator",
     "serve": "npx http-server -p 8080 ./public",
-    "test": "cd ./editor && npm run test"
+    "test": "cd ./editor && npm run test",
+    "prepare": "husky"
   },
   "lint-staged": {
-    "transcripts/*.json": "npm run validate",
+    "transcripts/**/*.json": [
+      "npm run validate",
+      "ts-node generate-catalog.ts"
+    ],
     "types.d.ts": "npm run validate"
   },
   "license": "MIT",
