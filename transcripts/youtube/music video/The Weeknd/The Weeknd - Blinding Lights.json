@@ -4,7 +4,7 @@
     "domain": "youtube",
     "id": "4NRXx6U8ABQ"
   },
-  "metadata": { "type": "music video", "title": "The Weeknd - Blinding Lights" },
+  "metadata": { "type": "music video", "title": "The Weeknd - Blinding Lights", "creator": "The Weeknd" },
   "scripts": [
     {
       "language": "en-US",
