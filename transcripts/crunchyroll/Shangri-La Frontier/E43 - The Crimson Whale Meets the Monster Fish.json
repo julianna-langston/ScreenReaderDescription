@@ -1,0 +1,395 @@
+{
+  "source": {
+    "url": "https://www.crunchyroll.com/watch/GQJUM07ZG/the-crimson-whale-meets-the-monster-fish",
+    "domain": "crunchyroll",
+    "id": "GQJUM07ZG"
+  },
+  "metadata": {
+    "type": "television episode",
+    "title": "The Crimson Whale Meets the Monster Fish",
+    "seriesTitle": "Shangri-La Frontier",
+    "season": 2,
+    "episode": 18
+  },
+  "scripts": [
+    {
+      "language": "en-US",
+      "author": "Julianna Langston",
+      "tracks": [
+        {
+          "text": "Sunraku's muscular body, covered in the scars of Lycagon's mark, walks across an expanse under the night sky and nearly full moon.",
+          "timestamp": 0
+        },
+        { "text": "Debris floats", "timestamp": 10.400000000000006 },
+        {
+          "text": "Backdropped by lightning, text reads, Shangri-La Frontier",
+          "timestamp": 12.5
+        },
+        {
+          "text": "Ink sketch of Sunraku's face. The ink splatters, and Emul falls through it. Sunraku catches her, and she crawls onto his shoulder. Behind him is a picture of Rakuro",
+          "timestamp": 16.400000000000006
+        },
+        {
+          "text": "Pencilgon smiles at us. Behind her is a picture of Towa Amane.",
+          "timestamp": 25.099999999999994
+        },
+        {
+          "text": "Katzo's hands burn with fire. Behind her is Kei Uomi.",
+          "timestamp": 28.5
+        },
+        {
+          "text": "Psyger strikes the grown with the purple long sword Antinomy.",
+          "timestamp": 31
+        },
+        {
+          "text": "A nest of interlocking lines forms. Ceecrue, a white rabbit samurai, leaps across them.",
+          "timestamp": 33.900000000000006
+        },
+        {
+          "text": "Outstretched hands form a diamond. Akitsu Akane's face smiles in the gap.",
+          "timestamp": 36.80000000000001
+        },
+        {
+          "text": "Rust holds a bow and Mold holds a staff.",
+          "timestamp": 39.599999999999994
+        },
+        {
+          "text": "Chains wrap around Sunraku's legs",
+          "timestamp": 42.900000000000006
+        },
+        {
+          "text": "Rakuro reaches up a hand. A hand reaches towards the metal spine in the ruins of past glories.",
+          "timestamp": 43.599999999999994
+        },
+        {
+          "text": "Psyger-0, Sunraku, Katzo, and Pencilgon stand side by side.",
+          "timestamp": 47.19999999999999
+        },
+        { "text": "The chains shatter.", "timestamp": 51.099999999999994 },
+        {
+          "text": "In red, fishmen wield swords and race towards the party in a circle.",
+          "timestamp": 52.19999999999999
+        },
+        {
+          "text": "The fishmen charge Stude at the wheel of the ship.",
+          "timestamp": 55.900000000000006
+        },
+        { "text": "A mermaid fights a shark.", "timestamp": 58.5 },
+        {
+          "text": "Giant octopus arms wrap around a tattered ship",
+          "timestamp": 59.80000000000001
+        },
+        {
+          "text": "A girl with blue eyes and white hair dances. Star Rain, Sylvia Goldberg. She falls into the floor, the floor rotates, and a white super hero replaces her. Galaxia Series, The Meteus",
+          "timestamp": 62.599999999999994
+        },
+        {
+          "text": "A brown haired girl turns into a tree girl. Nitro Squad.",
+          "timestamp": 68.5
+        },
+        {
+          "text": "In front of her stands an old man samurai and a young man with gauntlets.",
+          "timestamp": 71.4
+        },
+        {
+          "text": "A whale swims, its face engulfed with fire. It approaches an expanse with floating debris. Sunraku walks.",
+          "timestamp": 75.5
+        },
+        {
+          "text": "Lightning crackles across the whale. It opens its mouth. Darkness.",
+          "timestamp": 83.30000000000001
+        },
+        { "text": "He sees Psyger-0 in a barrel.", "timestamp": 94.3 },
+        {
+          "text": "Text, 43, The Crimson Whale Meets the Monster Fish",
+          "timestamp": 109.5
+        },
+        {
+          "text": "Light shines over the horizon. Seagulls fly over embarking ships.",
+          "timestamp": 117.9
+        },
+        {
+          "text": "Dialog, Unique Scenario, Find the Abyss's Disciples. Begin now?",
+          "timestamp": 128.6
+        },
+        { "text": "She presses Yes", "timestamp": 140.5 },
+        {
+          "text": "Brawny men run towards her, carrying a barrel.",
+          "timestamp": 146.3
+        },
+        {
+          "text": "2 men pick of Akane and Ceecrue, and toss them in the air. Another man catches them in the barrel.",
+          "timestamp": 161.5
+        },
+        { "text": "Rust sighs", "timestamp": 250.7 },
+        { "text": "Psyger stares", "timestamp": 258.1 },
+        {
+          "text": "Before pressing the button to leave the party, the join unique scenario dialog pops up. She joins.",
+          "timestamp": 302
+        },
+        { "text": "Psyger-0 stares at her sister.", "timestamp": 356.5 },
+        { "text": "She pumps her fist. The others stare.", "timestamp": 380.2 },
+        { "text": "He turns to look at the ocean.", "timestamp": 396 },
+        { "text": "Crew push away the gang way.", "timestamp": 412.8 },
+        { "text": "They raise the anchor.", "timestamp": 416 },
+        { "text": "Crew pull on ropes. The sails unfurl.", "timestamp": 425.4 },
+        { "text": "The Scarlet Whale embarks.", "timestamp": 434.6 },
+        { "text": "Rust and Mold look at a ballista.", "timestamp": 455.9 },
+        {
+          "text": "Seagulls fly over head. Akane and Ceecrue wave.",
+          "timestamp": 478
+        },
+        { "text": "Stude sweats, eyeing Sunraku's scars.", "timestamp": 579.4 },
+        {
+          "text": "The Scarlet Whale cuts through calm seas.",
+          "timestamp": 609.4
+        },
+        { "text": "A crewman stands in the crow's nest.", "timestamp": 615.6 },
+        { "text": "He looks through a spy glass.", "timestamp": 617.8 },
+        { "text": "He sees a dark cloud forming", "timestamp": 629.6 },
+        {
+          "text": "A fishing line pulls taut. Sunraku and Psyger fish",
+          "timestamp": 631.9
+        },
+        {
+          "text": "He looks to the side and grips the pole tightly.",
+          "timestamp": 641.8
+        },
+        {
+          "text": "The dark cloud grows larger and larger, filling the sky above the ship.",
+          "timestamp": 681.5
+        },
+        { "text": "The sea around the ship turns dark.", "timestamp": 686.8 },
+        {
+          "text": "Wind ripples against the sails. The seagulls fly away.",
+          "timestamp": 693
+        },
+        {
+          "text": "Lightning crackles then shoots down, striking the ocean nearby.",
+          "timestamp": 710.6
+        },
+        {
+          "text": "Lightning swirls around the section of water. A bubble starts to rise from the sea.",
+          "timestamp": 718.4
+        },
+        {
+          "text": "The bubble pops, revealing a dark mast with a tattered sail. The shock sends waves across the water, rocking the ship.",
+          "timestamp": 728
+        },
+        {
+          "text": "Sunraku stumbles and grabs on to Psyger. She blushes.",
+          "timestamp": 740.4
+        },
+        {
+          "text": "The Crying Innsman is a black, rotting ship with 3 masts and tattered sails. ",
+          "timestamp": 750.1
+        },
+        {
+          "text": "The Scarlet Whale and the Crying Innsman face each other on the dark ocean.",
+          "timestamp": 755.3
+        },
+        { "text": "Psyger is still blushing.", "timestamp": 764.2 },
+        { "text": "The crewman runs to a Ballista", "timestamp": 783 },
+        { "text": "He runs to the wheel", "timestamp": 841.8 },
+        {
+          "text": "Sunraku stares up at the boy, who looks forward.",
+          "timestamp": 859.2
+        },
+        {
+          "text": "Stude glances at Sunraku, and they make eye contact. Sunraku softens.",
+          "timestamp": 864.3
+        },
+        { "text": "Sunraku grabs rope.", "timestamp": 869.6 },
+        { "text": "He ties himself to the ship.", "timestamp": 877.4 },
+        {
+          "text": "A crewman holds a mast. Rust and Mold grab railings. Akane and Ceecrue brace against a wall.",
+          "timestamp": 887.4
+        },
+        { "text": "Psyger holds a beam and ropes.", "timestamp": 892.8 },
+        {
+          "text": "The sterns make contact. The Scarlet Whale pierces through the Crying Innsman.",
+          "timestamp": 904.9
+        },
+        { "text": "Crew go flying.", "timestamp": 908.6 },
+        { "text": "Akane and Ceecrue hold onto railings.", "timestamp": 910.8 },
+        {
+          "text": "Fish people with swords descend on the ship.",
+          "timestamp": 916.6
+        },
+        { "text": "The fishmen land on the deck", "timestamp": 924.7 },
+        {
+          "text": "A crewman stands between Stude and the fishmen, holding a sword.",
+          "timestamp": 933.1
+        },
+        { "text": "A fishman lunges.", "timestamp": 936.9 },
+        {
+          "text": "An arrow hits the fishman. He slides across the deck, then dissipates.",
+          "timestamp": 938.8
+        },
+        { "text": "Rust stands at a ballista.", "timestamp": 941.9 },
+        {
+          "text": "She loads an arrow. A fishman flies at Stude.",
+          "timestamp": 948.5
+        },
+        { "text": "She fires, sending the fishman flying", "timestamp": 953.8 },
+        {
+          "text": "Across the deck, crew and the party fight fishmen. Psyger strikes one across the chest. It stumbles back.",
+          "timestamp": 956.6
+        },
+        {
+          "text": "Akane strikes a fishman, who steps back.",
+          "timestamp": 967.7
+        },
+        { "text": "The deck rocks. The fishman swings.", "timestamp": 973.4 },
+        {
+          "text": "Ceecrue cuts the fishman in half. It dissipates.",
+          "timestamp": 977
+        },
+        { "text": "Sunraku cuts one in half.", "timestamp": 985.1 },
+        {
+          "text": "He runs forward and up the stairs. Standing on the fo'c'sle, the forward upper deck, he sees fishmen coming from the Innsman.",
+          "timestamp": 999.5
+        },
+        {
+          "text": "Mold hops the railing, holding a staff. Rust holds a purple arrow with runic inscriptions.",
+          "timestamp": 1025.6
+        },
+        {
+          "text": "He holds out his staff, and a purple diamond with decorations flashes in front of him, then in front of Rust's fire arrow.",
+          "timestamp": 1033.2
+        },
+        {
+          "text": "She fires. The arrow and diamond hit the hoard of fishmen, and they fly back into the ocean.",
+          "timestamp": 1042.2
+        },
+        { "text": "He leaps up. The fishmen look up.", "timestamp": 1054.9 },
+        {
+          "text": "He lands on the dark, rotting deck of the Innsman.",
+          "timestamp": 1061.3
+        },
+        {
+          "text": "A fishman swings. Sunraku parries, then pokes the fishman twice with the purple blade, and the chest rots away.",
+          "timestamp": 1072.7
+        },
+        {
+          "text": "The magic strikes the fishman, sending it flying. It dissipates in mid-air.",
+          "timestamp": 1094.3
+        },
+        {
+          "text": "A group of fishmen emerge from inside the boat.",
+          "timestamp": 1101.1
+        },
+        {
+          "text": "In the darkness, a shackled hand clutches chains.",
+          "timestamp": 1106.6
+        },
+        { "text": "A fishman swings, Sunraku dodges.", "timestamp": 1108.8 },
+        {
+          "text": "Flashback, drawing Arcanum, The Fool, Time between skill uses is halved",
+          "timestamp": 1113
+        },
+        { "text": "2 fishmen leap", "timestamp": 1128.9 },
+        {
+          "text": "Sunraku turns. A fire arrow strikes both fishmen at once",
+          "timestamp": 1132.9
+        },
+        { "text": "Rust on deck, Mold in crow's nest", "timestamp": 1140.4 },
+        { "text": "Scars", "timestamp": 1167.3 },
+        { "text": "The zombie fishmen shuffle forward", "timestamp": 1170.4 },
+        { "text": "An anchor flies through the air.", "timestamp": 1178.7 },
+        {
+          "text": "Rust and Sunraku dodge. The anchor lands in the deck.",
+          "timestamp": 1180.9
+        },
+        {
+          "text": "Inverted text, FrillShark Zombie, Denizen of the Abyss",
+          "timestamp": 1189.5
+        },
+        {
+          "text": "Stude picks up a sword. Lightning crackles in the storm.",
+          "timestamp": 1229.4
+        },
+        {
+          "text": "Psyger swings. A fishman stumbles back, then swings. She blocks.",
+          "timestamp": 1233.2
+        },
+        { "text": "Akane and Ceecrue kill the fishman.", "timestamp": 1239.2 },
+        {
+          "text": "She opens her equipment list. On the Innsman, Sunraku and Rust stare at the FrillShark",
+          "timestamp": 1272.7
+        },
+        { "text": "He grabs Emul", "timestamp": 1286 },
+        { "text": "He throws Emul", "timestamp": 1299.6 },
+        { "text": "Emul's eyes spin in spirals", "timestamp": 1310.2 },
+        {
+          "text": "Ducsuram in hand, Sunraku charges the FrillShark. Rust strings a magic fire arrow.",
+          "timestamp": 1327.5
+        },
+        {
+          "text": "Pixel art title card. Blue text over a starry background spell Shangri-La Frontier",
+          "timestamp": 1332
+        },
+        {
+          "text": "Sunraku holds Ducsuram and stands in an underwater town.",
+          "timestamp": 1336.1
+        },
+        {
+          "text": "Pencilgon holds a golden spear and stands in the hidden garden",
+          "timestamp": 1339
+        },
+        {
+          "text": "Katzo holds up fists and stands by the Teardrop lake",
+          "timestamp": 1341.6
+        },
+        {
+          "text": "Psyger crosses her arms and stands in the Lightless Barrens",
+          "timestamp": 1343.8999999999999
+        },
+        {
+          "text": "Montage of the game store, the Utopia headquarters, the palace, Rabbituza, a tower, and Fifticia.",
+          "timestamp": 1345.9
+        },
+        {
+          "text": "Sunraku runs across an underwater town. Fish swim in the air. Seaweed lines the street.",
+          "timestamp": 1351.6999999999998
+        },
+        {
+          "text": "Katzo runs across the cave floor on the shores of the Teardrop lake",
+          "timestamp": 1359.8
+        },
+        {
+          "text": "A serpent emerges from the lake. Crab pincers snap.",
+          "timestamp": 1366
+        },
+        {
+          "text": "Montage of items. Log. Bow. Twin blue blades. Grimoire. Mana potion. Cards.",
+          "timestamp": 1368.5
+        },
+        {
+          "text": "Pencilgon runs across the hidden garden. Red spider lilies blow in the breeze, surrounded by cavernous walls, under a full moon.",
+          "timestamp": 1372.6999999999998
+        },
+        {
+          "text": "Ceecrue, Rust, Sunraku, Akane, Mold, and Psyger walk along a dock. A crescent moon shines over the sea.",
+          "timestamp": 1380.7
+        },
+        {
+          "text": "The Scarlet Whale floats at sea. A giant octopus leg reaches up.",
+          "timestamp": 1395.3999999999999
+        },
+        {
+          "text": "Rakuro, Towa, Kei, and a brown haired woman walk along an urban street. Cars drive by.",
+          "timestamp": 1400
+        },
+        {
+          "text": "Montage. The Sage of Awakening. Akane's fox mask. A person in a yellow demon mask. An old man samurai. The beetle helm. A gas mask.",
+          "timestamp": 1406.1
+        },
+        {
+          "text": "Blue text over a black background spells Shangri-La Frontier",
+          "timestamp": 1410.8999999999999
+        }
+      ]
+    }
+  ]
+}
