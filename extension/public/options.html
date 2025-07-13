@@ -2,12 +2,29 @@
 <html>
     <head>
         <title>Options</title>
+        <style>
+            label{
+                display: block;
+                margin-bottom: 10px;
+            }
+        </style>
     </head>
     <body>
-        <label>
-            Emby
-            <input type="text" id="emby-url" />
-        </label>
+        <div>
+
+            <label>
+                <input type="checkbox" id="show-indicator" />
+                Show SRD indicator
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Emby URLs
+                <button id="add-emby-url">Add URL</button>
+            </label>
+            <div id="emby-urls-list"></div>
+        </div>
 
         <script src="options.js"></script>
     </body>

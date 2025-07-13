@@ -62,11 +62,24 @@ export class SRDManager {
         this.updateIndicator();
     }
 
+    private createIndicator() {
+        waitThenAct<HTMLElement>(this.params.indicatorContainerSelector, (container) => {
+            const indicator = document.createElement("div");
+            indicator.textContent = "Here";
+            indicator.style.cssText = "color: red; font-weight: bold; padding: 4px; border: 1px solid red; border-radius: 4px; background-color: rgba(255, 0, 0, 0.1); width: fit-content; height:20px;";
+            container.appendChild(indicator);
+            
+            // Store reference to indicator for later updates
+            this.indicatorElement = indicator;
+            this.updateIndicator();
+        });
+    }
+
     private updateIndicator() {
         if (!this.indicatorElement) {
             return;
         }
-
+        
         if(this.script.currentTracks.length === 0){
             this.indicatorElement.textContent = "SRD)))";
         }else{
@@ -109,7 +122,7 @@ export class SRDManager {
 
         // TODO: Set up indicator element
 
-        // Setup storage listener for cross-extension communication
+                // Setup storage listener for cross-extension communication
         chrome.storage.local.onChanged.addListener((changes) => {
             console.debug("[SRDManager] Storage changed:", changes);
             
@@ -118,7 +131,7 @@ export class SRDManager {
                 const idData = changes.currentlyEditingId.newValue;
                 if (idData && idData.id === this.currentKey?.split('-').pop()) {
                     this.activeUpdating = true;
-        
+         
                     // Initialize save callback
                     this.script.onSaveData = (data) => {
                         void chrome.storage.local.set({ trackUpdates: data });
@@ -131,6 +144,21 @@ export class SRDManager {
                 const trackData = changes.trackUpdates.newValue;
                 if (trackData && trackData.tracks && JSON.stringify(trackData.tracks) !== JSON.stringify(this.script.currentTracks)) {
                     this.script.loadData(trackData.tracks);
+                }
+            }
+            
+            // Handle showIndicator changes
+            if (changes.showIndicator) {
+                const showIndicator = changes.showIndicator.newValue;
+                if (this.params.indicatorContainerSelector) {
+                    if (showIndicator && !this.indicatorElement) {
+                        // Create indicator if it should be shown but doesn't exist
+                        this.createIndicator();
+                    } else if (!showIndicator && this.indicatorElement) {
+                        // Remove indicator if it should be hidden but exists
+                        this.indicatorElement?.remove();
+                        this.indicatorElement = null;
+                    }
                 }
             }
         })
@@ -146,15 +174,11 @@ export class SRDManager {
 
         // Setup indicator if container selector is provided
         if (this.params.indicatorContainerSelector) {
-            waitThenAct<HTMLElement>(this.params.indicatorContainerSelector, (container) => {
-                const indicator = document.createElement("div");
-                indicator.textContent = "Here";
-                indicator.style.cssText = "color: red; font-weight: bold; padding: 4px; border: 1px solid red; border-radius: 4px; background-color: rgba(255, 0, 0, 0.1); width: fit-content; height:20px;";
-                container.appendChild(indicator);
-                
-                // Store reference to indicator for later updates
-                this.indicatorElement = indicator;
-                this.updateIndicator();
+            // Check if indicator should be shown
+            chrome.storage.local.get({showIndicator: true}).then(({showIndicator}) => {
+                if (showIndicator) {
+                    this.createIndicator();
+                }
             });
         }
 
