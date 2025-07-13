@@ -7,7 +7,6 @@ type DomainMainCallbacks = {
     setup: (id: string, errorCallback?: () => void) => void;
 }
 type DomainRegistrationParams = {
-    generateServerPath: (id: string) => string;
     style: string;
     videoSelector: string;
     platformId: ScriptInfo["source"]["domain"];
@@ -169,7 +168,30 @@ export class SRDManager {
     private async setup(videoId: string, errorCallback?: () => void){
         console.debug("[ScreenReaderDescription] - Setting up for", videoId);
         this.currentKey = `script-${this.params.platformId}-info-${videoId}`
-        const serverPath = this.params.generateServerPath(videoId);
+        
+        // Fetch the transcript catalog from GitHub
+        let catalog: Record<string, string> = {};
+        try {
+            const catalogResponse = await fetch('https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/refs/heads/main/generated-transcript-catalog.json');
+            if (catalogResponse.ok) {
+                catalog = await catalogResponse.json();
+                console.debug("[ScreenReaderDescription] - Fetched catalog:", catalog);
+            } else {
+                console.warn("[ScreenReaderDescription] - Failed to fetch catalog, falling back to server path");
+            }
+        } catch (error) {
+            console.warn("[ScreenReaderDescription] - Error fetching catalog:", error);
+        }
+        
+        // Look up the transcript location in the catalog
+        const catalogKey = `${this.params.platformId}-${videoId}`;
+        if(!(catalogKey in catalog)){
+            console.debug("[ScreenReaderDescription] - Item not found in catalog, skipping");
+            return;
+        }
+
+        const serverPath = `https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/refs/heads/main${catalog[catalogKey]}`
+        
         const scripts = await grabScripts(this.currentKey, serverPath);
         this.script.currentTracks = scripts?.scripts[0].tracks ?? [];
         console.debug("[ScreenReaderDescription] - Grabbed script", scripts);
