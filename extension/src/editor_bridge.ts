@@ -3,6 +3,16 @@ import { ScriptData } from "../../types";
 let currentTracks: ScriptData["tracks"] = [];
 let lastTouchedTimestamp = -1;
 
+const createIndicator = () => {
+    const indicator = document.createElement("div");
+    indicator.textContent = "SRD)))";
+    indicator.style.cssText = "color: red; font-weight: bold; padding: 4px; border: 1px solid red; border-radius: 4px; background-color: rgba(255, 0, 0, 0.1); width: fit-content; height:20px;";
+    document.body.appendChild(indicator);
+    return indicator;
+};
+
+createIndicator();
+
 const sendMessageToBackground = () => {
     lastTouchedTimestamp = Date.now();
     chrome.storage.local.set({ trackUpdates: { tracks: currentTracks, lastTouched: lastTouchedTimestamp, timestamp: lastTouchedTimestamp } });
