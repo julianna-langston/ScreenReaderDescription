@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Screen Reader Description",
     "description": "Provides screen reader-based audio descriptions for select videos on various streaming sites.",
-    "version": "0.5",
+    "version": "0.6",
     "permissions": [
         "storage",
         "tabs",
