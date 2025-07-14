@@ -3,7 +3,6 @@ import { SRDManager } from "./SRDManager";
 import { waitThenAct } from "./utils";
 
 new SRDManager({
-    generateServerPath: () => ``,
     style: defaultStyle,
     videoSelector: "video",
     platformId: "emby",

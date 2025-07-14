@@ -2,7 +2,6 @@ import { defaultStyle} from "./constants";
 import { SRDManager } from "./SRDManager";
 
 new SRDManager({
-    generateServerPath: (id) => `https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main/transcripts/hidive/${id}.json`,
     style: defaultStyle,
     videoSelector: "video",
     platformId: "hidive",

@@ -2,13 +2,12 @@ import { defaultStyle} from "./constants";
 import { SRDManager } from "./SRDManager";
 
 new SRDManager({
-    generateServerPath: (id) => `https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main/transcripts/crunchyroll/${id}.json`,
     style: defaultStyle,
     videoSelector: "video",
     platformId: "crunchyroll",
     ccContainerSelector: "#velocity-player-package",
     editorListenerContainerSelector: "body",
-    indicatorContainerSelector: "#vilosControlsContainer",
+    indicatorContainerSelector: "#velocity-controls-package",
     main: ({ setup }) => {
         console.log("Checking page...");
         const starter = location.pathname.split("/")[1];

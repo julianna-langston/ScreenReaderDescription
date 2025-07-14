@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Options</title>
+        <title>Screen Reader Description Options</title>
+        <link rel="stylesheet" href="options.css">
     </head>
     <body>
-        <label>
-            Emby
-            <input type="text" id="emby-url" />
-        </label>
+        <div class="container">
+            <h1>Screen Reader Description</h1>
+            
+            <div class="section">
+                <div class="section-title">Indicators in Player</div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="show-indicator" class="checkbox">
+                    <label for="show-indicator" class="checkbox-label">Show indicator</label>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Emby URLs</div>
+                <button id="add-emby-url" class="add-button">Add URL</button>
+                <div id="emby-urls-list"></div>
+            </div>
+
+        </div>
 
         <script src="options.js"></script>
     </body>

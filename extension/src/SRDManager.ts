@@ -7,7 +7,6 @@ type DomainMainCallbacks = {
     setup: (id: string, errorCallback?: () => void) => void;
 }
 type DomainRegistrationParams = {
-    generateServerPath: (id: string) => string;
     style: string;
     videoSelector: string;
     platformId: ScriptInfo["source"]["domain"];
@@ -63,17 +62,33 @@ export class SRDManager {
         this.updateIndicator();
     }
 
+    private createIndicator() {
+        waitThenAct<HTMLElement>(this.params.indicatorContainerSelector, (container) => {
+            const indicator = document.createElement("div");
+            indicator.textContent = "Here";
+            indicator.style.cssText = "color: red; font-weight: bold; padding: 4px; border: 1px solid red; border-radius: 4px; background-color: rgba(255, 0, 0, 0.1); width: fit-content; height:20px;";
+            container.appendChild(indicator);
+            
+            // Store reference to indicator for later updates
+            this.indicatorElement = indicator;
+            this.updateIndicator();
+        });
+    }
+
     private updateIndicator() {
         if (!this.indicatorElement) {
             return;
         }
         
-        if (!this.activeUpdating) {
-            this.indicatorElement.textContent = "Here";
-            return;
+        if(this.script.currentTracks.length === 0){
+            this.indicatorElement.textContent = "SRD)))";
+        }else{
+            this.indicatorElement.textContent = "Described";
         }
         
-        this.indicatorElement.textContent = this.editMode ? "Editing mode on" : "Editing mode off";
+        if(this.activeUpdating){
+            this.indicatorElement.textContent = "Editing mode on";
+        }
     }
     
     constructor(private params: DomainRegistrationParams){
@@ -94,11 +109,6 @@ export class SRDManager {
             this.videoElement.play();
             this.editingMarker = null;
         });
-        
-        // Initialize save callback
-        this.script.onSaveData = (data) => {
-            void chrome.storage.local.set({ trackUpdates: data });
-        };
 
         this.script.onTrackChange = () => {
             this.killTranscript();
@@ -106,12 +116,13 @@ export class SRDManager {
                 this.playTranscriptFrom(this.videoElement.currentTime);
             }
             console.log("Current tracks updated.");
+            this.updateIndicator();
         }
         this.trackDisplayDialog = createTrackDisplayDialog();
 
         // TODO: Set up indicator element
 
-        // Setup storage listener for cross-extension communication
+                // Setup storage listener for cross-extension communication
         chrome.storage.local.onChanged.addListener((changes) => {
             console.debug("[SRDManager] Storage changed:", changes);
             
@@ -120,6 +131,11 @@ export class SRDManager {
                 const idData = changes.currentlyEditingId.newValue;
                 if (idData && idData.id === this.currentKey?.split('-').pop()) {
                     this.activeUpdating = true;
+         
+                    // Initialize save callback
+                    this.script.onSaveData = (data) => {
+                        void chrome.storage.local.set({ trackUpdates: data });
+                    };
                 }
             }
             
@@ -128,6 +144,21 @@ export class SRDManager {
                 const trackData = changes.trackUpdates.newValue;
                 if (trackData && trackData.tracks && JSON.stringify(trackData.tracks) !== JSON.stringify(this.script.currentTracks)) {
                     this.script.loadData(trackData.tracks);
+                }
+            }
+            
+            // Handle showIndicator changes
+            if (changes.showIndicator) {
+                const showIndicator = changes.showIndicator.newValue;
+                if (this.params.indicatorContainerSelector) {
+                    if (showIndicator && !this.indicatorElement) {
+                        // Create indicator if it should be shown but doesn't exist
+                        this.createIndicator();
+                    } else if (!showIndicator && this.indicatorElement) {
+                        // Remove indicator if it should be hidden but exists
+                        this.indicatorElement?.remove();
+                        this.indicatorElement = null;
+                    }
                 }
             }
         })
@@ -143,15 +174,11 @@ export class SRDManager {
 
         // Setup indicator if container selector is provided
         if (this.params.indicatorContainerSelector) {
-            waitThenAct<HTMLElement>(this.params.indicatorContainerSelector, (container) => {
-                const indicator = document.createElement("div");
-                indicator.textContent = "Here";
-                indicator.style.cssText = "color: red; font-weight: bold; padding: 4px; border: 1px solid red; border-radius: 4px; background-color: rgba(255, 0, 0, 0.1); width: fit-content; height:20px;";
-                container.appendChild(indicator);
-                
-                // Store reference to indicator for later updates
-                this.indicatorElement = indicator;
-                this.updateIndicator();
+            // Check if indicator should be shown
+            chrome.storage.local.get({showIndicator: true}).then(({showIndicator}) => {
+                if (showIndicator) {
+                    this.createIndicator();
+                }
             });
         }
 
@@ -169,10 +196,33 @@ export class SRDManager {
     private async setup(videoId: string, errorCallback?: () => void){
         console.debug("[ScreenReaderDescription] - Setting up for", videoId);
         this.currentKey = `script-${this.params.platformId}-info-${videoId}`
-        const serverPath = this.params.generateServerPath(videoId);
+        
+        // Fetch the transcript catalog from GitHub
+        let catalog: Record<string, string> = {};
+        try {
+            const catalogResponse = await fetch('https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/refs/heads/main/generated-transcript-catalog.json');
+            if (catalogResponse.ok) {
+                catalog = await catalogResponse.json();
+                console.debug("[ScreenReaderDescription] - Fetched catalog:", catalog);
+            } else {
+                console.warn("[ScreenReaderDescription] - Failed to fetch catalog, falling back to server path");
+            }
+        } catch (error) {
+            console.warn("[ScreenReaderDescription] - Error fetching catalog:", error);
+        }
+        
+        // Look up the transcript location in the catalog
+        const catalogKey = `${this.params.platformId}-${videoId}`;
+        if(!(catalogKey in catalog)){
+            console.debug("[ScreenReaderDescription] - Item not found in catalog, skipping");
+            return;
+        }
+
+        const serverPath = `https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/refs/heads/main${catalog[catalogKey]}`
+        
         const scripts = await grabScripts(this.currentKey, serverPath);
-        this.script.currentTracks = scripts?.scripts[0].tracks ?? [];
         console.debug("[ScreenReaderDescription] - Grabbed script", scripts);
+        this.script.currentTracks = scripts?.scripts[0].tracks ?? [];
 
         // Check storage for currentlyEditingId and trackUpdates
         const storage = await chrome.storage.local.get(['currentlyEditingId', 'trackUpdates']);
@@ -180,14 +230,7 @@ export class SRDManager {
             this.script.currentTracks = storage.trackUpdates.tracks;
             this.activeUpdating = true;
             // Update indicator after setting activeUpdating
-            this.updateIndicator();
             this.script.loadData(storage.trackUpdates.tracks);
-        }else{
-            const idData = {
-                id: videoId,
-                timestamp: Date.now()
-            };
-            void chrome.storage.local.set({ currentlyEditingId: idData });
         }
         
         waitThenAct<HTMLVideoElement>(this.params.videoSelector, (video) => {

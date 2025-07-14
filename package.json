@@ -13,7 +13,10 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "transcripts/**/*.json": "ts-node generate-catalog.ts && git add transcript-catalog.json",
+    "transcripts/**/*.json": [
+      "npm run validate",
+      "ts-node generate-catalog.ts"
+    ],
     "types.d.ts": "npm run validate"
   },
   "license": "MIT",

@@ -31,6 +31,7 @@ export const createTrackEditorDialog = (submitCallback: () => void) => {
 
     dialog.addEventListener("close", () => {
         dialog.setAttribute("data-isEditing", "false");
+        trackEditorInput.value = "";
     });
     return dialog;
 }
@@ -125,5 +126,41 @@ export const displayTimestamp = (num: number) => {
     const seconds = (num % 60);
     const minutes = Math.floor(num / 60);
     return `${padNumbersSimple(minutes)}:${padNumbersSimple(+seconds.toFixed(1))}`.match(/(\d{2}:\d{2}\.?[1-9]*)/)?.[1] ?? "00:00";
+};
+
+export const generateExportFilename = (metadata: {
+    type: string;
+    title: string;
+    seriesTitle?: string;
+    season?: number;
+    episode?: number;
+    creator?: string;
+}) => {
+    const sanitizeTitle = (title: string) => {
+        return title.replace(/[<>:"/\\|?*]/g, '').replace(/\s+/g, ' ').trim();
+    };
+
+    const padNumber = (num: number) => {
+        return num.toString().padStart(2, '0');
+    };
+
+    switch (metadata.type) {
+        case "television episode": {
+            const title = sanitizeTitle(metadata.title);
+            const season = metadata.season !== undefined ? padNumber(metadata.season) : '';
+            const episode = metadata.episode !== undefined ? padNumber(metadata.episode) : '';
+            
+            if (season && episode) {
+                return `S${season}E${episode} - ${title}.json`;
+            } else if (episode) {
+                return `E${episode} - ${title}.json`;
+            } else {
+                return `${title}.json`;
+            }
+        }
+        default: {
+            return `${sanitizeTitle(metadata.title)}.json`;
+        }
+    }
 };
 
