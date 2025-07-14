@@ -60,4 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
     chrome.storage.local.get({showIndicator: true}).then(({showIndicator}) => {
         indicatorCheckbox.checked = showIndicator;
     });
+
+    // Handle alternative editor URL
+    const alternativeEditorUrlInput = document.getElementById("alternative-editor-url") as HTMLInputElement;
+    alternativeEditorUrlInput.addEventListener("change", () => {
+        chrome.storage.local.set({alternativeEditorUrl: alternativeEditorUrlInput.value});
+    });
+    chrome.storage.local.get({alternativeEditorUrl: ""}).then(({alternativeEditorUrl}) => {
+        alternativeEditorUrlInput.value = alternativeEditorUrl;
+    });
 });
