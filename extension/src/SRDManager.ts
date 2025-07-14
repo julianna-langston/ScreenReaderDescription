@@ -122,7 +122,7 @@ export class SRDManager {
 
         // TODO: Set up indicator element
 
-                // Setup storage listener for cross-extension communication
+        // Setup storage listener for cross-extension communication
         chrome.storage.local.onChanged.addListener((changes) => {
             console.debug("[SRDManager] Storage changed:", changes);
             
@@ -136,6 +136,9 @@ export class SRDManager {
                     this.script.onSaveData = (data) => {
                         void chrome.storage.local.set({ trackUpdates: data });
                     };
+                }else{
+                    this.activeUpdating = false;
+                    this.script.onSaveData = null;
                 }
             }
             
@@ -231,6 +234,11 @@ export class SRDManager {
             this.activeUpdating = true;
             // Update indicator after setting activeUpdating
             this.script.loadData(storage.trackUpdates.tracks);
+            
+            // Initialize save callback
+            this.script.onSaveData = (data) => {
+                void chrome.storage.local.set({ trackUpdates: data });
+            };
         }
         
         waitThenAct<HTMLVideoElement>(this.params.videoSelector, (video) => {
