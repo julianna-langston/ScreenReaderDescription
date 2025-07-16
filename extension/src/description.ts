@@ -1,5 +1,5 @@
 import type { ScriptInfo, ScriptMetadata } from "../../types";
-import { renderTimestamp } from "./utils";
+import { renderTimestamp, generateExportFilename } from "./utils";
 
 const domains = ["crunchyroll", "youtube", "hidive", "emby"];
 const listKeys = domains.map((str) => `script-${str}-list`);
@@ -101,7 +101,7 @@ const showList = (list: ScriptInfo[]) => {
         const btn = document.createElement("button");
         btn.textContent = "Export";
         btn.draggable = true;
-        btn.addEventListener("click", () => downloadTracks(json.source.id + ".json", JSON.stringify(json)));
+        btn.addEventListener("click", () => downloadTracks(generateExportFilename(json.metadata), JSON.stringify(json)));
         btn.addEventListener("dragstart", (e) => {
             e.dataTransfer.setData("text/plain", JSON.stringify(json));
             e.dataTransfer.dropEffect = "copy";
