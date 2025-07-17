@@ -7,6 +7,7 @@ import {
   validTypes,
   pullFromStorage,
   trackSort,
+  generateExportFilename,
   type ScriptTrack
 } from "./utils";
 import { ScriptInfo, SupportedVideoTypes } from "./types";
@@ -329,9 +330,11 @@ function App() {
               e.dataTransfer.setData("text/plain", JSON.stringify(onExport()));
               e.dataTransfer.dropEffect = "copy";
             }}
-            onClick={() =>
-              exportContent(`${id}.json`, JSON.stringify(onExport()))
-            }
+            onClick={() => {
+              const exportData = onExport();
+              const filename = generateExportFilename(exportData.metadata);
+              exportContent(filename, JSON.stringify(exportData));
+            }}
           >
             Export
           </button>

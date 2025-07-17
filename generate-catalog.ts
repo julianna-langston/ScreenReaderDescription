@@ -53,9 +53,9 @@ function scanTranscriptsDirectory(): CatalogEntry {
 
 function main() {
   console.log('Scanning transcripts directory...');
-
+  
   const catalog = scanTranscriptsDirectory();
-
+  
   // Sort the catalog by keys for consistent output
   const sortedCatalog: CatalogEntry = {};
   Object.keys(catalog)
@@ -67,10 +67,10 @@ function main() {
   // Write the catalog to a JSON file
   const catalogPath = path.join(__dirname, 'generated-transcript-catalog.json');
   fs.writeFileSync(catalogPath, JSON.stringify(sortedCatalog, null, 2));
-
+  
   console.log(`Catalog generated with ${Object.keys(sortedCatalog).length} entries`);
   console.log(`Catalog saved to: ${catalogPath}`);
-
+  
   // Print some example entries
   console.log('\nExample entries:');
   const entries = Object.entries(sortedCatalog).slice(0, 5);

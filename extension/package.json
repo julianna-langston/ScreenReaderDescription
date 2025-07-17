@@ -4,7 +4,7 @@
     "description": "generating description",
     "scripts": {
         "clean": "rimraf ./dist",
-        "build": "rollup -c rollup.config.mjs --silent",
+        "build": "rollup -c rollup.config.mjs",
         "dev": "rollup -c rollup.config.mjs -w"
     },
     "devDependencies": {

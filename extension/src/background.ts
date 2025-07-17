@@ -22,35 +22,32 @@ const updateForEmby = async () => {
 };
 
 const updateForAlternativeEditor = async () => {
-    const {alternativeEditorUrl} = await chrome.storage.local.get({alternativeEditorUrl: ""});
-    
-    if (!alternativeEditorUrl) {
-        // Remove the content script if URL is empty
-        try {
-            await chrome.scripting.unregisterContentScripts({ids: ["alternative-editor"]});
-        } catch (e) {
-            // Script might not exist, ignore error
-        }
+    const {alternativeEditorUrl} = await chrome.storage.local.get<{alternativeEditorUrl: string}>({alternativeEditorUrl: ""});
+    const registeredScripts = await chrome.scripting.getRegisteredContentScripts();
+    const scriptExists = registeredScripts.some(script => script.id === "alternative-editor");
+    const isUrlValid = alternativeEditorUrl && alternativeEditorUrl.trim() !== "" && alternativeEditorUrl.includes("://");
+
+    if(scriptExists && !isUrlValid){
+        await chrome.scripting.unregisterContentScripts({ids: ["alternative-editor"]});
         return;
     }
 
-    try {
+    if(scriptExists && isUrlValid){
+        await chrome.scripting.updateContentScripts([{
+            id: "alternative-editor",
+            matches: [alternativeEditorUrl]
+        }]);
+        return
+    }
+
+    if(!scriptExists && isUrlValid){
         await chrome.scripting.registerContentScripts([{
             id: "alternative-editor",
             js: ["editor_bridge.js"],
-            matches: [alternativeEditorUrl]
+            matches: [alternativeEditorUrl],
         }]);
-    } catch (e) {
-        // If script already exists, update it
-        try {
-            await chrome.scripting.updateContentScripts([{
-                id: "alternative-editor",
-                matches: [alternativeEditorUrl]
-            }]);
-        } catch (updateError) {
-            console.error("Failed to update alternative editor content script:", updateError);
-        }
     }
+
 };
 
 void updateForEmby();

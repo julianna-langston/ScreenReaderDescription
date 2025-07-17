@@ -20,7 +20,7 @@
         {
             "js": ["editor_bridge.js"],
             "matches": [
-                "https://www.screenreaderdescription.com/editor.html"
+                "https://*.screenreaderdescription.com/editor.html"
             ]
         },
         {
