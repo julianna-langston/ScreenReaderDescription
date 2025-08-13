@@ -129,29 +129,31 @@ const generateCrunchyrollListing = () => {
         episode: number;
         title: string;
     }
+    
 
-    const directory = path.join(__dirname, "transcripts", "crunchyroll");
-    const files = fs.readdirSync(directory);
+    const catalog = JSON.parse(fs.readFileSync(path.join(__dirname, "generated-transcript-catalog.json")).toString());
+    const keys = Object.keys(catalog)
+    const crunchyrollKeys = keys.filter((key) => key.startsWith("crunchyroll-"));
+    console.log(crunchyrollKeys)
+    
     const show = new Map<string, Listing[]>();
-
-    files.forEach((f) => {
-        const {source, metadata}: ScriptInfo = JSON.parse(fs.readFileSync(path.join(directory, f)).toString());
-
+    crunchyrollKeys.forEach((key) => {
+        const fileName = catalog[key]
+        console.log(fileName);
+        const {source, metadata}: ScriptInfo = JSON.parse(fs.readFileSync(path.join(__dirname, fileName)).toString());
         const {seriesTitle, episode, title, draft} = metadata;
-
         if(draft || !seriesTitle){
             return;
         }
-
         const showList: Listing[] = show.get(seriesTitle) ?? [];
         showList.push({
             url: source.url,
             episode: Number(episode),
             title
         });
-
+    
         show.set(seriesTitle, showList);
-    });
+    })
 
     const entries = Array.from(show.entries());
     entries.sort((a, b) => {
