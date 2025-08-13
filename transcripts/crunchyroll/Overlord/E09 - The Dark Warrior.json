@@ -1,0 +1,453 @@
+{
+  "source": {
+    "url": "https://www.crunchyroll.com/watch/G2XU0340J/the-dark-warriorst",
+    "domain": "crunchyroll",
+    "id": "G2XU0340J"
+  },
+  "metadata": {
+    "type": "television episode",
+    "title": "The Dark Warrior",
+    "seriesTitle": "Overlord",
+    "episode": 9
+  },
+  "scripts": [
+    {
+      "language": "en-US",
+      "author": "Julianna Langston",
+      "tracks": [
+        {
+          "text": "A letter M stands in a spotlight. It explodes into a rainbow of confetti. Media Factory.",
+          "timestamp": 0
+        },
+        {
+          "text": "A silver phoenix erupts in fire and circles of bronze light. Kadokawa Video.",
+          "timestamp": 10
+        },
+        {
+          "text": "On a white background, the outline of a purple logo forms. A flaming phoenix surrounded by the words Kadokawa Pictures, Inc.",
+          "timestamp": 25
+        },
+        {
+          "text": "2 spheres of lightning fly forward and collide together into the men",
+          "timestamp": 41
+        },
+        {
+          "text": "The robed men lie on the ground, smoldering. Khajit stands",
+          "timestamp": 47
+        },
+        {
+          "text": "Light shimmers. A ringed skeleton hand reach out.",
+          "timestamp": 124
+        },
+        {
+          "text": "Ainz stands, wearing a cape that blows in the wind.",
+          "timestamp": 129
+        },
+        { "text": "Gold text, Overlord", "timestamp": 133.3 },
+        {
+          "text": "A hoard of skeletons shuffles through a mist",
+          "timestamp": 136.8
+        },
+        {
+          "text": "Nazarick, day time. Ainz sits, one hand resting against his face, the other holding the staff.",
+          "timestamp": 140.4
+        },
+        {
+          "text": "Albedo lies, her white dress emphasizing her slender waist. Black wings wrap around her bare hips.",
+          "timestamp": 145.9
+        },
+        { "text": "Aura backflips. Mare holds a staff.", "timestamp": 147.9 },
+        {
+          "text": "Demiurge adjusts his tie. He wears a red suit and glasses. He has a long, metal tail.",
+          "timestamp": 152.1
+        },
+        {
+          "text": "Cocytus, a humanoid insect, exhales frost.",
+          "timestamp": 154.3
+        },
+        { "text": "Sebas bows, a hand over his chest.", "timestamp": 157.1 },
+        {
+          "text": "Shaltear, wearing a black dress with red ribbon twirls, holding a black parasol. She has white hair and red eyes.",
+          "timestamp": 158.8
+        },
+        {
+          "text": "Momonga walks down a carpet, depicting animatd scenes. Enri and Nemu.",
+          "timestamp": 161.1
+        },
+        {
+          "text": "A warrior woman. The Swords of Darkness smile and embrace.",
+          "timestamp": 162.3
+        },
+        { "text": "Lizzy and Nphirea Balear stare.", "timestamp": 163.7 },
+        {
+          "text": "General Gazef and the Vice Captain look determined.",
+          "timestamp": 165.3
+        },
+        { "text": "Nigun smiles.", "timestamp": 166.4 },
+        { "text": "Clementine and Khajit smile.", "timestamp": 167.6 },
+        {
+          "text": "A blue haired man readies a sword.",
+          "timestamp": 168.60000000000002
+        },
+        { "text": "A dozen people pose dramatically", "timestamp": 169.5 },
+        { "text": "Momonga laughs", "timestamp": 172.2 },
+        { "text": "A hamster runs.", "timestamp": 173.3 },
+        { "text": "Momon and Nabe fly through the air", "timestamp": 174.3 },
+        {
+          "text": "Surrounded by ogres and goblins, Momon swings twin long swords. Nabe raises a hand and fires a beam of lightning.",
+          "timestamp": 177.2
+        },
+        {
+          "text": "Aura pulls Mare onto the back of Fenn, the black wolf. Quadracile, a giant reptile, runs alongside",
+          "timestamp": 182.2
+        },
+        {
+          "text": "Armored Albedo spins an axe in Carne village",
+          "timestamp": 184.10000000000002
+        },
+        {
+          "text": "Cocytus stands on ice, holding an axe and staring at humanoid reptiles",
+          "timestamp": 185.7
+        },
+        {
+          "text": "Sebas raises a fist in an alley",
+          "timestamp": 186.60000000000002
+        },
+        {
+          "text": "Demiurge spreads wings in front of a full moon",
+          "timestamp": 187.8
+        },
+        {
+          "text": "Ainz flashes between wearing a cloak, the black armor, and the mage robe.",
+          "timestamp": 189
+        },
+        { "text": "Albedo sheds a tear", "timestamp": 190.5 },
+        {
+          "text": "Shaltear wears red armor and flies by white wings. She exchanges blows with Ainz in a red sky.",
+          "timestamp": 192.10000000000002
+        },
+        {
+          "text": "Ainz takes a flag pole from Albedo. He raises the flag of Momonga, standing on a cliff with the residents of Nazarick.",
+          "timestamp": 199.7
+        },
+        { "text": "Text, Chapter 9, The dark warrior", "timestamp": 214 },
+        {
+          "text": "He holds out the orb. It glows purple.",
+          "timestamp": 239.1
+        },
+        { "text": "Nabe remembers", "timestamp": 241.8 },
+        {
+          "text": "A dragon hovers above her. She dodges as a bone paw slams on the ground.",
+          "timestamp": 246.7
+        },
+        {
+          "text": "The 100 foot dragon flaps its tattered wings. It has 2 pairs of glowing red eyes",
+          "timestamp": 251.5
+        },
+        {
+          "text": "It flies past Nabe and lands next to Khajit in front of the mausoleum",
+          "timestamp": 255.2
+        },
+        {
+          "text": "She grits her teeth. She picks up her sword and binds the hilt to the grip.",
+          "timestamp": 280.7
+        },
+        { "text": "She wields her hilted sword.", "timestamp": 288.7 },
+        {
+          "text": "The dragon steps forward and roars. She runs forward and leaps.",
+          "timestamp": 291.1
+        },
+        {
+          "text": "Dragon steps. She dodges its foot, flies through the air, and strikes the dragon in its skeletal face.",
+          "timestamp": 294.6
+        },
+        {
+          "text": "Chunks of its mouth explode off. The dragon tips and falls to its side.",
+          "timestamp": 298.4
+        },
+        { "text": "She lands on the misty ground", "timestamp": 303 },
+        {
+          "text": "The dragon stands, chunks of bone falling off",
+          "timestamp": 322.1
+        },
+        {
+          "text": "The orb glows and crackles. The dragon's falling face bones stop, glow, and rise back up, repairing the dragon's cheek.",
+          "timestamp": 330.7
+        },
+        {
+          "text": "Nabe stares. The dragon's 4 eyes glisten.",
+          "timestamp": 336.8
+        },
+        {
+          "text": "The dragon stomps forward, a purple aura smoking off of its body. It roars. ",
+          "timestamp": 358.2
+        },
+        {
+          "text": "Nabe runs along its side. Dragon swings its tail",
+          "timestamp": 361.9
+        },
+        {
+          "text": "She dodges up. The dragon swings its paw",
+          "timestamp": 364.4
+        },
+        {
+          "text": "She holds up an arm as the paw makes contact.",
+          "timestamp": 366.8
+        },
+        {
+          "text": "A green orb of light ripples out. Nabe leaps back, glowing. Khajit frowns as she lands on the ground.",
+          "timestamp": 370
+        },
+        {
+          "text": "Green goo forms a spear and shoots at Nabe. The goo hits a magic shield, splashes to the pavestones, and steams",
+          "timestamp": 376.2
+        },
+        {
+          "text": "Lightning bolts from her fingers. Dragon lands in front of Khajit, taking the hit. It roars.",
+          "timestamp": 385.5
+        },
+        { "text": "He holds the orb overhead.", "timestamp": 400.4 },
+        {
+          "text": "The ground cracks, revealing blue light. The earth pushes out. A geyser of skeletons shoot into the air and gather in the mist. A second dragon made of interlocking bone fragments rears above the cemetery.",
+          "timestamp": 407.5
+        },
+        {
+          "text": "Nabe runs forward. New dragon stomps. She sidesteps. Its tail swings. She leaps over. The tail follows. She bounces off the swing. Old dragon opens its mouth. She banks. Its paw rises, catches, and brings her to the ground.",
+          "timestamp": 438.3
+        },
+        { "text": "A foot presses into the ground.", "timestamp": 452.4 },
+        {
+          "text": "She holds up her sheathed sword, pushing back on the dragon's paw. Her feet dig into the dirt from the pressure.",
+          "timestamp": 454.6
+        },
+        { "text": "She grits her teeth and pushes.", "timestamp": 459 },
+        { "text": "Old dragon stumbles back.", "timestamp": 463.5 },
+        {
+          "text": "A cloud of smoke. Clementine flies back and lands.",
+          "timestamp": 487
+        },
+        { "text": "She frowns, her eyes narrow", "timestamp": 530 },
+        {
+          "text": "She pulls a sword. Momon and Clementine take fighting stances. The New skeleton dragon rears and roars over the trees. The pair turn.",
+          "timestamp": 532.8
+        },
+        {
+          "text": "She uses her sword to unhook a clasp at her collar. Her cloak drops and puddles around her feet. She wears armor and a bikini made of mostly copper adventurer plates.",
+          "timestamp": 565.4
+        },
+        {
+          "text": "She crouches, her right foot back, a hand on the ground. She lunges. In an instant, she appears at the end of his sword, sliding under it, sword outstretched.",
+          "timestamp": 572.6
+        },
+        { "text": "He swings the other sword", "timestamp": 581.4 },
+        {
+          "text": "She blocks with her sword. He steps back. She lunges. Her sword slides off the armor.",
+          "timestamp": 584.4
+        },
+        {
+          "text": "She frowns and leaps back as he swings.",
+          "timestamp": 589.6
+        },
+        {
+          "text": "He looks at the scuff on his left shoulder.",
+          "timestamp": 591.3
+        },
+        { "text": "She tosses and catches her sword", "timestamp": 611 },
+        { "text": "She crouches", "timestamp": 619.2 },
+        { "text": "Lunge. Swing.", "timestamp": 622.4 },
+        { "text": "Block. Swing. She smiles.", "timestamp": 624.6 },
+        { "text": "She backflips over the incoming sword", "timestamp": 627.6 },
+        {
+          "text": "She lunges, sword aimed at the single across his helmet. He turns his head. She spins her sword",
+          "timestamp": 631.2
+        },
+        { "text": "She licks her sword", "timestamp": 662.1 },
+        {
+          "text": "His eye glimmers red. Clementine stares at him in the misty cemetery under the full moon.",
+          "timestamp": 683.6
+        },
+        {
+          "text": "He puts both his swords in the ground and stretches out his arms.",
+          "timestamp": 693.8
+        },
+        {
+          "text": "Nabe pants. The 2 bone dragons tower over her in the misty cemetery. Khajit sneers",
+          "timestamp": 697.6
+        },
+        { "text": "The dragons rear and roar.", "timestamp": 721.9 },
+        { "text": "Khajit stares. Nabe smiles.", "timestamp": 729.2 },
+        {
+          "text": "The dragons lunge forward, paws outstretched.",
+          "timestamp": 741.4
+        },
+        {
+          "text": "Dirt clouds around the dragon's stomps. Khajit smiles. Above him, a light flashes.",
+          "timestamp": 747.9
+        },
+        {
+          "text": "She free falls, head first, staring forward. She looks down at the mausoleum from 100 feet in the air.",
+          "timestamp": 753.3
+        },
+        {
+          "text": "She glows and stops. On the ground, Khajit and the dragons look around.",
+          "timestamp": 761.6
+        },
+        { "text": "He looks up.", "timestamp": 767.9 },
+        {
+          "text": "She hovers, her silhouette centered across the full moon.",
+          "timestamp": 769.2
+        },
+        {
+          "text": "She throws off her cape, revealing a skirt resembling a beetle. She wears a maid's head piece and bows, metal gauntlets, and a bone staff.",
+          "timestamp": 795.8
+        },
+        { "text": "Khajit blinks", "timestamp": 818.7 },
+        { "text": "They roar. She disappears", "timestamp": 823.8 },
+        {
+          "text": "He looks from one dragon to the other and in between.",
+          "timestamp": 826.4
+        },
+        {
+          "text": "He looks at the sword sticking out of his shoulder. The sword withdraws, and he clutches the wound.",
+          "timestamp": 832.4
+        },
+        {
+          "text": "She stands behind him. He swings at her, and she teleports to over the dragon's heads",
+          "timestamp": 837.7
+        },
+        { "text": "Her hands strobe with lightning", "timestamp": 888.5 },
+        { "text": "He shakes his staff. She smiles", "timestamp": 924.1 },
+        {
+          "text": "Serpentine dragons formed from blue lightning swirl to the earth and smash through each dragon. Bones explode.",
+          "timestamp": 950.7
+        },
+        {
+          "text": "They swirl in the sky, fuse, and smash to the ground, smiting Khajit",
+          "timestamp": 956.3
+        },
+        {
+          "text": "He screams in the column of lightning. Naberal descends to the ground.",
+          "timestamp": 964.8
+        },
+        {
+          "text": "A pile of ash falls to the ground and smokes.",
+          "timestamp": 969.1
+        },
+        { "text": "Momon stands away from his swords.", "timestamp": 979.6 },
+        { "text": "Her eyes bulge", "timestamp": 1008 },
+        { "text": "She crouches", "timestamp": 1020.3 },
+        { "text": "She lunges", "timestamp": 1022 },
+        {
+          "text": "She pierces through the slit in his helmet.",
+          "timestamp": 1026.1
+        },
+        { "text": "The sword crackles", "timestamp": 1028.1 },
+        {
+          "text": "She draws another sword and pierces. The suit bursts into flames.",
+          "timestamp": 1032
+        },
+        {
+          "text": "She grins lustfully. A flaming arm wraps around her.",
+          "timestamp": 1035.3
+        },
+        { "text": "Momon transforms into Ainz.", "timestamp": 1053.3 },
+        { "text": "His arm doesn't move", "timestamp": 1070.2 },
+        { "text": "He removes the swords from his eyes", "timestamp": 1092.5 },
+        { "text": "His hand clutches her bare waist", "timestamp": 1100.7 },
+        {
+          "text": "Black dagger from the Swords of Darkness",
+          "timestamp": 1111.6
+        },
+        {
+          "text": "She struggles as her body squeezes against his. An iron plate falls off",
+          "timestamp": 1125.2
+        },
+        { "text": "She claws at his skull", "timestamp": 1139.7 },
+        {
+          "text": "Blood splatters her head. A fourth iron plate drops.",
+          "timestamp": 1147.4
+        },
+        { "text": "He raises his other hand up.", "timestamp": 1156.9 },
+        {
+          "text": "Blood spurts from her body. Her head rolls back limp",
+          "timestamp": 1165.2
+        },
+        {
+          "text": "Blood and Clementine fall to the ground",
+          "timestamp": 1169.2
+        },
+        { "text": "Ainz walks through the mist.", "timestamp": 1177.9 },
+        { "text": "Hamusuke breaks", "timestamp": 1184 },
+        {
+          "text": "Naberal lands on Hamusuke's head, pressing him into a bow.",
+          "timestamp": 1187.2
+        },
+        {
+          "text": "Under ground, in a 30 foot tall cave, Ainz walks across a platform with painted in a magic circle. Nphirea stands in the center, wearing the silver circlet on his head an a transparent robe. Ainz looks at him, blood tears running from his wounded eyes.",
+          "timestamp": 1226.8
+        },
+        { "text": "He holds a hand over the circlet", "timestamp": 1249.6 },
+        {
+          "text": "The circlet dissolves into dust. Nphirea buckles and slumps forward. Ainz catches him.",
+          "timestamp": 1279.3
+        },
+        {
+          "text": "The sun rises over the mausoleum. Naberal waits with Hamusuke, who wears a stuffed knapsack.",
+          "timestamp": 1283.1
+        },
+        {
+          "text": "Albedo stands with long, loose hair. Black feathers float around her.",
+          "timestamp": 1308
+        },
+        {
+          "text": "She holds her hands to her face and smiles.",
+          "timestamp": 1311.7
+        },
+        {
+          "text": "Her eyes are yellow with black slits down the center. Her eyes glow.",
+          "timestamp": 1314.5
+        },
+        {
+          "text": "A silvery spider web glistens, stretching between torn red ribbons.",
+          "timestamp": 1315.9
+        },
+        {
+          "text": "The ribbons entwine around her body, lying prone. Her legs are parted",
+          "timestamp": 1324.4
+        },
+        {
+          "text": "She looks up, her arms spread, her black hair lying messily across a checkered floor.",
+          "timestamp": 1333.2
+        },
+        {
+          "text": "In the style of metallic water color, she stands against a mirror, a hand covering her face",
+          "timestamp": 1339.6
+        },
+        {
+          "text": "While her dress is white with gold spider web trim, her reflection wears a low cut black dress",
+          "timestamp": 1345.9
+        },
+        { "text": "A black feather lands on water. ", "timestamp": 1351 },
+        {
+          "text": "Albedo stands, her arms spread behind her back, pushing her chest forward. Her black wings, rooted at her lower back, spread out. Each with is twice as long as an arm.",
+          "timestamp": 1351
+        },
+        {
+          "text": "Her dress is white, with off the shoulder sleeves, and a gold lining around her hips. The dress continues down from her stomach and back, leaving her hips bare. The dress is lined in ruffles down her legs. She wears gloves with ruffles that stretch up to her biceps.",
+          "timestamp": 1362.7
+        },
+        {
+          "text": "Albedo stands, wrapping an arm over one shoulder, and another arm around her waist. She wears a white collar with gold lining from the base of her head to just below her collar.",
+          "timestamp": 1377.4
+        },
+        {
+          "text": "Albedo stares forward. Her image flickers and distorts.",
+          "timestamp": 1392.4
+        },
+        { "text": "The inn, day time", "timestamp": 1397.9 },
+        { "text": "Green plates", "timestamp": 1403.1 },
+        { "text": "Text, Next Episode Preview", "timestamp": 1450 }
+      ]
+    }
+  ]
+}

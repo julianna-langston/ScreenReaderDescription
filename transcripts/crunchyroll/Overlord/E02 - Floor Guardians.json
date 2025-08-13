@@ -1,0 +1,302 @@
+{
+  "source": {
+    "url": "https://www.crunchyroll.com/watch/GX9UQ7JQ4/floor-guardians",
+    "domain": "crunchyroll",
+    "id": "GX9UQ7JQ4"
+  },
+  "metadata": {
+    "type": "television episode",
+    "title": "Floor Guardians",
+    "seriesTitle": "Overlord",
+    "episode": 2
+  },
+  "scripts": [
+    {
+      "language": "en-US",
+      "author": "Julianna Langston",
+      "tracks": [
+        {
+          "text": "A letter M stands in a spotlight. It explodes into a rainbow of confetti. Media Factory.",
+          "timestamp": 0
+        },
+        {
+          "text": "A silver phoenix erupts in fire and circles of bronze light. Kadokawa Video.",
+          "timestamp": 10
+        },
+        {
+          "text": "On a white background, the outline of a purple logo forms. A flaming phoenix surrounded by the words Kadokawa Pictures, Inc.",
+          "timestamp": 25
+        },
+        {
+          "text": "The 6th floor arena. A shadow forms, and Shalltear steps out",
+          "timestamp": 30.8
+        },
+        {
+          "text": "She tosses aside her parasol, which turns into black butterflies",
+          "timestamp": 49.8
+        },
+        { "text": "Cocytus", "timestamp": 110.2 },
+        {
+          "text": "Cocytus hits the ground with a sword. Ice forms over the arena",
+          "timestamp": 125.1
+        },
+        {
+          "text": "Albedo stands in front of the other guardians",
+          "timestamp": 158.6
+        },
+        {
+          "text": "Demiurge stands behind mare. Cocytus stands and bows.",
+          "timestamp": 160.8
+        },
+        {
+          "text": "Light shimmers. A ringed skeleton hand reach out.",
+          "timestamp": 173.5
+        },
+        {
+          "text": "Momonga stands, wearing a cape that blows in the wind.",
+          "timestamp": 178.5
+        },
+        { "text": "Gold text, Overlord", "timestamp": 182.8 },
+        {
+          "text": "A hoard of skeletons shuffles through a mist",
+          "timestamp": 186.3
+        },
+        {
+          "text": "Nazarick, day time. Momonga sits, one hand resting against his face, the other holding the staff.",
+          "timestamp": 189.9
+        },
+        {
+          "text": "Albedo lies, her white dress emphasizing her slender waist. Black wings wrap around her bare hips.",
+          "timestamp": 195.4
+        },
+        { "text": "Aura backflips. Mare holds a staff.", "timestamp": 197.4 },
+        {
+          "text": "Demiurge adjusts his tie. He wears a red suit and glasses. He has a long, metal tail.",
+          "timestamp": 201.6
+        },
+        {
+          "text": "Cocytus, a humanoid insect, exhales frost.",
+          "timestamp": 203.8
+        },
+        { "text": "Sebas bows, a hand over his chest.", "timestamp": 206.6 },
+        {
+          "text": "Shaltear, wearing a black dress with red ribbon twirls, holding a black parasol. She has white hair and red eyes.",
+          "timestamp": 208.3
+        },
+        {
+          "text": "Momonga walks down a carpet, depicting animatd scenes. 2 young girls stare up.",
+          "timestamp": 210.6
+        },
+        {
+          "text": "A warrior woman. 4 men smile and embrace.",
+          "timestamp": 211.8
+        },
+        {
+          "text": "An old woman and a boy with concealed eyes.",
+          "timestamp": 213.2
+        },
+        { "text": "Soldiers in armor looking determined.", "timestamp": 214.8 },
+        { "text": "An ominous soldier smiles.", "timestamp": 215.9 },
+        {
+          "text": "A woman with red eyes and a bald man smile.",
+          "timestamp": 217.1
+        },
+        { "text": "A blue haired man readies a sword.", "timestamp": 218.1 },
+        { "text": "A dozen people pose dramatically", "timestamp": 219 },
+        { "text": "Momonga laughs", "timestamp": 221.7 },
+        { "text": "A hamster runs.", "timestamp": 222.8 },
+        {
+          "text": "A soldier in black armor and a woman in a cape fly through the air",
+          "timestamp": 223.8
+        },
+        {
+          "text": "Surrounded by monsters, the black armored soldier swings a sword. The woman raises a hand and fires a beam of lightning.",
+          "timestamp": 226.7
+        },
+        {
+          "text": "Aura pulls Mare onto the back of a wolf demon",
+          "timestamp": 231.7
+        },
+        {
+          "text": "A horned, female soldier in black armor spins an axe",
+          "timestamp": 233.6
+        },
+        {
+          "text": "Cocytus stands on ice, holding an axe and staring at humanoid reptiles",
+          "timestamp": 235.2
+        },
+        { "text": "Sebas raises a fist in an alley", "timestamp": 236.1 },
+        {
+          "text": "Demiurge spreads wings in front of a full moon",
+          "timestamp": 237.3
+        },
+        {
+          "text": "Momonga flashes between wearing a cloak, the black armor, and the mage robe.",
+          "timestamp": 238.5
+        },
+        { "text": "Albedo sheds a tear", "timestamp": 240 },
+        {
+          "text": "Shaltear wears red armor and flies by white wings. She exchanges blows with Momonga in a red sky.",
+          "timestamp": 241.6
+        },
+        {
+          "text": "Momonga takes a flag pole from Albedo. He raises it, standing on a cliff with the residents of Nazarick.",
+          "timestamp": 249.2
+        },
+        { "text": "Text, Chapter 2, Floor Guardians", "timestamp": 260.8 },
+        { "text": "They smile", "timestamp": 317.7 },
+        { "text": "He teleports away", "timestamp": 515.7 },
+        { "text": "In the arena", "timestamp": 527.4 },
+        {
+          "text": "Sebas bows and walks away. Shaltear, still kneeling, quakes",
+          "timestamp": 616.5
+        },
+        { "text": "Her face is red", "timestamp": 625.3 },
+        { "text": "Demiurge and Mare walk away", "timestamp": 671.6 },
+        { "text": "Momonga picks up a sword", "timestamp": 806.7 },
+        { "text": "A maid watches", "timestamp": 816.1 },
+        { "text": "The sword falls", "timestamp": 819.5 },
+        { "text": "Albedo's chest", "timestamp": 835.2 },
+        { "text": "He glows green", "timestamp": 840 },
+        {
+          "text": "The maid looks at the sword on the floor",
+          "timestamp": 852.4
+        },
+        {
+          "text": "He switches to black armor with a red cloak",
+          "timestamp": 859.2
+        },
+        {
+          "text": "He takes the sword and swings it. Wind ripples from the force",
+          "timestamp": 863.6
+        },
+        { "text": "He hands the sword to Naberal, the maid", "timestamp": 898.9 },
+        {
+          "text": "He teleports. Label, 1st floor great tomb central mausoleum",
+          "timestamp": 902
+        },
+        {
+          "text": "A beast with fangs. A horned red head. A bird headed woman.",
+          "timestamp": 912.3
+        },
+        { "text": "Demiurge walks up", "timestamp": 923.9 },
+        { "text": "He kneels", "timestamp": 928 },
+        {
+          "text": "Momonga walks past. Demiurge stands and follows",
+          "timestamp": 974.7
+        },
+        {
+          "text": "Momonga stops and looks up at the night sky",
+          "timestamp": 989.3
+        },
+        {
+          "text": "Momonga reaches into a shadow and pulls out a necklace with a winged pendant.",
+          "timestamp": 1012
+        },
+        {
+          "text": "The pendant glows, and Momonga soars into the air",
+          "timestamp": 1016.5
+        },
+        {
+          "text": "Demiurge quakes. Leather wings emerge from his suit and unfurl. His head now resembles a toad with fangs. He flies.",
+          "timestamp": 1021.5
+        },
+        { "text": "Momonga flies up through the clouds", "timestamp": 1029.9 },
+        {
+          "text": "He breaches the highest cloud. He tosses away his helmet, which disappears. He stares at the full moon.",
+          "timestamp": 1032.5
+        },
+        { "text": "Demiurge stares", "timestamp": 1100.6 },
+        {
+          "text": "Below them, dirt rolls like waves toward the Tomb of Nazarick",
+          "timestamp": 1124.7
+        },
+        {
+          "text": "The dirt surges against the walls of the tomb. Mare stands on the walls, his staff glowing.",
+          "timestamp": 1132.9
+        },
+        {
+          "text": "Momonga holds up his hand, and the helmet reappears over his bare skull. Below, patches of green grow over the dirt.",
+          "timestamp": 1160.4
+        },
+        {
+          "text": "Momonga and human-faced Demiurge land on the wall.",
+          "timestamp": 1165.5
+        },
+        {
+          "text": "Mare takes the red ring and puts it on his left ring finger. The ring shrinks to fit.",
+          "timestamp": 1223.9
+        },
+        { "text": "Black feathers drift", "timestamp": 1247.5 },
+        {
+          "text": "Albedo floats in the air, beneath the cratered moon.",
+          "timestamp": 1250.3
+        },
+        { "text": "She eyes Mare's ring", "timestamp": 1286 },
+        { "text": "He conjures a ring", "timestamp": 1310.2 },
+        { "text": "She takes the ring", "timestamp": 1317.5 },
+        { "text": "She quivers", "timestamp": 1322.4 },
+        { "text": "He teleports", "timestamp": 1342.1 },
+        {
+          "text": "Lines of horses gallop across a field by moon light",
+          "timestamp": 1347.8
+        },
+        {
+          "text": "A soldier with a scar on his face watches from a ridge",
+          "timestamp": 1350.6
+        },
+        { "text": "The scarred man smiles", "timestamp": 1358.6 },
+        {
+          "text": "Albedo stands with long, loose hair. Black feathers float around her.",
+          "timestamp": 1362.6
+        },
+        {
+          "text": "She holds her hands to her face and smiles.",
+          "timestamp": 1366.3
+        },
+        {
+          "text": "Her eyes are yellow with black slits down the center. Her eyes glow.",
+          "timestamp": 1369.1
+        },
+        {
+          "text": "A silvery spider web glistens, stretching between torn red ribbons.",
+          "timestamp": 1370.5
+        },
+        {
+          "text": "The ribbons entwine around her body, lying prone. Her legs are parted",
+          "timestamp": 1379
+        },
+        {
+          "text": "She looks up, her arms spread, her black hair lying messily across a checkered floor.",
+          "timestamp": 1387.8
+        },
+        {
+          "text": "In the style of metallic water color, she stands against a mirror, a hand covering her face",
+          "timestamp": 1394.2
+        },
+        {
+          "text": "While her dress is white with gold spider web trim, her reflection wears a low cut black dress",
+          "timestamp": 1400.5
+        },
+        { "text": "A black feather lands on water. ", "timestamp": 1405.6 },
+        {
+          "text": "Albedo stands, her arms spread behind her back, pushing her chest forward. Her black wings, rooted at her lower back, spread out. Each with is twice as long as an arm.",
+          "timestamp": 1405.6
+        },
+        {
+          "text": "Her dress is white, with off the shoulder sleeves, and a gold lining around her hips. The dress continues down from her stomach and back, leaving her hips bare. The dress is lined in ruffles down her legs. She wears gloves with ruffles that stretch up to her biceps.",
+          "timestamp": 1417.3
+        },
+        {
+          "text": "Albedo stands, wrapping an arm over one shoulder, and another arm around her waist. She wears a white collar with gold lining from the base of her head to just below her collar.",
+          "timestamp": 1432
+        },
+        {
+          "text": "Albedo stares forward. Her image flickers and distorts.",
+          "timestamp": 1447
+        },
+        { "text": "Text, Next episode preview", "timestamp": 1450.2 }
+      ]
+    }
+  ]
+}
