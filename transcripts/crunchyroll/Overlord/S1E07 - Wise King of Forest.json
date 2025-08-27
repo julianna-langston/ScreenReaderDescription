@@ -8,6 +8,7 @@
     "type": "television episode",
     "title": "Wise King of Forest",
     "seriesTitle": "Overlord",
+    "season": 1,
     "episode": 7
   },
   "scripts": [
@@ -248,7 +249,7 @@
           "timestamp": 1337.2
         },
         { "text": "The door to the shop opens", "timestamp": 1352.7 },
-        { "text": "Clementine ssmiles", "timestamp": 1358.9 },
+        { "text": "Clementine smiles", "timestamp": 1358.9 },
         {
           "text": "Albedo stands with long, loose hair. Black feathers float around her.",
           "timestamp": 1362
