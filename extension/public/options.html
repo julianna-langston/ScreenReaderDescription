@@ -30,6 +30,140 @@
                 </div>
             </div>
 
+            <div class="section">
+                <div class="section-title">Keyboard Shortcuts</div>
+                <div class="shortcuts-header">
+                    <button id="reset-shortcuts" class="reset-button">Reset to Defaults</button>
+                </div>
+                <div class="shortcuts-container">
+                    <div class="shortcut-category">
+                        <h3 class="category-title">General Shortcuts</h3>
+                        <div class="shortcut-list">
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="toggleEditMode" maxlength="1" placeholder="R">
+                                    <span class="shortcut-description">Toggle editing mode on/off</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="displayTranscript" maxlength="1" placeholder="T">
+                                    <span class="shortcut-description">Display transcript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="shortcut-category">
+                        <h3 class="category-title">Editing Mode Shortcuts</h3>
+                        <div class="shortcut-list">
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="editTrack" maxlength="1" placeholder="E">
+                                    <span class="shortcut-description">Edit last-played track</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="addTrack" maxlength="1" placeholder="F">
+                                    <span class="shortcut-description">Add new track at current position</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="markPosition" maxlength="1" placeholder="D">
+                                    <span class="shortcut-description">Mark current position for track placement</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="jumpBack" maxlength="1" placeholder="A">
+                                    <span class="shortcut-description">Jump back 5 seconds</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="jumpBackFine" maxlength="1" placeholder="A">
+                                    <span class="shortcut-description">Jump back 1 second (with Alt)</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="jumpForward" maxlength="1" placeholder="S">
+                                    <span class="shortcut-description">Jump forward 5 seconds</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="jumpForwardFine" maxlength="1" placeholder="S">
+                                    <span class="shortcut-description">Jump forward 1 second (with Alt)</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="previousTrack" maxlength="1" placeholder="Q">
+                                    <span class="shortcut-description">Go to previous track</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="nextTrack" maxlength="1" placeholder="W">
+                                    <span class="shortcut-description">Go to next track</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="moveTrackBack" maxlength="1" placeholder="X">
+                                    <span class="shortcut-description">Move last-played track back 1 second</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="moveTrackBackFine" maxlength="1" placeholder="X">
+                                    <span class="shortcut-description">Move last-played track back 0.1 seconds (with Shift)</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="moveTrackForward" maxlength="1" placeholder="C">
+                                    <span class="shortcut-description">Move last-played track forward 1 second</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="moveTrackForwardFine" maxlength="1" placeholder="C">
+                                    <span class="shortcut-description">Move last-played track forward 0.1 seconds (with Shift)</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="showHelp" maxlength="1" placeholder="H">
+                                    <span class="shortcut-description">Show help</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="editMetadata" maxlength="1" placeholder="M">
+                                    <span class="shortcut-description">Edit metadata</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="openNotes" maxlength="1" placeholder="N">
+                                    <span class="shortcut-description">Open notes</span>
+                                </div>
+                            </div>
+                            <div class="shortcut-item">
+                                <div class="shortcut-input-group">
+                                    <input type="text" class="shortcut-input" data-action="export" maxlength="1" placeholder="P">
+                                    <span class="shortcut-description">Export script</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <script src="options.js"></script>

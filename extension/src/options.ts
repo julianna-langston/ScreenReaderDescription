@@ -1,3 +1,25 @@
+// Default keyboard shortcuts
+const DEFAULT_SHORTCUTS = {
+    toggleEditMode: "r",
+    displayTranscript: "t",
+    editTrack: "e",
+    addTrack: "f",
+    markPosition: "d",
+    jumpBack: "a",
+    jumpBackFine: "a", // Alt+a
+    jumpForward: "s",
+    jumpForwardFine: "s", // Alt+s
+    previousTrack: "q",
+    nextTrack: "w",
+    moveTrackBack: "x",
+    moveTrackBackFine: "x", // Shift+x
+    moveTrackForward: "c",
+    moveTrackForwardFine: "c", // Shift+c
+    showHelp: "h",
+    editMetadata: "m",
+    openNotes: "n"
+};
+
 document.addEventListener("DOMContentLoaded", () => {
     const addButton = document.getElementById("add-emby-url") as HTMLButtonElement;
     const urlsList = document.getElementById("emby-urls-list") as HTMLDivElement;
@@ -26,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.placeholder = "Enter Emby URL (e.g., http://your-emby-server.com)";
             input.addEventListener("change", () => {
                 embyUrls[index] = input.value;
-                chrome.storage.local.set({embyUrls: embyUrls});
+                chrome.storage.local.set({embyUrls});
             });
             
             const deleteButton = document.createElement("button");
@@ -34,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             deleteButton.className = "delete-button";
             deleteButton.addEventListener("click", () => {
                 embyUrls.splice(index, 1);
-                chrome.storage.local.set({embyUrls: embyUrls});
+                chrome.storage.local.set({embyUrls});
                 renderUrls();
             });
             
@@ -46,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     addButton.addEventListener("click", () => {
         embyUrls.push("");
-        chrome.storage.local.set({embyUrls: embyUrls});
+        chrome.storage.local.set({embyUrls});
         renderUrls();
     });
     
@@ -68,5 +90,64 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     chrome.storage.local.get({alternativeEditorUrl: ""}).then(({alternativeEditorUrl}) => {
         alternativeEditorUrlInput.value = alternativeEditorUrl;
+    });
+
+    // Handle keyboard shortcuts
+    const loadShortcuts = async () => {
+        const {keyboardShortcuts} = await chrome.storage.local.get({keyboardShortcuts: DEFAULT_SHORTCUTS});
+        const shortcutInputs = document.querySelectorAll('.shortcut-input') as NodeListOf<HTMLInputElement>;
+        
+        shortcutInputs.forEach(input => {
+            const action = input.getAttribute('data-action');
+            if (action && keyboardShortcuts[action]) {
+                input.value = keyboardShortcuts[action].toUpperCase();
+            }
+        });
+    };
+
+    const saveShortcuts = async () => {
+        const shortcutInputs = document.querySelectorAll('.shortcut-input') as NodeListOf<HTMLInputElement>;
+        const shortcuts: Record<string, string> = {};
+        
+        shortcutInputs.forEach(input => {
+            const action = input.getAttribute('data-action');
+            if (action && input.value) {
+                shortcuts[action] = input.value.toLowerCase();
+            }
+        });
+        
+        await chrome.storage.local.set({keyboardShortcuts: shortcuts});
+    };
+
+    // Load shortcuts on page load
+    loadShortcuts();
+
+    // Save shortcuts when inputs change
+    const shortcutInputs = document.querySelectorAll('.shortcut-input') as NodeListOf<HTMLInputElement>;
+    shortcutInputs.forEach(input => {
+        input.addEventListener('input', (e) => {
+            const target = e.target as HTMLInputElement;
+            // Only allow single character input
+            if (target.value.length > 1) {
+                target.value = target.value.slice(-1);
+            }
+            // Convert to uppercase for display
+            target.value = target.value.toUpperCase();
+        });
+
+        input.addEventListener('blur', saveShortcuts);
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                saveShortcuts();
+                (e.target as HTMLInputElement).blur();
+            }
+        });
+    });
+
+    // Handle reset to defaults
+    const resetButton = document.getElementById("reset-shortcuts") as HTMLButtonElement;
+    resetButton.addEventListener("click", () => {
+        chrome.storage.local.set({keyboardShortcuts: DEFAULT_SHORTCUTS});
+        loadShortcuts();
     });
 });

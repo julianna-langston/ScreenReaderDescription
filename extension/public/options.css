@@ -202,4 +202,132 @@ h1 {
     font-size: 24px;
     display: block;
     margin-bottom: 8px;
+}
+
+/* Keyboard Shortcuts Styles */
+.shortcuts-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.reset-button {
+    background: #ff9a9e;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #2d3748;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 154, 158, 0.3);
+}
+
+.reset-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 154, 158, 0.4);
+}
+
+.shortcuts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.shortcut-category {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.category-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.shortcut-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.shortcut-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    border: 1px solid rgba(226, 232, 240, 0.5);
+    transition: all 0.2s ease;
+}
+
+.shortcut-item:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: #cbd5e0;
+    transform: translateX(4px);
+}
+
+.shortcut-input-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.shortcut-input {
+    width: 40px;
+    height: 32px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    color: #2d3748;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.shortcut-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    background: rgba(255, 255, 255, 1);
+}
+
+.shortcut-input:invalid {
+    border-color: #ff9a9e;
+    box-shadow: 0 0 0 3px rgba(255, 154, 158, 0.2);
+}
+
+.shortcut-description {
+    font-size: 14px;
+    color: #4a5568;
+    font-weight: 500;
+    flex: 1;
+}
+
+/* Legacy key styling for reference */
+.key {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+    min-width: 24px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 } 
