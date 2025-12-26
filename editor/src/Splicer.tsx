@@ -79,6 +79,7 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
           const text = await file.text();
           const json = JSON.parse(text) as ScriptInfo;
           setTracks(json.scripts[0].tracks);
+          doSetSelected([]);
         }}
         onDragOver={(e) => e.preventDefault()}
         onDrop={async (e) => {
@@ -86,12 +87,14 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
             const text = await e.dataTransfer.files[0].text();
             const json = JSON.parse(text);
             setTracks(json.scripts[0].tracks);
+            doSetSelected([]);
             return;
           }
 
           const stringJson = e.dataTransfer.getData("text/plain");
           const json = JSON.parse(stringJson);
           setTracks(json.scripts[0].tracks);
+          doSetSelected([]);
         }}
       />
       
@@ -169,6 +172,7 @@ const Splicer = ({ open, closed, tracksCallback, timestamp }: SplicerProps) => {
               }
           });
         }
+        console.debug("Selected tracks: ", selectedTracks)
         tracksCallback(selectedTracks);
         dialogRef.current?.close();
         closed();
