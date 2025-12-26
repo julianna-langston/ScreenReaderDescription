@@ -1,4 +1,4 @@
-import type { ScriptInfo } from "../../types";
+import type { ScriptInfo, EditableMetadata } from "../../types";
 import {ccId} from "./constants";
 
 export const createCCElement = () => {
@@ -133,6 +133,22 @@ const padNumbers = (num: number, padCount: number, text = "0") => {
 }
 export const renderTimestamp = (seconds: number) => `${padNumbers(Math.floor(seconds / 60), 2)}:${padNumbers(Math.floor(seconds % 60), 2)}`;
 
+export const generateTitleFromMetadata = (metadata: { type: string, title?: string, creator?: string, seriesTitle?: string, episode?: number, season?: number }) => {
+    switch (metadata.type) {
+        case "other":
+        case "music video": {
+            return `[${metadata.creator?.trim()}] ${metadata.title}`;
+        }
+        case "television episode": {
+            return `${metadata.seriesTitle} ${typeof metadata.season !== "undefined" ? `S${metadata.season}` : ""}E${metadata.episode} - ${metadata.title}`;
+        }
+        case "movie":
+        default: {
+            return metadata.title;
+        }
+    }
+};
+
 const padNumbersSimple = (num: number) => {
     if (num < 10) {
         return `0${num}`;
@@ -181,4 +197,372 @@ export const generateExportFilename = (metadata: {
         }
     }
 };
+
+export const createNotesDialog = (submitCallback: (notes: {series: string, episode: string}) => void, getInitialNotes?: () => {series: string, episode: string}) => {
+    const dialog = document.createElement("dialog");
+    dialog.innerHTML = `
+        <div style="padding: 20px; min-width: 600px; max-width: 800px;">
+            <h3 style="margin-bottom: 16px;">Notes</h3>
+            
+            <form id="notes-form">
+                <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+                    <div style="flex: 1;">
+                        <label for="notes-series" style="display: block; margin-bottom: 8px; font-weight: 500;">Series:</label>
+                        <textarea id="notes-series" style="width: 100%; height: 300px; padding: 12px; border: 1px solid #ccc; border-radius: 4px; resize: vertical; font-family: inherit; font-size: 14px;" placeholder="Enter series notes here..."></textarea>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="notes-episode" style="display: block; margin-bottom: 8px; font-weight: 500;">Episode:</label>
+                        <textarea id="notes-episode" style="width: 100%; height: 300px; padding: 12px; border: 1px solid #ccc; border-radius: 4px; resize: vertical; font-family: inherit; font-size: 14px;" placeholder="Enter episode notes here..."></textarea>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                    <button type="button" id="notes-cancel" style="padding: 8px 16px; border: 1px solid #ccc; background: white; border-radius: 4px; cursor: pointer;">Cancel</button>
+                    <button type="submit" id="notes-submit" style="padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Save</button>
+                </div>
+            </form>
+        </div>
+    `;
+    
+    const form = dialog.querySelector("#notes-form") as HTMLFormElement;
+    const seriesTextarea = dialog.querySelector("#notes-series") as HTMLTextAreaElement;
+    const episodeTextarea = dialog.querySelector("#notes-episode") as HTMLTextAreaElement;
+    const cancelButton = dialog.querySelector("#notes-cancel") as HTMLButtonElement;
+
+    // Populate fields with initial data
+    const populateFields = () => {
+        if (getInitialNotes) {
+            const initialNotes = getInitialNotes();
+            seriesTextarea.value = initialNotes.series || "";
+            episodeTextarea.value = initialNotes.episode || "";
+        }
+    };
+
+    // Override showModal to populate fields
+    const originalShowModal = dialog.showModal.bind(dialog);
+    dialog.showModal = () => {
+        populateFields();
+        originalShowModal();
+    };
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        const notes = {
+            series: seriesTextarea.value,
+            episode: episodeTextarea.value
+        };
+
+        submitCallback(notes);
+        dialog.close();
+    });
+    
+    cancelButton.addEventListener("click", () => {
+        dialog.close();
+    });
+
+    return dialog;
+};
+
+export interface CreateMetadataEditorDialogOptions {
+    submitCallback: (metadata: EditableMetadata) => void;
+    getInitialMetadata?: () => EditableMetadata;
+    uploadCallback?: (scriptData: ScriptInfo) => void;
+}
+
+export const createMetadataEditorDialog = ({
+    submitCallback,
+    getInitialMetadata,
+    uploadCallback
+}: CreateMetadataEditorDialogOptions) => {
+    const dialog = document.createElement("dialog");
+    dialog.innerHTML = `
+        <div style="padding: 20px; min-width: 500px; max-width: 600px; position: relative;">
+            <input type="file" id="metadata-upload" accept=".json" style="display: none;">
+            <button type="button" id="metadata-upload-button" style="position: absolute; top: 20px; right: 20px; padding: 8px 16px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;">Upload Script</button>
+            
+            <h3 style="margin-bottom: 16px;">Edit Metadata</h3>
+            
+            <form id="metadata-form">
+                <div style="margin-bottom: 12px;">
+                    <label for="metadata-url" style="display: block; margin-bottom: 4px; font-weight: 500;">URL:</label>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="text" id="metadata-url" style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                        <button type="button" id="metadata-open-url" style="padding: 8px 12px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;" disabled>Open</button>
+                    </div>
+                </div>
+
+                <div id="metadata-video-id-container" style="margin-bottom: 12px; display: none;">
+                    <label for="metadata-video-id" style="display: block; margin-bottom: 4px; font-weight: 500;">ID:</label>
+                    <input type="text" id="metadata-video-id" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div style="margin-bottom: 12px;">
+                    <label for="metadata-type" style="display: block; margin-bottom: 4px; font-weight: 500;">Type:</label>
+                    <select id="metadata-type" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                        <option value="movie">Movie</option>
+                        <option value="television episode">TV episode</option>
+                        <option value="music video">Music video</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 12px;">
+                    <label for="metadata-title" style="display: block; margin-bottom: 4px; font-weight: 500;">Title:</label>
+                    <input type="text" id="metadata-title" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div style="margin-bottom: 12px;">
+                    <label for="metadata-author" style="display: block; margin-bottom: 4px; font-weight: 500;">Author:</label>
+                    <input type="text" id="metadata-author" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div style="margin-bottom: 12px;">
+                    <label for="metadata-language" style="display: block; margin-bottom: 4px; font-weight: 500;">Language:</label>
+                    <input type="text" id="metadata-language" value="en-US" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div id="metadata-series-container" style="margin-bottom: 12px; display: none;">
+                    <label for="metadata-series-title" style="display: block; margin-bottom: 4px; font-weight: 500;">Series Title:</label>
+                    <input type="text" id="metadata-series-title" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div id="metadata-season-container" style="margin-bottom: 12px; display: none;">
+                    <label style="display: block; margin-bottom: 4px; font-weight: 500;">
+                        <input type="checkbox" id="metadata-season-checkbox" style="margin-right: 8px;">
+                        Season
+                    </label>
+                    <input type="number" id="metadata-season" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; display: none;" disabled>
+                </div>
+
+                <div id="metadata-episode-container" style="margin-bottom: 12px; display: none;">
+                    <label for="metadata-episode" style="display: block; margin-bottom: 4px; font-weight: 500;">Episode:</label>
+                    <input type="number" id="metadata-episode" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div id="metadata-creator-container" style="margin-bottom: 16px; display: none;">
+                    <label for="metadata-creator" style="display: block; margin-bottom: 4px; font-weight: 500;">Creator:</label>
+                    <input type="text" id="metadata-creator" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                    <button type="button" id="metadata-cancel" style="padding: 8px 16px; border: 1px solid #ccc; background: white; border-radius: 4px; cursor: pointer;">Cancel</button>
+                    <button type="submit" id="metadata-submit" style="padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Save</button>
+                </div>
+            </form>
+        </div>
+    `;
+    
+    const urlInput = dialog.querySelector("#metadata-url") as HTMLInputElement;
+    const videoIdContainer = dialog.querySelector("#metadata-video-id-container") as HTMLDivElement;
+    const videoIdInput = dialog.querySelector("#metadata-video-id") as HTMLInputElement;
+    const openUrlButton = dialog.querySelector("#metadata-open-url") as HTMLButtonElement;
+    const typeSelect = dialog.querySelector("#metadata-type") as HTMLSelectElement;
+    const titleInput = dialog.querySelector("#metadata-title") as HTMLInputElement;
+    const authorInput = dialog.querySelector("#metadata-author") as HTMLInputElement;
+    const languageInput = dialog.querySelector("#metadata-language") as HTMLInputElement;
+    const seriesContainer = dialog.querySelector("#metadata-series-container") as HTMLDivElement;
+    const seriesTitleInput = dialog.querySelector("#metadata-series-title") as HTMLInputElement;
+    const seasonContainer = dialog.querySelector("#metadata-season-container") as HTMLDivElement;
+    const seasonCheckbox = dialog.querySelector("#metadata-season-checkbox") as HTMLInputElement;
+    const seasonInput = dialog.querySelector("#metadata-season") as HTMLInputElement;
+    const episodeContainer = dialog.querySelector("#metadata-episode-container") as HTMLDivElement;
+    const episodeInput = dialog.querySelector("#metadata-episode") as HTMLInputElement;
+    const creatorContainer = dialog.querySelector("#metadata-creator-container") as HTMLDivElement;
+    const creatorInput = dialog.querySelector("#metadata-creator") as HTMLInputElement;
+    const uploadInput = dialog.querySelector("#metadata-upload") as HTMLInputElement;
+    const uploadButton = dialog.querySelector("#metadata-upload-button") as HTMLButtonElement;
+    const form = dialog.querySelector("#metadata-form") as HTMLFormElement;
+    const submitButton = dialog.querySelector("#metadata-submit") as HTMLButtonElement;
+    const cancelButton = dialog.querySelector("#metadata-cancel") as HTMLButtonElement;
+
+    // Show/hide fields based on type
+    const updateFieldsVisibility = () => {
+        const isTelevisionEpisode = typeSelect.value === "television episode";
+        const isEmbyUrl = urlInput.value.includes("emby.");
+        
+        seriesContainer.style.display = isTelevisionEpisode ? "block" : "none";
+        seasonContainer.style.display = isTelevisionEpisode ? "block" : "none";
+        episodeContainer.style.display = isTelevisionEpisode ? "block" : "none";
+        creatorContainer.style.display = isTelevisionEpisode ? "none" : "block";
+        videoIdContainer.style.display = isEmbyUrl ? "block" : "none";
+    };
+
+    // Update season input visibility and enabled state
+    const updateSeasonInput = () => {
+        if (seasonCheckbox.checked) {
+            seasonInput.style.display = "block";
+            seasonInput.disabled = false;
+        } else {
+            seasonInput.style.display = "none";
+            seasonInput.disabled = true;
+        }
+    };
+
+    // Event listeners
+    typeSelect.addEventListener("change", updateFieldsVisibility);
+    urlInput.addEventListener("input", () => {
+        updateFieldsVisibility();
+        openUrlButton.disabled = !urlInput.value;
+    });
+    seasonCheckbox.addEventListener("change", updateSeasonInput);
+    
+    openUrlButton.addEventListener("click", () => {
+        if (urlInput.value) {
+            window.open(urlInput.value, '_blank');
+        }
+    });
+
+    // Upload button functionality
+    uploadButton.addEventListener("click", () => {
+        uploadInput.click();
+    });
+
+    uploadInput.addEventListener("change", async (e) => {
+        const file = (e.target as HTMLInputElement).files?.[0];
+        if (!file) return;
+
+        try {
+            const text = await file.text();
+            const scriptData = JSON.parse(text);
+
+            // Call uploadCallback if provided
+            if (uploadCallback) {
+                uploadCallback(scriptData);
+            }
+
+            // Populate metadata fields from uploaded script
+            if (scriptData.source) {
+                urlInput.value = scriptData.source.url || "";
+                videoIdInput.value = scriptData.source.id || "";
+            }
+            
+            if (scriptData.metadata) {
+                typeSelect.value = scriptData.metadata.type || "other";
+                titleInput.value = scriptData.metadata.title || "";
+                authorInput.value = scriptData.metadata.author || "";
+                languageInput.value = scriptData.metadata.language || "en-US";
+                
+                if (scriptData.metadata.seriesTitle) {
+                    seriesTitleInput.value = scriptData.metadata.seriesTitle;
+                }
+                if (scriptData.metadata.season !== undefined) {
+                    seasonCheckbox.checked = true;
+                    seasonInput.value = String(scriptData.metadata.season);
+                }
+                if (scriptData.metadata.episode !== undefined) {
+                    episodeInput.value = String(scriptData.metadata.episode);
+                }
+                if (scriptData.metadata.creator) {
+                    creatorInput.value = scriptData.metadata.creator;
+                }
+            }
+            
+            updateFieldsVisibility();
+            updateSeasonInput();
+            openUrlButton.disabled = !urlInput.value;
+            
+        } catch (error) {
+            console.error("Error parsing uploaded file:", error);
+            alert("Error parsing uploaded file. Please ensure it's a valid JSON script file.");
+        }
+    });
+    
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        const metadata: any = {
+            url: urlInput.value,
+            type: typeSelect.value,
+            title: titleInput.value,
+            author: authorInput.value,
+            language: languageInput.value
+        };
+
+        if (videoIdContainer.style.display !== "none") {
+            metadata.videoId = videoIdInput.value;
+        }
+
+        if (typeSelect.value === "television episode") {
+            if (seriesTitleInput.value) {
+                metadata.seriesTitle = seriesTitleInput.value;
+            }
+            if (seasonCheckbox.checked) {
+                metadata.season = parseInt(seasonInput.value) || 0;
+            }
+            metadata.seasonCheckbox = seasonCheckbox.checked;
+            metadata.episode = parseInt(episodeInput.value) || 0;
+        } else {
+            if (creatorInput.value) {
+                metadata.creator = creatorInput.value;
+            }
+        }
+
+        submitCallback(metadata);
+        dialog.close();
+    });
+    
+    cancelButton.addEventListener("click", () => {
+        dialog.close();
+    });
+    
+    dialog.addEventListener("keydown", (e) => {
+        if(e.key === "Escape"){
+            dialog.close();
+        } else if(e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+            submitButton.click();
+        }
+    });
+    
+    dialog.addEventListener("close", () => {
+        urlInput.value = "";
+        videoIdInput.value = "";
+        typeSelect.value = "other";
+        titleInput.value = "";
+        authorInput.value = "";
+        languageInput.value = "en-US";
+        seriesTitleInput.value = "";
+        seasonCheckbox.checked = true;
+        seasonInput.value = "0";
+        episodeInput.value = "0";
+        creatorInput.value = "";
+        updateFieldsVisibility();
+        updateSeasonInput();
+    });
+    
+    // Function to populate fields with initial metadata
+    const populateFields = () => {
+        if (getInitialMetadata) {
+            const initialData = getInitialMetadata();
+            urlInput.value = initialData.url || "";
+            videoIdInput.value = initialData.videoId || "";
+            typeSelect.value = initialData.type || "other";
+            titleInput.value = initialData.title || "";
+            authorInput.value = initialData.author || "";
+            languageInput.value = initialData.language || "en-US";
+            seriesTitleInput.value = initialData.seriesTitle || "";
+            seasonCheckbox.checked = initialData.seasonCheckbox ?? true;
+            seasonInput.value = String(initialData.season || 0);
+            episodeInput.value = String(initialData.episode || 0);
+            creatorInput.value = initialData.creator || "";
+            
+            updateFieldsVisibility();
+            updateSeasonInput();
+            openUrlButton.disabled = !urlInput.value;
+        }
+    };
+
+    // Override the showModal method to populate fields when dialog opens
+    const originalShowModal = dialog.showModal.bind(dialog);
+    dialog.showModal = () => {
+        populateFields();
+        originalShowModal();
+    };
+
+    // Initialize
+    updateFieldsVisibility();
+    updateSeasonInput();
+    
+    return dialog;
+}
 
