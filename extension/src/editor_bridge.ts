@@ -12,9 +12,15 @@ const createIndicator = () => {
 };
 
 createIndicator();
+console.log("Editor bridge loaded");
+
+// Signal that the bridge is ready
+document.body.setAttribute("data-editor-bridge-ready", "true");
+document.dispatchEvent(new CustomEvent("ScreenReaderDescription-Bridge-Ready"));
 
 const sendMessageToBackground = () => {
     lastTouchedTimestamp = Date.now();
+    console.debug("[SRD] Sending message to background", currentTracks, lastTouchedTimestamp)
     chrome.storage.local.set({ trackUpdates: { tracks: currentTracks, lastTouched: lastTouchedTimestamp, timestamp: lastTouchedTimestamp } });
 }
 
@@ -60,10 +66,12 @@ chrome.storage.local.onChanged.addListener((changes) => {
 });
 
 document.addEventListener("ScreenReaderDescription-Track-Update", (e: CustomEvent) => {
+    console.log("[Bridge] Track update received: ", e.detail.tracks)
     currentTracks = e.detail.tracks as ScriptData["tracks"];
     sendMessageToBackground();
 });
 
 document.addEventListener("ScreenReaderDescription-video-id-update", (e: CustomEvent) => {
+    console.debug("[SRD] Setting editing id", e.detail.id);
     chrome.storage.local.set({ currentlyEditingId: { id: e.detail.id, timestamp: Date.now() } });
 });

@@ -4,6 +4,7 @@
     "description": "generating description",
     "scripts": {
         "clean": "rimraf ./dist",
+        "prebuild": "npm run clean",
         "build": "rollup -c rollup.config.mjs",
         "dev": "rollup -c rollup.config.mjs -w"
     },

@@ -71,7 +71,13 @@
             const loadVideoTranscript = async (id) => {
               console.debug("loadVideoTranscript", {id});
               try {
-                const result = await fetch(`https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main/transcripts/${id}.json`)
+                const catalog = await fetch("https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/refs/heads/main/generated-transcript-catalog.json")
+                const map = await catalog.json();
+                const path = map[`youtube-${id}`];
+                if(!path){
+                  throw "Nothing in catalog"
+                }
+                const result = await fetch(`https://raw.githubusercontent.com/julianna-langston/ScreenReaderDescription/main${path}`)
                 const json = await result.json();
                 const {scripts} = json;
                 trackCollection[id] = scripts[0].tracks;
