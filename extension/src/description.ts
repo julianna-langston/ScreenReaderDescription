@@ -1,8 +1,8 @@
 import type { ScriptInfo, ScriptMetadata } from "../../types";
 import { renderTimestamp, generateExportFilename } from "./utils";
+import { DOMAINS } from "./constants";
 
-const domains = ["crunchyroll", "youtube", "hidive", "emby"];
-const listKeys = domains.map((str) => `script-${str}-list`);
+const listKeys = DOMAINS.map((str) => `script-${str}-list`);
 
 const generateTitleFromMetadata = ({ type, title, creator, seriesTitle, episode, season }: ScriptMetadata) => {
     switch (type) {
@@ -147,10 +147,144 @@ const initializeUploadButton = () => {
         await refreshList();
     });
 };
+const refreshDraftList = async () => {
+    const storage = await chrome.storage.local.get(['draftUpdates']);
+    const draftUpdates = storage.draftUpdates || {};
+    showDraftList(draftUpdates);
+};
+
+const showDraftList = (draftUpdates: Record<string, { tracks: any[], metadata: any }>) => {
+    const table = document.getElementById("draftList");
+    const keys = Object.keys(draftUpdates);
+    
+    if (keys.length === 0) {
+        table.innerHTML = `<tr><td colspan="7">No drafts available</td></tr>`;
+        return;
+    }
+    
+    table.innerHTML = `<tr>
+        <td>Key</td>
+        <td>Link</td>
+        <td>Track Count</td>
+        <td>Last Timestamp</td>
+        <td>Export</td>
+        <td>Save</td>
+        <td>Delete</td>
+    </tr>`;
+    
+    keys.forEach((key) => {
+        const draft = draftUpdates[key];
+        const tr = document.createElement("tr");
+        
+        const td0 = document.createElement("td");
+        td0.textContent = key;
+        tr.appendChild(td0);
+        
+        const tdLink = document.createElement("td");
+        const linkUrl = draft.metadata?.url;
+        if (linkUrl) {
+            const linkAnchor = document.createElement("a");
+            linkAnchor.href = linkUrl;
+            linkAnchor.textContent = "Open";
+            linkAnchor.target = "_blank";
+            linkAnchor.rel = "noopener noreferrer";
+            tdLink.appendChild(linkAnchor);
+        } else {
+            tdLink.textContent = "—";
+        }
+        tr.appendChild(tdLink);
+        
+        const td1 = document.createElement("td");
+        td1.textContent = `${draft.tracks?.length || 0}`;
+        tr.appendChild(td1);
+        
+        const td2 = document.createElement("td");
+        if (draft.tracks && draft.tracks.length > 0) {
+            td2.textContent = renderTimestamp(draft.tracks.at(-1).timestamp);
+        }
+        tr.appendChild(td2);
+        
+        const td3 = document.createElement("td");
+        const exportBtn = document.createElement("button");
+        exportBtn.textContent = "Export";
+        exportBtn.addEventListener("click", () => {
+            const exportData = {
+                source: { domain: key.split('-')[1], id: key.split('-').slice(3).join('-'), url: draft.metadata?.url || "" },
+                metadata: draft.metadata || {},
+                scripts: [{ language: "en-US", author: draft.metadata?.author || "", tracks: draft.tracks }]
+            };
+            downloadTracks(`draft-${key}.json`, JSON.stringify(exportData));
+        });
+        td3.appendChild(exportBtn);
+        tr.appendChild(td3);
+        
+        const td4 = document.createElement("td");
+        const saveBtn = document.createElement("button");
+        saveBtn.textContent = "Save";
+        saveBtn.addEventListener("click", async () => {
+            const scriptInfo: ScriptInfo = {
+                source: { 
+                    domain: key.split('-')[1] as any, 
+                    id: key.split('-').slice(3).join('-'), 
+                    url: draft.metadata?.url || "" 
+                },
+                metadata: draft.metadata || {},
+                scripts: [{ 
+                    language: draft.metadata?.language || "en-US", 
+                    author: draft.metadata?.author || "", 
+                    tracks: draft.tracks 
+                }]
+            };
+            await jsonProcessor(scriptInfo);
+            
+            // Remove the draft
+            const storage = await chrome.storage.local.get(['draftUpdates']);
+            const draftUpdates = storage.draftUpdates || {};
+            delete draftUpdates[key];
+            await chrome.storage.local.set({ draftUpdates });
+            
+            await refreshList();
+            await refreshDraftList();
+        });
+        td4.appendChild(saveBtn);
+        tr.appendChild(td4);
+        
+        const td5 = document.createElement("td");
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.addEventListener("click", async () => {
+            const storage = await chrome.storage.local.get(['draftUpdates']);
+            const draftUpdates = storage.draftUpdates || {};
+            delete draftUpdates[key];
+            await chrome.storage.local.set({ draftUpdates });
+            await refreshDraftList();
+        });
+        td5.appendChild(deleteBtn);
+        tr.appendChild(td5);
+        
+        table.appendChild(tr);
+    });
+};
+
+const initializeDeleteAllDrafts = () => {
+    const deleteAllBtn = document.getElementById("deleteAllDrafts");
+    deleteAllBtn.addEventListener("click", async () => {
+        if (confirm("Are you sure you want to delete all drafts?")) {
+            await chrome.storage.local.set({ draftUpdates: {} });
+            await refreshDraftList();
+        }
+    });
+};
+
 const main = async () => {
     await refreshList();
-    chrome.storage.onChanged.addListener(() => void refreshList);
+    await refreshDraftList();
+    chrome.storage.onChanged.addListener(() => {
+        void refreshList();
+        void refreshDraftList();
+    });
     initializeUploadButton();
+    initializeDeleteAllDrafts();
 };
 void main();
 

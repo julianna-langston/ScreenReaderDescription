@@ -60,4 +60,10 @@ chrome.storage.local.onChanged.addListener((changes) => {
     if("alternativeEditorUrl" in changes){
         void updateForAlternativeEditor();
     }
+    if("trackUpdates" in changes){
+        console.log("Track updated", changes)
+    }
+    if("currentlyEditingId" in changes){
+        console.log("Editing ID updated", changes)
+    }
 });
