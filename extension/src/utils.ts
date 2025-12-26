@@ -11,15 +11,19 @@ export const createCCElement = () => {
     return cc;
 };
 
-export const createTrackEditorDialog = (submitCallback: () => void) => {
+export const createTrackEditorDialog = (submitCallback: () => void, deleteCallback: () => void) => {
     const dialog = document.createElement("dialog");
     dialog.setAttribute("data-trackIndex", "-1");
     dialog.setAttribute("data-timestamp", "-1");
     const trackEditorInput = document.createElement("input");
     const trackSubmitButton = document.createElement("button");
+    const deleteButton = document.createElement("button");
     trackSubmitButton.textContent = "Submit";
     trackSubmitButton.style.display = "block";
     trackSubmitButton.addEventListener("click", submitCallback);
+    deleteButton.textContent = "Delete";
+    deleteButton.style.display = "block";
+    deleteButton.addEventListener("click", deleteCallback);        
     trackEditorInput.addEventListener("keydown", (e) => {
         if(e.key === "Enter"){
             submitCallback();
@@ -28,6 +32,7 @@ export const createTrackEditorDialog = (submitCallback: () => void) => {
     });
     dialog.appendChild(trackEditorInput);
     dialog.appendChild(trackSubmitButton);
+    dialog.appendChild(deleteButton);
 
     dialog.addEventListener("close", () => {
         dialog.setAttribute("data-isEditing", "false");
@@ -37,21 +42,34 @@ export const createTrackEditorDialog = (submitCallback: () => void) => {
 }
 
 export const createTrackDisplayDialog = () => {
+    
     const dialog = document.createElement("dialog");
-    dialog.innerHTML = `<button>Close</button>
+    dialog.id = "ScreenReaderDescription-track-display";
+    dialog.setAttribute("data-isEditing", "false");
+    dialog.innerHTML = `<button id="close-button">Close</button><button id="splice-button">Splice</button>
+    <div id="available-scripts">
+        <h3>Available Scripts</h3>
+        <div id="available-scripts-list">Loading...</div>
+    </div>
     <table>
         <thead>
             <tr>
                 <th scole="col">Timestamp</th>
                 <th scope="col">Text</th>
+                <th scope="col">Tools</th>
             </tr>
         </thead>
         <tbody>
         </tbody>
     </table>`;
-    dialog.querySelector("button").addEventListener("click", () => {
+    dialog.querySelector("#close-button").addEventListener("click", () => {
         dialog.close();
     });
+    dialog.addEventListener("keydown", (e) => {
+        if(e.key === "Escape"){
+            dialog.close()
+        }
+    })
     return dialog;
 }
 
