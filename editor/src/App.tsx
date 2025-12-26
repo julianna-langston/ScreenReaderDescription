@@ -25,6 +25,7 @@ function App() {
   const [type, setType] = useState<SupportedVideoTypes>("other");
   const [seriesTitle, setSeriesTitle] = useState("");
   const [season, setSeason] = useState(0);
+  const [seasonCheckbox, setSeasonCheckbox] = useState(true);
   const [episode, setEpisode] = useState(0);
   const [creator, setCreator] = useState("");
   const [lastTouchedTimestamp, setLastTouchedTimestamp] = useState(-1);
@@ -35,13 +36,17 @@ function App() {
   const otherMetadata = useMemo(() => {
     switch (type) {
       case "television episode": {
-        return { seriesTitle, season, episode };
+        const metadata: { seriesTitle: string; season?: number; episode: number } = { seriesTitle, episode };
+        if (seasonCheckbox) {
+          metadata.season = season;
+        }
+        return metadata;
       }
       default: {
         return { creator };
       }
     }
-  }, [type, seriesTitle, season, episode, creator]);
+  }, [type, seriesTitle, season, episode, creator, seasonCheckbox]);
   const shouldShowId = useMemo(() => url.includes("emby."), [url]);
 
   const editingMode = editingIndex !== null;
@@ -159,11 +164,56 @@ function App() {
     setEditingIndex(index);
   };
 
+  const maybeAddNewTracks = (newTracks: ScriptTrack[], lastTouched: number) => {
+    if(JSON.stringify(newTracks) === JSON.stringify(tracks)){
+      return;
+    }
+    console.debug("Old Tracks", tracks, "New tracks: ", newTracks)
+    if(Math.abs(tracks.length - newTracks.length) > 1){
+      console.log("Diff over 1", tracks.length, newTracks.length)
+    //   if(!confirm(`The SRD Extension is trying to update multiple tracks. This change will replace the current ${tracks.length} tracks with ${newTracks.length}. Continue?`)){
+    //     return
+    //   }
+    }
+    setTracks(newTracks);
+    localStorage.setItem("saved-tracks", JSON.stringify(newTracks));
+    setLastTouchedTimestamp(lastTouched)
+  }
+
+  const handleIncomingTracks = (e: CustomEvent) => {
+    const {tracks, lastTouched} = e.detail;
+    maybeAddNewTracks(tracks, lastTouched)
+  }
+
   useEffect(() => {
+    let bridgeReady = false;
+    let pendingTracks: ScriptTrack[] | null = null;
+
+    // Wait for bridge to be ready
+    const handleBridgeReady = () => {
+      bridgeReady = true;
+      if (pendingTracks) {
+        sendTrackUpdate(pendingTracks); 
+        pendingTracks = null;
+      }
+      document.removeEventListener("ScreenReaderDescription-Bridge-Ready", handleBridgeReady);
+    };
+
+    document.addEventListener("ScreenReaderDescription-Bridge-Ready", handleBridgeReady);
+    if(document.body.hasAttribute("data-editor-bridge-ready")){
+      bridgeReady = true;
+    }
+
     pullFromStorage<string>("saved-tracks", (saved) =>{
-      const pulledTracks = JSON.parse(saved);
-      setTracks(pulledTracks);
-      sendTrackUpdate(pulledTracks);
+      const pulledTracks = JSON.parse(saved) as ScriptTrack[];
+      const validTracks = pulledTracks.filter((track) => track !== null && "text" in track && "timestamp" in track);
+      console.debug("Pulled tracks: ", pulledTracks, "Valid tracks: ", validTracks)
+      setTracks(validTracks);
+      if (bridgeReady) {
+        sendTrackUpdate(validTracks);
+      } else {
+        pendingTracks = validTracks;
+      }
     });
     pullFromStorage<string>("saved-url", (saved) => setUrl(saved));
     pullFromStorage<SupportedVideoTypes>("saved-type", (saved) =>
@@ -174,19 +224,13 @@ function App() {
       setSeriesTitle(saved)
     );
     pullFromStorage<string>("saved-season", (saved) => setSeason(+saved));
+    pullFromStorage<string>("saved-seasonCheckbox", (saved) => setSeasonCheckbox(saved === "true"));
     pullFromStorage<string>("saved-episode", (saved) => setEpisode(+saved));
     pullFromStorage<string>("saved-author", (saved) => setAuthorName(saved));
 
     // @ts-expect-error
-    document.addEventListener("ScreenReaderDescription-Track-Update-From-Player", (e: CustomEvent) => {
-      const {tracks: newTracks, lastTouched} = e.detail;
-      if(JSON.stringify(newTracks) === JSON.stringify(tracks)){
-        return;
-      }
-      setTracks(newTracks);
-      localStorage.setItem("saved-tracks", JSON.stringify(newTracks));
-      setLastTouchedTimestamp(lastTouched)
-    });
+    document.addEventListener("ScreenReaderDescription-Track-Update-From-Player", handleIncomingTracks);
+
     // @ts-expect-error
     document.addEventListener("ScreenReaderDescription-announce-id", (e: CustomEvent) => {
       let idToUse = shouldShowId ? videoId : e.detail.id;
@@ -194,6 +238,11 @@ function App() {
         setVideoId(e.detail.id);
       }
     });
+
+    // Cleanup function
+    return () => {
+      document.removeEventListener("ScreenReaderDescription-Bridge-Ready", handleBridgeReady);
+    };
   }, []);
 
   useEffect(() => {
@@ -247,7 +296,6 @@ function App() {
               return;
             }
             setTracks([]);
-            console.log("Removing tracks...");
             localStorage.removeItem("saved-tracks");
           }}>Clear tracks</button>
           <button onClick={() => {
@@ -255,7 +303,6 @@ function App() {
               return;
             }
             setTracks([]);
-            console.log("Removing tracks...");
             localStorage.removeItem("saved-tracks");
             setTrackTimestamp("00:00");
             setUrl("");
@@ -270,7 +317,6 @@ function App() {
           <button
             onClick={() => {
               if (confirm("Are you sure?")) {
-                console.log("Reset");
                 setTracks([]);
                 localStorage.removeItem("saved-tracks");
                 setTrackTimestamp("00:00");
@@ -280,6 +326,8 @@ function App() {
                 localStorage.removeItem("saved-title");
                 setSeason(0);
                 localStorage.removeItem("saved-season");
+                setSeasonCheckbox(false);
+                localStorage.removeItem("saved-seasonCheckbox");
                 setEpisode(0);
                 localStorage.removeItem("saved-episode");
                 setSeriesTitle("");
@@ -347,6 +395,7 @@ function App() {
             <tr>
               <th scope="col">Time</th>
               <th scope="col">Text</th>
+              <th scope="col">Tools</th>
             </tr>
           </thead>
           <tbody>
@@ -361,6 +410,36 @@ function App() {
                   </button>
                 </td>
                 <td>{text}</td>
+                {index > 0 && <td>
+                    <button
+                      onClick={() => {
+                        const currentTimestamp = tracks[index].timestamp;
+                        const previousTimestamp = tracks[index - 1].timestamp;
+                        const timeDifference = currentTimestamp - previousTimestamp;
+                        
+                        // Check if current row's timestamp is more than 10 seconds after previous row
+                        if (timeDifference > 10) {
+                          if (!confirm("Are you sure? The current row is more than 10 seconds after the previous row.")) {
+                            return;
+                          }
+                        }
+                        
+                        const newTracks = [...tracks];
+                        // Concatenate current row's text to previous row's text
+                        newTracks[index - 1].text += " " + newTracks[index].text;
+                        // Remove the current row
+                        newTracks.splice(index, 1);
+
+                        console.debug("New tracks: ", newTracks)
+                        
+                        setTracks(newTracks);
+                        localStorage.setItem("saved-tracks", JSON.stringify(newTracks));
+                        sendTrackUpdate(newTracks);
+                      }}
+                  >
+                    Push
+                  </button>
+                </td>}
               </tr>
             ))}
           </tbody>
@@ -484,13 +563,21 @@ function App() {
             <label>
               Season
               <input
+                  type="checkbox"
+                  checked={seasonCheckbox}
+                  onChange={(e) => {
+                    setSeasonCheckbox(e.target.checked);
+                    localStorage.setItem("saved-seasonCheckbox", String(e.target.checked));
+                  }}
+                />
+               {(seasonCheckbox && <input
                 type="number"
                 value={season}
                 onChange={(e) => {
                   setSeason(+e.target.value);
                   localStorage.setItem("saved-season", e.target.value);
                 }}
-              />
+                />)}
             </label>
           )}
 
@@ -529,9 +616,9 @@ function App() {
         open={showSplicer}
         closed={() => setShowSplicer(false)}
         tracksCallback={(addedTracks) => {
-          console.log("Added tracks: ", addedTracks)
+          console.debug("tracks", tracks, "Added tracks: ", addedTracks)
           const newTracks = tracks.concat(addedTracks).toSorted(trackSort);
-          console.log("New tracks: ", newTracks);
+          console.debug("New tracks: ", newTracks)
           setTracks(newTracks);
           localStorage.setItem("saved-tracks", JSON.stringify(newTracks));
           sendTrackUpdate(newTracks);
