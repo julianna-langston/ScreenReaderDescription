@@ -14,32 +14,36 @@ export class TranscriptManager {
     if(JSON.stringify(this._tracks) === JSON.stringify(tracks)){
         return;
     }
+    const sortedTracks = tracks.toSorted(
+      (a, b) => {
+        if (a.timestamp < b.timestamp) {
+          return -1;
+        }
+        if (a.timestamp > b.timestamp) {
+          return 1;
+        }
+        return 0;
+      }
+    );
+    this._tracks = sortedTracks;
 
     // Save data through callback if available
     if (this.onSaveData) {
+      // console.log("[TranscriptManager] Calling onSaveData with tracks count:", sortedTracks.length, "lastTouched:", this.lastTouchedTimestamp);
+      // console.trace();
       this.onSaveData({
-        tracks: tracks.toSorted(
-          (a, b) => {
-            if (a.timestamp < b.timestamp) {
-              return -1;
-            }
-            if (a.timestamp > b.timestamp) {
-              return 1;
-            }
-            return 0;
-          }
-        ),
+        tracks: sortedTracks,
         lastTouched: this.lastTouchedTimestamp,
         timestamp: Date.now()
       });
-    }else{
-      this._tracks = tracks;
+      // console.log("[TranscriptManager] onSaveData call completed");
     }
 
     this.onTrackChange();
   }
 
   addTrack(timestamp: number, text: string) {
+    // console.log("[TranscriptManager] Adding track", timestamp, text);
     const newTrackList = this.currentTracks.slice(0);
     newTrackList.push({timestamp, text});
     this.lastTouchedTimestamp = timestamp;
@@ -47,17 +51,27 @@ export class TranscriptManager {
   }
   
   editTrack(timestamp: number, text: string){
+    // console.log("[TranscriptManager] Editing track", timestamp, text);
     const newTrackList = this.currentTracks.slice(0);
     const index = newTrackList.findIndex(({timestamp: comparer}) => comparer === timestamp);
     this.lastTouchedTimestamp = timestamp;
     this.currentTracks = newTrackList.toSpliced(index, 1, {text, timestamp});
   }
   
+  deleteTrack(timestamp: number){
+    console.log("[TranscriptManager] Deleting track", timestamp);
+    const newTrackList = this.currentTracks.slice(0);
+    const index = newTrackList.findIndex(({timestamp: comparer}) => comparer === timestamp);
+    this.lastTouchedTimestamp = timestamp;
+    this.currentTracks = newTrackList.toSpliced(index, 1);
+  }
+  
   moveTrack(timestamp: number, diff: number){
+    // console.log("[TranscriptManager] Moving track", timestamp, diff);
     const newTrackList = this.currentTracks;
     const index = newTrackList.findIndex(({timestamp: comparer}) => comparer === timestamp);
     const newTimestamp = timestamp + diff;
-    this.lastTouchedTimestamp = timestamp;
+    this.lastTouchedTimestamp = newTimestamp;
     this.currentTracks = newTrackList.toSpliced(index, 1, {
         text: newTrackList[index].text, 
         timestamp: newTimestamp
@@ -70,6 +84,7 @@ export class TranscriptManager {
   }
 
   loadData(data: ScriptData["tracks"]) { 
+    // console.log("[TranscriptManager] Loading data", data);
     this._tracks = data;
     this.onTrackChange();
   }

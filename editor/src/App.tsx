@@ -562,7 +562,7 @@ function App() {
           {type === "television episode" && (
             <label>
               Season
-              <input
+                <input
                   type="checkbox"
                   checked={seasonCheckbox}
                   onChange={(e) => {
@@ -571,12 +571,12 @@ function App() {
                   }}
                 />
                {(seasonCheckbox && <input
-                type="number"
-                value={season}
-                onChange={(e) => {
-                  setSeason(+e.target.value);
-                  localStorage.setItem("saved-season", e.target.value);
-                }}
+                  type="number"
+                  value={season}
+                  onChange={(e) => {
+                    setSeason(+e.target.value);
+                    localStorage.setItem("saved-season", e.target.value);
+                  }}
                 />)}
             </label>
           )}
