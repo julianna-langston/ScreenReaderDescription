@@ -42,7 +42,7 @@ function scanTranscriptsDirectory(): CatalogEntry {
       if (stats.isDirectory()) {
         scanDir(itemPath, relPath);
       } else if (stats.isFile() && item.endsWith('.json')) {
-        processJsonFile(itemPath, `/${relDir}/${relPath}`);
+        processJsonFile(itemPath, `/transcripts/${relPath}`);
       }
     }
   }
