@@ -2,7 +2,7 @@ type SupportedSourceDomains = "youtube" | "crunchyroll" | "disney" | "hidive" | 
 type SupportedVideoTypes = "music video" | "television episode" | "movie" | "other"
 
 export interface ScriptInfo {
-    source: ScriptSource;
+    source: ScriptSource | ScriptSource[];
     metadata: ScriptMetadata;
     scripts: ScriptData[];
 }
@@ -15,6 +15,7 @@ interface ScriptSource {
     url: string;
     domain: SupportedSourceDomains;
     id: string;
+    offset?: number;
 }
 
 interface ScriptMetadata {

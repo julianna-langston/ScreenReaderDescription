@@ -1,10 +1,10 @@
 import path from "path";
 import fs from "fs";
-import type { ScriptInfo, SupportedVideoTypes } from "./types";
+import type { ScriptInfo, ScriptSource, SupportedVideoTypes } from "./types";
 
 const generateYoutubeListing = () => {
     type ListType = {
-        id: ScriptInfo["source"]["id"];
+        id: ScriptSource["id"];
         title: string;
     };
     type ListTypeList = Array<ListType>;
@@ -64,9 +64,16 @@ const generateYoutubeListing = () => {
         if(metadata.draft || metadata.requiresExtension){
             return;
         }
+
+        const arrSource = Array.isArray(source) ? source.splice(0) : [source]
+        const youtubeSource = arrSource.find(({domain}) => domain === "youtube")
+
+        if(!youtubeSource){
+            return
+        }
     
         const metadataBundle = {
-            id: source.id,
+            id: youtubeSource.id,
             title: generateTitle(metadata)
         };
     
@@ -134,20 +141,28 @@ const generateCrunchyrollListing = () => {
     const catalog = JSON.parse(fs.readFileSync(path.join(__dirname, "generated-transcript-catalog.json")).toString());
     const keys = Object.keys(catalog)
     const crunchyrollKeys = keys.filter((key) => key.startsWith("crunchyroll-"));
-    console.log(crunchyrollKeys)
+    // console.log(crunchyrollKeys)
     
     const show = new Map<string, Listing[]>();
     crunchyrollKeys.forEach((key) => {
         const fileName = catalog[key]
-        console.log(fileName);
         const {source, metadata}: ScriptInfo = JSON.parse(fs.readFileSync(path.join(__dirname, fileName)).toString());
+        
+
+        const arrSource = Array.isArray(source) ? source.splice(0) : [source]
+        const crSource = arrSource.find(({domain}) => domain === "crunchyroll")
+
+        if(!crSource){
+            return
+        }
+
         const {seriesTitle, episode, title, draft} = metadata;
         if(draft || !seriesTitle){
             return;
         }
         const showList: Listing[] = show.get(seriesTitle) ?? [];
         showList.push({
-            url: source.url,
+            url: crSource.url,
             episode: Number(episode),
             title
         });
