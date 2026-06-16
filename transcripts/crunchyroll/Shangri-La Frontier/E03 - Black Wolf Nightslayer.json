@@ -1,111 +1,115 @@
 {
-  "source": {
-    "url": "https://www.crunchyroll.com/watch/G9DUE58GJ/black-wolf-nightslayer",
-    "domain": "crunchyroll",
-    "id": "G9DUE58GJ"
-  },
   "metadata": {
-    "type": "television episode",
-    "title": "Black Wolf Nightslayer",
+    "episode": 3,
     "seriesTitle": "Shangri-La Frontier",
-    "episode": 3
+    "title": "Black Wolf Nightslayer",
+    "type": "episode"
   },
   "scripts": [
     {
-      "language": "en-US",
       "author": "Julianna Langston",
+      "language": "en-US",
       "tracks": [
         {
-          "timestamp": 0,
-          "text": "Muscular legs walk forward. Twin green blades dangle to side. The thighs bear large, dark scars."
-        },
-        { "timestamp": 3, "text": "Muscular arms and abs also bear scars." },
-        {
-          "timestamp": 5,
-          "text": "Sunraku wears only blue shorts and a blue bird mask."
+          "text": "Muscular legs walk forward. Twin green blades dangle to side. The thighs bear large, dark scars.",
+          "timestamp": 0
         },
         {
-          "timestamp": 9,
-          "text": "Red text appears, Shangri-La Frontier. Beyond the text is an expanse of mountains, forests, plains, and cities. We zoom out and the expanse is reflected in VR goggles worn by Rakuro"
+          "text": "Muscular arms and abs also bear scars.",
+          "timestamp": 3
         },
         {
-          "timestamp": 20,
-          "text": "At night, Sunraku stands in a misty field"
+          "text": "Sunraku wears only blue shorts and a blue bird mask.",
+          "timestamp": 5
         },
         {
-          "timestamp": 25,
-          "text": "Moon light shines over Sunraku as he stands near large rocks."
+          "text": "Red text appears, Shangri-La Frontier. Beyond the text is an expanse of mountains, forests, plains, and cities. We zoom out and the expanse is reflected in VR goggles worn by Rakuro",
+          "timestamp": 9
         },
         {
-          "timestamp": 27,
-          "text": "Rakuro smiles. His image glitches into Sunraku, whose brow furrows"
+          "text": "At night, Sunraku stands in a misty field",
+          "timestamp": 20
         },
         {
-          "timestamp": 30,
-          "text": "A woman with long purple hair twirls a spear in a forest."
+          "text": "Moon light shines over Sunraku as he stands near large rocks.",
+          "timestamp": 25
         },
         {
-          "timestamp": 34,
-          "text": "A girl with blond pig tails walks forward. Looking away from us, she puts her hands on her hips."
+          "text": "Rakuro smiles. His image glitches into Sunraku, whose brow furrows",
+          "timestamp": 27
         },
         {
-          "timestamp": 37,
-          "text": "A large knight wears a helmet. A rabbit wears a suit and top hat. The rabbit leaps and is replaced by a girl in a suit and top hat."
+          "text": "A woman with long purple hair twirls a spear in a forest.",
+          "timestamp": 30
         },
         {
-          "timestamp": 39,
-          "text": "A large rabbit with an eye patch sits cross legged in a low lit, traditional Japanese room"
+          "text": "A girl with blond pig tails walks forward. Looking away from us, she puts her hands on her hips.",
+          "timestamp": 34
         },
         {
-          "timestamp": 44,
-          "text": "A man wearing armor and a purple cape sits on a box in a storage room."
+          "text": "A large knight wears a helmet. A rabbit wears a suit and top hat. The rabbit leaps and is replaced by a girl in a suit and top hat.",
+          "timestamp": 37
+        },
+        {
+          "text": "A large rabbit with an eye patch sits cross legged in a low lit, traditional Japanese room",
+          "timestamp": 39
+        },
+        {
+          "text": "A man wearing armor and a purple cape sits on a box in a storage room.",
+          "timestamp": 44
         },
         {
           "text": "The dark fligure of a wolf bearing fangs appears over a forest and a red moon. Yellow lines shine around the wolf's read, glowing eyes.",
           "timestamp": 47
         },
         {
-          "timestamp": 51,
-          "text": "Sunraku runs through the woods. He leaps, and crosses in front of a full moon."
+          "text": "Sunraku runs through the woods. He leaps, and crosses in front of a full moon.",
+          "timestamp": 51
         },
         {
-          "timestamp": 54,
-          "text": "Flying through the air, he kicks and punches goblins. Holding red twin knives, he cuts at more goblins."
+          "text": "Flying through the air, he kicks and punches goblins. Holding red twin knives, he cuts at more goblins.",
+          "timestamp": 54
         },
         {
-          "timestamp": 58,
-          "text": "With red glowing fists, the blond girl fires energy blasts at goblins. The purple haired woman strikes human sized wasps. They fight back to back."
+          "text": "With red glowing fists, the blond girl fires energy blasts at goblins. The purple haired woman strikes human sized wasps. They fight back to back.",
+          "timestamp": 58
         },
         {
-          "timestamp": 63,
-          "text": "The large rabbit, with a scar over his right eye, slowly opens his eyes."
+          "text": "The large rabbit, with a scar over his right eye, slowly opens his eyes.",
+          "timestamp": 63
         },
         {
-          "timestamp": 65,
-          "text": "The purple haired girl strikes with a sword. The blond girl punches with a fire ball."
+          "text": "The purple haired girl strikes with a sword. The blond girl punches with a fire ball.",
+          "timestamp": 65
         },
         {
-          "timestamp": 68,
-          "text": "The knight strikes the ground, and the ground explodes with brilliant light that fades to lightning."
+          "text": "The knight strikes the ground, and the ground explodes with brilliant light that fades to lightning.",
+          "timestamp": 68
         },
         {
-          "timestamp": 72,
-          "text": "A town of small red houses and rabbit shaped motifs. A large temple rests at the top of a giant tree. "
+          "text": "A town of small red houses and rabbit shaped motifs. A large temple rests at the top of a giant tree. ",
+          "timestamp": 72
         },
         {
-          "timestamp": 76,
-          "text": "The town fades into the bird man's red eye"
+          "text": "The town fades into the bird man's red eye",
+          "timestamp": 76
         },
-        { "timestamp": 79, "text": "The rabbit leaps up, smiling." },
         {
-          "timestamp": 83,
-          "text": "In a forest glowing with a red mist, the blond girl, Sunraku, and purple haired girl walk side by side."
+          "text": "The rabbit leaps up, smiling.",
+          "timestamp": 79
+        },
+        {
+          "text": "In a forest glowing with a red mist, the blond girl, Sunraku, and purple haired girl walk side by side.",
+          "timestamp": 83
         },
         {
           "text": "At night, a clock in a traditional Japanese bedroom reads 11:08.",
           "timestamp": 90
         },
-        { "text": "Text, 3, Black Wolf Nightslayer", "timestamp": 93 },
+        {
+          "text": "Text, 3, Black Wolf Nightslayer",
+          "timestamp": 93
+        },
         {
           "text": "The room includes a small potted plant and a white teddy bear.",
           "timestamp": 96
@@ -114,8 +118,14 @@
           "text": "Rei lies on her futon in a modest white night gown",
           "timestamp": 100
         },
-        { "text": "The white knight talks to Reiji and Mia.", "timestamp": 105 },
-        { "text": "Label, Gift, Coordinate Teleporter", "timestamp": 178 },
+        {
+          "text": "The white knight talks to Reiji and Mia.",
+          "timestamp": 105
+        },
+        {
+          "text": "Label, Gift, Coordinate Teleporter",
+          "timestamp": 178
+        },
         {
           "text": "Her cape bears an emblem of a wolf biting a sword",
           "timestamp": 186
@@ -124,15 +134,30 @@
           "text": "Her foot glows green, and she disappears, leaving a trail of dust.",
           "timestamp": 189
         },
-        { "text": "Sunraku looks up at Lycagon", "timestamp": 273 },
-        { "text": "Clouds part from the full moon", "timestamp": 285 },
+        {
+          "text": "Sunraku looks up at Lycagon",
+          "timestamp": 273
+        },
+        {
+          "text": "Clouds part from the full moon",
+          "timestamp": 285
+        },
         {
           "text": "Lycagon stares down, her black fur crackling with purple electricity",
           "timestamp": 290
         },
-        { "text": "Her breath releases a shockwave.", "timestamp": 295 },
-        { "text": "He stares, wide eyed", "timestamp": 313 },
-        { "text": "Lycagon lunges forward", "timestamp": 321 },
+        {
+          "text": "Her breath releases a shockwave.",
+          "timestamp": 295
+        },
+        {
+          "text": "He stares, wide eyed",
+          "timestamp": 313
+        },
+        {
+          "text": "Lycagon lunges forward",
+          "timestamp": 321
+        },
         {
           "text": "She swipes. He parries with his daggers. He flies into the air.",
           "timestamp": 326
@@ -145,7 +170,10 @@
           "text": "He swipes, then leaps into the air, backdropped by the moon.",
           "timestamp": 337
         },
-        { "text": "He lands and slides back", "timestamp": 341 },
+        {
+          "text": "He lands and slides back",
+          "timestamp": 341
+        },
         {
           "text": "He crouches, holding his daggers, panting. Lycagon lowers",
           "timestamp": 345
@@ -154,30 +182,66 @@
           "text": "She strikes, he dodges upward, along with chunks of earth",
           "timestamp": 370
         },
-        { "text": "He switches to Vorpal choppers", "timestamp": 379 },
-        { "text": "His legs glow. Blue dialog, Slide step", "timestamp": 383 },
-        { "text": "He leaps between rocks", "timestamp": 387 },
-        { "text": "He strikes her paw. Critical.", "timestamp": 392 },
+        {
+          "text": "He switches to Vorpal choppers",
+          "timestamp": 379
+        },
+        {
+          "text": "His legs glow. Blue dialog, Slide step",
+          "timestamp": 383
+        },
+        {
+          "text": "He leaps between rocks",
+          "timestamp": 387
+        },
+        {
+          "text": "He strikes her paw. Critical.",
+          "timestamp": 392
+        },
         {
           "text": "She swipes, he dodges from side to side, then over.",
           "timestamp": 398
         },
-        { "text": "Critical strike to her paw", "timestamp": 401 },
-        { "text": "Clouds cover the moon. ", "timestamp": 403 },
+        {
+          "text": "Critical strike to her paw",
+          "timestamp": 401
+        },
+        {
+          "text": "Clouds cover the moon. ",
+          "timestamp": 403
+        },
         {
           "text": "Lycagon vanishes in the darkness, leaving only her glowing orange eyes, which close.",
           "timestamp": 406
         },
-        { "text": "Sunraku looks around", "timestamp": 410 },
-        { "text": "She strikes from behind him. He dodges", "timestamp": 415 },
-        { "text": "She moon shines", "timestamp": 418 },
-        { "text": "He dodges, then strikes. Critical.", "timestamp": 425 },
+        {
+          "text": "Sunraku looks around",
+          "timestamp": 410
+        },
+        {
+          "text": "She strikes from behind him. He dodges",
+          "timestamp": 415
+        },
+        {
+          "text": "She moon shines",
+          "timestamp": 418
+        },
+        {
+          "text": "He dodges, then strikes. Critical.",
+          "timestamp": 425
+        },
         {
           "text": "The moon disappears, as does Lycagon, into a mist of black",
           "timestamp": 431
         },
-        { "text": "To the right", "timestamp": 441 },
-        { "text": "He runs, surrounded by exploding rubble", "timestamp": 445 },
+        {
+          "text": "To the right",
+          "timestamp": 441
+        },
+        {
+          "text": "He runs, surrounded by exploding rubble",
+          "timestamp": 445
+        },
         {
           "text": "She strikes, he dodges, she strikes, he parries",
           "timestamp": 450
@@ -190,26 +254,50 @@
           "text": "He looks up then turns around. She flies at him from behind.",
           "timestamp": 463
         },
-        { "text": "He parries, and she vanishes into mist", "timestamp": 470 },
-        { "text": "Clouds approach the moon", "timestamp": 475 },
-        { "text": "Black mist forms in front of him", "timestamp": 478 },
+        {
+          "text": "He parries, and she vanishes into mist",
+          "timestamp": 470
+        },
+        {
+          "text": "Clouds approach the moon",
+          "timestamp": 475
+        },
+        {
+          "text": "Black mist forms in front of him",
+          "timestamp": 478
+        },
         {
           "text": "He takes a stance. His legs tense. The moon shines, illuminating the craggy landscape.",
           "timestamp": 485
         },
-        { "text": "Lycagon runs", "timestamp": 490 },
-        { "text": "Sunraku runs", "timestamp": 494 },
+        {
+          "text": "Lycagon runs",
+          "timestamp": 490
+        },
+        {
+          "text": "Sunraku runs",
+          "timestamp": 494
+        },
         {
           "text": "A mud frog sleeps on a rock. Lycagon and Sunraku's battle can be seen across the wastes.",
           "timestamp": 496
         },
-        { "text": "He strikes her eye", "timestamp": 575 },
-        { "text": "He flies back", "timestamp": 578 },
+        {
+          "text": "He strikes her eye",
+          "timestamp": 575
+        },
+        {
+          "text": "He flies back",
+          "timestamp": 578
+        },
         {
           "text": "She looks down at him, then disappears into mist",
           "timestamp": 602
         },
-        { "text": "Purple blur", "timestamp": 606 },
+        {
+          "text": "Purple blur",
+          "timestamp": 606
+        },
         {
           "text": "Sunraku looks down at his missing calves",
           "timestamp": 610
@@ -222,7 +310,10 @@
           "text": "He points at her, staring. She stares back and narrows her eyes",
           "timestamp": 690
         },
-        { "text": "A wind blows across the landscape", "timestamp": 695 },
+        {
+          "text": "A wind blows across the landscape",
+          "timestamp": 695
+        },
         {
           "text": "The clouds cover the moon, casting the craggy rocks in darkness",
           "timestamp": 700
@@ -251,13 +342,22 @@
           "text": "Monsters of lower level than the afflicted character will flee. Conversations with NPCs will be affected by the presence of Lycagon's Mark. The afflicted body part gains resistance to magic effects. The curse can be removed through the prayers of a Saint or the defeat of the curse's caster.",
           "timestamp": 745
         },
-        { "text": "He leaps off the bed and flails", "timestamp": 761 },
-        { "text": "He falls back to the bed", "timestamp": 803 },
+        {
+          "text": "He leaps off the bed and flails",
+          "timestamp": 761
+        },
+        {
+          "text": "He falls back to the bed",
+          "timestamp": 803
+        },
         {
           "text": "He looks out the window as players walk around Secondale",
           "timestamp": 813
         },
-        { "text": "He walks down the street", "timestamp": 825 },
+        {
+          "text": "He walks down the street",
+          "timestamp": 825
+        },
         {
           "text": "In an alley, he looks at his profile. 50 skill points remaining.",
           "timestamp": 856
@@ -266,7 +366,10 @@
           "text": "He increases his Luck score to 65. Agility 60, Vitality 6, Stamina 50",
           "timestamp": 877
         },
-        { "text": "A white bunny falls from the sky", "timestamp": 921 },
+        {
+          "text": "A white bunny falls from the sky",
+          "timestamp": 921
+        },
         {
           "text": "bounces off his head and lands in the alleyway. He turns. The bunny adjusts a tophat.",
           "timestamp": 926
@@ -303,7 +406,10 @@
           "text": "He walks through the door and it. The door's label adds a new line, Recommended Level, 80.",
           "timestamp": 1046
         },
-        { "text": "Text, Sunraku, Level: 28", "timestamp": 1050 },
+        {
+          "text": "Text, Sunraku, Level: 28",
+          "timestamp": 1050
+        },
         {
           "text": "A town full of bunny people. Small white buildings with orange and red roofs. Hedges and buildings in the shape of rabbits. A white stone wall in front of a giant tree in the center of town. Label, Rabituza.",
           "timestamp": 1054
@@ -320,12 +426,18 @@
           "text": "He emerges from the door in the middle of the giant tree trunk, looking out of Rabbituza. Behind him are stairs leading to a Japanese-style castle at the top of the tree.",
           "timestamp": 1076
         },
-        { "text": "The white bunny", "timestamp": 1096 },
+        {
+          "text": "The white bunny",
+          "timestamp": 1096
+        },
         {
           "text": "Conversations with NPC's will be affected by the presence of Lycagon's Mark",
           "timestamp": 1159
         },
-        { "text": "Emul walks up the stairs", "timestamp": 1184 },
+        {
+          "text": "Emul walks up the stairs",
+          "timestamp": 1184
+        },
         {
           "text": "Sunraku follows. The Rabituza Palace includes a 4 story tenshu, a main tower with tiered stories. It has white eaves and gables. The tenshu design resembles Osaka Castle.",
           "timestamp": 1198
@@ -358,79 +470,94 @@
           "text": "The large rabbit man, in traditional clothes, has a scar instead of a left eye. He sits in a tatehiza, a battle-ready sitting style.",
           "timestamp": 1307
         },
-        { "text": "Label, Boss of Rabituza, Vysache", "timestamp": 1321 },
+        {
+          "text": "Label, Boss of Rabituza, Vysache",
+          "timestamp": 1321
+        },
         {
           "text": "Sunraku sweats. Vysache smiles, pipe in his mouth.",
           "timestamp": 1325
         },
         {
-          "timestamp": 1333,
-          "text": "Rakuro floats, as if in water. Debris floats around him. "
+          "text": "Rakuro floats, as if in water. Debris floats around him. ",
+          "timestamp": 1333
         },
         {
-          "timestamp": 1338,
-          "text": "He reaches out a hand. The debris glitters."
+          "text": "He reaches out a hand. The debris glitters.",
+          "timestamp": 1338
         },
         {
-          "timestamp": 1343,
-          "text": "He opens his blue eyes. He has short, spiky blue hair."
+          "text": "He opens his blue eyes. He has short, spiky blue hair.",
+          "timestamp": 1343
         },
         {
-          "timestamp": 1348,
-          "text": "Pixels float in cyberspace. We follow a tunnel of light"
+          "text": "Pixels float in cyberspace. We follow a tunnel of light",
+          "timestamp": 1348
         },
-        { "timestamp": 1353, "text": "Grass blows before an orange sunset." },
-        { "timestamp": 1357, "text": "Sunraku, covered in scars, stands." },
         {
-          "timestamp": 1361,
-          "text": "Rei opens her brown eyes. She has short brown hair that wraps around her face."
+          "text": "Grass blows before an orange sunset.",
+          "timestamp": 1353
+        },
+        {
+          "text": "Sunraku, covered in scars, stands.",
+          "timestamp": 1357
+        },
+        {
+          "text": "Rei opens her brown eyes. She has short brown hair that wraps around her face.",
+          "timestamp": 1361
         },
         {
           "text": "Sunraku walks on a path with Emul, a white bunny wearing a blue coat, red vest, and top hat. Emul twirls and back flips.",
           "timestamp": 1365
         },
         {
-          "timestamp": 1370,
-          "text": "Surrounded by stone columns, the knight appears. Her armor is white and lined in gold. Her helmet bears a long, red plume."
+          "text": "Surrounded by stone columns, the knight appears. Her armor is white and lined in gold. Her helmet bears a long, red plume.",
+          "timestamp": 1370
         },
         {
-          "timestamp": 1375,
-          "text": "A woman with long purple hair looks determined. Her hair moves gently in the wind."
+          "text": "A woman with long purple hair looks determined. Her hair moves gently in the wind.",
+          "timestamp": 1375
         },
         {
-          "timestamp": 1380,
-          "text": "A blond woman looks up. She has shoulder length hair tied up in pig tails."
+          "text": "A blond woman looks up. She has shoulder length hair tied up in pig tails.",
+          "timestamp": 1380
         },
         {
-          "timestamp": 1384,
-          "text": "Sunraku stares up as clouds roll over a blue sky. It glows yellow with a sunset, then darkens to a dark purple moon."
+          "text": "Sunraku stares up as clouds roll over a blue sky. It glows yellow with a sunset, then darkens to a dark purple moon.",
+          "timestamp": 1384
         },
         {
           "text": "His bird mask feathers blows in the wind.",
           "timestamp": 1393
         },
         {
-          "timestamp": 1393,
-          "text": "The purple haired woman stands on a cliff in front of the moon, her hands on her hips."
+          "text": "The purple haired woman stands on a cliff in front of the moon, her hands on her hips.",
+          "timestamp": 1393
         },
         {
-          "timestamp": 1399,
-          "text": "The blond woman crouches on an outcropping, in front of the moon"
+          "text": "The blond woman crouches on an outcropping, in front of the moon",
+          "timestamp": 1399
         },
         {
-          "timestamp": 1404,
-          "text": "Sunraku and the knight stand, facing opposite directions, surrounded by floating debris, backdropped by a nebula that glows prismatically from red to green to blue."
+          "text": "Sunraku and the knight stand, facing opposite directions, surrounded by floating debris, backdropped by a nebula that glows prismatically from red to green to blue.",
+          "timestamp": 1404
         },
         {
-          "timestamp": 1413,
-          "text": "Blue pixels float in cyberspace as we fly through a tunnel of light"
+          "text": "Blue pixels float in cyberspace as we fly through a tunnel of light",
+          "timestamp": 1413
         },
         {
           "text": "Elementary students sit in front of a stage. Sunraku pushes the word SLF Mini",
           "timestamp": 1422
         },
-        { "text": "Text, 5, Psyger: Episode-0", "timestamp": 1427 },
-        { "text": "Rei stands in the game store", "timestamp": 1430 },
+        {
+          "text": "Text, 5, Psyger: Episode-0",
+          "timestamp": 1427
+        },
+        {
+          "text": "Rei stands in the game store",
+          "timestamp": 1430
+        },
         {
           "text": "She runs out, clutching a disc case to her chest",
           "timestamp": 1506
@@ -439,8 +566,24 @@
           "text": "The figure of Rei's game avatar, the white knight.",
           "timestamp": 1525
         },
-        { "text": "Credits roll", "timestamp": 1528 }
+        {
+          "text": "Credits roll",
+          "timestamp": 1528
+        }
       ]
+    }
+  ],
+  "source": [
+    {
+      "domain": "disney",
+      "id": "1bd3e005-6b71-4beb-b354-c74fe5d300f9",
+      "offset": 3,
+      "url": "https://www.disneyplus.com/play/1bd3e005-6b71-4beb-b354-c74fe5d300f9"
+    },
+    {
+      "domain": "crunchyroll",
+      "id": "G9DUE58GJ",
+      "url": "https://www.crunchyroll.com/watch/G9DUE58GJ/black-wolf-nightslayer"
     }
   ]
 }

@@ -1,105 +1,106 @@
 {
-  "source": {
-    "url": "https://www.crunchyroll.com/watch/G50UZV87N/regrets-always-lie-in-the-past",
-    "domain": "crunchyroll",
-    "id": "G50UZV87N"
-  },
   "metadata": {
-    "type": "television episode",
-    "title": "Regrets Always Lie in the Past",
+    "episode": 12,
     "seriesTitle": "Shangri-La Frontier",
-    "episode": 12
+    "title": "Regrets Always Lie in the Past",
+    "type": "episode"
   },
   "scripts": [
     {
-      "language": "en-US",
       "author": "Julianna Langston",
+      "language": "en-US",
       "tracks": [
-        { "timestamp": 41, "text": "Muscular arms and abs also bear scars." },
         {
-          "timestamp": 43,
-          "text": "Sunraku wears only blue shorts and a blue bird mask."
+          "text": "Muscular arms and abs also bear scars.",
+          "timestamp": 41
         },
         {
-          "timestamp": 47,
-          "text": "Red text appears, Shangri-La Frontier. Beyond the text is an expanse of mountains, forests, plains, and cities. We zoom out and the expanse is reflected in VR goggles worn by Rakuro"
+          "text": "Sunraku wears only blue shorts and a blue bird mask.",
+          "timestamp": 43
         },
         {
-          "timestamp": 58,
-          "text": "At night, Sunraku stands in a misty field"
+          "text": "Red text appears, Shangri-La Frontier. Beyond the text is an expanse of mountains, forests, plains, and cities. We zoom out and the expanse is reflected in VR goggles worn by Rakuro",
+          "timestamp": 47
         },
         {
-          "timestamp": 60,
-          "text": "Pencilgon stands on a cliff in front of the moon, her hands on her hips."
+          "text": "At night, Sunraku stands in a misty field",
+          "timestamp": 58
         },
         {
-          "timestamp": 63,
-          "text": "Moon light shines over Sunraku as he stands near large rocks."
+          "text": "Pencilgon stands on a cliff in front of the moon, her hands on her hips.",
+          "timestamp": 60
         },
         {
-          "timestamp": 65,
-          "text": "Rakuro smiles. His image glitches into Sunraku, whose brow furrows"
+          "text": "Moon light shines over Sunraku as he stands near large rocks.",
+          "timestamp": 63
         },
         {
-          "timestamp": 68,
-          "text": "Pencilgon, a woman with long purple hair, twirls a spear in a forest."
+          "text": "Rakuro smiles. His image glitches into Sunraku, whose brow furrows",
+          "timestamp": 65
         },
         {
-          "timestamp": 72,
-          "text": "Katzo, a girl with blond pig tails, walks forward. Looking away from us, she puts her hands on her hips."
+          "text": "Pencilgon, a woman with long purple hair, twirls a spear in a forest.",
+          "timestamp": 68
         },
         {
-          "timestamp": 75,
-          "text": "Psyger-0 swings a log. Emul wears a suit and top hat. She leaps and is replaced by her human form."
+          "text": "Katzo, a girl with blond pig tails, walks forward. Looking away from us, she puts her hands on her hips.",
+          "timestamp": 72
         },
         {
-          "timestamp": 77,
-          "text": "Vysache wears an eye patch. He holds a carrot shaped smoking pipe and sits cross legged in a low lit, traditional Japanese room"
+          "text": "Psyger-0 swings a log. Emul wears a suit and top hat. She leaps and is replaced by her human form.",
+          "timestamp": 75
         },
         {
-          "timestamp": 82,
-          "text": "Orcelot, wearing armor and a purple cape, sits on a box in a storage room."
+          "text": "Vysache wears an eye patch. He holds a carrot shaped smoking pipe and sits cross legged in a low lit, traditional Japanese room",
+          "timestamp": 77
         },
         {
-          "timestamp": 85,
-          "text": "Lycagon bears fangs over a forest, backdropped by a red moon. Yellow lines shine around her red, glowing eyes."
+          "text": "Orcelot, wearing armor and a purple cape, sits on a box in a storage room.",
+          "timestamp": 82
         },
         {
-          "timestamp": 89,
-          "text": "Sunraku runs through the woods. He leaps, and crosses in front of a full moon."
+          "text": "Lycagon bears fangs over a forest, backdropped by a red moon. Yellow lines shine around her red, glowing eyes.",
+          "timestamp": 85
         },
         {
-          "timestamp": 92,
-          "text": "Flying through the air, he kicks and punches goblins. Holding red twin knives, he cuts at more goblins."
+          "text": "Sunraku runs through the woods. He leaps, and crosses in front of a full moon.",
+          "timestamp": 89
         },
         {
-          "timestamp": 96,
-          "text": "With red glowing fists, the blond girl fires energy blasts at goblins. Pencilgon strikes human sized wasps. They fight back to back."
+          "text": "Flying through the air, he kicks and punches goblins. Holding red twin knives, he cuts at more goblins.",
+          "timestamp": 92
         },
         {
-          "timestamp": 101,
-          "text": "Vysache, with a scar over his right eye, slowly opens his eyes."
+          "text": "With red glowing fists, the blond girl fires energy blasts at goblins. Pencilgon strikes human sized wasps. They fight back to back.",
+          "timestamp": 96
         },
         {
-          "timestamp": 103,
-          "text": "Pencilgon strikes with a sword. Katzo punches with a fire ball."
+          "text": "Vysache, with a scar over his right eye, slowly opens his eyes.",
+          "timestamp": 101
         },
         {
-          "timestamp": 106,
-          "text": "The knight strikes the ground, and the ground explodes with brilliant light that fades to lightning."
+          "text": "Pencilgon strikes with a sword. Katzo punches with a fire ball.",
+          "timestamp": 103
         },
         {
-          "timestamp": 110,
-          "text": "A town of small red houses and rabbit shaped motifs. A large temple rests at the top of a giant tree. "
+          "text": "The knight strikes the ground, and the ground explodes with brilliant light that fades to lightning.",
+          "timestamp": 106
         },
         {
-          "timestamp": 114,
-          "text": "The town fades into the bird man's red eye"
+          "text": "A town of small red houses and rabbit shaped motifs. A large temple rests at the top of a giant tree. ",
+          "timestamp": 110
         },
-        { "timestamp": 117, "text": "Emul leaps up, smiling." },
         {
-          "timestamp": 121,
-          "text": "In a forest glowing with a red mist, Katzo, Sunraku, and Pencilgon walk side by side."
+          "text": "The town fades into the bird man's red eye",
+          "timestamp": 114
+        },
+        {
+          "text": "Emul leaps up, smiling.",
+          "timestamp": 117
+        },
+        {
+          "text": "In a forest glowing with a red mist, Katzo, Sunraku, and Pencilgon walk side by side.",
+          "timestamp": 121
         },
         {
           "text": "In UniteRounds, Pencilgon smiles. Text, 12, Regrets Always Lie in the Past.",
@@ -125,19 +126,46 @@
           "text": "Sunraku and Emul exchange glances. He folds his arms, straightens, and cocks an eyebrow",
           "timestamp": 296
         },
-        { "text": "Pyramid approaches.", "timestamp": 310 },
+        {
+          "text": "Pyramid approaches.",
+          "timestamp": 310
+        },
         {
           "text": "Katzo punches the pyramid, her fists glowing red",
           "timestamp": 312
         },
-        { "text": "3 more pyramids descend", "timestamp": 337 },
-        { "text": "Katzo smiles", "timestamp": 339 },
-        { "text": "Katzo cocks her head and stares blankly", "timestamp": 392 },
-        { "text": "The three walk", "timestamp": 399 },
-        { "text": "A deep, dark hole", "timestamp": 464 },
-        { "text": "Katzo jumps", "timestamp": 501 },
-        { "text": "He taps his fist in his palm", "timestamp": 510 },
-        { "text": "Sunraku's temple throbs.", "timestamp": 551 },
+        {
+          "text": "3 more pyramids descend",
+          "timestamp": 337
+        },
+        {
+          "text": "Katzo smiles",
+          "timestamp": 339
+        },
+        {
+          "text": "Katzo cocks her head and stares blankly",
+          "timestamp": 392
+        },
+        {
+          "text": "The three walk",
+          "timestamp": 399
+        },
+        {
+          "text": "A deep, dark hole",
+          "timestamp": 464
+        },
+        {
+          "text": "Katzo jumps",
+          "timestamp": 501
+        },
+        {
+          "text": "He taps his fist in his palm",
+          "timestamp": 510
+        },
+        {
+          "text": "Sunraku's temple throbs.",
+          "timestamp": 551
+        },
         {
           "text": "Sunraku grabs Emul and leaps into the hole",
           "timestamp": 560
@@ -146,50 +174,98 @@
           "text": " Katzo stands in a cave. Sunraku and Emul slide down a crack in the wall.",
           "timestamp": 564
         },
-        { "text": "Label, Tearlight Lake", "timestamp": 580 },
+        {
+          "text": "Label, Tearlight Lake",
+          "timestamp": 580
+        },
         {
           "text": "The 2 cast lines into the water. The lake glows etherally in the stone cave, with a forest of stalactites dangling above them.",
           "timestamp": 599
         },
-        { "text": "Label, Lifestide Salmon", "timestamp": 622 },
+        {
+          "text": "Label, Lifestide Salmon",
+          "timestamp": 622
+        },
         {
           "text": "A long green serpent with red eyes and gills on either side of the head",
           "timestamp": 658.5
         },
-        { "text": "Katzo's hands glow red", "timestamp": 663 },
+        {
+          "text": "Katzo's hands glow red",
+          "timestamp": 663
+        },
         {
           "text": "The serpent lunges at the shore. The trio dodge.",
           "timestamp": 685.5
         },
-        { "text": "Embers warm in the fire", "timestamp": 697 },
-        { "text": "Bilac wipes sweat off her face", "timestamp": 702 },
+        {
+          "text": "Embers warm in the fire",
+          "timestamp": 697
+        },
+        {
+          "text": "Bilac wipes sweat off her face",
+          "timestamp": 702
+        },
         {
           "text": "A long purple blade rapier and a short dagger with a purple hilt.",
           "timestamp": 712
         },
-        { "text": "He picks up the blades", "timestamp": 744 },
-        { "text": "The rapier", "timestamp": 821.5 },
+        {
+          "text": "He picks up the blades",
+          "timestamp": 744
+        },
+        {
+          "text": "The rapier",
+          "timestamp": 821.5
+        },
         {
           "text": "He uses Spiral Edge on the serpent, leaving a purple and red circle on the body",
           "timestamp": 826
         },
-        { "text": "Katzo red fist punches the serpent", "timestamp": 830 },
-        { "text": "She backflips away", "timestamp": 832 },
+        {
+          "text": "Katzo red fist punches the serpent",
+          "timestamp": 830
+        },
+        {
+          "text": "She backflips away",
+          "timestamp": 832
+        },
         {
           "text": "Emul hides behind a rock. The serpent's wound glows purple.",
           "timestamp": 839
         },
-        { "text": "Text, Corrosive Poison", "timestamp": 872 },
-        { "text": "Katzo punches", "timestamp": 874 },
-        { "text": "Katzo's hands glow black", "timestamp": 895 },
+        {
+          "text": "Text, Corrosive Poison",
+          "timestamp": 872
+        },
+        {
+          "text": "Katzo punches",
+          "timestamp": 874
+        },
+        {
+          "text": "Katzo's hands glow black",
+          "timestamp": 895
+        },
         {
           "text": "She leaps and black fist punches the purple wound.",
           "timestamp": 898
         },
-        { "text": "The serpent reels back and screams", "timestamp": 903 },
-        { "text": "She runs, carrying a book", "timestamp": 913 },
-        { "text": "Katzo runs", "timestamp": 916 },
-        { "text": "The serpent leers then lunges", "timestamp": 930 },
+        {
+          "text": "The serpent reels back and screams",
+          "timestamp": 903
+        },
+        {
+          "text": "She runs, carrying a book",
+          "timestamp": 913
+        },
+        {
+          "text": "Katzo runs",
+          "timestamp": 916
+        },
+        {
+          "text": "The serpent leers then lunges",
+          "timestamp": 930
+        },
         {
           "text": "The serpent screams in a torrent of attacks from the trio",
           "timestamp": 942
@@ -198,8 +274,14 @@
           "text": "The lake lies still in the cave. Sunraku, Level up, 31 arrow 32. Katzo, level up, 25 arrow 29",
           "timestamp": 953
         },
-        { "text": "His eyes bulge and he squeezes Emul", "timestamp": 1058 },
-        { "text": "Sunraku stomps off. Emul pants.", "timestamp": 1067 },
+        {
+          "text": "His eyes bulge and he squeezes Emul",
+          "timestamp": 1058
+        },
+        {
+          "text": "Sunraku stomps off. Emul pants.",
+          "timestamp": 1067
+        },
         {
           "text": "A tie down rope is anchored to the floor of the cave. The trio sit on a rug in a tent. Pencilgon enters.",
           "timestamp": 1085
@@ -229,81 +311,103 @@
           "timestamp": 1200
         },
         {
-          "timestamp": 1207,
-          "text": "Rakuro floats, as if in water. Debris floats around him. "
+          "text": "Rakuro floats, as if in water. Debris floats around him. ",
+          "timestamp": 1207
         },
         {
-          "timestamp": 1212,
-          "text": "He reaches out a hand. The debris glitters."
+          "text": "He reaches out a hand. The debris glitters.",
+          "timestamp": 1212
         },
         {
-          "timestamp": 1217,
-          "text": "He opens his blue eyes. He has short, spiky blue hair."
+          "text": "He opens his blue eyes. He has short, spiky blue hair.",
+          "timestamp": 1217
         },
         {
-          "timestamp": 1222,
-          "text": "Pixels float in cyberspace. We follow a tunnel of light"
-        },
-        { "timestamp": 1227, "text": "Grass blows before an orange sunset." },
-        {
-          "timestamp": 1231,
-          "text": "Sunraku, bearing Lycagon's Mark, stands."
+          "text": "Pixels float in cyberspace. We follow a tunnel of light",
+          "timestamp": 1222
         },
         {
-          "timestamp": 1235,
-          "text": "Rei opens her brown eyes. She has short brown hair that wraps around her face."
+          "text": "Grass blows before an orange sunset.",
+          "timestamp": 1227
         },
         {
-          "timestamp": 1239,
-          "text": "Sunraku walks on a path with Emul, a white bunny wearing a blue coat, red vest, and top hat. Emul twirls and back flips."
+          "text": "Sunraku, bearing Lycagon's Mark, stands.",
+          "timestamp": 1231
         },
         {
-          "timestamp": 1244,
-          "text": "Surrounded by stone columns, Psyger-0, a knight appears. Her armor is white and lined in gold. Her helmet bears a long, red plume."
+          "text": "Rei opens her brown eyes. She has short brown hair that wraps around her face.",
+          "timestamp": 1235
         },
         {
-          "timestamp": 1249,
-          "text": "Arthur Pencilgon, a woman with long purple hair, looks determined. Her hair moves gently in the wind."
+          "text": "Sunraku walks on a path with Emul, a white bunny wearing a blue coat, red vest, and top hat. Emul twirls and back flips.",
+          "timestamp": 1239
         },
         {
-          "timestamp": 1254,
-          "text": "Katzo looks up. She has shoulder length hair tied up in pig tails."
+          "text": "Surrounded by stone columns, Psyger-0, a knight appears. Her armor is white and lined in gold. Her helmet bears a long, red plume.",
+          "timestamp": 1244
         },
         {
-          "timestamp": 1258,
-          "text": "Sunraku stares up as clouds roll over a blue sky. It glows yellow with a sunset, then darkens to a dark purple moon."
+          "text": "Arthur Pencilgon, a woman with long purple hair, looks determined. Her hair moves gently in the wind.",
+          "timestamp": 1249
         },
         {
-          "timestamp": 1261,
-          "text": "His bird mask feathers blows in the wind."
+          "text": "Katzo looks up. She has shoulder length hair tied up in pig tails.",
+          "timestamp": 1254
         },
         {
-          "timestamp": 1267,
-          "text": "Pencilgon stands on a cliff in front of the moon, her hands on her hips."
+          "text": "Sunraku stares up as clouds roll over a blue sky. It glows yellow with a sunset, then darkens to a dark purple moon.",
+          "timestamp": 1258
         },
         {
-          "timestamp": 1273,
-          "text": "Katzo crouches on an outcropping, in front of the moon"
+          "text": "His bird mask feathers blows in the wind.",
+          "timestamp": 1261
         },
         {
-          "timestamp": 1278,
-          "text": "Sunraku and Psyger-0 stand, facing opposite directions, surrounded by floating debris, backdropped by a nebula that glows prismatically from red to green to blue."
+          "text": "Pencilgon stands on a cliff in front of the moon, her hands on her hips.",
+          "timestamp": 1267
         },
         {
-          "timestamp": 1287,
-          "text": "Blue pixels float in cyberspace as we fly through a tunnel of light"
+          "text": "Katzo crouches on an outcropping, in front of the moon",
+          "timestamp": 1273
+        },
+        {
+          "text": "Sunraku and Psyger-0 stand, facing opposite directions, surrounded by floating debris, backdropped by a nebula that glows prismatically from red to green to blue.",
+          "timestamp": 1278
+        },
+        {
+          "text": "Blue pixels float in cyberspace as we fly through a tunnel of light",
+          "timestamp": 1287
         },
         {
           "text": "Text, Animalia Expedition, Monster-Bird of the Forest Grotto, The \"Rabbit Eared Shoebill\" Really Exists",
           "timestamp": 1321
         },
-        { "text": "A human foot print", "timestamp": 1345 },
+        {
+          "text": "A human foot print",
+          "timestamp": 1345
+        },
         {
           "text": "A large, shadowy figure flies between 2 trees.",
           "timestamp": 1378
         },
-        { "text": "Sunraku and Katzo walk behind them", "timestamp": 1412 }
+        {
+          "text": "Sunraku and Katzo walk behind them",
+          "timestamp": 1412
+        }
       ]
+    }
+  ],
+  "source": [
+    {
+      "domain": "disney",
+      "id": "0b7a597e-4c8b-409c-9f7e-ce06595cef8d",
+      "offset": 2,
+      "url": "https://www.disneyplus.com/play/0b7a597e-4c8b-409c-9f7e-ce06595cef8d"
+    },
+    {
+      "domain": "crunchyroll",
+      "id": "G50UZV87N",
+      "url": "https://www.crunchyroll.com/watch/G50UZV87N/regrets-always-lie-in-the-past"
     }
   ]
 }
